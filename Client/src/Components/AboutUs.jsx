@@ -6,6 +6,12 @@ import about3 from "../assets/AboutUs/about-3.png"
 import about4 from "../assets/AboutUs/about-4.png"
 import about5 from "../assets/AboutUs/about-5.png"
 import about6 from "../assets/AboutUs/about-6.png"
+import icon1 from "../assets/AboutUs/icon1.png"
+import icon2 from "../assets/AboutUs/icon2.png"
+import icon3 from "../assets/AboutUs/icon3.png"
+
+// import { Target, Mountain, Hand } from "lucide-react";
+
 
 
 const AboutUs = () => {
@@ -15,17 +21,17 @@ const AboutUs = () => {
     {
       title: "Mission",
       text: "At Aruh Koncepts, we simplify design with personalized, stylish, and lasting solutions—blending creativity, collaboration, and quality craftsmanship.",
-      icon: "🎯",
+      icon: icon1,
     },
     {
       title: "Vision",
       text: "To be a trusted interior design name by creating functional, beautiful spaces that reflect our clients' lifestyles and elevate daily living.",
-      icon: "⛰️",
+      icon: icon2,
     },
     {
       title: "Why Choose",
       text: "At Aruh Koncepts, we craft personalized interior solutions that balance style and function—delivered with clear communication, smart planning, and a respect for your time and budget.",
-      icon: "☝️",
+      icon: icon3,
     },
   ];
 ////
@@ -109,10 +115,14 @@ const team = [
           {items.map((item, i) => (
             <div key={i} className="flex items-start gap-4">
               {/* Icon circle */}
-              <div className="w-14 h-14 flex items-center justify-center rounded-full bg-[#7B4E39] text-white text-2xl">
-                {item.icon}
-              </div>
-              {/* Text */}
+<div className="w-24 h-24 rounded-full flex items-center justify-center flex-shrink-0">
+  <img
+    src={item.icon}
+    alt={`${item.title} icon`}
+    className="w-20 h-20 object-contain"
+  />
+</div>
+  {/* Text */}
               <div>
                 <h3 className="text-lg font-bold text-gray-900">
                   {item.title}

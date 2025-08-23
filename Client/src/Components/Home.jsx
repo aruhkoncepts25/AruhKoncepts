@@ -617,66 +617,76 @@ const Home = () => {
       </section>
 
       {/* //// FAQ  */}
-      <section className="faqs-section">
-        <div className="w-[90%] mx-auto">
-          <h1
-            className="text-xl font-bold text-[#C9966B] mb-18"
-            data-aos="fade-up"
-          >
-            FAQ
-          </h1>
+     <section className="faqs-section">
+  <div className="w-[90%] mx-auto">
+    <h1
+      className="text-xl font-bold text-[#C9966B] mb-18"
+      data-aos="fade-up"
+    >
+      FAQ
+    </h1>
 
-          {/* 2 column layout */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 ">
-            {/* Left column */}
-            <div className="space-y-4" data-aos="fade-right">
-              {faqs.slice(0, 3).map((faq, index) => (
-                <div key={index} className=" bg-[#F1E9E1] rounded-lg shadow-sm">
-                  <button
-                    onClick={() => toggleFAQ(index)}
-                    className="w-full flex justify-between items-center p-4 text-left"
-                  >
-                    <span className="font-medium">{faq.question}</span>
-                    <span className="text-lg">
-                      {openIndex === index ? "−" : "+"}
-                    </span>
-                  </button>
-                  {openIndex === index && (
-                    <div className="p-4 border-t border-gray-400 text-gray-800">
-                      {faq.answer}
-                    </div>
-                  )}
+    {/* 2 column layout */}
+    <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+      {/* Left column */}
+      <div className="space-y-4" data-aos="fade-right">
+        {faqs.slice(0, 3).map((faq, index) => {
+          const isOpen = openIndex === index;
+          return (
+            <div
+              key={index}
+              className={`rounded-lg shadow-sm transition-colors duration-300 ${
+                isOpen ? 'bg-[#FFFAF5]' : 'bg-[#F1E9E1]'
+              }`}
+            >
+              <button
+                onClick={() => toggleFAQ(index)}
+                className="w-full flex justify-between items-center p-4 text-left"
+              >
+                <span className="font-medium">{faq.question}</span>
+                <span className="text-lg">{isOpen ? "−" : "+"}</span>
+              </button>
+              {isOpen && (
+                <div className="p-4  text-gray-800">
+                  {faq.answer}
                 </div>
-              ))}
+              )}
             </div>
+          );
+        })}
+      </div>
 
-            {/* Right column */}
-            <div className="space-y-4" data-aos="fade-left">
-              {faqs.slice(3, 6).map((faq, index) => (
-                <div
-                  key={index + 3}
-                  className="bg-[#F1E9E1] rounded-lg shadow-sm"
-                >
-                  <button
-                    onClick={() => toggleFAQ(index + 3)}
-                    className="w-full flex justify-between items-center p-4 text-left"
-                  >
-                    <span className="font-medium">{faq.question}</span>
-                    <span className="text-lg">
-                      {openIndex === index + 3 ? "−" : "+"}
-                    </span>
-                  </button>
-                  {openIndex === index + 3 && (
-                    <div className="p-4 border-t border-gray-400 text-gray-800">
-                      {faq.answer}
-                    </div>
-                  )}
+      {/* Right column */}
+      <div className="space-y-4" data-aos="fade-left">
+        {faqs.slice(3, 6).map((faq, index) => {
+          const actualIndex = index + 3;
+          const isOpen = openIndex === actualIndex;
+          return (
+            <div
+              key={actualIndex}
+              className={`rounded-lg shadow-sm transition-colors duration-300 ${
+                isOpen ? 'bg-[#FFFAF5]' : 'bg-[#F1E9E1]'
+              }`}
+            >
+              <button
+                onClick={() => toggleFAQ(actualIndex)}
+                className="w-full flex justify-between items-center p-4 text-left"
+              >
+                <span className="font-medium">{faq.question}</span>
+                <span className="text-lg">{isOpen ? "−" : "+"}</span>
+              </button>
+              {isOpen && (
+                <div className="p-4  text-gray-800">
+                  {faq.answer}
                 </div>
-              ))}
+              )}
             </div>
-          </div>
-        </div>
-      </section>
+          );
+        })}
+      </div>
+    </div>
+  </div>
+</section>
 
       {/* Testinomials  */}
 <section className="testinomials-section py-10 bg-white">
