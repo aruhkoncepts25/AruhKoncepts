@@ -66,11 +66,11 @@ const Navbar = () => {
               <div className="flex flex-col space-y-2 max-w-[120px] items-start">
                 <Link to="/" onClick={() => setMenuOpen(false)}>Home</Link>
                 <Link to="/about" onClick={() => setMenuOpen(false)}>About</Link>
-                <Link to="/project" onClick={() => setMenuOpen(false)}>Our Projects</Link>
+                <Link to="/mainproject" onClick={() => setMenuOpen(false)}>Our Projects</Link>
               </div>
               <div className="flex flex-col space-y-2 max-w-[120px] items-start">
                 <Link to="ourservice" onClick={() => setMenuOpen(false)}>Services</Link>
-                <a href="#" onClick={() => setMenuOpen(false)}>Team</a>
+                {/* <a href="#" onClick={() => setMenuOpen(false)}>Team</a> */}
                 <a href="#" onClick={() => setMenuOpen(false)}>Contact</a>
               </div>
             </div>

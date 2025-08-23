@@ -56,8 +56,8 @@ const team = [
 //////
   return (
   <>
-  <section className="about-page py-12">
-  <div className="w-[90%] mx-auto">
+  <section className="about-page ">
+  <div className="w-[90%] mx-auto py-9">
     {/* Heading  */}
     <h1 className="text-xl font-semibold text-[#C8966B]">About Us</h1>
 
