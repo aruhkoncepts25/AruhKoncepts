@@ -40,16 +40,16 @@ const Project = () => {
 
         {/* Info Table */}
         <div className="space-y-2 mt-6 text-gray-700">
-          <p className="flex justify-between border-b pb-1">
+          <p className="flex  gap-9 pb-1">
             <span className="font-semibold">Client</span> <span>:</span>
           </p>
-          <p className="flex justify-between border-b pb-1">
+          <p className="flex gap-6 pb-1">
             <span className="font-semibold">Service</span> <span>:</span>
           </p>
-          <p className="flex justify-between border-b pb-1">
+          <p className="flex  gap-3 pb-1">
             <span className="font-semibold">Location</span> <span>:</span>
           </p>
-          <p className="flex justify-between border-b pb-1">
+          <p className="flex gap-11 pb-1">
             <span className="font-semibold">Size</span> <span>:</span>
           </p>
         </div>
@@ -85,7 +85,7 @@ const Project = () => {
 </section>
 
 {/* Gallery Section */}
-<section className="w-full py-12">
+<section className="w-full pb-9">
   <div className="w-[90%] mx-auto">
     {/* Image Grid */}
     <div className="grid grid-cols-1 md:grid-cols-4 gap-6 mb-8">

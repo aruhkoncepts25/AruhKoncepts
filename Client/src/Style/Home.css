@@ -1,5 +1,7 @@
 .home-section {
-  padding: 3rem 0 1.5rem;
+  padding: 4rem 0 6rem;
+   background-color: #142241;
+
 }
 
 
@@ -49,4 +51,39 @@
 .contact-section{
   padding: 3rem 0 6rem;
   background-color: #142241;
+}
+
+/* // Navbar  */
+.menu-expand {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.5s ease-in-out;
+}
+
+.menu-expand.open {
+  max-height: 50vh; /* Adjust as needed */
+}
+
+/* // toast  */
+.custom-toast-success {
+  background-color: white;
+  border-left: 4px solid #22c55e; /* Tailwind green-500 */
+  color: black;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* /// process aniamtion */
+@keyframes grow-line {
+  0% {
+    width: 0%;
+    opacity: 0;
+  }
+  100% {
+    width: 100%;
+    opacity: 1;
+  }
+}
+
+.animate-grow-line {
+  animation: grow-line 1.5s ease-out forwards;
 }

@@ -22,25 +22,25 @@ const MainProject = () => {
     {
       id: 2,
       title: "Modern Living Spaces",
-      description: "Beautiful spaces designed with comfort and functionality.",
+      description: "This comes from opportunities with a clear goal to create a home that feels calm.",
       image: mproject2,
     },
     {
       id: 3,
       title: "Corporate Office Design",
-      description: "Creating modern and efficient work environments.",
+      description: "This comes from opportunities with a clear goal to create a home that feels calm.",
       image: mproject3,
     },
     {
       id: 4,
       title: "Luxury Villas",
-      description: "Stylish and spacious villas for modern living.",
+      description: "This comes from opportunities with a clear goal to create a home that feels calm.",
       image: mproject1,
     },
     {
       id: 5,
       title: "Creative Studios",
-      description: "Innovative spaces for creative minds.",
+      description: "This comes from opportunities with a clear goal to create a home that feels calm.",
       image: mproject2,
     },
   ];

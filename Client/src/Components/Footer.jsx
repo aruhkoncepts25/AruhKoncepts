@@ -3,6 +3,10 @@ import logo from "../assets/logo.png"
 import { FaInstagram, FaTimes,FaFacebook } from "react-icons/fa";
 import { MdLocationOn, MdEmail } from "react-icons/md";
 import { FiPhone } from "react-icons/fi";
+import instagram from "../assets/instagram.png"
+import facebook from "../assets/facebook.png"
+import twitter from "../assets/twitter.png"
+
 const Footer = () => {
   return (
     <>
@@ -58,7 +62,7 @@ const Footer = () => {
   </div>
 
   {/* Horizontal Row */}
-  <div className="mt-10 pt-6 flex flex-col md:flex-row items-start md:items-center justify-between gap-6 text-sm border-t border-gray-700">
+  <div className="mt-10 pt-6 flex flex-col md:flex-row items-start md:items-center justify-between gap-6 text-sm ">
     {/* Address */}
     <div className="flex items-start gap-2 max-w-xs">
       <MdLocationOn className="text-white w-5 h-5 mt-1 flex-shrink-0" />
@@ -70,7 +74,7 @@ const Footer = () => {
     </div>
 
     {/* Contact */}
-    <div className="flex flex-col">
+    <div className="flex flex-col relative left-[-165px]">
       <h2 className="font-semibold flex items-center gap-2">
         <MdEmail /> Contact Us
       </h2>
@@ -81,12 +85,13 @@ const Footer = () => {
     </div>
 
     {/* Follow Us */}
-    <div>
+    <div className='relative right-[175px]'>
       <h2 className="font-semibold">Follow Us</h2>
       <div className="flex gap-3 mt-2 text-xl">
-        <a href="#"><FaInstagram /></a>
-        <a href="#"><FaTimes /></a>
-        <a href="#"><FaFacebook /></a>
+        <a href="#" aria-label="Instagram" className="hover:opacity-80"> <img src={instagram} alt="Instagram" className="h-4 w-4 object-contain" /></a>
+        <a href="#" aria-label="twitter" className="hover:opacity-80"> <img src={twitter} alt="twitter" className="h-4 w-4 object-contain" /></a>
+        <a href="#" aria-label="facebook" className="hover:opacity-80"> <img src={facebook} alt="facebook" className="h-4 w-4 object-contain" /></a>
+        
       </div>
     </div>
   </div>
