@@ -857,12 +857,10 @@ const Home = () => {
         </p>
 
         <div className="mt-8 sm:mt-8 flex justify-center text-center">
-          <button
-            href=""
-            className="bg-white w-full hover:bg-[#C9966B] hover:text-white text-black rounded-full px-4 sm:px-4 py-1 sm:py-2 text-sm sm:text-base"
-          >
-            Contact Us
-          </button>
+         
+          <a href="#contact" className="bg-white w-full hover:bg-[#C9966B] hover:text-white text-black rounded-full px-4 sm:px-4 py-1 sm:py-2 text-sm sm:text-base">  Contact Us</a>
+          
+         
         </div>
       </div>
     </div>
@@ -977,8 +975,11 @@ const Home = () => {
           </div>
         </section>
 
+
+
+
         {/* contact  */}
-      <section className="contact-section md:pt-28">
+      <section id="contact" className="contact-section md:pt-28  ">
   <div className="w-[90%] mx-auto">
     {/* Heading */}
     <h1
@@ -992,7 +993,7 @@ const Home = () => {
     <div className="w-[100%] mx-auto grid grid-cols-1 md:grid-cols-2 mt-32 gap-12">
       {/* Left Section */}
       <div
-        className="space-y-6 relative bottom-[-172px]"
+        className="space-y-6 mt-[170px]"
         data-aos="fade-right"
         data-aos-duration="1000"
       >
@@ -1041,8 +1042,8 @@ const Home = () => {
 
         <h1
           className="text-8xl font-bold text-white mt-8"
-          data-aos="zoom-in"
-          data-aos-duration="1200"
+          // data-aos="zoom-in"
+          // data-aos-duration="600"
         >
           Let’s Talk!
         </h1>

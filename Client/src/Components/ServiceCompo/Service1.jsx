@@ -11,12 +11,6 @@ import ind6 from '../../assets/insideService/include6.png'
 import ind7 from '../../assets/insideService/include7.png'
 
 
-
-
-
-
-
-
 const Service1 = () => {
   const itemsPerRow = 3;
 

@@ -73,13 +73,15 @@ for (let i = 0; i < items.length; i += itemsPerRow) {
       </div>
 
       {/* Banner Image */}
-      <div className="mt-6">
-        <img
-          src={service22}
-          alt="Residential Interior"
-          className="w-full h-[450px] object-cover"
-        />
-      </div>
+  <div className="w-full h-[450px] overflow-hidden">
+  <img
+    src={service22}
+    loading="eager" //
+    alt="Commercial Interior"
+    className="w-full h-full object-cover"
+  />
+</div>
+
 
       {/* Description */}
       <p className="text-gray-600 mt-6 text-base leading-relaxed">

@@ -19,21 +19,14 @@ import icon6 from "../assets/OurService/icon-6.png"
 import icon7 from "../assets/OurService/icon-7.png"
 // vector icon
 import vector from '../assets/OurService/Vector44.png'
-
 import { useNavigate } from "react-router-dom";
 
-
-
-
-
-
-
 const OurService = () => {
-    const navigate=useNavigate()
+    const navigate = useNavigate()
 
-      const handleViewServiceClick = (path) => {
-    navigate(path);
-  };
+    const handleViewServiceClick = (path) => {
+        navigate(path);
+    };
     const services = [
         {
             id: 1,
