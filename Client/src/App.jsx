@@ -30,10 +30,14 @@ function App() {
 
   return (
     <>
-      <ScrollToTop /> {/* ✅ Scroll to top on route change */}
+      <ScrollToTop /> 
       <Routes>
         <Route path="/" element={<Layout />}>
           <Route index element={<Home />} />
+          <Route path="/home" element={<Home/>}/>
+          <Route path="headNav" element={<Home/>}/>
+          <Route path="aboutus" element={<AboutUs/>}/>
+          <Route path="projectKnowMore" element={<MainProject/>}/>
           <Route path="about" element={<AboutUs />} />
           <Route path="mainproject" element={<MainProject />} />
           <Route path="ourservice" element={<OurService />} />

@@ -16,6 +16,10 @@ import icon3 from "../assets/AboutUs/icon3.png";
 
 const AboutUs = () => {
 
+  useEffect(() => {
+      window.scrollTo({ top: 0, left: 0, behavior: "auto" }); 
+    }, []);
+
   const items = [
     {
       title: "Mission",

@@ -22,14 +22,22 @@ import { MdPhone } from "react-icons/md";
 import hero from "../assets/hero.jpg";
 import hero1 from "../assets/hero1.jpg";
 import hero2 from "../assets/hero2.jpg";
-
+import { useLocation } from "react-router-dom";
 import axios from "axios";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
 const Home = () => {
   const navigate = useNavigate();
-
+const location = useLocation();  // for contact
+  useEffect(() => {
+    if (location.hash) {
+      const element = document.querySelector(location.hash);
+      if (element) {
+        element.scrollIntoView({ behavior: "smooth" });
+      }
+    }
+  }, [location]);
   const scrollRef = useRef(null); // testinomialss
   const [isPaused, setIsPaused] = useState(false); // testinomials
   const speed = 1; // scroll speed
@@ -452,10 +460,10 @@ const Home = () => {
       <p className="text-gray-200 text-lg md:text-xl">
         Simplicity, elegance, and function crafted uniquely for you.
       </p>
-     <button
-  className="w-fit px-7 py-2 backdrop-blur-lg bg-white/10 text-white border border-white/20 rounded-2xl shadow-md transition-all duration-300 ease-in-out hover:scale-105 hover:bg-white/20 hover:shadow-xl"
+     <button onClick={()=>navigate("/aboutus")}
+  className="w-fit px-7 py-2 backdrop-blur-lg bg-white/10 cursor-pointer text-white border border-white/20 rounded-2xl shadow-md transition-all duration-300 ease-in-out hover:scale-105 hover:bg-white/20 hover:shadow-xl"
 >
-  Explore Our Work
+  Explore
 </button>
     </div>
 
@@ -501,14 +509,14 @@ const Home = () => {
         </div>
 
         {/* Link */}
-        <a
-          href="#"
-          className="inline-block text-sm relative left-[73px] text-gray-300 hover:text-white transition"
+        <button
+         onClick={()=>navigate("/projectKnowMore")}
+          className="inline-block text-sm cursor-pointer text-gray-300 hover:text-white transition"
           data-aos="fade-up"
           data-aos-delay="800"
         >
           Know More →
-        </a>
+        </button>
       </div>
     </div>
   </div>
@@ -610,7 +618,7 @@ const Home = () => {
           </div>
         </div>
 
-        <div className="bg-[#142241] py-28">
+        <div className="bg-[#142241] mt-24">
           <div
             className="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center border py-8 border-white/20 p-6 rounded-full bg-white/10 backdrop-blur-lg text-white"
             data-aos="fade-up"
@@ -691,7 +699,7 @@ const Home = () => {
         <div className="w-full max-w-[550px] flex justify-end">
           <button
             onClick={() => navigate("/ourservice")}
-            className="mt-6 px-6 py-2 bg-[#C9966B] text-gray-800 rounded-full hover:bg-pink-300 transition"
+            className="mt-6 px-6 py-2 bg-[#C9966B] text-gray-800 rounded-full hover:bg-[#142241] hover:text-white transition"
           >
             Know more →
           </button>
@@ -778,12 +786,12 @@ const Home = () => {
           explore how we transform every corner into a story.
         </p>
         <div className="mt-10 sm:mt-14">
-          <a
+          <button
             onClick={() => navigate("/mainproject")}
-            className="bg-black text-white rounded-full px-4 sm:px-6 py-2 sm:py-3 text-sm sm:text-base"
+            className="hover:bg-[#BC956A] text-white bg-[#142241] cursor-pointer rounded-full px-4 sm:px-6 py-2 sm:py-3 text-sm sm:text-base"
           >
             View Projects
-          </a>
+          </button>
         </div>
       </div>
 

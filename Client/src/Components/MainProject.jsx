@@ -1,5 +1,5 @@
-import React, { useRef } from 'react';
-import {Link} from 'react-router-dom'
+import React, { useRef,useEffect } from 'react';
+import { Link } from 'react-router-dom'
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import mproject1 from "../assets/Project/Mproject-1.jpg"
 import mproject2 from "../assets/Project/Mproject-2.jpg"
@@ -9,6 +9,11 @@ import project6 from '../assets/Project/project-6.png'
 
 
 const MainProject = () => {
+
+  useEffect(() => {
+    window.scrollTo({ top: 0, left: 0, behavior: "auto" });
+  }, []);
+
   const scrollRef = useRef(null);
 
   const projects = [
@@ -17,7 +22,7 @@ const MainProject = () => {
       title: "Residential Interior Solutions",
       description: "This comes from opportunities with a clear goal to create a home that feels calm.",
       image: mproject1,
-       link: "/Project"
+      link: "/Project"
     },
     {
       id: 2,
@@ -83,37 +88,37 @@ const MainProject = () => {
           ref={scrollRef}
           className="flex gap-12 overflow-hidden"
         >
-     {projects.map((project) => (
-  <Link to='/project'
-    key={project.id}
-    className="relative flex-shrink-0 w-full sm:w-[80%] md:w-[48%] lg:w-[32%] xl:w-[30%] max-w-full rounded-lg shadow-md hover:shadow-2xl transform transition duration-300 ease-in-out hover:scale-105 hover:-translate-y-2 overflow-hidden"
-  >
-    <img
-      src={project.image}
-      alt={project.title}
-      className="w-full h-[250px] sm:h-[280px] md:h-[300px] lg:h-[320px] xl:h-[340px] object-cover"
-    />
-    <div className="absolute bottom-0 left-0 w-full backdrop-blur-md p-4 bg-black/40">
-      <h2 className="text-lg font-semibold text-white">{project.title}</h2>
-      <p className="text-white text-sm">{project.description}</p>
-    </div>
-  </Link>
-))}
+          {projects.map((project) => (
+            <Link to='/project'
+              key={project.id}
+              className="relative flex-shrink-0 w-full sm:w-[80%] md:w-[48%] lg:w-[32%] xl:w-[30%] max-w-full rounded-lg shadow-md hover:shadow-2xl transform transition duration-300 ease-in-out hover:scale-105 hover:-translate-y-2 overflow-hidden"
+            >
+              <img
+                src={project.image}
+                alt={project.title}
+                className="w-full h-[250px] sm:h-[280px] md:h-[300px] lg:h-[320px] xl:h-[340px] object-cover"
+              />
+              <div className="absolute bottom-0 left-0 w-full backdrop-blur-md p-4 bg-black/40">
+                <h2 className="text-lg font-semibold text-white">{project.title}</h2>
+                <p className="text-white text-sm">{project.description}</p>
+              </div>
+            </Link>
+          ))}
         </div>
 
         <div className='mt-6 flex gap-16 justify-start pl-6 items-center'>
-            <h1 className='text-3xl font-semibold'>Build Your Vision With Us</h1>
-           <button
-                 href="#"
-                 className="inline-flex items-center px-6 py-2 rounded-2xl gap-6 border border-[#898787] mt-6 mb-6 text-xl font-medium text-gray-800 hover:text-[#C8966B] transition"
-               >
-                 Connect Now
-                 <img
-                   src={project6}
-                   alt="arrow icon"
-                   className="w-5 h-5 object-contain inline-block"
-                 />
-               </button>
+          <h1 className='text-3xl font-semibold'>Build Your Vision With Us</h1>
+          <button
+            href="#"
+            className="inline-flex items-center px-6 py-2 rounded-2xl gap-6 border border-[#898787] mt-6 mb-6 text-xl font-medium text-gray-800 hover:text-[#C8966B] transition"
+          >
+            Connect Now
+            <img
+              src={project6}
+              alt="arrow icon"
+              className="w-5 h-5 object-contain inline-block"
+            />
+          </button>
         </div>
       </div>
     </section>
