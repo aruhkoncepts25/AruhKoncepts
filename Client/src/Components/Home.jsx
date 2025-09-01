@@ -1,6 +1,6 @@
 import React from "react";
 import { useState, useRef } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate,Link } from "react-router-dom";
 import "../Style/Home.css";
 import { FaBuffer } from "react-icons/fa";
 import { FaCity } from "react-icons/fa";
@@ -8,7 +8,7 @@ import about from "../assets/about1.png";
 import about1 from "../assets/about2.jpg";
 import calender from "../assets/calender.png";
 import blueprint from "../assets/blueprint.png";
-import location from "../assets/location.png";
+import location1 from "../assets/location.png";
 import service2 from "../assets/service2.png";
 import { FaQuoteLeft, FaStar } from "react-icons/fa";
 import { MdEmail } from "react-icons/md";
@@ -22,6 +22,7 @@ import { MdPhone } from "react-icons/md";
 import hero from "../assets/hero.jpg";
 import hero1 from "../assets/hero1.jpg";
 import hero2 from "../assets/hero2.jpg";
+import mproject3 from "../assets/Project/Mproject-3.jpg"
 import { useLocation } from "react-router-dom";
 import axios from "axios";
 import { ToastContainer, toast } from "react-toastify";
@@ -418,7 +419,7 @@ const location = useLocation();  // for contact
       label: "Projects",
     },
     {
-      icon: <img src={location} alt="projects" className="w-10 h-10" />,
+      icon: <img src={location1} alt="projects" className="w-10 h-10" />,
       number: "5+",
       label: "Cities Served",
     },
@@ -477,7 +478,8 @@ const location = useLocation();  // for contact
 
       <div className="space-y-8">
         {/* Project 1 */}
-        <div
+        
+        <Link to="/featuredProject"
           className="bg-white/0 backdrop-blur-md border border-white flex flex-col justify-center rounded-xl px-4 pt-8 pb-4 hover:bg-white/20 h-[130px] transition-all duration-300 ease-in-out w-[130px]"
           data-aos="zoom-in"
           data-aos-delay="400"
@@ -488,9 +490,9 @@ const location = useLocation();  // for contact
             className="w-20 h-20 object-cover relative top-[-35px] left-[-30px] border-2 border-white rounded-lg shadow-md"
           />
           <p className="text-[#EBCFAC] text-sm mt-[-20px]">
-            Cozy Urban <br /> Apartment
+            Residential Interior
           </p>
-        </div>
+        </Link>
 
         {/* Project 2 */}
         <div
@@ -504,7 +506,7 @@ const location = useLocation();  // for contact
             className="w-20 h-20 object-cover relative top-[-35px] left-[-30px] border-2 border-white rounded-lg shadow-md"
           />
           <p className="text-[#EBCFAC] text-sm mt-[-20px]">
-            Luxury Penthouse
+            Modern Living Spaces
           </p>
         </div>
 
@@ -827,7 +829,7 @@ const location = useLocation();  // for contact
         data-aos-delay="200"
       >
         <img
-          src={project2}
+          src={mproject3}
           alt=""
           className="object-cover w-full h-[327px] rounded-2xl transform transition-transform duration-500 ease-in-out hover:scale-110"
         />

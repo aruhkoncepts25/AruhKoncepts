@@ -1,4 +1,5 @@
 import { useEffect } from "react";
+import { Link } from "react-router-dom";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import ScrollToTop from './Components/ScrollToTop';
@@ -50,6 +51,21 @@ function App() {
           <Route path="service/renovation" element={<Service5 />} />
           <Route path="service/furniture" element={<Service6 />} />
           <Route path="service/vastu" element={<Service7 />} />
+
+          {/* Featured Project Home Hero Section  */}
+          <Route path="featuredProject" element={<Project/>}/>
+
+          {/* Footer Link  */}
+          <Route path="footerhome" element={<Home/>}/>
+          <Route path="footerservice" element={<OurService/>}/>
+          <Route path="footResidential" element={<Service1/>}/>
+          <Route path="footerCommercial" element={<Service2/>}/>
+          <Route path="footerTurnkey" element={<Service3/>}/>
+          <Route path="footerVisualization" element={<Service4/>}/>
+          <Route path="footerRenovation" element={<Service5/>}/>
+          <Route path="footerFurniture" element={<Service6/>}/>
+          <Route path="footerVastu" element={<Service7/>}/>
+
 
 
         </Route>

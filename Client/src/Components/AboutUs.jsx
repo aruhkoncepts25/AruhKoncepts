@@ -56,16 +56,17 @@ const AboutUs = () => {
             className="w-full h-[500px] object-cover shadow-lg mt-8 transform transition-transform duration-500 hover:scale-105 cursor-pointer"
           />
 
-          <div className="flex flex-col md:flex-row items-center justify-between gap-10 mt-12">
-            <div className="md:w-1/2">
+          <div className="flex flex-col md:flex-row items-center justify-between gap-12 mt-12">
+
+            <div className="md:w-2/2">
               <h2 className="text-lg md:text-3xl leading-relaxed text-gray-800">
-                <span className="font-bold">Aruhkoncepts</span> is a young dynamic place <br />
-                where we make things happen, by keeping it simple. Well known for designing residential & office spaces in Hyd.
+                <span className="font-bold">Aruhkoncepts</span> is a young dynamic place
+                where we make things happen, by keeping it simple. Well known for designing residential & office spaces in Hyderabad.
               </h2>
             </div>
 
             <div className="flex justify-between w-full md:w-1/2">
-              <div className="w-40 h-40 rounded-full bg-[#F1F2EB] relative left-[160px] flex flex-col items-center justify-center shadow-lg px-2 text-center">
+              <div className="w-40 h-40 rounded-full bg-[#F1F2EB] flex flex-col items-center justify-center shadow-lg px-2 text-center">
                 <h3 className="text-5xl text-[#142241] font-bold">10</h3>
                 <p className="text-xs mt-1 text-[#1A1A1A]">
                   Years of <br /> Experience
@@ -83,7 +84,7 @@ const AboutUs = () => {
         </div>
       </section>
 
-      <section className="bg-white py-6">
+      <section className="bg-white">
         <div className="w-[90%] mx-auto grid grid-cols-1 md:grid-cols-2 gap-24 items-center">
           <div className="space-y-8">
             {items.map((item, i) => (
@@ -117,7 +118,7 @@ const AboutUs = () => {
         </div>
       </section>
 
-      <section className="w-full bg-white py-12">
+      <section className="w-full bg-white py-18">
         <div className="w-[90%] mx-auto px-4">
           <h2 className="text-2xl md:text-3xl font-bold text-gray-900">Meet Our Team</h2>
           <p className="mt-4 text-gray-600 leading-relaxed">

@@ -1,5 +1,7 @@
 import React from 'react'
 import logo from "../assets/logo.png"
+import { Link } from 'react-router-dom';
+
 import { FaInstagram, FaTimes,FaFacebook } from "react-icons/fa";
 import { MdLocationOn, MdEmail } from "react-icons/md";
 import { FiPhone } from "react-icons/fi";
@@ -27,11 +29,11 @@ const Footer = () => {
     <div>
       <h2 className="font-semibold mb-4">Quick Links</h2>
       <ul className="space-y-1 text-sm">
-        <li><a href="#" className="hover:underline">Home</a></li>
+        <li><Link to="/footerhome" className="hover:underline">Home</Link></li>
         <li><a href="#" className="hover:underline">Portfolio</a></li>
-        <li><a href="#" className="hover:underline">Contact</a></li>
+        <li><Link  to="/#contact">Contact</Link></li>
         <li><a href="#" className="hover:underline">Checkout</a></li>
-        <li><a href="#" className="hover:underline">Service Page</a></li>
+        <li><Link to="/footerservice" className="hover:underline">Service Page</Link></li>
       </ul>
     </div>
 
@@ -39,13 +41,14 @@ const Footer = () => {
     <div>
       <h2 className="font-semibold mb-4">Services</h2>
       <ul className="space-y-1 text-sm">
-        <li>Residential Interior Design</li>
-        <li>Commercial Interior Design</li>
-        <li>TurnKey Interior Solutions</li>
-        <li>3D Visualization & Conceptual Design</li>
-        <li>Renovation & Remodeling</li>
-        <li>Custom Furniture & Decor</li>
-        <li>Vastu Consultation</li>
+          <li><Link to="/footResidential" className="hover:underline">Residential Interior Design</Link></li>
+
+        <li><Link to="/footerCommercial" className="hover:underline">Commercial Interior Design</Link></li>
+        <li><Link to="/footerTurnkey" className="hover:underline">TurnKey Interior Solutions</Link></li>
+        <li><Link to="/footerVisualization" className="hover:underline">3D Visualization & Conceptual Design</Link></li>
+        <li><Link to="/footerRenovation" className="hover:underline">Renovation & Remodeling</Link></li>
+        <li><Link to="/footerFurniture" className="hover:underline">Custom Furniture & Decor</Link></li>
+        <li><Link to="/footerVastu" className="hover:underline">Vastu Consultation</Link></li>
       </ul>
     </div>
 

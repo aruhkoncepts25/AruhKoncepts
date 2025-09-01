@@ -1,7 +1,7 @@
 import React, { useRef,useEffect } from 'react';
 import { Link } from 'react-router-dom'
 import { ChevronLeft, ChevronRight } from "lucide-react";
-import mproject1 from "../assets/Project/Mproject-1.jpg"
+import mproject1 from "../assets/Project/Mproject-1.jpg";
 import mproject2 from "../assets/Project/Mproject-2.jpg"
 import mproject3 from "../assets/Project/Mproject-3.jpg"
 

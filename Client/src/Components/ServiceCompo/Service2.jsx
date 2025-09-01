@@ -65,7 +65,7 @@ for (let i = 0; i < items.length; i += itemsPerRow) {
 
         
       {/* Heading */}
-      <div>
+      <div >
         <p className="text-xl font-semibold text-[#C8966B]">Services</p>
         <h1 className="text-2xl md:text-3xl font-semibold mt-6">
           Commercial
@@ -73,7 +73,7 @@ for (let i = 0; i < items.length; i += itemsPerRow) {
       </div>
 
       {/* Banner Image */}
-  <div className="w-full h-[450px] overflow-hidden">
+  <div className="w-full h-[450px] overflow-hidden mt-6">
   <img
     src={service22}
     loading="eager" //
