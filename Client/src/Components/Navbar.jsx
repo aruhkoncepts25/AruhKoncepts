@@ -56,14 +56,14 @@ const Navbar = () => {
 
         {/* Menu Items and h1 text */}
         {menuOpen && (
-          <div className="bg-white rounded pt-12 pb-4 flex justify-between items-center text-gray-800 font-medium">
+          <div className="bg-white rounded pt-12 pb-4 flex justify-between items-center text-gray-800 font-normal md:font-medium">
             {/* Left: h1 text */}
-            <div className="text-black">
-              <h1 className="text-5xl">
+            <div className="text-black hidden md:block">
+              <h1 className="text-3xl lg:text-5xl">
                 When reality looks <br /> better than the <br />renders.
               </h1>
 
-              <div className="flex space-x-9 mt-18">
+              <div className="flex mb:space-x-2 lg:space-x-9 mt-18">
                 <h2><span className="font-bold">Email: </span> aruhkoncepts@gmail.com</h2>
                 <h2><span className="font-bold">Phone:</span> +91 63098 92801</h2>
 
@@ -72,15 +72,15 @@ const Navbar = () => {
 
             {/* Right: Menu items in two columns */}
             <div className="flex gap-x-12 text-black text-4xl">
-              <div className="flex flex-col space-y-4  items-start">
-                <Link to="/home" onClick={() => setMenuOpen(false)}>Home</Link>
-                <Link to="/about" onClick={() => setMenuOpen(false)}>About</Link>
-                <Link to="/mainproject" onClick={() => setMenuOpen(false)}>Our Projects</Link>
+              <div className="flex flex-col  space-y-4  items-start">
+                <Link to="/home" className='hover:underline' onClick={() => setMenuOpen(false)}>Home</Link>
+                <Link to="/about" className='hover:underline' onClick={() => setMenuOpen(false)}>About</Link>
+                <Link to="/mainproject" className='hover:underline' onClick={() => setMenuOpen(false)}>Our Projects</Link>
               </div>
-              <div className="flex flex-col space-y-4 items-start">
-                <Link to="ourservice" onClick={() => setMenuOpen(false)}>Services</Link>
+              <div className="flex flex-col space-y-3 lg:space-y-4 items-start">
+                <Link to="ourservice" className='hover:underline' onClick={() => setMenuOpen(false)}>Services</Link>
                 {/* <a href="#" onClick={() => setMenuOpen(false)}>Team</a> */}
-                <Link to="/#contact" onClick={() => setMenuOpen(false)}>Contact</Link>
+                <Link to="/#contact" className='hover:underline' onClick={() => setMenuOpen(false)}>Contact</Link>
               </div>
             </div>
           </div>

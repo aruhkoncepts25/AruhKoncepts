@@ -1,8 +1,6 @@
 import React from 'react'
 import logo from "../assets/logo.png"
 import { Link } from 'react-router-dom';
-
-import { FaInstagram, FaTimes,FaFacebook } from "react-icons/fa";
 import { MdLocationOn, MdEmail } from "react-icons/md";
 import { FiPhone } from "react-icons/fi";
 import instagram from "../assets/instagram.png"
@@ -11,100 +9,216 @@ import twitter from "../assets/twitter.png"
 
 const Footer = () => {
   return (
-    <>
-<footer className="bg-[#142241] text-white px-6 md:px-16 py-10">
-  <div className="w-[100%] mx-auto grid grid-cols-1 md:grid-cols-5 gap-8">
-    {/* Logo */}
-    <div className="md:col-span-2">
-      <h1 className="text-xl font-bold flex items-center gap-2">
-        <img src={logo} alt="" className="h-8" />
-        <span className="bg-gradient-to-r from-[#AE8625] via-[#F7EF8A] to-[#D2AC47] bg-clip-text text-transparent font-bold">
-          Aruh Koncepts
-        </span>
-      </h1>
-      <p className="mt-6 text-sm">Copyright © 2025</p>
-    </div>
+    <>  
+ {/* /// For DeskTop //  */}
+      <footer className="bg-[#142241] hidden md:block  text-white px-6 md:px-16 py-10">
+        {/* Top Grid */}
+        <div className=" w-full mx-auto grid grid-cols-1 md:grid-cols-5 gap-8">
 
-    {/* Quick Links */}
-    <div>
-      <h2 className="font-semibold mb-4">Quick Links</h2>
-      <ul className="space-y-1 text-sm">
-        <li><Link to="/footerhome" className="hover:underline">Home</Link></li>
-        <li><a href="#" className="hover:underline">Portfolio</a></li>
-        <li><Link  to="/#contact">Contact</Link></li>
-        <li><a href="#" className="hover:underline">Checkout</a></li>
-        <li><Link to="/footerservice" className="hover:underline">Service Page</Link></li>
-      </ul>
-    </div>
+          {/* Logo */}
+          <div className="md:col-span-2">
+            <h1 className="text-xl font-bold flex items-center gap-2">
+              <img src={logo} alt="" className="h-8" />
+              <span className="bg-gradient-to-r from-[#AE8625] via-[#F7EF8A] to-[#D2AC47] bg-clip-text text-transparent font-bold">
+                Aruh Koncepts
+              </span>
+            </h1>
+            <p className="mt-6 text-sm">Copyright © 2025</p>
+          </div>
 
-    {/* Services */}
-    <div>
-      <h2 className="font-semibold mb-4">Services</h2>
-      <ul className="space-y-1 text-sm">
-          <li><Link to="/footResidential" className="hover:underline">Residential Interior Design</Link></li>
+          {/* Quick Links */}
+          <div>
+            <h2 className="font-semibold mb-4">Quick Links</h2>
+            <ul className="space-y-1 text-sm">
+              <li><Link to="/footerhome" className="hover:underline">Home</Link></li>
+              <li><a href="#" className="hover:underline">Portfolio</a></li>
+              <li><Link to="/#contact">Contact</Link></li>
+              <li><a href="#" className="hover:underline">Checkout</a></li>
+              <li><Link to="/footerservice" className="hover:underline">Service Page</Link></li>
+            </ul>
+          </div>
 
-        <li><Link to="/footerCommercial" className="hover:underline">Commercial Interior Design</Link></li>
-        <li><Link to="/footerTurnkey" className="hover:underline">TurnKey Interior Solutions</Link></li>
-        <li><Link to="/footerVisualization" className="hover:underline">3D Visualization & Conceptual Design</Link></li>
-        <li><Link to="/footerRenovation" className="hover:underline">Renovation & Remodeling</Link></li>
-        <li><Link to="/footerFurniture" className="hover:underline">Custom Furniture & Decor</Link></li>
-        <li><Link to="/footerVastu" className="hover:underline">Vastu Consultation</Link></li>
-      </ul>
-    </div>
+          {/* Services */}
+          <div>
+            <h2 className="font-semibold mb-4">Services</h2>
+            <ul className="space-y-1 text-sm">
+              <li><Link to="/footResidential" className="hover:underline">Residential Interior Design</Link></li>
+              <li><Link to="/footerCommercial" className="hover:underline">Commercial Interior Design</Link></li>
+              <li><Link to="/footerTurnkey" className="hover:underline">TurnKey Interior Solutions</Link></li>
+              <li><Link to="/footerVisualization" className="hover:underline">3D Visualization & Conceptual Design</Link></li>
+              <li><Link to="/footerRenovation" className="hover:underline">Renovation & Remodeling</Link></li>
+              <li><Link to="/footerFurniture" className="hover:underline">Custom Furniture & Decor</Link></li>
+              <li><Link to="/footerVastu" className="hover:underline">Vastu Consultation</Link></li>
+            </ul>
+          </div>
 
-    {/* Projects */}
-    <div>
-      <h2 className="font-semibold mb-4">Projects</h2>
-      <ul className="space-y-1 text-sm">
-        <li>Residential Projects</li>
-        <li>Commercial Projects</li>
-        <li>Corporate Projects</li>
-        <li>TurnKey Interior Projects</li>
-      </ul>
-    </div>
-  </div>
+          {/* Projects */}
+          <div>
+            <h2 className="font-semibold mb-4">Projects</h2>
+            <ul className="space-y-1 text-sm">
+              <li>Residential Projects</li>
+              <li>Commercial Projects</li>
+              <li>Corporate Projects</li>
+              <li>TurnKey Interior Projects</li>
+            </ul>
+          </div>
+        </div>
 
-  {/* Horizontal Row */}
-  <div className="mt-10 pt-6 flex flex-col md:flex-row items-start md:items-center justify-between gap-6 text-sm ">
-    {/* Address */}
-    <div className="flex items-start gap-2 max-w-xs">
-      <MdLocationOn className="text-white w-5 h-5 mt-1 flex-shrink-0" />
-      <p>
-        5th Floor, Plot No.138, HIG, 6th Phase, above Bank of India bank,
-        Kukatpally Housing Board Colony, Kukatpally, Hyderabad,
-        Telangana 500072
-      </p>
-    </div>
+        {/* Address / Contact / Social Row */}
+        <div className="mt-10 pt-6 flex flex-col md:flex-row items-start md:items-center justify-between gap-8 text-sm">
 
-    {/* Contact */}
-    <div className="flex flex-col relative left-[-165px]">
-      <h2 className="font-semibold flex items-center gap-2">
-        <MdEmail /> Contact Us
-      </h2>
-      <p className="flex items-center gap-2 mt-1">
-        <FiPhone /> +91 63098 92801
-      </p>
-      <p>arunkoncepts@gmail.com</p>
-    </div>
+          {/* Address */}
+          <div className="flex items-start gap-2 max-w-xs">
+            <MdLocationOn className="text-white w-5 h-5 mt-1 flex-shrink-0" />
+            <p>
+              5th Floor, Plot No.138, HIG, 6th Phase, above Bank of India bank,
+              Kukatpally Housing Board Colony, Kukatpally, Hyderabad,
+              Telangana 500072
+            </p>
+          </div>
 
-    {/* Follow Us */}
-    <div className='relative right-[175px]'>
-      <h2 className="font-semibold">Follow Us</h2>
-      <div className="flex gap-3 mt-2 text-xl">
-        <a href="#" aria-label="Instagram" className="hover:opacity-80"> <img src={instagram} alt="Instagram" className="h-4 w-4 object-contain" /></a>
-        <a href="#" aria-label="twitter" className="hover:opacity-80"> <img src={twitter} alt="twitter" className="h-4 w-4 object-contain" /></a>
-        <a href="#" aria-label="facebook" className="hover:opacity-80"> <img src={facebook} alt="facebook" className="h-4 w-4 object-contain" /></a>
-        
-      </div>
-    </div>
-  </div>
+          {/* Contact */}
+          <div className='relative lg:left-[-165px]'>
+            <h2 className="font-semibold flex items-center  gap-2">
+              <MdEmail /> Contact Us
+            </h2>
+            <p className="flex items-center gap-2 mt-1">
+              <FiPhone /> +91 63098 92801
+            </p>
+            <p>arunkoncepts@gmail.com</p>
+          </div>
 
-  {/* Bottom Copyright Row */}
-  <div className="mt-8 pt-4 border-t border-gray-700 flex flex-col md:flex-row items-center justify-between text-xs text-gray-400">
-    <p>© 2025 Aruh Koncepts | All Rights Reserved</p>
-    <p>Developed by <span className="text-[#C8966B]">Zenith Studio</span></p>
-  </div>
-</footer>
+          {/* Follow Us */}
+          <div className='relative lg:right-[175px]'>
+            <h2 className="font-semibold">Follow Us</h2>
+            <div className="flex gap-3 mt-2 text-xl">
+              <a href="#" aria-label="Instagram" className="hover:opacity-80">
+                <img src={instagram} alt="Instagram" className="h-4 w-4 object-contain" />
+              </a>
+              <a href="#" aria-label="Twitter" className="hover:opacity-80">
+                <img src={twitter} alt="Twitter" className="h-4 w-4 object-contain" />
+              </a>
+              <a href="#" aria-label="Facebook" className="hover:opacity-80">
+                <img src={facebook} alt="Facebook" className="h-4 w-4 object-contain" />
+              </a>
+            </div>
+          </div>
+        </div>
+
+        {/* Bottom Row */}
+        <div className="mt-8 pt-4 border-t border-gray-700 flex flex-col md:flex-row items-center justify-between text-xs text-gray-400">
+          <p>© 2025 Aruh Koncepts | All Rights Reserved</p>
+          <p>Developed by <span className="text-[#C8966B]">Zenith Studio</span></p>
+        </div>
+      </footer>
+
+
+      {/* /// for mobile  */}
+
+
+      <footer className="bg-[#142241] md:hidden text-white px-6 md:px-16 pt-6 md:py-10">
+        {/* Top Section */}
+        <div className="w-full mx-auto flex flex-col gap-8">
+
+          {/* Logo */}
+          <div className="order-1">
+            <h1 className="text-xl font-bold flex items-center gap-2">
+              <img src={logo} alt="Logo" className="h-8" />
+              <span className="bg-gradient-to-r from-[#AE8625] via-[#F7EF8A] to-[#D2AC47] bg-clip-text text-transparent font-bold">
+                Aruh Koncepts
+              </span>
+            </h1>
+            {/* <p className="mt-4 text-sm">Copyright © 2025</p> */}
+          </div>
+
+          {/* Address */}
+          <div className="order-2">
+            <h2 className='font-semibold flex items-center  gap-2'>
+
+            <MdLocationOn className="text-white w-5 h-5 mt-1 flex-shrink-0" />Address
+            </h2>
+            <p className="flex items-center text-[#FFFFFFA3] gap-2 mt-1">
+              5th Floor, Plot No.138, HIG, 6th Phase, above Bank of India bank,
+              Kukatpally Housing Board Colony, Kukatpally, Hyderabad,
+              Telangana 500072
+            </p>
+          </div>
+
+          {/* Contact */}
+          <div className="order-3">
+            <h2 className="font-semibold flex items-center gap-2">
+              <MdEmail /> Contact Us
+            </h2>
+            <p className="flex items-center text-[#FFFFFFA3] gap-2 mt-1">
+              <FiPhone /> +91 63098 92801
+            </p>
+            <p className='text-[#FFFFFFA3]'>arunkoncepts@gmail.com</p>
+          </div>
+
+          {/* Quick Links + Projects Side-by-Side on Mobile */}
+          <div className="grid grid-cols-2 gap-6 md:hidden order-4">
+            {/* Quick Links */}
+            <div>
+              <h2 className="font-semibold mb-2">Quick Links</h2>
+              <ul className="space-y-1 text-sm ">
+                <li><Link to="/footerhome" className=" text-[#FFFFFFA3] hover:underline">Home</Link></li>
+                <li><a href="#" className=" text-[#FFFFFFA3] hover:underline">Portfolio</a></li>
+                <li><Link to="/#contact" className='text-[#FFFFFFA3]'>Contact</Link></li>
+                <li><a href="#" className="hover:underline text-[#FFFFFFA3]">Checkout</a></li>
+                <li><Link to="/footerservice" className="hover:underline text-[#FFFFFFA3]">Service Page</Link></li>
+              </ul>
+            </div>
+
+            {/* Projects */}
+            <div>
+              <h2 className="font-semibold mb-2">Projects</h2>
+              <ul className="space-y-1 text-sm">
+                <li className='text-[#FFFFFFA3]'>Residential Projects</li>
+                <li className='text-[#FFFFFFA3]'>Commercial Projects</li>
+                <li className='text-[#FFFFFFA3]'>Corporate Projects</li>
+                <li className='text-[#FFFFFFA3]'>TurnKey Interior Projects</li>
+              </ul>
+            </div>
+          </div>
+
+          {/* Services (Below Quick Links & Projects) */}
+          <div className="order-5 md:hidden">
+            <h2 className="font-semibold mb-2">Services</h2>
+            <ul className="space-y-1 text-sm">
+              <li><Link to="/footResidential" className="hover:underline text-[#FFFFFFA3]">Residential Interior Design</Link></li>
+              <li><Link to="/footerCommercial" className="hover:underline text-[#FFFFFFA3]">Commercial Interior Design</Link></li>
+              <li><Link to="/footerTurnkey" className="hover:underline text-[#FFFFFFA3]">TurnKey Interior Solutions</Link></li>
+              <li><Link to="/footerVisualization" className="hover:underline text-[#FFFFFFA3]">3D Visualization & Conceptual Design</Link></li>
+              <li><Link to="/footerRenovation" className="hover:underline text-[#FFFFFFA3]">Renovation & Remodeling</Link></li>
+              <li><Link to="/footerFurniture" className="hover:underline text-[#FFFFFFA3]">Custom Furniture & Decor</Link></li>
+              <li><Link to="/footerVastu" className="hover:underline text-[#FFFFFFA3]">Vastu Consultation</Link></li>
+            </ul>
+          </div>
+
+          {/* Follow Us - Centered on Mobile */}
+          <div className="flex flex-col items-center mt-6 order-6">
+            <h2 className="font-semibold">Follow Us</h2>
+            <div className="flex gap-4 mt-2 text-xl">
+              <a href="#" aria-label="Instagram" className="hover:opacity-80">
+                <img src={instagram} alt="Instagram" className="h-5 w-5 object-contain" />
+              </a>
+              <a href="#" aria-label="Twitter" className="hover:opacity-80">
+                <img src={twitter} alt="Twitter" className="h-5 w-5 object-contain" />
+              </a>
+              <a href="#" aria-label="Facebook" className="hover:opacity-80">
+                <img src={facebook} alt="Facebook" className="h-5 w-5 object-contain" />
+              </a>
+            </div>
+          </div>
+        </div>
+
+        {/* Bottom Footer Row */}
+        <div className="mt-8 pt-4 border-t border-gray-700 flex flex-col md:flex-row items-center justify-between text-xs text-gray-400">
+          <p>© 2025 Aruh Koncepts | All Rights Reserved</p>
+          <p>Developed by <span className="text-[#C8966B]">Zenith Studio</span></p>
+        </div>
+      </footer>
+
 
     </>
   )
