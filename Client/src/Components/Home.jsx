@@ -538,16 +538,18 @@ const Home = () => {
 
 
      {/* /// Mobile Home Section */}
-<div className="w-full relative mx-auto md:hidden px-4 py-2">
+<div className="w-full relative mx-auto md:hidden px-4 py-2" data-aos="fade-up" data-aos-duration="1000">
   {/* Background Image */}
   <img
     src={hero}
     alt="Interior Design"
     className="w-full h-[320px] object-cover rounded-2xl"
+    data-aos="zoom-in"
+    data-aos-delay="300"
   />
 
   {/* Content over the image, aligned to bottom */}
-  <div className="absolute bottom-6 left-0 right-0 z-10 px-6">
+  <div className="absolute bottom-6 left-0 right-0 z-10 px-6" data-aos="fade-left" data-aos-delay="500">
     <div className="flex flex-row items-center gap-7 text-start space-y-4">
       <h1 className="text-2xl font-semibold text-white leading-snug">
         Designing Spaces That <br /> Reflect Your Soul
@@ -558,6 +560,7 @@ const Home = () => {
     </div>
   </div>
 </div>
+
 
 
         </section>

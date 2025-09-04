@@ -44,73 +44,80 @@ const Service3 = () => {
   return (
     <>
       <section className="section1 w-full py-12 px-6 md:px-16 lg:px-28">
-        <div className="w-[90%] md:px-4 mx-auto">
-          {/* Heading  */}
-          <div>
-            <p className="text-xl font-semibold text-[#C8966B]">Services</p>
-            <h1 className="text-2xl md:text-3xl font-semibold mt-6">
-              TurnKey Interior Solutions
-            </h1>
-          </div>
+  <div className="w-[90%] md:px-4 mx-auto">
 
-          {/* banner image  */}
-          <div className="mt-6">
-            <img
-              src={service33}
-              alt="TurnKey Interior Solutions"
-              className="w-full h-[250px]  md:h-[450px] object-cover"
-            />
-          </div>
+    {/* Heading */}
+    <div data-aos="fade-up">
+      <p className="text-xl font-semibold text-[#C8966B]">Services</p>
+      <h1 className="text-2xl md:text-3xl font-semibold mt-6">
+        TurnKey Interior Solutions
+      </h1>
+    </div>
 
-          {/* Description  */}
-          <p className="mt-6 text-gray-600 text-base leading-relaxed">
-            From concept to completion, we take complete responsibility for
-            delivering ready-to-use interior spaces. Our turnkey service ensures
-            stress-free experience through full-cycle project management and
-            seamless execution.
-          </p>
+    {/* Banner Image */}
+    <div className="mt-6" data-aos="zoom-in">
+      <img
+        src={service33}
+        alt="TurnKey Interior Solutions"
+        className="w-full h-[250px] md:h-[450px] object-cover"
+      />
+    </div>
 
-          {/* What Are Included  */}
-         <div className="mt-10">
-  <h2 className="text-2xl font-semibold mb-4 md:mb-12">What are included</h2>
+    {/* Description */}
+    <p className="mt-6 text-gray-600 text-base leading-relaxed" data-aos="fade-up" data-aos-delay="100">
+      From concept to completion, we take complete responsibility for
+      delivering ready-to-use interior spaces. Our turnkey service ensures
+      stress-free experience through full-cycle project management and
+      seamless execution.
+    </p>
 
-  {groupedItems.map((group, i) => (
-    <React.Fragment key={i}>
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-9 mb-9 md:gap-10 px-6 py-2">
-        {group.map((item, idx) => (
+    {/* What Are Included */}
+    <div className="mt-10" data-aos="fade-up" data-aos-delay="200">
+      <h2 className="text-2xl font-semibold mb-4 md:mb-12">What are included</h2>
+
+      {groupedItems.map((group, i) => (
+        <React.Fragment key={i}>
           <div
-            key={idx}
-            className="flex items-start gap-4 pr-2 md:pr-6 md:border-r md:border-[#464646] last:md:border-none"
+            className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-9 mb-9 md:gap-10 px-6 py-2"
+            data-aos="fade-up"
+            data-aos-delay={100 * (i + 3)} // stagger delay for groups
           >
-            <div className="w-14 h-14 flex-shrink-0 text-gray-700">
-              {typeof item.icon === "string" ? (
-                <img
-                  src={item.icon}
-                  alt={item.title}
-                  className="w-full h-full object-contain"
-                />
-              ) : (
-                item.icon
-              )}
-            </div>
-            <div>
-              <h3 className="font-semibold text-lg">{item.title}</h3>
-              <p className="text-gray-600 text-sm">{item.desc}</p>
-            </div>
+            {group.map((item, idx) => (
+              <div
+                key={idx}
+                className="flex items-start gap-4 pr-2 md:pr-6 md:border-r md:border-[#464646] last:md:border-none"
+                data-aos="zoom-in"
+                data-aos-delay={150 + idx * 100} // stagger delay for items
+              >
+                <div className="w-14 h-14 flex-shrink-0 text-gray-700">
+                  {typeof item.icon === "string" ? (
+                    <img
+                      src={item.icon}
+                      alt={item.title}
+                      className="w-full h-full object-contain"
+                    />
+                  ) : (
+                    item.icon
+                  )}
+                </div>
+                <div>
+                  <h3 className="font-semibold text-lg">{item.title}</h3>
+                  <p className="text-gray-600 text-sm">{item.desc}</p>
+                </div>
+              </div>
+            ))}
           </div>
-        ))}
-      </div>
 
-      {/* Divider only between groups, and only on desktop */}
-      {i !== groupedItems.length - 1 && (
-        <hr className="md:block hidden border-t border-[#464646] my-6" />
-      )}
-    </React.Fragment>
-  ))}
-</div>
+          {/* Divider only between groups, and only on desktop */}
+          {i !== groupedItems.length - 1 && (
+            <hr className="md:block hidden border-t border-[#464646] my-6" />
+          )}
+        </React.Fragment>
+      ))}
+    </div>
+  </div>
+</section>
 
-        </div>
-      </section>
     </>
   );
 };
