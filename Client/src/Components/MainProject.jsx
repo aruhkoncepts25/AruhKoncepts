@@ -1,4 +1,4 @@
-import React, { useRef,useEffect } from 'react';
+import React, { useRef, useEffect } from 'react';
 import { Link } from 'react-router-dom'
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import mproject1 from "../assets/Project/Mproject-1.jpg";
@@ -61,12 +61,16 @@ const MainProject = () => {
   };
 
   return (
+    <main className='overflow-hidden'>
+
+   
     <section className="w-full py-12 bg-gray-50">
-      <div className="w-[90%] mx-auto py-10">
+      <div className="w-[90%] mx-auto pt-10 md:py-10">
         <h1 className="text-xl font-semibold text-[#C9966B] mb-6">Projects</h1>
+        <p className='text-base text-[#1A1A1A]'>Aruh Koncepts has worked with many communities, including My home avthar, Aparna cyber scape, Jayabheri, Ramky Kosmos, Ramky one, Aprna Zenith, Mahaveer Communities,</p>
 
         {/* Arrow Controls */}
-        <div className="flex justify-end mb-6">
+        <div className="hidden md:flex justify-end mb-6">
           <div className="flex gap-2">
             <button
               onClick={() => scroll("left")}
@@ -86,7 +90,7 @@ const MainProject = () => {
         {/* Scrollable Projects Container */}
         <div
           ref={scrollRef}
-          className="flex gap-12 overflow-hidden"
+          className="flex flex-col mt-6 md:flex-row gap-6 md:gap-12 overflow-hidden"
         >
           {projects.map((project) => (
             <Link to='/project'
@@ -96,7 +100,7 @@ const MainProject = () => {
               <img
                 src={project.image}
                 alt={project.title}
-                className="w-full h-[250px] sm:h-[280px] md:h-[300px] lg:h-[320px] xl:h-[340px] object-cover"
+                className="w-full h-[350px] sm:h-[280px] md:h-[300px] lg:h-[320px] xl:h-[340px] object-cover"
               />
               <div className="absolute bottom-0 left-0 w-full backdrop-blur-md p-4 bg-black/40">
                 <h2 className="text-lg font-semibold text-white">{project.title}</h2>
@@ -106,11 +110,11 @@ const MainProject = () => {
           ))}
         </div>
 
-        <div className='mt-6 flex gap-16 justify-start pl-6 items-center'>
-          <h1 className='text-3xl font-semibold'>Build Your Vision With Us</h1>
+        <div className='mt-6 flex flex-col md:flex-row gap-4 md:gap-16 justify-start md:pl-6 items-center'>
+          <h1 className='text-2xl md:text-3xl font-semibold'>Build Your Vision With Us</h1>
           <button
             href="#"
-            className="inline-flex items-center px-6 py-2 rounded-2xl gap-6 border border-[#898787] mt-6 mb-6 text-xl font-medium text-gray-800 hover:text-[#C8966B] transition"
+            className="inline-flex items-center px-6 py-2 rounded-2xl gap-6 border border-[#898787] mt-2 md:mt-6 mb-2 md:mb-6 text-xl font-medium text-gray-800 hover:text-[#C8966B] transition"
           >
             Connect Now
             <img
@@ -122,6 +126,7 @@ const MainProject = () => {
         </div>
       </div>
     </section>
+     </main>
   );
 };
 
