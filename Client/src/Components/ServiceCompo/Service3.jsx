@@ -44,7 +44,7 @@ const Service3 = () => {
   return (
     <>
       <section className="section1 w-full py-12 px-6 md:px-16 lg:px-28">
-        <div className="w-[90%] px-4 mx-auto">
+        <div className="w-[90%] md:px-4 mx-auto">
           {/* Heading  */}
           <div>
             <p className="text-xl font-semibold text-[#C8966B]">Services</p>
@@ -58,7 +58,7 @@ const Service3 = () => {
             <img
               src={service33}
               alt="TurnKey Interior Solutions"
-              className="w-full h-[450px] object-cover"
+              className="w-full h-[250px]  md:h-[450px] object-cover"
             />
           </div>
 
@@ -71,37 +71,44 @@ const Service3 = () => {
           </p>
 
           {/* What Are Included  */}
-          <div className="mt-10">
-            <h2 className="text-2xl font-semibold mb-12">What are included</h2>
-{groupedItems.map((group, i) => (
-      <React.Fragment key={i}>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10 px-6 py-2">
-          {group.map((item, idx) => (
-            <div
-              key={idx}
-              className="flex items-start gap-4 border-r border-[#464646] pr-6 last:border-none"
-            >
-              <div className="text-gray-700">{typeof item.icon === "string" ? (
-    <img src={item.icon} alt={item.title} className="w-full h-full object-contain" />
-  ) : (
-    item.icon
-  )}</div>
-              <div>
-                <h3 className="font-semibold text-lg">{item.title}</h3>
-                <p className="text-gray-600 text-sm">{item.desc}</p>
-              </div>
-            </div>
-          ))}
-        </div>
+         <div className="mt-10">
+  <h2 className="text-2xl font-semibold mb-4 md:mb-12">What are included</h2>
 
-        {/* Full-width horizontal line */}
-        {i !== groupedItems.length - 1 && (
-          <hr className="border-t border-[#464646] my-6" />
-        )}
-      </React.Fragment>
-    ))}
-     
+  {groupedItems.map((group, i) => (
+    <React.Fragment key={i}>
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-9 mb-9 md:gap-10 px-6 py-2">
+        {group.map((item, idx) => (
+          <div
+            key={idx}
+            className="flex items-start gap-4 pr-2 md:pr-6 md:border-r md:border-[#464646] last:md:border-none"
+          >
+            <div className="w-14 h-14 flex-shrink-0 text-gray-700">
+              {typeof item.icon === "string" ? (
+                <img
+                  src={item.icon}
+                  alt={item.title}
+                  className="w-full h-full object-contain"
+                />
+              ) : (
+                item.icon
+              )}
+            </div>
+            <div>
+              <h3 className="font-semibold text-lg">{item.title}</h3>
+              <p className="text-gray-600 text-sm">{item.desc}</p>
+            </div>
           </div>
+        ))}
+      </div>
+
+      {/* Divider only between groups, and only on desktop */}
+      {i !== groupedItems.length - 1 && (
+        <hr className="md:block hidden border-t border-[#464646] my-6" />
+      )}
+    </React.Fragment>
+  ))}
+</div>
+
         </div>
       </section>
     </>

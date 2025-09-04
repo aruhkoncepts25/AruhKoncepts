@@ -6,10 +6,14 @@ import mproject2 from "../assets/Project/Mproject-2.jpg"
 import mproject3 from "../assets/Project/Mproject-3.jpg"
 
 import project6 from '../assets/Project/project-6.png'
-
+import { useNavigate } from "react-router-dom";
 
 const MainProject = () => {
+const navigate = useNavigate();
 
+  const handleClick = () => {
+    navigate("/#contact");
+  };
   useEffect(() => {
     window.scrollTo({ top: 0, left: 0, behavior: "auto" });
   }, []);
@@ -113,16 +117,16 @@ const MainProject = () => {
         <div className='mt-6 flex flex-col md:flex-row gap-4 md:gap-16 justify-start md:pl-6 items-center'>
           <h1 className='text-2xl md:text-3xl font-semibold'>Build Your Vision With Us</h1>
           <button
-            href="#"
-            className="inline-flex items-center px-6 py-2 rounded-2xl gap-6 border border-[#898787] mt-2 md:mt-6 mb-2 md:mb-6 text-xl font-medium text-gray-800 hover:text-[#C8966B] transition"
-          >
-            Connect Now
-            <img
-              src={project6}
-              alt="arrow icon"
-              className="w-5 h-5 object-contain inline-block"
-            />
-          </button>
+      onClick={handleClick}
+      className="inline-flex items-center cursor-pointer px-6 py-2 rounded-2xl gap-6 border border-[#898787] mt-2 md:mt-6 mb-2 md:mb-6 text-xl font-medium text-gray-800 hover:text-[#C8966B] transition"
+    >
+      Connect Now
+      <img
+        src={project6}
+        alt="arrow icon"
+        className="w-5 h-5 object-contain inline-block"
+      />
+    </button>
         </div>
       </div>
     </section>

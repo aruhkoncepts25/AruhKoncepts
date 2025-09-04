@@ -99,7 +99,7 @@ const AboutUs = () => {
                   data-aos="fade-right"
                   data-aos-delay={i * 200}
                 >
-                   <div className="w-16 h-16 md:w-20 md:h-20  rounded-full flex items-center justify-center flex-shrink-0">
+                   <div className="w-16 h-16 md:w-18 md:h-18  rounded-full flex items-center justify-center flex-shrink-0">
             <img
               src={item.icon}
               alt={`${item.title} icon`}

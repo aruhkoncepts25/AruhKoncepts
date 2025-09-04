@@ -61,8 +61,8 @@ for (let i = 0; i < items.length; i += itemsPerRow) {
 
   return (
     <>
-      <section className="section1 w-full py-12 px-6 md:px-16 lg:px-28">
-        <div className='w-[90%] mx-auto px-4'>
+      <section className="section1 w-full  md:px-16 lg:px-28">
+        <div className='w-[90%] mx-auto  px-0 md:px-4'>
 
         
       {/* Heading */}
@@ -78,7 +78,7 @@ for (let i = 0; i < items.length; i += itemsPerRow) {
         <img
           src={service11}
           alt="Residential Interior"
-          className="w-full h-[450px] object-cover"
+          className="w-full h-[250px] md:h-[450px] object-cover"
         />
       </div>
 
@@ -92,32 +92,35 @@ for (let i = 0; i < items.length; i += itemsPerRow) {
 
       {/* What are included */}
 <div className="mt-10">
-  <h2 className="text-2xl font-semibold mb-12">What are included</h2>
+  <h2 className="text-2xl font-semibold mb-4 md:mb-12">What are included</h2>
 
     {groupedItems.map((group, i) => (
       <React.Fragment key={i}>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10 px-6 py-2">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-9 mb-9 md:gap-10 px-6 py-2">
           {group.map((item, idx) => (
-            <div
-              key={idx}
-              className="flex items-start gap-4 border-r border-[#464646] pr-6 last:border-none"
-            >
-              <div className="text-gray-700">{typeof item.icon === "string" ? (
-    <img src={item.icon} alt={item.title} className="w-full h-full object-contain" />
-  ) : (
-    item.icon
-  )}</div>
-              <div>
-                <h3 className="font-semibold text-lg">{item.title}</h3>
-                <p className="text-gray-600 text-sm">{item.desc}</p>
-              </div>
-            </div>
+           <div
+  key={idx}
+  className="flex items-start gap-4 pr-2 md:pr-6 md:border-r md:border-[#464646] last:md:border-none"
+>
+  <div className="w-14 h-14 flex-shrink-0">
+    {typeof item.icon === "string" ? (
+      <img src={item.icon} alt={item.title} className="w-full h-full object-contain" />
+    ) : (
+      item.icon
+    )}
+  </div>
+  <div>
+    <h3 className="font-semibold text-lg">{item.title}</h3>
+    <p className="text-gray-600 text-sm">{item.desc}</p>
+  </div>
+</div>
+
           ))}
         </div>
 
         {/* Full-width horizontal line */}
         {i !== groupedItems.length - 1 && (
-          <hr className="border-t border-[#464646] my-6" />
+          <hr className="md:block hidden border-t border-[#464646] my-6" />
         )}
       </React.Fragment>
     ))}

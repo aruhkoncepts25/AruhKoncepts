@@ -45,7 +45,7 @@ for (let i = 0; i < items.length; i += itemsPerRow) {
   return (
     <>
       <section className="section1 w-full py-12 px-6 md:px-16 lg:px-28">
-        <div className='w-[90%] mx-auto px-4'>
+        <div className='w-[90%] mx-auto md:px-4'>
 
         
       {/* Heading */}
@@ -61,7 +61,7 @@ for (let i = 0; i < items.length; i += itemsPerRow) {
         <img
           src={service55}
           alt="3D Visualization & Conceptual Design"
-          className="w-full h-[450px] object-cover"
+          className="w-full h-[250px]  md:h-[450px] object-cover"
         />
       </div>
 
@@ -74,40 +74,43 @@ outdated spaces.
 
       {/* What are included */}
 <div className="mt-10">
-  <h2 className="text-2xl font-semibold mb-12">What are included</h2>
+  <h2 className="text-2xl font-semibold mb-4 md:mb-12">What are included</h2>
 
-    {groupedItems.map((group, i) => (
-      <React.Fragment key={i}>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10 px-6 py-2">
-          {group.map((item, idx) => (
-            <div
-              key={idx}
-              className="flex items-start gap-4 border-r border-[#464646] pr-6 last:border-none"
-            >
-              <div className="text-gray-700">{typeof item.icon === "string" ? (
-    <img src={item.icon} alt={item.title} className="w-full h-full object-contain" />
-  ) : (
-    item.icon
-  )}</div>
-              <div>
-                <h3 className="font-semibold text-lg">{item.title}</h3>
-                <p className="text-gray-600 text-sm">{item.desc}</p>
-              </div>
+  {groupedItems.map((group, i) => (
+    <React.Fragment key={i}>
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-9 mb-9 md:gap-10 px-6 py-2">
+        {group.map((item, idx) => (
+          <div
+            key={idx}
+            className="flex items-start gap-4 pr-2 md:pr-6 md:border-r md:border-[#464646] last:md:border-none"
+          >
+            <div className="w-14 h-14 flex-shrink-0 text-gray-700">
+              {typeof item.icon === "string" ? (
+                <img
+                  src={item.icon}
+                  alt={item.title}
+                  className="w-full h-full object-contain"
+                />
+              ) : (
+                item.icon
+              )}
             </div>
-          ))}
-        </div>
+            <div>
+              <h3 className="font-semibold text-lg">{item.title}</h3>
+              <p className="text-gray-600 text-sm">{item.desc}</p>
+            </div>
+          </div>
+        ))}
+      </div>
 
-        {/* Full-width horizontal line */}
-        {i !== groupedItems.length - 1 && (
-          <hr className="border-t border-[#464646] my-6" />
-        )}
-      </React.Fragment>
-    ))}
-
-
-
-
+      {/* Divider line between rows (only desktop) */}
+      {i !== groupedItems.length - 1 && (
+        <hr className="hidden md:block border-t border-[#464646] my-6" />
+      )}
+    </React.Fragment>
+  ))}
 </div>
+
 
 
       </div>

@@ -439,13 +439,14 @@ const Home = () => {
     <>
       <main className="overflow-hidden">
         {/* Home Section */}
-        {/* <section className="home-section relative mx-auto scale-z-100 text-white min-h-screen flex items-center">
-         */}
-       <section className="home-section relative mx-auto scale-z-100 text-white min-h-[unset] sm:min-h-screen flex items-start sm:items-center py-0">
+
+ <section className="home-section relative mx-auto text-white min-h-[400px] md:min-h-screen scale-z-100 flex flex-col justify-start sm:justify-center">
+  {/* desktop  */}
+  
   {/* Background Image */}
-  <div className="absolute inset-0 flex justify-center items-center pt-4 z-0">
+  <div className="hidden w-full relative sm:absolute inset-0 md:flex justify-center items-center px-2 pt-4 z-0">
     <div
-      className="w-[97%] h-[300px] md:h-[650px] overflow-hidden rounded-xl shadow-xl"
+      className="w-[97%] h-[300px] sm:w-[97%] sm:h-[650px] overflow-hidden rounded-xl shadow-xl mx-auto"
       data-aos="zoom-in"
       data-aos-delay="100"
     >
@@ -457,28 +458,27 @@ const Home = () => {
     </div>
   </div>
 
-          {/* Main Content Grid */}
-          <div className="container mx-auto relative z-10 grid grid-cols-1 md:grid-cols-2 gap-8 px-6 md:px-12">
-            {/* Text Section */}
-            <div
-              className="flex flex-col justify-center space-y-6"
-              data-aos="fade-right"
-              data-aos-delay="200"
-            >
-              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight">
-                Designing Spaces <br /> That Reflect Your Soul
-              </h1>
-              <p className="text-gray-200 text-lg md:text-xl">
-                Simplicity, elegance, and function crafted uniquely for you.
-              </p>
-              <button
-                onClick={() => navigate("/aboutus")}
-                className="w-fit px-7 py-2 backdrop-blur-lg bg-white/10 cursor-pointer text-white border border-white/20 rounded-2xl shadow-md transition-all duration-300 ease-in-out hover:scale-105 hover:bg-white/20 hover:shadow-xl"
-              >
-                Explore
-              </button>
-            </div>
-
+  {/* Main Content Grid */}
+  <div className="container mx-auto relative z-10 hidden md:grid grid-cols-1 md:grid-cols-2 gap-8 px-6 md:px-12 pt-[-20px] sm:pt-0">
+    {/* Text Section */}
+    <div
+      className="flex flex-col justify-center space-y-6"
+      data-aos="fade-right"
+      data-aos-delay="200"
+    >
+      <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight">
+        Designing Spaces <br /> That Reflect Your Soul
+      </h1>
+      <p className="hidden md:block text-gray-200 text-lg md:text-xl">
+        Simplicity, elegance, and function crafted uniquely for you.
+      </p>
+      <button
+        onClick={() => navigate("/aboutus")}
+        className="w-fit px-7 py-2 backdrop-blur-lg bg-white/10 cursor-pointer text-white border border-white/20 rounded-2xl shadow-md transition-all duration-300 ease-in-out hover:scale-105 hover:bg-white/20 hover:shadow-xl"
+      >
+        Explore
+      </button>
+    </div>
             {/* Featured Projects */}
             <div
               className="hidden md:flex flex-col justify-center space-y-6 items-start md:items-end"
@@ -534,7 +534,35 @@ const Home = () => {
               </div>
             </div>
           </div>
+          {/* //// */}
+
+
+     {/* /// Mobile Home Section */}
+<div className="w-full relative mx-auto md:hidden px-4 py-2">
+  {/* Background Image */}
+  <img
+    src={hero}
+    alt="Interior Design"
+    className="w-full h-[320px] object-cover rounded-2xl"
+  />
+
+  {/* Content over the image, aligned to bottom */}
+  <div className="absolute bottom-6 left-0 right-0 z-10 px-6">
+    <div className="flex flex-row items-center gap-7 text-start space-y-4">
+      <h1 className="text-2xl font-semibold text-white leading-snug">
+        Designing Spaces That <br /> Reflect Your Soul
+      </h1>
+      <button className="px-5 py-2 backdrop-blur-lg bg-white/10 cursor-pointer text-white border border-white/20 rounded-2xl shadow-md transition-all duration-300 ease-in-out hover:scale-105 hover:bg-white/20 hover:shadow-xl">
+        Explore
+      </button>
+    </div>
+  </div>
+</div>
+
+
         </section>
+
+   
 
         {/* About Section */}
         <section className="about-section ">
@@ -569,12 +597,7 @@ const Home = () => {
                   data-aos-delay="300"
                 >
                   <p>
-                    We at Aruh Koncepts have been bringing spaces to life with
-                    innovative interior design solutions for over X years. Our
-                    work reflects a perfect balance of functionality and
-                    aesthetics, trusted by leading communities such as My Home
-                    Avthar, Aparna Cyber Scape, Jayabheri, Ramky Kosmos, Ramky
-                    One, Aparna Zenith, and Mahaveer Communities.
+                  Since our beginning, we've helped homes and offices in Hyderabad come alive through thoughtful layouts, warm materials, and effortless design.
                   </p>
                 </div>
               </div>
