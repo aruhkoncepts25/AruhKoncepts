@@ -117,7 +117,7 @@ const OurService = () => {
                             </div>
 
                             {/* Right Content */}
-                            <div className="w-full h-[260px] md:h-[400px] md:p-6 flex flex-col justify-between" data-aos="fade-up">
+                            <div className="w-full h-auto md:h-[400px] md:p-6 flex flex-col justify-between" data-aos="fade-up">
                                 <div>
                                      <div className="flex md:flex-col flex-row gap-4 md:items-start items-center ">
 
