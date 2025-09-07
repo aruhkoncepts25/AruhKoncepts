@@ -132,7 +132,7 @@ const Footer = () => {
           </div>
 
           {/* Address */}
-          <div className="order-2">
+          {/* <div className="order-2">
             <h2 className='font-semibold flex items-center  gap-2'>
 
             <MdLocationOn className="text-white w-5 h-5 mt-1 flex-shrink-0" />Address
@@ -142,7 +142,24 @@ const Footer = () => {
               Kukatpally Housing Board Colony, Kukatpally, Hyderabad,
               Telangana 500072
             </p>
-          </div>
+          </div> */}
+
+          <div className="order-2">
+  <h2 className="font-semibold flex items-center gap-2">
+    <MdLocationOn className="text-white w-5 h-5 mt-1 flex-shrink-0" />
+    Address
+  </h2>
+
+  <a
+    href="https://www.google.com/maps?q=5th+Floor,+Plot+No.138,+HIG,+6th+Phase,+above+Bank+of+India+bank,+Kukatpally+Housing+Board+Colony,+Kukatpally,+Hyderabad,+Telangana+500072"
+    target="_blank"
+    rel="noopener noreferrer"
+    className="flex items-center text-[#C8966B] gap-2 mt-1 hover:underline"
+  >
+    5th Floor, Plot No.138, HIG, 6th Phase, above Bank of India bank, Kukatpally Housing Board Colony, Kukatpally, Hyderabad, Telangana 500072
+  </a>
+</div>
+
 
           {/* Contact
           <div className="order-3">
@@ -160,12 +177,11 @@ const Footer = () => {
     <MdEmail /> Contact Us
   </h2>
   
-  {/* Phone number with clickable link */}
+
   <a href="tel:+916309892801" className="flex items-center text-[#FFFFFFA3] gap-2 mt-1 hover:underline">
     <FiPhone /> +91 63098 92801
   </a>
   
-  {/* Email with clickable mail link */}
   <a href="mailto:arunkoncepts@gmail.com" className="text-[#FFFFFFA3] hover:underline">
     arunkoncepts@gmail.com
   </a>
@@ -174,7 +190,7 @@ const Footer = () => {
 
           {/* Quick Links + Projects Side-by-Side on Mobile */}
           <div className="grid grid-cols-2 gap-6 md:hidden order-4">
-            {/* Quick Links */}
+        
             <div>
               <h2 className="font-semibold mb-2">Quick Links</h2>
               <ul className="space-y-1 text-sm ">

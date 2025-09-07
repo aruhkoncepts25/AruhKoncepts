@@ -1186,7 +1186,7 @@ const Home = () => {
                       </p>
                       <a
                         href="mailto:aruhkoncepts@gmail.com"
-                        className="text-[#C8966B] hover:underline"
+                        className="text-[#C8966B] hover:underline cursor-pointer"
                       >
                         aruhkoncepts@gmail.com
                       </a>
@@ -1205,7 +1205,7 @@ const Home = () => {
                       </p>
                       <a
                         href="tel:+916309892801"
-                        className="text-[#C8966B] hover:underline"
+                        className="text-[#C8966B] hover:underline cursor-pointer"
                       >
                         +91 63098 92801
                       </a>
