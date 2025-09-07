@@ -440,45 +440,45 @@ const Home = () => {
       <main className="overflow-hidden">
         {/* Home Section */}
 
- <section className="home-section relative mx-auto text-white min-h-[400px] md:min-h-screen scale-z-100 flex flex-col justify-start sm:justify-center">
-  {/* desktop  */}
-  
-  {/* Background Image */}
-  <div className="hidden w-full relative sm:absolute inset-0 md:flex justify-center items-center px-2 pt-4 z-0">
-    <div
-      className="w-[97%] h-[300px] sm:w-[97%] sm:h-[650px] overflow-hidden rounded-xl shadow-xl mx-auto"
-      data-aos="zoom-in"
-      data-aos-delay="100"
-    >
-      <img
-        src={hero}
-        alt="Interior Design"
-        className="w-full h-full object-cover"
-      />
-    </div>
-  </div>
+        <section className="home-section relative mx-auto text-white min-h-[400px] md:min-h-screen scale-z-100 flex flex-col justify-start sm:justify-center">
+          {/* desktop  */}
 
-  {/* Main Content Grid */}
-  <div className="container mx-auto relative z-10 hidden md:grid grid-cols-1 md:grid-cols-2 gap-8 px-6 md:px-12 pt-[-20px] sm:pt-0">
-    {/* Text Section */}
-    <div
-      className="flex flex-col justify-center space-y-6"
-      data-aos="fade-right"
-      data-aos-delay="200"
-    >
-      <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight">
-        Designing Spaces <br /> That Reflect Your Soul
-      </h1>
-      <p className="hidden md:block text-gray-200 text-lg md:text-xl">
-        Simplicity, elegance, and function crafted uniquely for you.
-      </p>
-      <button
-        onClick={() => navigate("/aboutus")}
-        className="w-fit px-7 py-2 backdrop-blur-lg bg-white/10 cursor-pointer text-white border border-white/20 rounded-2xl shadow-md transition-all duration-300 ease-in-out hover:scale-105 hover:bg-white/20 hover:shadow-xl"
-      >
-        Explore
-      </button>
-    </div>
+          {/* Background Image */}
+          <div className="hidden w-full relative sm:absolute inset-0 md:flex justify-center items-center px-2 pt-4 z-0">
+            <div
+              className="w-[97%] h-[300px] sm:w-[97%] sm:h-[650px] overflow-hidden rounded-xl shadow-xl mx-auto"
+              data-aos="zoom-in"
+              data-aos-delay="100"
+            >
+              <img
+                src={hero}
+                alt="Interior Design"
+                className="w-full h-full object-cover"
+              />
+            </div>
+          </div>
+
+          {/* Main Content Grid */}
+          <div className="container mx-auto relative z-10 hidden md:grid grid-cols-1 md:grid-cols-2 gap-8 px-6 md:px-12 pt-[-20px] sm:pt-0">
+            {/* Text Section */}
+            <div
+              className="flex flex-col justify-center space-y-6"
+              data-aos="fade-right"
+              data-aos-delay="200"
+            >
+              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight">
+                Designing Spaces <br /> That Reflect Your Soul
+              </h1>
+              <p className="hidden md:block text-gray-200 text-lg md:text-xl">
+                Simplicity, elegance, and function crafted uniquely for you.
+              </p>
+              <button
+                onClick={() => navigate("/aboutus")}
+                className="w-fit px-7 py-2 backdrop-blur-lg bg-white/10 cursor-pointer text-white border border-white/20 rounded-2xl shadow-md transition-all duration-300 ease-in-out hover:scale-105 hover:bg-white/20 hover:shadow-xl"
+              >
+                Explore
+              </button>
+            </div>
             {/* Featured Projects */}
             <div
               className="hidden md:flex flex-col justify-center space-y-6 items-start md:items-end"
@@ -537,35 +537,36 @@ const Home = () => {
           {/* //// */}
 
 
-     {/* /// Mobile Home Section */}
-<div className="w-full relative mx-auto md:hidden px-4 py-2" data-aos="fade-up" data-aos-duration="1000">
-  {/* Background Image */}
-  <img
-    src={hero}
-    alt="Interior Design"
-    className="w-full h-[320px] object-cover rounded-2xl"
-    data-aos="zoom-in"
-    data-aos-delay="300"
-  />
+          {/* /// Mobile Home Section */}
+          <div className="w-full relative mx-auto md:hidden px-4 py-2" data-aos="fade-up" data-aos-duration="1000">
+            {/* Background Image */}
+            <img
+              src={hero}
+              alt="Interior Design"
+              className="w-full h-[320px] object-cover rounded-2xl"
+              data-aos="zoom-in"
+              data-aos-delay="300"
+            />
 
-  {/* Content over the image, aligned to bottom */}
-  <div className="absolute bottom-6 left-0 right-0 z-10 px-6" data-aos="fade-left" data-aos-delay="500">
-    <div className="flex flex-row items-center gap-7 text-start space-y-4">
-      <h1 className="text-2xl font-semibold text-white leading-snug">
-        Designing Spaces That <br /> Reflect Your Soul
-      </h1>
-      <button className="px-5 py-2 backdrop-blur-lg bg-white/10 cursor-pointer text-white border border-white/20 rounded-2xl shadow-md transition-all duration-300 ease-in-out hover:scale-105 hover:bg-white/20 hover:shadow-xl">
-        Explore
-      </button>
-    </div>
-  </div>
-</div>
+            {/* Content over the image, aligned to bottom */}
+            <div className="absolute bottom-6 left-0 right-0 z-10 px-6" data-aos="fade-left" data-aos-delay="500">
+              <div className="flex flex-col items-start
+     gap-1 text-start space-y-4">
+                <h1 className="text-2xl font-semibold text-white leading-snug">
+                  Designing Spaces That <br /> Reflect Your Soul
+                </h1>
+                <button onClick={() => navigate("/aboutus")} className="px-7 py-2 backdrop-blur-lg bg-white/10 cursor-pointer text-white border border-white/20 rounded-2xl shadow-md transition-all duration-300 ease-in-out hover:scale-105 hover:bg-white/20 hover:shadow-xl">
+                  Explore
+                </button>
+              </div>
+            </div>
+          </div>
 
 
 
         </section>
 
-   
+
 
         {/* About Section */}
         <section className="about-section ">
@@ -600,7 +601,7 @@ const Home = () => {
                   data-aos-delay="300"
                 >
                   <p>
-                  Since our beginning, we've helped homes and offices in Hyderabad come alive through thoughtful layouts, warm materials, and effortless design.
+                    Since our beginning, we've helped homes and offices in Hyderabad come alive through thoughtful layouts, warm materials, and effortless design.
                   </p>
                 </div>
               </div>
@@ -720,11 +721,10 @@ const Home = () => {
                   {services.map((service, index) => (
                     <li className="space-y-2" key={index}>
                       <div
-                        className={`flex justify-between items-center text-xl md:text-3xl p-2 lg:border-b cursor-pointer transition-colors duration-300 ${
-                          index === activeIndex
+                        className={`flex justify-between items-center text-xl md:text-3xl p-2 lg:border-b cursor-pointer transition-colors duration-300 ${index === activeIndex
                             ? "text-[#1A1A1A] font-semibold"
                             : "text-[#A6A6A6]"
-                        }
+                          }
                 `}
                         onClick={() =>
                           setActiveIndex(index === activeIndex ? null : index)
@@ -737,11 +737,10 @@ const Home = () => {
                           className={`
                     flex items-center justify-center w-8 h-8 rounded-full 
                     transition-transform duration-300
-                    ${
-                      index === activeIndex
-                        ? "bg-[#C8966B] text-white "
-                        : "border-none lg:border lg:border-[#A6A6A6] text-[#A6A6A6]"
-                    }
+                    ${index === activeIndex
+                              ? "bg-[#C8966B] text-white "
+                              : "border-none lg:border lg:border-[#A6A6A6] text-[#A6A6A6]"
+                            }
                   `}
                         >
                           {/* Arrow Right for Large Screens */}
@@ -886,7 +885,7 @@ const Home = () => {
 
                     {/* Text content */}
                     <div className="pl-4 sm:pl-0 sm:mt-4 sm:text-end relative left-[150px] text-white">
-                  
+
 
                       <h2 className="font-semibold mb-1">{step.title}</h2>
                       {/* <p className="text-xs">{step.mobileDescription}</p> */}
@@ -1063,9 +1062,8 @@ const Home = () => {
                   return (
                     <div
                       key={index}
-                      className={`rounded-lg shadow-sm transition-colors duration-300 ${
-                        isOpen ? "bg-[#FFFAF5]" : "bg-[#F1E9E1]"
-                      }`}
+                      className={`rounded-lg shadow-sm transition-colors duration-300 ${isOpen ? "bg-[#FFFAF5]" : "bg-[#F1E9E1]"
+                        }`}
                     >
                       <button
                         onClick={() => toggleFAQ(index)}
@@ -1090,9 +1088,8 @@ const Home = () => {
                   return (
                     <div
                       key={actualIndex}
-                      className={`rounded-lg shadow-sm transition-colors duration-300 ${
-                        isOpen ? "bg-[#FFFAF5]" : "bg-[#F1E9E1]"
-                      }`}
+                      className={`rounded-lg shadow-sm transition-colors duration-300 ${isOpen ? "bg-[#FFFAF5]" : "bg-[#F1E9E1]"
+                        }`}
                     >
                       <button
                         onClick={() => toggleFAQ(actualIndex)}
@@ -1218,8 +1215,8 @@ const Home = () => {
 
                 <h1
                   className="text-4xl lg:text-8xl font-medium lg:font-bold text-white mt-8"
-                  // data-aos="zoom-in"
-                  // data-aos-duration="600"
+                // data-aos="zoom-in"
+                // data-aos-duration="600"
                 >
                   Let’s Talk!
                 </h1>

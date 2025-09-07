@@ -144,7 +144,7 @@ const Footer = () => {
             </p>
           </div>
 
-          {/* Contact */}
+          {/* Contact
           <div className="order-3">
             <h2 className="font-semibold flex items-center gap-2">
               <MdEmail /> Contact Us
@@ -153,7 +153,24 @@ const Footer = () => {
               <FiPhone /> +91 63098 92801
             </p>
             <p className='text-[#FFFFFFA3]'>arunkoncepts@gmail.com</p>
-          </div>
+          </div> */}
+          {/* Contact */}
+<div className="order-3">
+  <h2 className="font-semibold flex items-center gap-2">
+    <MdEmail /> Contact Us
+  </h2>
+  
+  {/* Phone number with clickable link */}
+  <a href="tel:+916309892801" className="flex items-center text-[#FFFFFFA3] gap-2 mt-1 hover:underline">
+    <FiPhone /> +91 63098 92801
+  </a>
+  
+  {/* Email with clickable mail link */}
+  <a href="mailto:arunkoncepts@gmail.com" className="text-[#FFFFFFA3] hover:underline">
+    arunkoncepts@gmail.com
+  </a>
+</div>
+
 
           {/* Quick Links + Projects Side-by-Side on Mobile */}
           <div className="grid grid-cols-2 gap-6 md:hidden order-4">

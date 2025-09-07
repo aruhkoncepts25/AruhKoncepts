@@ -138,7 +138,7 @@ const OurService = () => {
                                 </div>
                                 <button
                                     onClick={() => handleViewServiceClick(service.link)}
-                                    className="group inline-flex mb-2 justify-end md:justify-start items-center gap-2 text-black hover:text-[#C8966B] font-medium hover:underline cursor-pointer"
+                                    className="group inline-flex mb-2 justify-end md:justify-start items-center gap-2 text-[#C8966B] md:text-black hover:text-[#C8966B] font-medium hover:underline cursor-pointer"
                                 >
                                     <span>View Service</span>
                                     <ArrowRight className="w-4 h-4 relative top-[1px] transition-transform duration-300 group-hover:translate-x-1 group-hover:-rotate-[40deg]" />
