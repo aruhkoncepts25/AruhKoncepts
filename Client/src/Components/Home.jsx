@@ -1,4 +1,5 @@
 import React from "react";
+import { LazyLoadImage } from "react-lazy-load-image-component";  // LCP Means Big Imahe jo front pe rehti hai
 import { useState, useRef } from "react";
 import { useNavigate, Link } from "react-router-dom";
 import "../Style/Home.css";
@@ -28,7 +29,18 @@ import axios from "axios";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
+// process animation 
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+gsap.registerPlugin(ScrollTrigger);
+
+
+//////
+
 const Home = () => {
+
+  
   const navigate = useNavigate();
   const location = useLocation(); // for contact
   useEffect(() => {
@@ -150,6 +162,56 @@ const Home = () => {
       step: "Step 5",
     },
   ];
+
+  const containerRef = useRef(null);
+  const desktopBulbsRef = useRef([]);
+  const mobileBulbsRef = useRef([]);
+
+  useEffect(() => {
+    const ctx = gsap.context(() => {
+      // ✅ function for animating bulbs
+      const animateBulbs = (bulbs) => {
+        gsap.set(bulbs, {
+          backgroundColor: "#1f2937",
+          boxShadow: "0 0 0px rgba(0,0,0,0)",
+        });
+
+        const tl = gsap.timeline({
+          scrollTrigger: {
+            trigger: containerRef.current,
+            start: "center center",
+            end: "+=" + steps.length * 100,
+            scrub: true,
+            pin: true,
+            markers: false,
+            // pinSpacing: false, 
+          },
+        });
+
+        bulbs.forEach((bulb) => {
+          tl.to(bulb, {
+            backgroundColor: "#fde68a",
+            boxShadow: "0 0 30px 12px rgba(253, 224, 71, 0.8)",
+            duration: 1,
+            ease: "power2.inOut",
+          });
+        });
+      };
+
+      // ✅ Desktop bulbs
+      if (desktopBulbsRef.current.length > 0) {
+        animateBulbs(desktopBulbsRef.current);
+      }
+
+      // ✅ Mobile bulbs
+      if (mobileBulbsRef.current.length > 0) {
+        animateBulbs(mobileBulbsRef.current);
+      }
+    }, containerRef);
+
+    return () => ctx.revert();
+  }, [steps.length]);
+
 
   //////////////////////////////////////////////////////////////////////////////
 
@@ -416,7 +478,9 @@ const Home = () => {
   ];
   ////////////////////////////////////////////////////////////////////////////////////////////////////
 
-  const stats = [
+
+
+      const stats = [
     {
       icon: <img src={calender} alt="Experience" className="w-10 h-10" />,
       number: "10+",
@@ -433,6 +497,32 @@ const Home = () => {
       label: "Cities Served",
     },
   ];
+  const refs = useRef([]);
+
+   useEffect(() => {
+    refs.current.forEach((el, i) => {
+      if (el) {
+        let targetValue = parseInt(el.dataset.value, 10);
+
+        let obj = { val: 0 }; // dummy object for animation
+       gsap.to(obj, {
+  val: targetValue,
+  duration: 2,
+  ease: "power1.out",
+  scrollTrigger: {
+    trigger: el,
+    start: "top 80%",
+    toggleActions: "play reset play reset", // 👈 repeat hoga
+  },
+  onUpdate: () => {
+    el.innerText = Math.floor(obj.val) + "+";
+  },
+});
+
+      }
+    });
+  }, []);
+
 
   ///////////////////////////////////////////////////////////////////////
   return (
@@ -454,6 +544,7 @@ const Home = () => {
                 src={hero}
                 alt="Interior Design"
                 className="w-full h-full object-cover"
+                loading="eager" // preload for LCP
               />
             </div>
           </div>
@@ -546,6 +637,7 @@ const Home = () => {
               className="w-full h-[320px] object-cover rounded-2xl"
               data-aos="zoom-in"
               data-aos-delay="300"
+              loading="eager"
             />
 
             {/* Content over the image, aligned to bottom */}
@@ -634,7 +726,7 @@ const Home = () => {
                   data-aos="fade-up"
                   data-aos-delay="400"
                 >
-                  <img
+                  <LazyLoadImage
                     src={about}
                     alt="About"
                     className="w-full sm:h-58 h-68 object-cover rounded-lg transition-transform duration-500 ease-in-out hover:scale-110 hover:shadow-lg hover:cursor-pointer"
@@ -647,7 +739,7 @@ const Home = () => {
                   data-aos="fade-up"
                   data-aos-delay="600"
                 >
-                  <img
+                  <LazyLoadImage
                     src={about1}
                     alt="About"
                     className="w-full sm:h-58 h-68 object-cover rounded-lg transition-transform duration-500 ease-in-out hover:scale-110 hover:shadow-lg hover:cursor-pointer"
@@ -675,34 +767,41 @@ const Home = () => {
               </div>
             </div>
 
-            <div className="bg-[#142241] mt-5 md:mt-24">
-              <div
-                className="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-stretch border  border-white/20  sm:p-2 md:p-6 rounded-2xl md:rounded-full bg-white/10 backdrop-blur-lg text-white"
-                data-aos="fade-up"
-                data-aos-delay="900"
-              >
-                {stats.map((stat, index) => (
-                  <div
-                    key={index}
-                    className={`
-  flex flex-row items-center md:justify-center flex-1 text-left 
-  px-6 md:px-4 mx-9 md:mx-0 gap-4 min-h-[120px]
-  border-white/80
-  ${index !== stats.length - 1 ? "border-b-4 md:border-b-0 md:border-r-4" : ""}
-`}
-                  >
-                    {/* Icon */}
-                    <div className="flex-shrink-0">{stat.icon}</div>
+           <div className="bg-[#142241] mt-5 md:mt-24">
+            
+      <div
+        className="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-stretch border border-white/20 sm:p-2 md:p-6 rounded-2xl md:rounded-full bg-white/10 backdrop-blur-lg text-white"
+        data-aos="fade-up"
+        data-aos-delay="900"
+      >
+        {stats.map((stat, index) => (
+          <div
+            key={index}
+            className={`
+              flex flex-row items-center md:justify-center flex-1 text-left 
+              px-6 md:px-4 mx-9 md:mx-0 gap-4 min-h-[120px]
+              border-white/80
+              ${index !== stats.length - 1 ? "border-b-4 md:border-b-0 md:border-r-4" : ""}
+            `}
+          >
+            {/* Icon */}
+            <div className="flex-shrink-0">{stat.icon}</div>
 
-                    {/* Text */}
-                    <div>
-                      <h2 className="text-3xl font-bold">{stat.number}</h2>
-                      <p className="text-gray-300">{stat.label}</p>
-                    </div>
-                  </div>
-                ))}
-              </div>
+            {/* Text */}
+            <div>
+              <h2
+                ref={(el) => (refs.current[index] = el)}
+                data-value={stat.number}
+                className="text-3xl font-bold"
+              >
+                0+
+              </h2>
+              <p className="text-gray-300">{stat.label}</p>
             </div>
+          </div>
+        ))}
+      </div>
+    </div>
           </div>
         </section>
 
@@ -811,8 +910,8 @@ const Home = () => {
         </section>
 
         {/* /// Process Section */}
-        <section className="process-section">
-          <div className="w-[90%] mx-auto">
+        <section className="process-section" ref={containerRef}>
+          <div className="w-[90%] mx-auto ">
             <h1
               className="text-xl font-semibold text-[#C9966B]"
               data-aos="fade-down"
@@ -846,7 +945,7 @@ const Home = () => {
 
                     {/* Circle bilkul line ke bich me */}
                     <div className="absolute top-1/2 -translate-y-1/2">
-                      <div className="w-6 h-6 bg-[#FFF6DA] border-4 border-[#79553899] rounded-full"></div>
+                      <div className="w-6 h-6 bg-[#FFF6DA] border-4 border-[#79553899] rounded-full" ref={(el) => (desktopBulbsRef.current[index] = el)}></div>
                     </div>
 
                     {/* Step niche */}
@@ -864,33 +963,33 @@ const Home = () => {
               data-aos="fade-up"
               data-aos-delay="200"
             >
-              {/* Center vertical line for mobile */}
+           
               <div className="absolute left-1/2 transform -translate-x-1/2 w-0.5 h-full bg-[#C9966B] sm:hidden z-0"></div>
-              {/* Steps */}
+             
               <div className="flex flex-col gap-12 sm:grid sm:grid-cols-5 text-left relative z-10">
                 {steps.map((step, index) => (
                   <div
                     key={index}
                     className="relative flex sm:flex-col items-start sm:items-center"
                   >
-                    {/* Step number */}
+                  
                     <p className="text-gray-300 text-sm w-16 text-right pr-4 sm:order-3 sm:mt-4 sm:text-center">
                       {step.step}
                     </p>
 
-                    {/* Circle */}
+                   
                     <div className="absolute left-1/2 transform -translate-x-1/2 sm:static sm:translate-x-0">
                       <div className="w-6 h-6 bg-[#FFF6DA] border-4 border-[#79553899] rounded-full z-10"></div>
                     </div>
 
-                    {/* Text content */}
+           
                     <div className="pl-4 sm:pl-0 sm:mt-4 sm:text-end relative left-[150px] text-white">
 
 
                       <h2 className="font-semibold mb-1">{step.title}</h2>
-                      {/* <p className="text-xs">{step.mobileDescription}</p> */}
+                   
 
-                      {/* ✅ Mobile-only with line breaks using split */}
+                 
                       <div className="text-sm text-white block sm:hidden">
                         {step.mobileDescription.split("\n").map((line, i) => (
                           <p key={i}>{line}</p>
@@ -901,8 +1000,13 @@ const Home = () => {
                 ))}
               </div>
             </div>
+            
+            
+
+
           </div>
         </section>
+
 
         {/* //// Project Section  */}
         <section className="project-section  bg-white">
@@ -1215,8 +1319,8 @@ const Home = () => {
 
                 <h1
                   className="text-4xl lg:text-8xl font-medium lg:font-bold text-white mt-8"
-                // data-aos="zoom-in"
-                // data-aos-duration="600"
+                data-aos="zoom-in"
+                data-aos-duration="600"
                 >
                   Let’s Talk!
                 </h1>
