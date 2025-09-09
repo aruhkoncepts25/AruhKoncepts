@@ -40,7 +40,7 @@ gsap.registerPlugin(ScrollTrigger);
 
 const Home = () => {
 
-  
+
   const navigate = useNavigate();
   const location = useLocation(); // for contact
   useEffect(() => {
@@ -480,7 +480,7 @@ const Home = () => {
 
 
 
-      const stats = [
+  const stats = [
     {
       icon: <img src={calender} alt="Experience" className="w-10 h-10" />,
       number: "10+",
@@ -499,25 +499,25 @@ const Home = () => {
   ];
   const refs = useRef([]);
 
-   useEffect(() => {
+  useEffect(() => {
     refs.current.forEach((el, i) => {
       if (el) {
         let targetValue = parseInt(el.dataset.value, 10);
 
         let obj = { val: 0 }; // dummy object for animation
-       gsap.to(obj, {
-  val: targetValue,
-  duration: 2,
-  ease: "power1.out",
-  scrollTrigger: {
-    trigger: el,
-    start: "top 80%",
-    toggleActions: "play reset play reset", // 👈 repeat hoga
-  },
-  onUpdate: () => {
-    el.innerText = Math.floor(obj.val) + "+";
-  },
-});
+        gsap.to(obj, {
+          val: targetValue,
+          duration: 2,
+          ease: "power1.out",
+          scrollTrigger: {
+            trigger: el,
+            start: "top 80%",
+            toggleActions: "play reset play reset", // 👈 repeat hoga
+          },
+          onUpdate: () => {
+            el.innerText = Math.floor(obj.val) + "+";
+          },
+        });
 
       }
     });
@@ -545,6 +545,7 @@ const Home = () => {
                 alt="Interior Design"
                 className="w-full h-full object-cover"
                 loading="eager" // preload for LCP
+                fetchpriority="high" // ✅ Helps browser prioritize this image
               />
             </div>
           </div>
@@ -638,6 +639,7 @@ const Home = () => {
               data-aos="zoom-in"
               data-aos-delay="300"
               loading="eager"
+               fetchpriority="high" // ✅ Helps browser prioritize this image
             />
 
             {/* Content over the image, aligned to bottom */}
@@ -647,7 +649,7 @@ const Home = () => {
                 <h1 className="text-2xl font-semibold text-white leading-snug">
                   Designing Spaces That <br /> Reflect Your Soul
                 </h1>
-                <button onClick={() => navigate("/aboutus")} className="px-7 py-2 backdrop-blur-lg bg-white/10 cursor-pointer text-white border border-white/20 rounded-2xl shadow-md transition-all duration-300 ease-in-out hover:scale-105 hover:bg-white/20 hover:shadow-xl">
+                <button onClick={() => navigate("/aboutus")} className="px-7 py-2 backdrop-blur-lg bg-white/10 cursor-pointer text-white border border-white/20 rounded-2xl shadow-md">
                   Explore
                 </button>
               </div>
@@ -671,7 +673,6 @@ const Home = () => {
               About
             </h1>
 
-            {/* <div className="mt-20 sm:mt-6 flex flex-col lg:flex-row lg:justify-between gap-10 items-end"> */}
             <div className="mt-2 sm:mt-6 md:mt-4 lg:mt-20 flex flex-col lg:flex-row ...">
               {/* Left Text */}
               <div className="lg:w-1/2 self-end" data-aos="fade-right">
@@ -729,6 +730,7 @@ const Home = () => {
                   <LazyLoadImage
                     src={about}
                     alt="About"
+                   
                     className="w-full sm:h-58 h-68 object-cover rounded-lg transition-transform duration-500 ease-in-out hover:scale-110 hover:shadow-lg hover:cursor-pointer"
                   />
                 </div>
@@ -741,6 +743,7 @@ const Home = () => {
                 >
                   <LazyLoadImage
                     src={about1}
+                   
                     alt="About"
                     className="w-full sm:h-58 h-68 object-cover rounded-lg transition-transform duration-500 ease-in-out hover:scale-110 hover:shadow-lg hover:cursor-pointer"
                   />
@@ -767,41 +770,41 @@ const Home = () => {
               </div>
             </div>
 
-           <div className="bg-[#142241] mt-5 md:mt-24">
-            
-      <div
-        className="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-stretch border border-white/20 sm:p-2 md:p-6 rounded-2xl md:rounded-full bg-white/10 backdrop-blur-lg text-white"
-        data-aos="fade-up"
-        data-aos-delay="900"
-      >
-        {stats.map((stat, index) => (
-          <div
-            key={index}
-            className={`
+            <div className="bg-[#142241] mt-5 md:mt-24">
+
+              <div
+                className="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-stretch border border-white/20 sm:p-2 md:p-6 rounded-2xl md:rounded-full bg-white/10 backdrop-blur-lg text-white"
+                data-aos="fade-up"
+                data-aos-delay="900"
+              >
+                {stats.map((stat, index) => (
+                  <div
+                    key={index}
+                    className={`
               flex flex-row items-center md:justify-center flex-1 text-left 
               px-6 md:px-4 mx-9 md:mx-0 gap-4 min-h-[120px]
               border-white/80
               ${index !== stats.length - 1 ? "border-b-4 md:border-b-0 md:border-r-4" : ""}
             `}
-          >
-            {/* Icon */}
-            <div className="flex-shrink-0">{stat.icon}</div>
+                  >
+                    {/* Icon */}
+                    <div className="flex-shrink-0">{stat.icon}</div>
 
-            {/* Text */}
-            <div>
-              <h2
-                ref={(el) => (refs.current[index] = el)}
-                data-value={stat.number}
-                className="text-3xl font-bold"
-              >
-                0+
-              </h2>
-              <p className="text-gray-300">{stat.label}</p>
+                    {/* Text */}
+                    <div>
+                      <h2
+                        ref={(el) => (refs.current[index] = el)}
+                        data-value={stat.number}
+                        className="text-3xl font-bold"
+                      >
+                        0+
+                      </h2>
+                      <p className="text-gray-300">{stat.label}</p>
+                    </div>
+                  </div>
+                ))}
+              </div>
             </div>
-          </div>
-        ))}
-      </div>
-    </div>
           </div>
         </section>
 
@@ -821,8 +824,8 @@ const Home = () => {
                     <li className="space-y-2" key={index}>
                       <div
                         className={`flex justify-between items-center text-xl md:text-3xl p-2 lg:border-b cursor-pointer transition-colors duration-300 ${index === activeIndex
-                            ? "text-[#1A1A1A] font-semibold"
-                            : "text-[#A6A6A6]"
+                          ? "text-[#1A1A1A] font-semibold"
+                          : "text-[#A6A6A6]"
                           }
                 `}
                         onClick={() =>
@@ -856,9 +859,10 @@ const Home = () => {
                           className="lg:hidden mt-2 mb-8 pl-2 transition-all duration-300"
                           data-aos="fade-up"
                         >
-                          <img
+                          <LazyLoadImage
                             src={service.image}
                             alt={service.title}
+                          
                             className="rounded-tl-lg rounded-br-lg shadow-md w-full object-cover h-[200px] 
                             transition-transform duration-500 ease-in-out hover:scale-105 hover:shadow-xl cursor-pointer"
                           />
@@ -891,6 +895,7 @@ const Home = () => {
                 <img
                   src={services[activeIndex].image}
                   alt={services[activeIndex].title}
+                  loading="eager" // Preload main image for faster LCP
                   className="rounded-tl-lg rounded-br-lg shadow-md w-[550px] object-cover h-[350px] transition-transform duration-500 ease-in-out hover:scale-105 hover:shadow-xl cursor-pointer"
                 />
                 <p className="mt-4 text-[#1A1A1A]">
@@ -963,33 +968,33 @@ const Home = () => {
               data-aos="fade-up"
               data-aos-delay="200"
             >
-           
+
               <div className="absolute left-1/2 transform -translate-x-1/2 w-0.5 h-full bg-[#C9966B] sm:hidden z-0"></div>
-             
+
               <div className="flex flex-col gap-12 sm:grid sm:grid-cols-5 text-left relative z-10">
                 {steps.map((step, index) => (
                   <div
                     key={index}
                     className="relative flex sm:flex-col items-start sm:items-center"
                   >
-                  
+
                     <p className="text-gray-300 text-sm w-16 text-right pr-4 sm:order-3 sm:mt-4 sm:text-center">
                       {step.step}
                     </p>
 
-                   
+
                     <div className="absolute left-1/2 transform -translate-x-1/2 sm:static sm:translate-x-0">
                       <div className="w-6 h-6 bg-[#FFF6DA] border-4 border-[#79553899] rounded-full z-10"></div>
                     </div>
 
-           
+
                     <div className="pl-4 sm:pl-0 sm:mt-4 sm:text-end relative left-[150px] text-white">
 
 
                       <h2 className="font-semibold mb-1">{step.title}</h2>
-                   
 
-                 
+
+
                       <div className="text-sm text-white block sm:hidden">
                         {step.mobileDescription.split("\n").map((line, i) => (
                           <p key={i}>{line}</p>
@@ -1000,8 +1005,8 @@ const Home = () => {
                 ))}
               </div>
             </div>
-            
-            
+
+
 
 
           </div>
@@ -1078,6 +1083,9 @@ const Home = () => {
                 <img
                   src={mproject3}
                   alt="Project"
+                  loading="lazy"               // Lazy load non-LCP images
+    fetchpriority="high"         // LCP image ke liye high priority
+
                   className="object-cover w-full h-[250px] sm:h-[327px] rounded-2xl transform transition-transform duration-500 ease-in-out hover:scale-110"
                 />
               </div>
@@ -1091,6 +1099,9 @@ const Home = () => {
                 <img
                   src={project2}
                   alt="Project"
+                  loading="lazy"               // Lazy load non-LCP images
+    fetchpriority="high"         // LCP image ke liye high priority
+
                   className="object-cover w-full h-[250px] sm:h-[327px] rounded-2xl transform transition-transform duration-500 ease-in-out hover:scale-110"
                 />
               </div>
@@ -1319,8 +1330,8 @@ const Home = () => {
 
                 <h1
                   className="text-4xl lg:text-8xl font-medium lg:font-bold text-white mt-8"
-                data-aos="zoom-in"
-                data-aos-duration="600"
+                  data-aos="zoom-in"
+                  data-aos-duration="600"
                 >
                   Let’s Talk!
                 </h1>

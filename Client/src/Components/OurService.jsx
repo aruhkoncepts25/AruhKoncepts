@@ -122,7 +122,10 @@ const OurService = () => {
                                      <div className="flex md:flex-col flex-row gap-4 md:items-start items-center ">
 
                                     <div className="group mb-4 md:mb-0 w-12 h-12 md:w-16 md:h-16">
-                                        <service.icon className="text-[#C8966B] group-hover:text-red-600 w-full h-full transition-colors duration-300" />
+                                       <div className="group mb-4 md:mb-0 w-12 h-12 md:w-16 md:h-16 text-[#C8966B] group-hover:text-red-600 transition-colors duration-300">
+  <service.icon className="w-full h-full" color="currentColor" />
+</div>
+
                                     </div>
 
 

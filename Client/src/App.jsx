@@ -1,30 +1,25 @@
-import { useEffect } from "react";
-import { Link } from "react-router-dom";
+import { useEffect, lazy, Suspense } from "react";
+import { Routes, Route } from "react-router-dom";
 import AOS from "aos";
 import "aos/dist/aos.css";
+
 import ScrollToTop from './Components/ScrollToTop';
-
-import { Routes, Route } from "react-router-dom";
-
-// Components
-import Home from "./Components/Home";
-import AboutUs from "./Components/AboutUs";
-import Project from "./Components/Project";
-import MainProject from "./Components/MainProject";
-import OurService from "./Components/OurService";
-import Layout from "./Components/Layout";
-import Service1 from "./Components/ServiceCompo/Service1";  // residential
-import Service2 from "./Components/ServiceCompo/Service2"; // commercial
-import Service3 from "./Components/ServiceCompo/Service3"; // turnkey
-import Service4 from "./Components/ServiceCompo/Service4";  // visualization
-import Service5 from "./Components/ServiceCompo/Service5";  // renovation
-import Service6 from "./Components/ServiceCompo/Service6";  // furniture
-import Service7 from "./Components/ServiceCompo/Service7";  // vastu
-import { Contact } from "lucide-react";
 import ScrollToHash from "./Components/ScrollToHash";
 
- // commercial
-
+// ✅ Lazy load components
+const Home = lazy(() => import("./Components/Home"));
+const AboutUs = lazy(() => import("./Components/AboutUs"));
+const Project = lazy(() => import("./Components/Project"));
+const MainProject = lazy(() => import("./Components/MainProject"));
+const OurService = lazy(() => import("./Components/OurService"));
+const Layout = lazy(() => import("./Components/Layout"));
+const Service1 = lazy(() => import("./Components/ServiceCompo/Service1"));  // residential
+const Service2 = lazy(() => import("./Components/ServiceCompo/Service2")); // commercial
+const Service3 = lazy(() => import("./Components/ServiceCompo/Service3")); // turnkey
+const Service4 = lazy(() => import("./Components/ServiceCompo/Service4"));  // visualization
+const Service5 = lazy(() => import("./Components/ServiceCompo/Service5"));  // renovation
+const Service6 = lazy(() => import("./Components/ServiceCompo/Service6"));  // furniture
+const Service7 = lazy(() => import("./Components/ServiceCompo/Service7"));  // vastu
 
 function App() {
   useEffect(() => {
@@ -33,48 +28,54 @@ function App() {
 
   return (
     <>
-      <ScrollToTop /> 
-      
+      <ScrollToTop />
       <ScrollToHash />
-      <Routes>
-        <Route path="/" element={<Layout />}>
-          <Route index element={<Home />} />
-          <Route path="/home" element={<Home/>}/>
-          <Route path="headNav" element={<Home/>}/>
-          <Route path="aboutus" element={<AboutUs/>}/>
-          <Route path="projectKnowMore" element={<MainProject/>}/>
-          <Route path="about" element={<AboutUs />} />
-          <Route path="mainproject" element={<MainProject />} />
-          <Route path="ourservice" element={<OurService />} />
-          <Route path="project" element={<Project />} />
-          {/* //// */}
-          <Route path="service/residential" element={<Service1 />} />
-          <Route path="service/commercial" element={<Service2 />} />
-          <Route path="service/turnkey" element={<Service3 />} />
-          <Route path="service/visualization" element={<Service4 />} />
-          <Route path="service/renovation" element={<Service5 />} />
-          <Route path="service/furniture" element={<Service6 />} />
-          <Route path="service/vastu" element={<Service7 />} />
 
-          {/* Featured Project Home Hero Section  */}
-          <Route path="featuredProject" element={<Project/>}/>
+      {/* ✅ Suspense wrapper for lazy-loaded routes */}
+      <Suspense fallback={
+    <div className="flex items-center justify-center h-screen w-screen bg-[#142241]">
+      <p className="text-white text-xl md:text-3xl font-semibold animate-pulse">
+        Loading...
+      </p>
+    </div>
+  }>
+        <Routes>
+          <Route path="/" element={<Layout />}>
+            <Route index element={<Home />} />
+            <Route path="/home" element={<Home />} />
+            <Route path="headNav" element={<Home />} />
+            <Route path="aboutus" element={<AboutUs />} />
+            <Route path="projectKnowMore" element={<MainProject />} />
+            <Route path="about" element={<AboutUs />} />
+            <Route path="mainproject" element={<MainProject />} />
+            <Route path="ourservice" element={<OurService />} />
+            <Route path="project" element={<Project />} />
 
-          {/* Footer Link  */}
-          <Route path="footerhome" element={<Home/>}/>
-          <Route path="footerservice" element={<OurService/>}/>
-          <Route path="footResidential" element={<Service1/>}/>
-          <Route path="footerCommercial" element={<Service2/>}/>
-          <Route path="footerTurnkey" element={<Service3/>}/>
-          <Route path="footerVisualization" element={<Service4/>}/>
-          <Route path="footerRenovation" element={<Service5/>}/>
-          <Route path="footerFurniture" element={<Service6/>}/>
-          <Route path="footerVastu" element={<Service7/>}/>
-       
+            {/* Services */}
+            <Route path="service/residential" element={<Service1 />} />
+            <Route path="service/commercial" element={<Service2 />} />
+            <Route path="service/turnkey" element={<Service3 />} />
+            <Route path="service/visualization" element={<Service4 />} />
+            <Route path="service/renovation" element={<Service5 />} />
+            <Route path="service/furniture" element={<Service6 />} />
+            <Route path="service/vastu" element={<Service7 />} />
 
+            {/* Featured Project Home Hero Section */}
+            <Route path="featuredProject" element={<Project />} />
 
-
-        </Route>
-      </Routes>
+            {/* Footer Links */}
+            <Route path="footerhome" element={<Home />} />
+            <Route path="footerservice" element={<OurService />} />
+            <Route path="footResidential" element={<Service1 />} />
+            <Route path="footerCommercial" element={<Service2 />} />
+            <Route path="footerTurnkey" element={<Service3 />} />
+            <Route path="footerVisualization" element={<Service4 />} />
+            <Route path="footerRenovation" element={<Service5 />} />
+            <Route path="footerFurniture" element={<Service6 />} />
+            <Route path="footerVastu" element={<Service7 />} />
+          </Route>
+        </Routes>
+      </Suspense>
     </>
   );
 }
