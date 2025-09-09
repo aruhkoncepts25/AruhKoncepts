@@ -20,6 +20,8 @@ import Service4 from "./Components/ServiceCompo/Service4";  // visualization
 import Service5 from "./Components/ServiceCompo/Service5";  // renovation
 import Service6 from "./Components/ServiceCompo/Service6";  // furniture
 import Service7 from "./Components/ServiceCompo/Service7";  // vastu
+import { Contact } from "lucide-react";
+import ScrollToHash from "./Components/ScrollToHash";
 
  // commercial
 
@@ -32,6 +34,8 @@ function App() {
   return (
     <>
       <ScrollToTop /> 
+      
+      <ScrollToHash />
       <Routes>
         <Route path="/" element={<Layout />}>
           <Route index element={<Home />} />
@@ -65,6 +69,7 @@ function App() {
           <Route path="footerRenovation" element={<Service5/>}/>
           <Route path="footerFurniture" element={<Service6/>}/>
           <Route path="footerVastu" element={<Service7/>}/>
+       
 
 
 

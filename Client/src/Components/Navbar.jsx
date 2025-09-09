@@ -2,6 +2,8 @@ import React, { useState, useRef, useEffect } from "react";
 import logo from "../assets/logo.png";
 import { Link } from "react-router-dom";
 import gsap from "gsap";
+import { HashLink } from "react-router-hash-link"; // for home pe contact ke liye
+
 
 const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -131,13 +133,15 @@ const Navbar = () => {
               >
                 Services
               </Link>
-              <Link
+              <HashLink
+                smooth
                 to="/#contact"
                 className="hover:underline"
                 onClick={() => setMenuOpen(false)}
               >
                 Contact
-              </Link>
+              </HashLink>
+
             </div>
           </div>
         </div>
