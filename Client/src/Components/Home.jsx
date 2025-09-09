@@ -1427,7 +1427,7 @@ const Home = () => {
                   <div className="flex w-[90%] justify-start">
                     <button
                       type="submit"
-                      className="bg-[#C8966B] text-black py-2 px-12 lg:py-3 lg:px-18 rounded-full font-semibold hover:bg-[#a87752] transition"
+                      className="bg-[#C8966B] cursor-pointer text-black py-2 px-12 lg:py-3 lg:px-18 rounded-full font-semibold hover:text-white hover:bg-[#142241] transition"
                     >
                       Submit
                     </button>
