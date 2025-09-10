@@ -167,50 +167,49 @@ const Home = () => {
   const desktopBulbsRef = useRef([]);
   const mobileBulbsRef = useRef([]);
 
-  useEffect(() => {
-    const ctx = gsap.context(() => {
-      // ✅ function for animating bulbs
-      const animateBulbs = (bulbs) => {
-        gsap.set(bulbs, {
-          backgroundColor: "#1f2937",
-          boxShadow: "0 0 0px rgba(0,0,0,0)",
+useEffect(() => {
+  const ctx = gsap.context(() => {
+    // ✅ function for animating bulbs
+    const animateBulbs = (bulbs) => {
+      gsap.set(bulbs, {
+        backgroundColor: "#1f2937",
+        boxShadow: "0 0 0px rgba(0,0,0,0)",
+      });
+
+      const tl = gsap.timeline({
+        scrollTrigger: {
+          trigger: containerRef.current,
+          start: "center center",
+          end: "+=" + steps.length * 100,
+          scrub: true,
+          pin: true,
+          markers: false,
+        },
+      });
+
+      bulbs.forEach((bulb) => {
+        tl.to(bulb, {
+          backgroundColor: "#fde68a",
+          boxShadow: "0 0 30px 12px rgba(253, 224, 71, 0.8)",
+          duration: 1,
+          ease: "power2.inOut",
         });
+      });
+    };
 
-        const tl = gsap.timeline({
-          scrollTrigger: {
-            trigger: containerRef.current,
-            start: "center center",
-            end: "+=" + steps.length * 100,
-            scrub: true,
-            pin: true,
-            markers: false,
-            // pinSpacing: false, 
-          },
-        });
+    // ✅ check screen width
+    if (window.innerWidth >= 768 && desktopBulbsRef.current.length > 0) {
+      // Desktop
+      animateBulbs(desktopBulbsRef.current);
+    } else if (window.innerWidth < 768 && mobileBulbsRef.current.length > 0) {
+      // Mobile
+      animateBulbs(mobileBulbsRef.current);
+    }
+  }, containerRef);
 
-        bulbs.forEach((bulb) => {
-          tl.to(bulb, {
-            backgroundColor: "#fde68a",
-            boxShadow: "0 0 30px 12px rgba(253, 224, 71, 0.8)",
-            duration: 1,
-            ease: "power2.inOut",
-          });
-        });
-      };
+  return () => ctx.revert();
+}, [steps.length]);
 
-      // ✅ Desktop bulbs
-      if (desktopBulbsRef.current.length > 0) {
-        animateBulbs(desktopBulbsRef.current);
-      }
-
-      // ✅ Mobile bulbs
-      if (mobileBulbsRef.current.length > 0) {
-        animateBulbs(mobileBulbsRef.current);
-      }
-    }, containerRef);
-
-    return () => ctx.revert();
-  }, [steps.length]);
 
 
   //////////////////////////////////////////////////////////////////////////////
@@ -639,7 +638,7 @@ const Home = () => {
               data-aos="zoom-in"
               data-aos-delay="300"
               loading="eager"
-               fetchpriority="high" // ✅ Helps browser prioritize this image
+              fetchpriority="high" // ✅ Helps browser prioritize this image
             />
 
             {/* Content over the image, aligned to bottom */}
@@ -730,7 +729,7 @@ const Home = () => {
                   <LazyLoadImage
                     src={about}
                     alt="About"
-                   
+
                     className="w-full sm:h-58 h-68 object-cover rounded-lg transition-transform duration-500 ease-in-out hover:scale-110 hover:shadow-lg hover:cursor-pointer"
                   />
                 </div>
@@ -743,7 +742,7 @@ const Home = () => {
                 >
                   <LazyLoadImage
                     src={about1}
-                   
+
                     alt="About"
                     className="w-full sm:h-58 h-68 object-cover rounded-lg transition-transform duration-500 ease-in-out hover:scale-110 hover:shadow-lg hover:cursor-pointer"
                   />
@@ -862,7 +861,7 @@ const Home = () => {
                           <LazyLoadImage
                             src={service.image}
                             alt={service.title}
-                          
+
                             className="rounded-tl-lg rounded-br-lg shadow-md w-full object-cover h-[200px] 
                             transition-transform duration-500 ease-in-out hover:scale-105 hover:shadow-xl cursor-pointer"
                           />
@@ -964,7 +963,7 @@ const Home = () => {
 
             {/* // For Mobile  */}
             <div
-              className="md:hidden relative mt-14"
+              className="block md:hidden relative mt-14"
               data-aos="fade-up"
               data-aos-delay="200"
             >
@@ -975,26 +974,21 @@ const Home = () => {
                 {steps.map((step, index) => (
                   <div
                     key={index}
-                    className="relative flex sm:flex-col items-start sm:items-center"
+                    className="relative flex sm:flex-col items-start sm:items-center mb-6"
                   >
 
-                    <p className="text-gray-300 text-sm w-16 text-right pr-4 sm:order-3 sm:mt-4 sm:text-center">
+                    <p className="text-gray-300 text-sm w-16 text-right relative left-[45px] sm:order-3 sm:mt-4 sm:text-center">
                       {step.step}
                     </p>
 
 
                     <div className="absolute left-1/2 transform -translate-x-1/2 sm:static sm:translate-x-0">
-                      <div className="w-6 h-6 bg-[#FFF6DA] border-4 border-[#79553899] rounded-full z-10"></div>
+                      <div className="w-6 h-6 bg-[#FFF6DA] border-4 border-[#79553899] rounded-full z-10"  ref={(el) => (mobileBulbsRef.current[index] = el)}></div>
                     </div>
 
 
-                    <div className="pl-4 sm:pl-0 sm:mt-4 sm:text-end relative left-[150px] text-white">
-
-
+                    <div className="pl-9 sm:pl-0 sm:mt-4 sm:text-end absolute left-1/2  text-white">
                       <h2 className="font-semibold mb-1">{step.title}</h2>
-
-
-
                       <div className="text-sm text-white block sm:hidden">
                         {step.mobileDescription.split("\n").map((line, i) => (
                           <p key={i}>{line}</p>
@@ -1014,8 +1008,8 @@ const Home = () => {
 
 
         {/* //// Project Section  */}
-        <section className="project-section  bg-white">
-          <div className="w-[90%] mx-auto">
+        <section className="project-section bg-white">
+          <div className="w-[90%] mx-auto mt-6 md:mt-0">
             <h1
               className="text-xl font-bold text-[#C9966B]"
               data-aos="fade-down"
@@ -1084,7 +1078,7 @@ const Home = () => {
                   src={mproject3}
                   alt="Project"
                   loading="lazy"               // Lazy load non-LCP images
-    fetchpriority="high"         // LCP image ke liye high priority
+                  fetchpriority="high"         // LCP image ke liye high priority
 
                   className="object-cover w-full h-[250px] sm:h-[327px] rounded-2xl transform transition-transform duration-500 ease-in-out hover:scale-110"
                 />
@@ -1100,7 +1094,7 @@ const Home = () => {
                   src={project2}
                   alt="Project"
                   loading="lazy"               // Lazy load non-LCP images
-    fetchpriority="high"         // LCP image ke liye high priority
+                  fetchpriority="high"         // LCP image ke liye high priority
 
                   className="object-cover w-full h-[250px] sm:h-[327px] rounded-2xl transform transition-transform duration-500 ease-in-out hover:scale-110"
                 />
@@ -1160,7 +1154,7 @@ const Home = () => {
 
         {/* //// FAQ  */}
         <section className="faqs-section">
-          <div className="w-[90%] mx-auto">
+          <div className="w-[90%] mx-auto mt-8 md:mt-0">
             <h1
               className="text-xl font-bold text-[#C9966B] mb-6 md:mb-18"
               data-aos="fade-up"
