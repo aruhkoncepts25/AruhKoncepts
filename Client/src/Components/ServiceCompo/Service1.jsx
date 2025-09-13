@@ -1,7 +1,6 @@
 import React from 'react'
 import '../../Style/OurService.css'
 import service11 from "../../assets/OurService/service1.1.jpg"
-import { Sofa, Lamp, BedDouble, Utensils, Ruler, Home, Brush } from "lucide-react";
 import ind1 from '../../assets/insideService/include1.png'
 import ind2 from '../../assets/insideService/include2.png'
 import ind3 from '../../assets/insideService/include3.png'

@@ -1,11 +1,19 @@
 import React from 'react'
 import "../Style/Project.css"
-import project1 from "../assets/Project/project-1.jpg"
-import project2 from '../assets/Project/project-2.jpg'
-import project3 from '../assets/Project/project-3.jpg'
-import project4 from '../assets/Project/project-4.jpg'
+// import project1 from "../assets/Project/project-1.jpg"
+import project1 from "../assets/Project/Mproject-1.webp"
+
+import project2 from '../assets/Project/project-2.webp'
+import project3 from '../assets/Project/project-3.webp'
+import project4 from '../assets/Project/project-4.webp'
 import project5 from '../assets/Project/project-5.jpg'
 import project6 from '../assets/Project/project-6.png'
+
+// import project2 from '../assets/Project/project-2.jpg'
+// import project3 from '../assets/Project/project-3.jpg'
+// import project4 from '../assets/Project/project-4.jpg'
+// import project5 from '../assets/Project/project-5.jpg'
+// import project6 from '../assets/Project/project-6.png'
 
 
 
@@ -58,12 +66,12 @@ const Project = () => {
           <p className="flex gap-6 pb-1">
             <span className="font-semibold">Service</span> <span>:</span>
           </p>
-          <p className="flex  gap-3 pb-1">
+          {/* <p className="flex  gap-3 pb-1">
             <span className="font-semibold">Location</span> <span>:</span>
           </p>
           <p className="flex gap-11 pb-1">
             <span className="font-semibold">Size</span> <span>:</span>
-          </p>
+          </p> */}
         </div>
       </div>
 

@@ -1,9 +1,6 @@
-
 import React, { useEffect } from "react";
-import AOS from "aos";
 import "aos/dist/aos.css";
 import "../Style/AboutUs.css"
-
 import about1 from '../assets/AboutUs/about-1.jpg';
 import about2 from '../assets/AboutUs/about-2.jpg';
 import about3 from "../assets/AboutUs/about-3.png";
@@ -39,10 +36,10 @@ const AboutUs = () => {
   ];
 
   const team = [
-    { name: "Alexander", role: "Interior Designer", image: about3 },
-    { name: "Madona", role: "Interior Designer", image: about4 },
-    { name: "Madona", role: "Interior Designer", image: about5 },
-    { name: "Madona", role: "Interior Designer", image: about6 },
+    { name: "Alexander", role: "Founder", image: about3 },
+    { name: "Madona", role: "Co-Founder", image: about4 },
+    // { name: "Madona", role: "Interior Designer", image: about5 },
+    // { name: "Madona", role: "Interior Designer", image: about6 },
   ];
 
   return (
@@ -62,9 +59,12 @@ const AboutUs = () => {
             <div className="flex flex-col lg:flex-row items-center justify-between gap-12 mt-12">
 
               <div className="md:w-2/2">
-                <h2 className="text-lg md:text-2xl lg:text-3xl leading-relaxed text-gray-800">
+                {/* <h2 className="text-lg md:text-2xl lg:text-3xl leading-relaxed text-gray-800">
                   <span className="font-bold">Aruhkoncepts</span> is a young dynamic place
                   where we make things happen, by keeping it simple. Well known for designing residential & office spaces in Hyderabad.
+                </h2> */}
+                <h2 className="text-lg leading-relaxed text-gray-800">
+                  AK Interiors is Hyderabad based Interior trunke contracting firm. One of the applauded & trendsetters in Interior Contracting Industry. Our unique way of 'giving Ideas to quality work' has helped AK make quantifiable value delivery in Projects. We have trained carpenters, specialized skill set personals expertise and work style, to the site engineers that represent us and to the managerial team that forms the core of the firm-AK is constantly evolving. Also having worked with the best of architects over a period of time. We have built a reputation of delivering excellence in quality within the stipulated time. Our commitment to offer premium quality output by focusing on creativity and Innovative ideas, are helping us to make the potential market for our firm.
                 </h2>
               </div>
 
@@ -131,29 +131,37 @@ const AboutUs = () => {
       Meet Our Team
     </h2>
     <p className="mt-6 text-gray-600 text-start mx-auto leading-relaxed">
-      A passionate collective of designers, planners, and visual thinkers, the Aruh Koncepts team brings creativity, precision, and personality to every project. Together, we turn ideas into spaces that feel just like home.
+   The founders of Aruh Koncepts bring together a shared passion for design, planning, and visual storytelling. With creativity, precision, and vision, they shape every project into a space that reflects both functionality and personality, turning ideas into environments that truly feel like home.
     </p>
 
-    <div className="mt-10 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
+
+
+<div className="mt-10 flex justify-center">
+ {/* <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8"> */}
+ <div className="grid grid-cols-1  md:grid-cols-2  gap-14">
+
       {team.map((member, idx) => (
         <div
           key={idx}
-          className="relative bg-white rounded-xl shadow-md hover:shadow-lg transition-shadow duration-300 overflow-hidden"
+          className="relative bg-white p-2 border border-[#C0B0B0] shadow-md hover:shadow-lg transition-shadow duration-300 overflow-hidden"
           data-aos="zoom-in"
           data-aos-delay={idx * 150}
         >
           <img
             src={member.image}
             alt={member.name}
-            className="w-full h-100 object-cover  transition-transform duration-500 hover:scale-105"
+            className="w-full h-100 object-cover  "
           />
-          <div className="absolute bottom-4 left-4 right-4 bg-white/90 backdrop-blur-md text-black px-4 py-2 rounded-lg">
+  
+             <div className=" bg-white/90 backdrop-blur-md text-black px-4 py-2 rounded-lg">
             <h3 className="text-lg font-semibold">{member.name}</h3>
             <p className="text-sm">{member.role}</p>
           </div>
         </div>
       ))}
     </div>
+</div>
+   
   </div>
 </section>
 

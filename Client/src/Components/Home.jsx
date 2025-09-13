@@ -14,10 +14,9 @@ import service2 from "../assets/service2.png";
 import { FaQuoteLeft, FaStar } from "react-icons/fa";
 import { MdEmail } from "react-icons/md";
 import { FaArrowRight, FaArrowDown } from "react-icons/fa";
-import project1 from "../assets/projrctt1.jpg";
-import project2 from "../assets/project2.jpg";
+import project1 from "../assets/project1.webp";
+import project2 from "../assets/project2.webp";
 import { useEffect } from "react";
-import AOS from "aos";
 import "aos/dist/aos.css";
 import { MdPhone } from "react-icons/md";
 import hero from "../assets/hero.webp";
@@ -64,11 +63,37 @@ const Home = () => {
     message: "",
   });
   //  for contact
+  const contactValidationForm = () => {
+    if (formData.name.trim().length < 3) {
+      toast.error("Name must be at least 3 characters long");
+      return false;
+    }
+    // email 
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(formData.email)) {
+      toast.error("Enter a valid email address");
+      return false;
+    }
+
+    // service
+    if (!formData.service) {
+      toast.error("Please select a service");
+      return false;
+    }
+
+    if (formData.message.trim().length < 10) {
+      toast.error("Message must be at least 10 characters long");
+      return false;
+    }
+
+    return true;
+  }
   const contactHandle = async (e) => {
     e.preventDefault();
+    if (!contactValidationForm()) return; // ❌ Invalid hua toh aage nahi jaayega
     try {
       const response = await axios.post(
-        "http://localhost:3000/contactRoute/insert",
+        `${import.meta.env.VITE_API_URL}/contactRoute/insert`,
         {
           name: formData.name,
           email: formData.email,
@@ -100,15 +125,6 @@ const Home = () => {
     }
   };
 
-  //
-
-  // useEffect(() => {
-  //   AOS.init({
-  //     duration: 1000, // animation speed
-  //     once: true, // ek hi baar chale
-  //     easing: "ease-in-out",
-  //   });
-  // }, []);
 
   useEffect(() => {
     const scrollContainer = scrollRef.current;
@@ -167,48 +183,48 @@ const Home = () => {
   const desktopBulbsRef = useRef([]);
   const mobileBulbsRef = useRef([]);
 
-useEffect(() => {
-  const ctx = gsap.context(() => {
-    // ✅ function for animating bulbs
-    const animateBulbs = (bulbs) => {
-      gsap.set(bulbs, {
-        backgroundColor: "#1f2937",
-        boxShadow: "0 0 0px rgba(0,0,0,0)",
-      });
-
-      const tl = gsap.timeline({
-        scrollTrigger: {
-          trigger: containerRef.current,
-          start: "center center",
-          end: "+=" + steps.length * 100,
-          scrub: true,
-          pin: true,
-          markers: false,
-        },
-      });
-
-      bulbs.forEach((bulb) => {
-        tl.to(bulb, {
-          backgroundColor: "#fde68a",
-          boxShadow: "0 0 30px 12px rgba(253, 224, 71, 0.8)",
-          duration: 1,
-          ease: "power2.inOut",
+  useEffect(() => {
+    const ctx = gsap.context(() => {
+      // ✅ function for animating bulbs
+      const animateBulbs = (bulbs) => {
+        gsap.set(bulbs, {
+          backgroundColor: "#1f2937",
+          boxShadow: "0 0 0px rgba(0,0,0,0)",
         });
-      });
-    };
 
-    // ✅ check screen width
-    if (window.innerWidth >= 768 && desktopBulbsRef.current.length > 0) {
-      // Desktop
-      animateBulbs(desktopBulbsRef.current);
-    } else if (window.innerWidth < 768 && mobileBulbsRef.current.length > 0) {
-      // Mobile
-      animateBulbs(mobileBulbsRef.current);
-    }
-  }, containerRef);
+        const tl = gsap.timeline({
+          scrollTrigger: {
+            trigger: containerRef.current,
+            start: "center center",
+            end: "+=" + steps.length * 100,
+            scrub: true,
+            pin: true,
+            markers: false,
+          },
+        });
 
-  return () => ctx.revert();
-}, [steps.length]);
+        bulbs.forEach((bulb) => {
+          tl.to(bulb, {
+            backgroundColor: "#fde68a",
+            boxShadow: "0 0 30px 12px rgba(253, 224, 71, 0.8)",
+            duration: 1,
+            ease: "power2.inOut",
+          });
+        });
+      };
+
+      // ✅ check screen width
+      if (window.innerWidth >= 768 && desktopBulbsRef.current.length > 0) {
+        // Desktop
+        animateBulbs(desktopBulbsRef.current);
+      } else if (window.innerWidth < 768 && mobileBulbsRef.current.length > 0) {
+        // Mobile
+        animateBulbs(mobileBulbsRef.current);
+      }
+    }, containerRef);
+
+    return () => ctx.revert();
+  }, [steps.length]);
 
 
 
@@ -257,8 +273,8 @@ useEffect(() => {
   // for testinomial
   const testimonials = [
     {
-      name: "John Wick",
-      role: "Renovation client",
+      name: "Mrs. Pavan Surekha",
+      role: "Ramky harmony",
       text: (
         <>
           Aruh Koncepts made our <br /> renovation easy and delivered <br />{" "}
@@ -269,8 +285,8 @@ useEffect(() => {
         "https://tse1.mm.bing.net/th/id/OIP.y992YJbARnndaTJ_41Os8AHaHZ?w=719&h=718&rs=1&pid=ImgDetMain&o=7&rm=3", // Replace with actual image URL
     },
     {
-      name: "John Wick",
-      role: "Renovation client",
+      name: "Mr. Hari Prasad",
+      role: "Jaya bheri trend set",
       text: (
         <>
           Aruh Koncepts made our <br /> renovation easy and delivered <br />{" "}
@@ -281,8 +297,33 @@ useEffect(() => {
         "https://tse1.mm.bing.net/th/id/OIP.y992YJbARnndaTJ_41Os8AHaHZ?w=719&h=718&rs=1&pid=ImgDetMain&o=7&rm=3",
     },
     {
-      name: "John Wick",
-      role: "Renovation client",
+      name: "Mrs. Rajeev",
+      role: "Mahaveer",
+      text: (
+        <>
+          Aruh Koncepts made our <br /> renovation easy and delivered <br />{" "}
+          beautiful, lasting results
+        </>
+      ),
+      image:
+        "https://tse1.mm.bing.net/th/id/OIP.y992YJbARnndaTJ_41Os8AHaHZ?w=719&h=718&rs=1&pid=ImgDetMain&o=7&rm=3",
+    },
+
+    {
+      name: "Mrs. Pavan Surekha",
+      role: "Ramky harmony",
+      text: (
+        <>
+          Aruh Koncepts made our <br /> renovation easy and delivered <br />{" "}
+          beautiful, lasting results
+        </>
+      ),
+      image:
+        "https://tse1.mm.bing.net/th/id/OIP.y992YJbARnndaTJ_41Os8AHaHZ?w=719&h=718&rs=1&pid=ImgDetMain&o=7&rm=3", // Replace with actual image URL
+    },
+    {
+      name: "Mr. Hari Prasad",
+      role: "Jaya bheri trend set",
       text: (
         <>
           Aruh Koncepts made our <br /> renovation easy and delivered <br />{" "}
@@ -293,8 +334,33 @@ useEffect(() => {
         "https://tse1.mm.bing.net/th/id/OIP.y992YJbARnndaTJ_41Os8AHaHZ?w=719&h=718&rs=1&pid=ImgDetMain&o=7&rm=3",
     },
     {
-      name: "John Wick",
-      role: "Renovation client",
+      name: "Mrs. Rajeev",
+      role: "Mahaveer",
+      text: (
+        <>
+          Aruh Koncepts made our <br /> renovation easy and delivered <br />{" "}
+          beautiful, lasting results
+        </>
+      ),
+      image:
+        "https://tse1.mm.bing.net/th/id/OIP.y992YJbARnndaTJ_41Os8AHaHZ?w=719&h=718&rs=1&pid=ImgDetMain&o=7&rm=3",
+    },
+
+    {
+      name: "Mrs. Pavan Surekha",
+      role: "Ramky harmony",
+      text: (
+        <>
+          Aruh Koncepts made our <br /> renovation easy and delivered <br />{" "}
+          beautiful, lasting results
+        </>
+      ),
+      image:
+        "https://tse1.mm.bing.net/th/id/OIP.y992YJbARnndaTJ_41Os8AHaHZ?w=719&h=718&rs=1&pid=ImgDetMain&o=7&rm=3", // Replace with actual image URL
+    },
+    {
+      name: "Mr. Hari Prasad",
+      role: "Jaya bheri trend set",
       text: (
         <>
           Aruh Koncepts made our <br /> renovation easy and delivered <br />{" "}
@@ -305,8 +371,33 @@ useEffect(() => {
         "https://tse1.mm.bing.net/th/id/OIP.y992YJbARnndaTJ_41Os8AHaHZ?w=719&h=718&rs=1&pid=ImgDetMain&o=7&rm=3",
     },
     {
-      name: "John Wick",
-      role: "Renovation client",
+      name: "Mrs. Rajeev",
+      role: "Mahaveer",
+      text: (
+        <>
+          Aruh Koncepts made our <br /> renovation easy and delivered <br />{" "}
+          beautiful, lasting results
+        </>
+      ),
+      image:
+        "https://tse1.mm.bing.net/th/id/OIP.y992YJbARnndaTJ_41Os8AHaHZ?w=719&h=718&rs=1&pid=ImgDetMain&o=7&rm=3",
+    },
+
+    {
+      name: "Mrs. Pavan Surekha",
+      role: "Ramky harmony",
+      text: (
+        <>
+          Aruh Koncepts made our <br /> renovation easy and delivered <br />{" "}
+          beautiful, lasting results
+        </>
+      ),
+      image:
+        "https://tse1.mm.bing.net/th/id/OIP.y992YJbARnndaTJ_41Os8AHaHZ?w=719&h=718&rs=1&pid=ImgDetMain&o=7&rm=3", // Replace with actual image URL
+    },
+    {
+      name: "Mr. Hari Prasad",
+      role: "Jaya bheri trend set",
       text: (
         <>
           Aruh Koncepts made our <br /> renovation easy and delivered <br />{" "}
@@ -317,8 +408,8 @@ useEffect(() => {
         "https://tse1.mm.bing.net/th/id/OIP.y992YJbARnndaTJ_41Os8AHaHZ?w=719&h=718&rs=1&pid=ImgDetMain&o=7&rm=3",
     },
     {
-      name: "John Wick",
-      role: "Renovation client",
+      name: "Mrs. Rajeev",
+      role: "Mahaveer",
       text: (
         <>
           Aruh Koncepts made our <br /> renovation easy and delivered <br />{" "}
@@ -328,90 +419,7 @@ useEffect(() => {
       image:
         "https://tse1.mm.bing.net/th/id/OIP.y992YJbARnndaTJ_41Os8AHaHZ?w=719&h=718&rs=1&pid=ImgDetMain&o=7&rm=3",
     },
-    {
-      name: "John Wick",
-      role: "Renovation client",
-      text: (
-        <>
-          Aruh Koncepts made our <br /> renovation easy and delivered <br />{" "}
-          beautiful, lasting results
-        </>
-      ),
-      image:
-        "https://tse1.mm.bing.net/th/id/OIP.y992YJbARnndaTJ_41Os8AHaHZ?w=719&h=718&rs=1&pid=ImgDetMain&o=7&rm=3",
-    },
-    {
-      name: "John Wick",
-      role: "Renovation client",
-      text: (
-        <>
-          Aruh Koncepts made our <br /> renovation easy and delivered <br />{" "}
-          beautiful, lasting results
-        </>
-      ),
-      image:
-        "https://tse1.mm.bing.net/th/id/OIP.y992YJbARnndaTJ_41Os8AHaHZ?w=719&h=718&rs=1&pid=ImgDetMain&o=7&rm=3",
-    },
-    {
-      name: "John Wick",
-      role: "Renovation client",
-      text: (
-        <>
-          Aruh Koncepts made our <br /> renovation easy and delivered <br />{" "}
-          beautiful, lasting results
-        </>
-      ),
-      image:
-        "https://tse1.mm.bing.net/th/id/OIP.y992YJbARnndaTJ_41Os8AHaHZ?w=719&h=718&rs=1&pid=ImgDetMain&o=7&rm=3",
-    },
-    {
-      name: "John Wick",
-      role: "Renovation client",
-      text: (
-        <>
-          Aruh Koncepts made our <br /> renovation easy and delivered <br />{" "}
-          beautiful, lasting results
-        </>
-      ),
-      image:
-        "https://tse1.mm.bing.net/th/id/OIP.y992YJbARnndaTJ_41Os8AHaHZ?w=719&h=718&rs=1&pid=ImgDetMain&o=7&rm=3",
-    },
-    {
-      name: "John Wick",
-      role: "Renovation client",
-      text: (
-        <>
-          Aruh Koncepts made our <br /> renovation easy and delivered <br />{" "}
-          beautiful, lasting results
-        </>
-      ),
-      image:
-        "https://tse1.mm.bing.net/th/id/OIP.y992YJbARnndaTJ_41Os8AHaHZ?w=719&h=718&rs=1&pid=ImgDetMain&o=7&rm=3",
-    },
-    {
-      name: "John Wick",
-      role: "Renovation client",
-      text: (
-        <>
-          Aruh Koncepts made our <br /> renovation easy and delivered <br />{" "}
-          beautiful, lasting results
-        </>
-      ),
-      image:
-        "https://tse1.mm.bing.net/th/id/OIP.y992YJbARnndaTJ_41Os8AHaHZ?w=719&h=718&rs=1&pid=ImgDetMain&o=7&rm=3",
-    },
-    {
-      name: "John Wick",
-      role: "Renovation client",
-      text: (
-        <>
-          Aruh Koncepts made our <br /> renovation easy and delivered <br />{" "}
-          beautiful, lasting results
-        </>
-      ),
-      image:
-        "https://tse1.mm.bing.net/th/id/OIP.y992YJbARnndaTJ_41Os8AHaHZ?w=719&h=718&rs=1&pid=ImgDetMain&o=7&rm=3",
-    },
+
   ];
 
   ////////////////////////////////////////////////////////////////////////////////////////////////
@@ -983,7 +991,7 @@ useEffect(() => {
 
 
                     <div className="absolute left-1/2 transform -translate-x-1/2 sm:static sm:translate-x-0">
-                      <div className="w-6 h-6 bg-[#FFF6DA] border-4 border-[#79553899] rounded-full z-10"  ref={(el) => (mobileBulbsRef.current[index] = el)}></div>
+                      <div className="w-6 h-6 bg-[#FFF6DA] border-4 border-[#79553899] rounded-full z-10" ref={(el) => (mobileBulbsRef.current[index] = el)}></div>
                     </div>
 
 
@@ -1243,11 +1251,11 @@ useEffect(() => {
                   <p className="text-gray-700 mb-6">"{t.text}"</p>
 
                   <div className="flex items-center">
-                    <img
+                    {/* <img
                       src={t.image}
                       alt={t.name}
                       className="w-12 h-12 rounded-full mr-4"
-                    />
+                    /> */}
                     <div>
                       <h4 className="font-bold">{t.name}</h4>
                       <p className="text-sm text-gray-500">{t.role}</p>
