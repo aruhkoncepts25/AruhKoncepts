@@ -22,7 +22,7 @@ import { MdPhone } from "react-icons/md";
 import hero from "../assets/hero.webp";
 import hero1 from "../assets/hero1.webp";
 import hero2 from "../assets/hero2.jpg";
-import mproject3 from "../assets/Project/Mproject-3.jpg";
+import mproject3 from "../assets/Project/Mproject-3(2).webp";
 import { useLocation } from "react-router-dom";
 import axios from "axios";
 import { ToastContainer, toast } from "react-toastify";
