@@ -1,4 +1,5 @@
 import React from "react";
+import { Api } from "./Api/Api";
 import { LazyLoadImage } from "react-lazy-load-image-component";  // LCP Means Big Imahe jo front pe rehti hai
 import { useState, useRef } from "react";
 import { useNavigate, Link } from "react-router-dom";
@@ -24,7 +25,7 @@ import hero1 from "../assets/hero1.webp";
 import hero2 from "../assets/hero2.jpg";
 import mproject3 from "../assets/Project/Mproject-3(2).webp";
 import { useLocation } from "react-router-dom";
-import axios from "axios";
+
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
@@ -92,8 +93,7 @@ const Home = () => {
     e.preventDefault();
     if (!contactValidationForm()) return; // ❌ Invalid hua toh aage nahi jaayega
     try {
-      const response = await axios.post(
-        `${import.meta.env.VITE_API_URL}/contactRoute/insert`,
+      const response = await Api.createContact(
         {
           name: formData.name,
           email: formData.email,

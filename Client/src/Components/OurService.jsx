@@ -114,10 +114,10 @@ const OurService = () => {
                     <h1 className='text-xl font-semibold text-[#C8966B]'>Our Services</h1>
                     {services.map((service, index) => (
                         <div
-  key={service.id}
-  className={`group grid md:grid-cols-2 gap-8 p-2 md:p-6 shadow-md items-center transition-all duration-500 ease-in-out transform 
+                            key={service.id}
+                            className={`group grid md:grid-cols-2 gap-8 p-2 md:p-6 shadow-md items-center transition-all duration-500 ease-in-out transform 
   hover:-translate-y-3 hover:scale-105 hover:shadow-2xl hover:bg-[#F1F2EB] ${index % 2 === 1 ? "md:flex-row-reverse" : ""}`}
->
+                        >
 
                             {/* Left Image */}
                             <div className="w-full" data-aos="zoom-in">
@@ -133,14 +133,14 @@ const OurService = () => {
                             <div className="w-full h-auto md:h-[400px] md:p-6 flex flex-col justify-between" data-aos="fade-up">
                                 <div>
                                     <div className="flex md:flex-col flex-row gap-4 md:items-start items-center ">
-<div className="relative group w-12 h-12 md:w-16 md:h-16">
-  <div className="absolute inset-0 group-hover:hidden">
-    <service.icon className="w-full h-full text-[#C8966B]" />
-  </div>
-  <div className="absolute inset-0 hidden group-hover:block">
-    <service.hoverIcon className="w-full h-full text-red-500" />
-  </div>
-</div>
+                                        <div className="relative group w-12 h-12 md:w-16 md:h-16">
+                                            <div className="absolute inset-0 group-hover:hidden">
+                                                <service.icon className="w-full h-full text-[#C8966B]" />
+                                            </div>
+                                            <div className="absolute inset-0 hidden group-hover:block">
+                                                <service.hoverIcon className="w-full h-full text-red-500" />
+                                            </div>
+                                        </div>
 
 
 
