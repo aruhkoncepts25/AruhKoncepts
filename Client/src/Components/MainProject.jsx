@@ -76,17 +76,17 @@ const navigate = useNavigate();
         <p className='text-base text-[#1A1A1A]'>For the past 10+ years, Aruh Koncepts has partnered with premium residential and commercial communities to create elegant and personalized interiors. Our portfolio proudly includes projects for My Home Avthar, Aparna Cyber Scape, Jayabheri, Ramky Kosmos, Ramky One, Aparna Zenith, and Mahaveer Communities, among others.</p>
 
         {/* Arrow Controls */}
-        <div className="hidden md:flex justify-end mb-6">
+        <div className="hidden md:flex justify-end mb-6 mt-7">
           <div className="flex gap-2">
             <button
               onClick={() => scroll("left")}
-              className="p-2 bg-white rounded-full border cursor-pointer border-black shadow hover:bg-gray-100"
+              className="p-2 bg-white rounded-full border cursor-pointer border-black shadow hover:bg-[#C9966B] hover:text-white hover:border-white"
             >
               <ChevronLeft size={24} />
             </button>
             <button
               onClick={() => scroll("right")}
-              className="p-2 bg-white rounded-full border cursor-pointer border-black shadow hover:bg-gray-100"
+              className="p-2 bg-white rounded-full border cursor-pointer border-black shadow  hover:bg-[#C9966B] hover:text-white hover:border-white"
             >
               <ChevronRight size={24} />
             </button>
@@ -96,7 +96,7 @@ const navigate = useNavigate();
         {/* Scrollable Projects Container */}
         <div
           ref={scrollRef}
-          className="flex flex-col mt-6 md:flex-row gap-6 md:gap-12 overflow-hidden"
+          className="flex flex-col mt-9 md:flex-row gap-6 md:gap-12 overflow-hidden"
         >
           {projects.map((project) => (
             <Link to={project.link}

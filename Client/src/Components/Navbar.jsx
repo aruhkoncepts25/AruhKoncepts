@@ -10,22 +10,45 @@ const Navbar = () => {
   const menuRef = useRef(null);
 
   // Animation effect for opening/closing menu
-  useEffect(() => {
-    if (menuOpen) {
-      gsap.fromTo(
-        menuRef.current,
-        { y: "-100%", opacity: 0 },
-        { y: 0, opacity: 1, duration: 0.6, ease: "power3.out" }
-      );
-    } else {
-      gsap.to(menuRef.current, {
-        y: "-100%",
-        opacity: 0,
-        duration: 0.5,
-        ease: "power3.in",
-      });
-    }
-  }, [menuOpen]);
+  // useEffect(() => {
+  //   if (menuOpen) {
+  //     gsap.fromTo(
+  //       menuRef.current,
+  //       { y: "-100%", opacity: 0 },
+  //       { y: 0, opacity: 1, duration: 0.6, ease: "power3.out" }
+  //     );
+  //   } else {
+  //     gsap.to(menuRef.current, {
+  //       y: "-100%",
+  //       opacity: 0,
+  //       duration: 0.5,
+  //       ease: "power3.in",
+  //     });
+  //   }
+  // }, [menuOpen]);
+useEffect(() => {
+  if (menuOpen) {
+    gsap.fromTo(
+      menuRef.current,
+      { yPercent: -100, opacity: 0, scale: 0.95 },
+      {
+        yPercent: 0,
+        opacity: 1,
+        scale: 1,
+        duration: 0.7,
+        ease: "power4.out",
+      }
+    );
+  } else {
+    gsap.to(menuRef.current, {
+      yPercent: -100,
+      opacity: 0,
+      scale: 0.95,
+      duration: 0.6,
+      ease: "power4.in",
+    });
+  }
+}, [menuOpen]);
 
   return (
     <nav
@@ -104,7 +127,7 @@ const Navbar = () => {
           <div className="flex gap-x-12 text-black text-4xl">
             <div className="flex flex-col  space-y-4  items-start">
               <Link
-                to="/home"
+                to="/#home"
                 className="hover:underline"
                 onClick={() => setMenuOpen(false)}
               >

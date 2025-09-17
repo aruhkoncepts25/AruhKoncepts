@@ -54,6 +54,8 @@ function App() {
           <Route path="/" element={<Layout />}>
             <Route index element={<Home />} />
             <Route path="/home" element={<Home />} />
+            {/* <Route path="/#home" element={<Home />} /> */}
+
             <Route path="headNav" element={<Home />} />
             <Route path="aboutus" element={<AboutUs />} />
             <Route path="projectKnowMore" element={<MainProject />} />

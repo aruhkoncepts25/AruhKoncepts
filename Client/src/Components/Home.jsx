@@ -1,4 +1,4 @@
-import React from "react";
+
 import { Api } from "./Api/Api";
 import { LazyLoadImage } from "react-lazy-load-image-component";  // LCP Means Big Imahe jo front pe rehti hai
 import { useState, useRef } from "react";
@@ -576,13 +576,13 @@ hero,hero11,hero12,hero13
       <main className="overflow-hidden">
         {/* Home Section */}
 
-        <section className="home-section relative mx-auto text-white min-h-[400px] md:min-h-screen scale-z-100 flex flex-col justify-start sm:justify-center">
+        <section id="home" className="home-section relative mx-auto text-white min-h-[400px] md:min-h-screen scale-z-100 flex flex-col justify-start sm:justify-center">
           {/* desktop  */}
 
           {/* Background Image */}
           <div className="hidden w-full relative sm:absolute inset-0 md:flex justify-center items-center px-2 pt-4 z-0">
             <div
-              className="w-[97%] h-[300px] sm:w-[97%] sm:h-[650px] overflow-hidden rounded-xl shadow-xl mx-auto"
+              className="relative w-[97%] h-[300px] sm:w-[97%] sm:h-[650px] overflow-hidden rounded-xl shadow-xl mx-auto"
               data-aos="zoom-in"
               data-aos-delay="100"
             >
@@ -594,6 +594,7 @@ hero,hero11,hero12,hero13
                 loading="eager" // preload for LCP
                 fetchpriority="high" // ✅ Helps browser prioritize this image
               />
+              <div className="absolute inset-0 bg-black opacity-40 pointer-events-none" />
             </div>
           </div>
 
@@ -678,32 +679,37 @@ hero,hero11,hero12,hero13
 
 
           {/* /// Mobile Home Section */}
-          <div className="w-full relative mx-auto md:hidden px-4 py-2" data-aos="fade-up" data-aos-duration="1000">
-            {/* Background Image */}
-            <img
-             ref={imgRef}
-                 src={imageSrc}
-              alt="Interior Design"
-              className="w-full h-[320px] object-cover rounded-2xl"
-              data-aos="zoom-in"
-              data-aos-delay="300"
-              loading="eager"
-              fetchpriority="high" // ✅ Helps browser prioritize this image
-            />
+      <div className="w-full relative mx-auto md:hidden px-4 py-2" data-aos="fade-up" data-aos-duration="1000">
+  {/* Image + overlay wrapper */}
+  <div className="relative rounded-2xl overflow-hidden h-[320px]" data-aos="zoom-in" data-aos-delay="300">
+    <img
+      ref={imgRef}
+      src={imageSrc}
+      alt="Interior Design"
+      className="w-full h-full object-cover"
+      loading="eager"
+      fetchpriority="high"
+    />
+    {/* Overlay only on image */}
+    <div className="absolute inset-0 bg-black opacity-40 pointer-events-none" />
+  </div>
 
-            {/* Content over the image, aligned to bottom */}
-            <div className="absolute bottom-6 left-0 right-0 z-10 px-6" data-aos="fade-left" data-aos-delay="500">
-              <div className="flex flex-col items-start
-     gap-1 text-start space-y-4">
-                <h1 className="text-2xl font-semibold text-white leading-snug">
-                  Designing Spaces That <br /> Reflect Your Soul
-                </h1>
-                <button onClick={() => navigate("/aboutus")} className="px-7 py-2 backdrop-blur-lg bg-white/10 cursor-pointer text-white border border-white/20 rounded-2xl shadow-md">
-                  Explore
-                </button>
-              </div>
-            </div>
-          </div>
+  {/* Content over the image, aligned to bottom */}
+  <div className="absolute bottom-6 left-0 right-0 z-10 px-6" data-aos="fade-left" data-aos-delay="500">
+    <div className="flex flex-col items-start gap-1 text-start space-y-4">
+      <h1 className="text-2xl font-semibold text-white leading-snug">
+        Designing Spaces That <br /> Reflect Your Soul
+      </h1>
+      <button
+        onClick={() => navigate("/aboutus")}
+        className="px-7 py-2 backdrop-blur-lg bg-white/10 cursor-pointer text-white border border-white/20 rounded-2xl shadow-md"
+      >
+        Explore
+      </button>
+    </div>
+  </div>
+</div>
+
 
 
 
