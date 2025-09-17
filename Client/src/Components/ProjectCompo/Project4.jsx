@@ -101,7 +101,7 @@ The client emphasized their preference for modern aesthetics blended with comfor
     <img
       src={project3}
       alt="Kitchen Bar"
-      className="w-1/2 md:w-full h-[400px]  object-cover shadow-md hover:scale-105 transition-transform duration-500 ease-in-out"
+      className="w-1/2 md:w-full h-[400px]  object-cover shadow-md hover:scale-105  transition-transform duration-500 ease-in-out"
     />
   </div>
 {/* //// */}
@@ -113,14 +113,14 @@ The client emphasized their preference for modern aesthetics blended with comfor
           src={project4}
           alt="Modern Kitchen"
            data-aos="zoom-in-up"
-          className="w-full h-[250px] object-cover shadow-md hover:scale-105 transition-transform duration-500 ease-in-out"
+          className="w-full h-[250px] object-cover transform shadow-md hover:scale-105 transition-transform duration-500 ease-in-out"
         />
         <img
           src={project5}
           alt="Living Room"
            data-aos="zoom-in-up"
                 data-aos-delay="200"
-          className="w-full h-[250px] object-cover shadow-md hover:scale-105 transition-transform duration-500 ease-in-out"
+          className="w-full h-[250px] object-cover shadow-md  transform hover:scale-105 transition-transform duration-500 ease-in-out"
         />
       </div>
     </div>

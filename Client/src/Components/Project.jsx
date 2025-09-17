@@ -20,7 +20,7 @@ const Project = () => {
     <h1 className="text-xl font-semibold text-[#C8966B]" data-aos="fade-up">Projects</h1>
 
     {/* Top Section */}
-    <div className="grid md:grid-cols-2 gap-10 items-center mt-4 md:mt-2">
+    <div className="grid md:grid-cols-2 justify-between items-center mt-4 md:mt-2">
       {/* Left Content */}
       <div className="w-full mt-6" data-aos="fade-right">
         <h2 className="text-2xl md:text-3xl font-bold mb-1 md:mb-6">

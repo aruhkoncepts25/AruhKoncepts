@@ -4,7 +4,9 @@ import "../Style/AboutUs.css"
 import about1 from '../assets/AboutUs/about-1.jpg';
 import about2 from '../assets/AboutUs/about-2.jpg';
 import about3 from "../assets/AboutUs/about-3.png";
-import about4 from "../assets/AboutUs/about-4.png";
+// import about4 from "../assets/AboutUs/about-4.png";
+import about4 from "../assets/AboutUs/about4.jpg";
+
 import about5 from "../assets/AboutUs/about5.webp";
 import about6 from "../assets/AboutUs/about6.webp";
 
@@ -39,8 +41,8 @@ const AboutUs = () => {
   ];
 
   const team = [
-    { name: "Alexander", role: "Founder", image: about3 },
-    { name: "Madona", role: "Co-Founder", image: about4 },
+    // { name: "Alexander", role: "Founder", image: about },
+    { name: "Mounish Kumar N ", role: "CEO & Founder", image: about4 },
     { name: "Ms. Nirmala", role: "Creative Designer", image: about5 },
     { name: "Mr. Upendra", role: "Creative Designer", image: about6 },
   ];
