@@ -641,12 +641,13 @@ hero,hero11,hero12,hero13
                     className="w-20 h-20 object-cover relative top-[-35px] left-[-30px] border-2 border-white rounded-lg shadow-md"
                   />
                   <p className="text-[#EBCFAC] text-sm mt-[-20px]">
-                    Residential Interior
+                    Residencial Project
                   </p>
                 </Link>
 
                 {/* Project 2 */}
-                <div
+                <Link
+                to="/featuredProject2"
                   className="bg-white/0 backdrop-blur-md border flex flex-col justify-center border-white rounded-xl px-4 pt-8 pb-4 hover:bg-white/20 transition-all duration-300 ease-in-out h-[130px] w-[130px]"
                   data-aos="zoom-in"
                   data-aos-delay="600"
@@ -657,9 +658,9 @@ hero,hero11,hero12,hero13
                     className="w-20 h-20 object-cover relative top-[-35px] left-[-30px] border-2 border-white rounded-lg shadow-md"
                   />
                   <p className="text-[#EBCFAC] text-sm mt-[-20px]">
-                    Modern Living Spaces
+                    Commercial Project
                   </p>
-                </div>
+                </Link>
 
                 {/* Link */}
                 <button

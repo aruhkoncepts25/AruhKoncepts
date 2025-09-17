@@ -27,7 +27,7 @@ const navigate = useNavigate();
   const projects = [
     {
       id: 1,
-      title: "Residential Interior Solutions",
+      title: "Residencial Project",
       description: "The focus was on building a professional, collaborative environment that blended functionality with sophistication, supporting both productivity and employee well-being.",
       image: mproject1,
       link: "/Project"

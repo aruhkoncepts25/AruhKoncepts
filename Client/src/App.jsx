@@ -78,10 +78,13 @@ function App() {
 
             {/* Featured Project Home Hero Section */}
             <Route path="featuredProject" element={<Project />} />
+            <Route path="featuredProject2" element={<Project2 />} />
+
 
             {/* Footer Links */}
             <Route path="footerhome" element={<Home />} />
             <Route path="footerservice" element={<OurService />} />
+            <Route path="footerAbout" element={<AboutUs/>}/>
             {/* // Service  */}
             <Route path="footResidential" element={<Service1 />} />
             <Route path="footerCommercial" element={<Service2 />} />

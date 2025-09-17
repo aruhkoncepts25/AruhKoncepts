@@ -31,7 +31,7 @@ const Footer = () => {
             <h2 className="font-semibold mb-4">Quick Links</h2>
             <ul className="space-y-1 text-sm">
               <li><Link to="/footerhome" className="hover:underline">Home</Link></li>
-              <li><a href="#" className="hover:underline">About Us</a></li>
+              <li><a href="/footerAbout" className="hover:underline">About Us</a></li>
               <li><Link to="/#contact">Contact</Link></li>
               {/* <li><a href="#" className="hover:underline">Checkout</a></li>
               <li><Link to="/footerservice" className="hover:underline">Service Page</Link></li> */}
