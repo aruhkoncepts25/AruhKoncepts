@@ -1,18 +1,21 @@
-import "../Style/Project.css"
-import project1 from "../assets/Project/Mproject-1.webp"
-import project2 from '../assets/Project/project-2.webp'
-import project3 from '../assets/Project/project-3.webp'
-import project4 from '../assets/Project/project-4.webp'
-import project5 from '../assets/Project/project-5.jpg'
-import project6 from '../assets/Project/project-6.png'
+import "../../Style/Project.css"
+import project1 from "../../assets/Project/MoreProject/Cproject1.webp"
+import project2 from "../../assets/Project/MoreProject/Cproject2.webp"
+import project3 from "../../assets/Project/MoreProject/Cproject3.webp"
+import project4 from "../../assets/Project/MoreProject/Cproject4.jpg"
+import project5 from "../../assets/Project/MoreProject/Cproject5.jpg"
 
+  // connect now ka icon 
+import project6 from "../../assets/Project/project-6.png"
+
+// for button link ke liye 
 import { useNavigate } from "react-router-dom"
+const Project2 = () => {
+    const navigate =useNavigate();
+    const handleClick=()=>{
+        navigate("/#contact")
+    }
 
-const Project = () => {
-  const navigate =useNavigate();
-  const handleClick=()=>{
-    navigate("/#contact")
-  }
   return (
     <>
    <section className="project-section w-full md:py-12">
@@ -24,7 +27,7 @@ const Project = () => {
       {/* Left Content */}
       <div className="w-full mt-6">
         <h2 className="text-2xl md:text-3xl font-bold mb-1 md:mb-6">
-          Residential Interior Solutions
+          Commercial
         </h2>
         <p className="hidden lg:block text-gray-700 leading-relaxed mb-4">
      The project began with a clear and thoughtful goal: to design a home that felt calm, welcoming, and functional for everyday living. The vision was not limited to just aesthetics but extended to creating a space that offered both comfort and meaning, reflecting the values, personality, and lifestyle of the family. The idea was to bring together relaxation and practicality in perfect harmony, ensuring that the home could serve as a peaceful retreat after long, busy days while still accommodating the various needs and routines of daily life. Every corner was to be planned with intention—whether it was a cozy space to unwind, a functional area to stay productive, or open layouts that encouraged connection and togetherness. The emphasis was on achieving balance: a design that exuded warmth and serenity while remaining durable and versatile enough to support the evolving needs of modern living.
@@ -42,8 +45,8 @@ const Project = () => {
           <p className="flex gap-6 pb-1">
             <span className="font-semibold">Service</span> <span>:</span>
           </p>
-             <p className="hidden md:block text-gray-700 leading-relaxed">
-      The family had recently relocated and were looking for a design that truly reflected their lifestyle and sensibilities. They wanted their new home to feel like an extension of their personality, balancing elegance with functionality.
+          <p className="text-gray-700 leading-relaxed">
+  The business had recently expanded and required a space that truly mirrored its professional ethos. The leadership team wanted interiors that projected confidence and modernity, while maintaining functionality and comfort for staff and stakeholders.
       </p>
           {/* <p className="flex  gap-3 pb-1">
             <span className="font-semibold">Location</span> <span>:</span>
@@ -56,9 +59,9 @@ const Project = () => {
 
 {/* text ---  Mobile */}
     <div className="md:hidden grid md:grid-cols-2 gap-16  items-center">
-      <p className="text-gray-700 leading-relaxed">
+      {/* <p className="text-gray-700 leading-relaxed">
         The family had recently relocated and were looking for a design that truly reflected their lifestyle and sensibilities. They wanted their new home to feel like an extension of their personality, balancing elegance with functionality.
-      </p>
+      </p> */}
     </div>
       {/* Right Image with Hover Effect */}
       <div className="w-full h-[350px] max-w-[500px] md:h-[500px] overflow-hidden shadow-lg mx-auto">
@@ -139,7 +142,7 @@ const Project = () => {
 
     {/* Text Section */}
     <p className="text-gray-600 leading-relaxed mb-6 text-sm md:text-base">
-     Based on these insights, we developed a concept that highlighted softness, openness, and fluid connections between spaces. The design aimed to create a sense of warmth and continuity, ensuring that each room complemented the other while maintaining its own unique character.
+ Based on these insights, we developed a concept that emphasized openness, flexibility, and seamless connectivity between different work zones. The design fostered collaboration while ensuring privacy where needed, ultimately creating a space that balanced brand presence, employee well-being, and operational efficiency.
     </p>
 
     {/* Connect Now Button */}
@@ -161,4 +164,4 @@ const Project = () => {
   )
 }
 
-export default Project
+export default Project2

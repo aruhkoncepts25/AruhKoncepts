@@ -1,14 +1,15 @@
-import "../Style/Project.css"
-import project1 from "../assets/Project/Mproject-1.webp"
-import project2 from '../assets/Project/project-2.webp'
-import project3 from '../assets/Project/project-3.webp'
-import project4 from '../assets/Project/project-4.webp'
-import project5 from '../assets/Project/project-5.jpg'
-import project6 from '../assets/Project/project-6.png'
+import "../../Style/Project.css"
+import project1 from "../../assets/Project/MoreProject/CoProject1.jpg"
+import project2 from "../../assets/Project/MoreProject/CoProject2.jpg"
+import project3 from "../../assets/Project/MoreProject/CoProject3.jpg"
+import project4 from "../../assets/Project/MoreProject/CoProject4.jpg"
+import project5 from "../../assets/Project/MoreProject/CoProject5.jpg"
+  // connect now ka icon 
+import project6 from "../../assets/Project/project-6.png"
 
 import { useNavigate } from "react-router-dom"
 
-const Project = () => {
+const Project3 = () => {
   const navigate =useNavigate();
   const handleClick=()=>{
     navigate("/#contact")
@@ -24,13 +25,13 @@ const Project = () => {
       {/* Left Content */}
       <div className="w-full mt-6">
         <h2 className="text-2xl md:text-3xl font-bold mb-1 md:mb-6">
-          Residential Interior Solutions
+          Corporate
         </h2>
         <p className="hidden lg:block text-gray-700 leading-relaxed mb-4">
-     The project began with a clear and thoughtful goal: to design a home that felt calm, welcoming, and functional for everyday living. The vision was not limited to just aesthetics but extended to creating a space that offered both comfort and meaning, reflecting the values, personality, and lifestyle of the family. The idea was to bring together relaxation and practicality in perfect harmony, ensuring that the home could serve as a peaceful retreat after long, busy days while still accommodating the various needs and routines of daily life. Every corner was to be planned with intention—whether it was a cozy space to unwind, a functional area to stay productive, or open layouts that encouraged connection and togetherness. The emphasis was on achieving balance: a design that exuded warmth and serenity while remaining durable and versatile enough to support the evolving needs of modern living.
+   A corporate client approached us with a well-defined yet ambitious vision: to create an office environment that seamlessly blended professionalism, comfort, and functionality. Their goal was not only to establish a space that could accommodate their growing team but also to design a workplace that embodied the company’s ethos, values, and forward-looking culture. They envisioned an office that would inspire productivity while remaining warm and welcoming, striking the right balance between individual focus and collaborative engagement. 
         </p>
           <p className="lg:hidden text-gray-700 leading-relaxed mb-6">
-         The project began with a clear and focused goal: to design a commercial space that felt professional, welcoming, and highly functional for daily business operations. The vision was to create an environment that not only supported efficiency and productivity but also reflected the company’s values, culture, and brand identity in every detail. The workplace was intended to balance functionality with aesthetics, offering employees a space that motivates and inspires them while also projecting a strong and lasting impression on clients, partners, and visitors. More than just a physical office, the idea was to craft a space that seamlessly integrates work needs with comfort, ensuring that every element—from layout and lighting to materials and finishes—contributes to a cohesive and forward-thinking design.
+          A corporate client approached us with a well-defined yet ambitious vision: to create an office environment that seamlessly blended professionalism, comfort, and functionality. Their goal was not only to establish a space that could accommodate their growing team but also to design a workplace that embodied the company’s ethos, values, and forward-looking culture. They envisioned an office that would inspire productivity while remaining warm and welcoming, striking the right balance between individual focus and collaborative engagement. 
         </p>
 
 
@@ -43,21 +44,16 @@ const Project = () => {
             <span className="font-semibold">Service</span> <span>:</span>
           </p>
              <p className="hidden md:block text-gray-700 leading-relaxed">
-      The family had recently relocated and were looking for a design that truly reflected their lifestyle and sensibilities. They wanted their new home to feel like an extension of their personality, balancing elegance with functionality.
+The organization had recently expanded and was seeking a design that matched their evolving aspirations. They wanted their workspace to showcase modern aesthetics, paired with layouts that could adapt to the dynamic demands of their business.
       </p>
-          {/* <p className="flex  gap-3 pb-1">
-            <span className="font-semibold">Location</span> <span>:</span>
-          </p>
-          <p className="flex gap-11 pb-1">
-            <span className="font-semibold">Size</span> <span>:</span>
-          </p> */}
+         
         </div>
       </div>
 
 {/* text ---  Mobile */}
     <div className="md:hidden grid md:grid-cols-2 gap-16  items-center">
       <p className="text-gray-700 leading-relaxed">
-        The family had recently relocated and were looking for a design that truly reflected their lifestyle and sensibilities. They wanted their new home to feel like an extension of their personality, balancing elegance with functionality.
+The organization had recently expanded and was seeking a design that matched their evolving aspirations. They wanted their workspace to showcase modern aesthetics, paired with layouts that could adapt to the dynamic demands of their business.
       </p>
     </div>
       {/* Right Image with Hover Effect */}
@@ -69,17 +65,6 @@ const Project = () => {
         />
       </div>
     </div>
-
-    {/* Bottom Text both desktop */}
-    {/* <div className="grid md:grid-cols-2 gap-16 mt-6 md:mt-12 items-center">
-      <p className="hidden md:block text-gray-700 leading-relaxed">
-      The family had recently relocated and were looking for a design that truly reflected their lifestyle and sensibilities. They wanted their new home to feel like an extension of their personality, balancing elegance with functionality.
-      </p>
-
-      <p className="text-gray-700 leading-relaxed">
-     During our initial consultation, we explored their requirements in detail. From storage solutions to color preferences, every aspect was carefully considered. They emphasized that the interiors should remain timeless and relaxed, while still meeting the practical needs of a busy household.
-      </p>
-    </div> */}
   </div>
 </section>
 
@@ -139,7 +124,7 @@ const Project = () => {
 
     {/* Text Section */}
     <p className="text-gray-600 leading-relaxed mb-6 text-sm md:text-base">
-     Based on these insights, we developed a concept that highlighted softness, openness, and fluid connections between spaces. The design aimed to create a sense of warmth and continuity, ensuring that each room complemented the other while maintaining its own unique character.
+  With these insights, we developed a concept centered on openness, flexibility, and seamless connections across work zones. The result was a functional yet sophisticated office that supported collaboration, efficiency, and reflected the company’s vision with clarity.
     </p>
 
     {/* Connect Now Button */}
@@ -161,4 +146,4 @@ const Project = () => {
   )
 }
 
-export default Project
+export default Project3

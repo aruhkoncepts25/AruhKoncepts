@@ -4,8 +4,10 @@ import { ChevronLeft, ChevronRight } from "lucide-react";
 // import mproject1 from "../assets/Project/Mproject-1.jpg";
 import mproject1 from "../assets/Project/Mproject-1.webp";
 
-import mproject2 from "../assets/Project/Mproject-2.webp"
-import mproject3 from "../assets/Project/Mproject-3.webp"
+import mproject2 from "../assets/Project/mproject2.jpg"
+import mproject3 from "../assets/Project/mproject3.jpg"
+import mproject4 from "../assets/Project/mproject4.jpg"
+
 
 import project6 from '../assets/Project/project-6.png'
 import { useNavigate } from "react-router-dom";
@@ -26,34 +28,32 @@ const navigate = useNavigate();
     {
       id: 1,
       title: "Residential Interior Solutions",
-      description: "This comes from opportunities with a clear goal to create a home that feels calm.",
+      description: "The focus was on building a professional, collaborative environment that blended functionality with sophistication, supporting both productivity and employee well-being.",
       image: mproject1,
       link: "/Project"
     },
     {
       id: 2,
-      title: "Modern Living Spaces",
-      description: "This comes from opportunities with a clear goal to create a home that feels calm.",
+      title: "Commercial Project",
+      description: "The vision was to deliver a complete turnkey solution — from design to execution — ensuring a stylish, practical, and move-in-ready space with ease and precision.",
       image: mproject2,
+      link: "/Project2"
     },
     {
       id: 3,
-      title: "Corporate Office Design",
-      description: "This comes from opportunities with a clear goal to create a home that feels calm.",
+      title: "Corporate Project",
+      description: "The focus was on building a professional, collaborative environment that blended functionality with sophistication, supporting both productivity and employee well-being.",
       image: mproject3,
+      link: "/Project3"
     },
     {
       id: 4,
-      title: "Luxury Villas",
-      description: "This comes from opportunities with a clear goal to create a home that feels calm.",
-      image: mproject1,
+      title: "TurnKey Project",
+      description: "The vision was to deliver a complete turnkey solution — from design to execution — ensuring a stylish, practical, and move-in-ready space with ease and precision.",
+      image: mproject4,
+      link: "/Project4"
     },
-    {
-      id: 5,
-      title: "Creative Studios",
-      description: "This comes from opportunities with a clear goal to create a home that feels calm.",
-      image: mproject2,
-    },
+  
   ];
 
   const scroll = (direction) => {
@@ -80,13 +80,13 @@ const navigate = useNavigate();
           <div className="flex gap-2">
             <button
               onClick={() => scroll("left")}
-              className="p-2 bg-white rounded-full border border-black shadow hover:bg-gray-100"
+              className="p-2 bg-white rounded-full border cursor-pointer border-black shadow hover:bg-gray-100"
             >
               <ChevronLeft size={24} />
             </button>
             <button
               onClick={() => scroll("right")}
-              className="p-2 bg-white rounded-full border border-black shadow hover:bg-gray-100"
+              className="p-2 bg-white rounded-full border cursor-pointer border-black shadow hover:bg-gray-100"
             >
               <ChevronRight size={24} />
             </button>
@@ -99,7 +99,7 @@ const navigate = useNavigate();
           className="flex flex-col mt-6 md:flex-row gap-6 md:gap-12 overflow-hidden"
         >
           {projects.map((project) => (
-            <Link to='/project'
+            <Link to={project.link}
               key={project.id}
               className="relative flex-shrink-0 w-full sm:w-[80%] md:w-[48%] lg:w-[32%] xl:w-[30%] max-w-full rounded-lg shadow-md hover:shadow-2xl transform transition duration-300 ease-in-out hover:scale-105 hover:-translate-y-2 overflow-hidden"
             >

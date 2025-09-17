@@ -6,10 +6,14 @@ import "aos/dist/aos.css";
 import ScrollToTop from './Components/ScrollToTop';
 import ScrollToHash from "./Components/ScrollToHash";
 
+
 // ✅ Lazy load components
 const Home = lazy(() => import("./Components/Home"));
 const AboutUs = lazy(() => import("./Components/AboutUs"));
+
 const Project = lazy(() => import("./Components/Project"));
+
+
 const MainProject = lazy(() => import("./Components/MainProject"));
 const OurService = lazy(() => import("./Components/OurService"));
 const Layout = lazy(() => import("./Components/Layout"));
@@ -20,6 +24,13 @@ const Service4 = lazy(() => import("./Components/ServiceCompo/Service4"));  // v
 const Service5 = lazy(() => import("./Components/ServiceCompo/Service5"));  // renovation
 const Service6 = lazy(() => import("./Components/ServiceCompo/Service6"));  // furniture
 const Service7 = lazy(() => import("./Components/ServiceCompo/Service7"));  // vastu
+
+// project
+const Project2 =lazy(()=>import("./Components/ProjectCompo/Project2"));
+const Project3 =lazy(()=>import("./Components/ProjectCompo/Project3"));
+const Project4 =lazy(()=>import("./Components/ProjectCompo/Project4"));
+
+
 
 function App() {
   useEffect(() => {
@@ -49,7 +60,12 @@ function App() {
             <Route path="about" element={<AboutUs />} />
             <Route path="mainproject" element={<MainProject />} />
             <Route path="ourservice" element={<OurService />} />
+            {/* inside project  */}
             <Route path="project" element={<Project />} />
+            <Route path="project2" element={<Project2 />} />
+            <Route path="project3" element={<Project3 />} />
+            <Route path="project4" element={<Project4 />} />
+
 
             {/* Services */}
             <Route path="service/residential" element={<Service1 />} />
@@ -66,6 +82,7 @@ function App() {
             {/* Footer Links */}
             <Route path="footerhome" element={<Home />} />
             <Route path="footerservice" element={<OurService />} />
+            {/* // Service  */}
             <Route path="footResidential" element={<Service1 />} />
             <Route path="footerCommercial" element={<Service2 />} />
             <Route path="footerTurnkey" element={<Service3 />} />
@@ -73,7 +90,19 @@ function App() {
             <Route path="footerRenovation" element={<Service5 />} />
             <Route path="footerFurniture" element={<Service6 />} />
             <Route path="footerVastu" element={<Service7 />} />
-          </Route>
+            {/* Project  */}
+            {/* project 1 */}
+            <Route path="footerResidentialProject" element={<Project/>}/>
+            
+            {/* project 2 & so on     */}
+            <Route path="footerCommercialProject" element={<Project2/>}/>
+            <Route path="footerCorporateProject" element={<Project3/>}/>
+            <Route path="footerTurnKeyProject" element={<Project4/>}/>
+         
+
+
+
+           </Route>
         </Routes>
       </Suspense>
     </>

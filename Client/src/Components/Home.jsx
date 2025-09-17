@@ -11,7 +11,6 @@ import about1 from "../assets/about2.jpg";
 import calender from "../assets/calender.png";
 import blueprint from "../assets/blueprint.png";
 import location1 from "../assets/location.png";
-import service2 from "../assets/service2.png";
 import { FaQuoteLeft, FaStar } from "react-icons/fa";
 import { MdEmail } from "react-icons/md";
 import { FaArrowRight, FaArrowDown } from "react-icons/fa";
@@ -21,22 +20,32 @@ import { useEffect } from "react";
 import "aos/dist/aos.css";
 import { MdPhone } from "react-icons/md";
 import hero from "../assets/hero.webp";
+import hero11 from "../assets/hero1.1.webp";
+import hero12 from "../assets/hero1.2.webp";
+import hero13 from "../assets/hero1.3.webp";
 import hero1 from "../assets/hero1.webp";
-import hero2 from "../assets/hero2.jpg";
+import hero2 from "../assets/Project/mproject2.jpg";
 import mproject3 from "../assets/Project/Mproject-3(2).webp";
 import { useLocation } from "react-router-dom";
 
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+// Service Section Image
+import hService1 from "../assets/hService1.jpg"
+import hService2 from "../assets/hService2.webp"
+import hService3 from "../assets/hService3.jpg"
+import hService4 from "../assets/hService4.jpg"
+import hService5 from "../assets/hService5.jpg"
+import hService6 from "../assets/hService6.jpg"
+import hService7 from "../assets/hService7.jpg"
+
+
 
 // process animation 
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-
 gsap.registerPlugin(ScrollTrigger);
-
-
-//////
+//
 
 const Home = () => {
 
@@ -230,6 +239,53 @@ const Home = () => {
 
   //////////////////////////////////////////////////////////////////////////////
 
+// HOME section automatic slider 
+
+const backgroundImages=[
+hero,hero11,hero12,hero13
+]
+ const [currentBgIndex, setCurrentBgIndex] = useState(0);
+  const imgRef = useRef(null);
+  const [imageSrc, setImageSrc] = useState(backgroundImages[0]);
+ // Auto-change background index
+ useEffect(() => {
+    const interval = setInterval(() => {
+      const nextIndex = (currentBgIndex + 1) % backgroundImages.length;
+      const img = new Image();
+      img.src = backgroundImages[nextIndex];
+
+      // Once image is loaded, switch and animate
+      img.onload = () => {
+        setCurrentBgIndex(nextIndex);
+        setImageSrc(backgroundImages[nextIndex]);
+      };
+    }, 4000); // 4 seconds
+
+    return () => clearInterval(interval);
+  }, [currentBgIndex]);
+
+  // Animate on imageSrc change
+  useEffect(() => {
+    if (imgRef.current) {
+      gsap.fromTo(
+  imgRef.current,
+  {
+    opacity: 0,
+    scale: 1.02,
+    filter: "blur(4px)",
+  },
+  {
+    opacity: 1,
+    scale: 1,
+    filter: "blur(0px)",
+    duration: 1.6,
+    ease: "expo.out",
+  }
+);
+
+    }
+  }, [imageSrc]);
+////////////////////////////
   // FAQ
   const faqs = [
     {
@@ -272,37 +328,24 @@ const Home = () => {
 
   // for testinomial
   const testimonials = [
-    {
-      name: "Mrs. Pavan Surekha",
-      role: "Ramky harmony",
-      text: (
-        <>
-          Aruh Koncepts made our <br /> renovation easy and delivered <br />{" "}
-          beautiful, lasting results
-        </>
-      ),
-      image:
-        "https://tse1.mm.bing.net/th/id/OIP.y992YJbARnndaTJ_41Os8AHaHZ?w=719&h=718&rs=1&pid=ImgDetMain&o=7&rm=3", // Replace with actual image URL
-    },
+
     {
       name: "Mr. Hari Prasad",
-      role: "Jaya bheri trend set",
+      role: "Jayabheri Trendset",
       text: (
         <>
-          Aruh Koncepts made our <br /> renovation easy and delivered <br />{" "}
-          beautiful, lasting results
+          “The dedication and passion of <br />Aruh Koncepts shine through in <br />every detail  our space now feels <br />inspiring and truly our own.”
         </>
       ),
       image:
         "https://tse1.mm.bing.net/th/id/OIP.y992YJbARnndaTJ_41Os8AHaHZ?w=719&h=718&rs=1&pid=ImgDetMain&o=7&rm=3",
     },
     {
-      name: "Mrs. Rajeev",
-      role: "Mahaveer",
+      name: "Mrs. Pavan Surekha",
+      role: "Ramky Harmony",
       text: (
         <>
-          Aruh Koncepts made our <br /> renovation easy and delivered <br />{" "}
-          beautiful, lasting results
+          “Aruh Koncepts turned our house <br />into a home with interiors that feel <br />both modern and timeless. Their <br /> attention to detail was truly <br /> impressive.”
         </>
       ),
       image:
@@ -310,36 +353,33 @@ const Home = () => {
     },
 
     {
-      name: "Mrs. Pavan Surekha",
+      name: "Mrs. Swathi",
       role: "Ramky harmony",
       text: (
         <>
-          Aruh Koncepts made our <br /> renovation easy and delivered <br />{" "}
-          beautiful, lasting results
+          “From start to finish, the process <br /> was seamless. The designs were <br />thoughtful, practical, and tailored to <br />our needs.”
         </>
       ),
       image:
         "https://tse1.mm.bing.net/th/id/OIP.y992YJbARnndaTJ_41Os8AHaHZ?w=719&h=718&rs=1&pid=ImgDetMain&o=7&rm=3", // Replace with actual image URL
     },
     {
-      name: "Mr. Hari Prasad",
-      role: "Jaya bheri trend set",
+      name: "Mrs. Ramanjanelyulu",
+      role: "Individual Villa",
       text: (
         <>
-          Aruh Koncepts made our <br /> renovation easy and delivered <br />{" "}
-          beautiful, lasting results
+          “The creativity and precision of <br /> Aruh Koncepts exceeded our <br /> expectations. Every corner of our <br />space feels carefully designed.”
         </>
       ),
       image:
         "https://tse1.mm.bing.net/th/id/OIP.y992YJbARnndaTJ_41Os8AHaHZ?w=719&h=718&rs=1&pid=ImgDetMain&o=7&rm=3",
     },
     {
-      name: "Mrs. Rajeev",
-      role: "Mahaveer",
+      name: "Mrs. Vijaya",
+      role: "Independent Villa",
       text: (
         <>
-          Aruh Koncepts made our <br /> renovation easy and delivered <br />{" "}
-          beautiful, lasting results
+          “They listened closely to our ideas <br />and transformed them into a space <br /> that is beautiful, functional, and <br />uniquely ours.”
         </>
       ),
       image:
@@ -347,36 +387,33 @@ const Home = () => {
     },
 
     {
-      name: "Mrs. Pavan Surekha",
-      role: "Ramky harmony",
+      name: "Mrs. Prashanth",
+      role: "Ramky Kosmos",
       text: (
         <>
-          Aruh Koncepts made our <br /> renovation easy and delivered <br />{" "}
-          beautiful, lasting results
+          “Aruh Koncepts delivered exactly <br /> what we were looking for  warm, <br /> inviting interiors that still look <br /> stylish and professional.”
         </>
       ),
       image:
         "https://tse1.mm.bing.net/th/id/OIP.y992YJbARnndaTJ_41Os8AHaHZ?w=719&h=718&rs=1&pid=ImgDetMain&o=7&rm=3", // Replace with actual image URL
     },
     {
-      name: "Mr. Hari Prasad",
-      role: "Jaya bheri trend set",
+      name: "Mrs. Swathi",
+      role: "Aparna Cyber Scape",
       text: (
         <>
-          Aruh Koncepts made our <br /> renovation easy and delivered <br />{" "}
-          beautiful, lasting results
+          “What we loved most was their <br /> collaborative approach. They kept <br />us involved at every stage and <br />made the whole experience stress- <br />free.”
         </>
       ),
       image:
         "https://tse1.mm.bing.net/th/id/OIP.y992YJbARnndaTJ_41Os8AHaHZ?w=719&h=718&rs=1&pid=ImgDetMain&o=7&rm=3",
     },
     {
-      name: "Mrs. Rajeev",
-      role: "Mahaveer",
+      name: "Mrs. Madhavi Venkateshwar",
+      role: "Marina Skies",
       text: (
         <>
-          Aruh Koncepts made our <br /> renovation easy and delivered <br />{" "}
-          beautiful, lasting results
+          “Aruh Koncepts reimagined our <br /> space with elegance and <br /> practicality. It’s a design we’ll <br /> cherish for years to come.”
         </>
       ),
       image:
@@ -384,41 +421,28 @@ const Home = () => {
     },
 
     {
-      name: "Mrs. Pavan Surekha",
-      role: "Ramky harmony",
+      name: "Mrs. Shirisha Prashant",
+      role: "Independent House",
       text: (
         <>
-          Aruh Koncepts made our <br /> renovation easy and delivered <br />{" "}
-          beautiful, lasting results
+          “Their designs not only enhanced <br />the look of our home but also <br /> improved how we use the space <br /> every day. Truly transformative <br />work.”
         </>
       ),
       image:
         "https://tse1.mm.bing.net/th/id/OIP.y992YJbARnndaTJ_41Os8AHaHZ?w=719&h=718&rs=1&pid=ImgDetMain&o=7&rm=3", // Replace with actual image URL
     },
     {
-      name: "Mr. Hari Prasad",
-      role: "Jaya bheri trend set",
+      name: "Mr. Raman",
+      role: "My Home Avatar",
       text: (
         <>
-          Aruh Koncepts made our <br /> renovation easy and delivered <br />{" "}
-          beautiful, lasting results
+          “Aruh Koncepts blended creativity <br />with functionality, giving us interiors <br />that feel both sophisticated and <br />comfortable for everyday living.”
         </>
       ),
       image:
         "https://tse1.mm.bing.net/th/id/OIP.y992YJbARnndaTJ_41Os8AHaHZ?w=719&h=718&rs=1&pid=ImgDetMain&o=7&rm=3",
     },
-    {
-      name: "Mrs. Rajeev",
-      role: "Mahaveer",
-      text: (
-        <>
-          Aruh Koncepts made our <br /> renovation easy and delivered <br />{" "}
-          beautiful, lasting results
-        </>
-      ),
-      image:
-        "https://tse1.mm.bing.net/th/id/OIP.y992YJbARnndaTJ_41Os8AHaHZ?w=719&h=718&rs=1&pid=ImgDetMain&o=7&rm=3",
-    },
+
 
   ];
 
@@ -430,57 +454,72 @@ const Home = () => {
       title: "Residential",
       description: (
         <>
-          Creating warm, personalized spaces that reflect your{" "}
-          <br className="hidden lg:inline" />
-          lifestyle – from cozy apartments to spacious{" "}
-          <br className="hidden lg:inline" />
+          Creating warm, personalized spaces that reflect your
+         
+          lifestyle – from cozy apartments to spacious
+        
           villas.
         </>
       ),
-      image: service2,
+      image: hService1,
     },
 
     {
       title: "Commercial",
-      description:
-        "Functional and aesthetic designs tailored for offices, retail, and business spaces.",
-      image:
-        "https://images.livspace-cdn.com/plain/https://d3gq2merok8n5r.cloudfront.net/abhinav/ond-1634120396-Obfdc/ond-2022-1664872805-f0ijv/mbr-1664872893-qeyQW/br-1666881566-g8ezJ.jpg",
+      description:(
+       <>
+       Designing smart, impactful business spaces that boost productivity, reflect <br /> brand identity, and leave a lasting professional impression.
+       </>
+      ),
+      image: hService2,
     },
     {
       title: "Turnkey Interior Solutions",
       description:
-        "End-to-end solutions for designing, building, and delivering your dream space.",
-      image:
-        "https://chiedesign.in/wp-content/uploads/2022/05/Luxury-Interior-Design-Living-Room.jpg",
+       (<>
+       Delivering end-to-end turnkey solutions — from concept to completion — ensuring seamless design, execution, and handover of spaces tailored to your vision.
+       </>),
+      image: hService3,
     },
     {
       title: "3D Visualization & Conceptual Design",
       description:
-        "High-quality 3D renders to help you visualize the space before execution.",
-      image:
-        "https://images.livspace-cdn.com/plain/https://d3gq2merok8n5r.cloudfront.net/abhinav/ond-1634120396-Obfdc/ond-2022-1664872805-f0ijv/mbr-1664872893-qeyQW/mb-op11-1-1-1666273596-52elL.jpg",
+        (
+          <>
+          Bringing ideas to life with realistic 3D visuals and thoughtful concepts — <br />helping you see and shape your dream space before it’s built.
+          </>
+        ),
+      image: hService4,
     },
     {
       title: "Renovation & Remodeling",
       description:
-        "Transform your space with our innovative renovation and remodeling services.",
-      image:
-        "https://static.asianpaints.com/content/dam/asianpaintsbeautifulhomes/gallery/bedroom/a-modern-and-chic-bedroom-design-with-an-l-shaped-wardrobe/chic-bedroom.jpg",
+       (
+        <>
+        Transforming existing spaces with fresh ideas and smart design — <br />from modern upgrades to complete makeovers that blend style, comfort,<br /> and functionality.
+        </>
+       ),
+      image: hService5,
     },
     {
       title: "Custom Furniture & Decor",
       description:
-        "Unique, handcrafted furniture and décor tailored to your style.",
-      image:
-        "https://tse1.mm.bing.net/th/id/OIP.-1eeWEBBVvLa0R6tQrmNPgHaFu?w=622&h=481&rs=1&pid=ImgDetMain&o=7&rm=3",
+       (
+        <>
+        Crafting unique, functional pieces that bring character and comfort to your <br /> home — designed to suit every style, space, and story.
+        </>
+       ),
+      image: hService6,
     },
     {
       title: "Vastu Consultation",
       description:
-        "Enhance harmony and positive energy in your space through Vastu principles.",
-      image:
-        "https://cf.ltkcdn.net/interiordesign/images/orig/226437-2117x1416-turquoise-and-tan-living-room.jpg",
+        (
+          <>
+          Harmonizing your home with positive energy — guided by Vastu principles <br />for balance, well-being, and prosperity.
+          </>
+        ),
+      image: hService7,
     },
   ];
   ////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -548,7 +587,8 @@ const Home = () => {
               data-aos-delay="100"
             >
               <img
-                src={hero}
+               ref={imgRef}
+                 src={imageSrc}
                 alt="Interior Design"
                 className="w-full h-full object-cover"
                 loading="eager" // preload for LCP
@@ -640,7 +680,8 @@ const Home = () => {
           <div className="w-full relative mx-auto md:hidden px-4 py-2" data-aos="fade-up" data-aos-duration="1000">
             {/* Background Image */}
             <img
-              src={hero}
+             ref={imgRef}
+                 src={imageSrc}
               alt="Interior Design"
               className="w-full h-[320px] object-cover rounded-2xl"
               data-aos="zoom-in"
@@ -1065,7 +1106,7 @@ const Home = () => {
                 {/* Caption Box */}
                 <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 w-[93%] bg-white p-4 rounded-xl shadow-lg">
                   <h1 className="text-lg font-bold text-black text-start">
-                    Willow House
+                    Residencial Interior
                   </h1>
                   <p className="text-sm text-[#000000A3] text-start">
                     Soft, Serene interiors designed for relaxed family living

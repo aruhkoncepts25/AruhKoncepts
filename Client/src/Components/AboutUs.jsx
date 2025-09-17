@@ -5,8 +5,11 @@ import about1 from '../assets/AboutUs/about-1.jpg';
 import about2 from '../assets/AboutUs/about-2.jpg';
 import about3 from "../assets/AboutUs/about-3.png";
 import about4 from "../assets/AboutUs/about-4.png";
-import about5 from "../assets/AboutUs/about-5.png";
-import about6 from "../assets/AboutUs/about-6.png";
+import about5 from "../assets/AboutUs/about5.webp";
+import about6 from "../assets/AboutUs/about6.webp";
+
+
+
 import icon1 from "../assets/AboutUs/icon1.png";
 import icon2 from "../assets/AboutUs/icon2.png";
 import icon3 from "../assets/AboutUs/icon3.png";
@@ -38,8 +41,8 @@ const AboutUs = () => {
   const team = [
     { name: "Alexander", role: "Founder", image: about3 },
     { name: "Madona", role: "Co-Founder", image: about4 },
-    // { name: "Madona", role: "Interior Designer", image: about5 },
-    // { name: "Madona", role: "Interior Designer", image: about6 },
+    { name: "Ms. Nirmala", role: "Creative Designer", image: about5 },
+    { name: "Mr. Upendra", role: "Creative Designer", image: about6 },
   ];
 
   return (
@@ -138,7 +141,7 @@ const AboutUs = () => {
 
 <div className="mt-10 flex justify-center">
  {/* <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8"> */}
- <div className="grid grid-cols-1  md:grid-cols-2  gap-14">
+ <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-4  gap-14">
 
       {team.map((member, idx) => (
         <div
