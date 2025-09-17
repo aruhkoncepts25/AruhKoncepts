@@ -3,12 +3,15 @@ import "aos/dist/aos.css";
 import "../Style/AboutUs.css"
 import about1 from '../assets/AboutUs/about-1.jpg';
 import about2 from '../assets/AboutUs/about-2.jpg';
-import about3 from "../assets/AboutUs/about-3.png";
-// import about4 from "../assets/AboutUs/about-4.png";
-import about4 from "../assets/AboutUs/about4.jpg";
 
-import about5 from "../assets/AboutUs/about5.webp";
-import about6 from "../assets/AboutUs/about6.webp";
+
+import about4 from "../assets/AboutUs/about4.jpg";  // bich ke liye Meet our founder wlala
+import about3 from "../assets/AboutUs/about3.jpg"; // meet our team
+
+import about5 from "../assets/AboutUs/about5.webp";// meet our team
+
+import about6 from "../assets/AboutUs/about6.webp";// meet our team
+
 
 
 
@@ -42,7 +45,7 @@ const AboutUs = () => {
 
   const team = [
     // { name: "Alexander", role: "Founder", image: about },
-    { name: "Mounish Kumar N ", role: "CEO & Founder", image: about4 },
+    { name: "Mr. Numaan Siddiqui ", role: "Project Lead ", image: about3 },
     { name: "Ms. Nirmala", role: "Creative Designer", image: about5 },
     { name: "Mr. Upendra", role: "Creative Designer", image: about6 },
   ];
@@ -64,10 +67,6 @@ const AboutUs = () => {
             <div className="flex flex-col lg:flex-row items-center justify-between gap-12 mt-12">
 
               <div className="md:w-2/2">
-                {/* <h2 className="text-lg md:text-2xl lg:text-3xl leading-relaxed text-gray-800">
-                  <span className="font-bold">Aruhkoncepts</span> is a young dynamic place
-                  where we make things happen, by keeping it simple. Well known for designing residential & office spaces in Hyderabad.
-                </h2> */}
                 <h2 className="text-lg leading-relaxed text-gray-800">
                   AK Interiors is Hyderabad based Interior trunke contracting firm. One of the applauded & trendsetters in Interior Contracting Industry. Our unique way of 'giving Ideas to quality work' has helped AK make quantifiable value delivery in Projects. We have trained carpenters, specialized skill set personals expertise and work style, to the site engineers that represent us and to the managerial team that forms the core of the firm-AK is constantly evolving. Also having worked with the best of architects over a period of time. We have built a reputation of delivering excellence in quality within the stipulated time. Our commitment to offer premium quality output by focusing on creativity and Innovative ideas, are helping us to make the potential market for our firm.
                 </h2>
@@ -128,6 +127,64 @@ const AboutUs = () => {
           </div>
         </section>
 
+        {/* // Meet our Founder  */}
+
+<section className="bg-white">
+  <div className="w-[90%] py-12 mx-auto px-4 sm:px-6 lg:px-8">
+    <h2 className="text-3xl lg:text-4xl font-bold text-black mb-10 text-center md:text-start">
+      Meet Our Founder
+    </h2>
+
+    <div className="max-w-6xl mx-auto mt-32">
+      <div className="flex flex-col md:flex-row items-center md:items-start justify-center gap-y-10 md:gap-x-22">
+        {/* Image Section */}
+        <div className="relative w-64 h-96 sm:w-68 sm:h-[22rem]">
+          {/* Gradient Background Shape */}
+          <div
+            className="absolute -top-6 -left-6 w-full h-full rounded-tl-[0%] rounded-tr-[40%] rounded-br-[50%] rounded-bl-[50%]"
+            style={{
+              background:
+                'linear-gradient(180deg, rgba(20, 34, 65, 1) 0%, rgba(51, 87, 167, 1) 100%)',
+            }}
+          ></div>
+
+          {/* Blue Outline + Image */}
+          <div
+            className="relative w-full h-full rounded-tl-[0%] rounded-tr-[40%] rounded-br-[0%] rounded-bl-[50%] overflow-hidden"
+            style={{
+              boxShadow: '0 0 0 4px #2563eb', // blue-600
+            }}
+          >
+            <img
+              src={about4}
+              alt="Founder"
+              className="w-full h-full object-cover"
+            />
+          </div>
+        </div>
+
+        {/* Founder Info */}
+        <div className="flex-1 text-center md:text-left px-2 sm:px-4">
+          <h3 className="text-2xl sm:text-3xl font-bold text-[#000000] mb-3">
+            Mr. Mounesh Kumar
+          </h3>
+          <p className="text-[#585858] font-medium mb-3 text-base sm:text-lg">
+            CEO & Founder
+          </p>
+          <p className="text-[#1A1A1A] leading-relaxed text-sm sm:text-base max-w-xl mx-auto md:mx-0">
+            The founder of Aruh Koncepts,<span className="font-bold italic">an award-winning creative designer </span>
+ brings together a shared passion for design, planning, and visual storytelling. With creativity, precision, and vision, they shape every project into a space that reflects both functionality and personality, turning ideas into environments that truly feel like home.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+
+
    {/* Meet our Team  */}
 
         <section className="w-full bg-white py-18">
@@ -143,28 +200,38 @@ const AboutUs = () => {
 
 <div className="mt-10 flex justify-center">
  {/* <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8"> */}
- <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-4  gap-14">
+<div className="max-w-6xl mx-auto px-4">
 
-      {team.map((member, idx) => (
-        <div
-          key={idx}
-          className="relative bg-white p-2 border border-[#C0B0B0] shadow-md hover:shadow-lg transition-shadow duration-300 overflow-hidden"
-          data-aos="zoom-in"
-          data-aos-delay={idx * 150}
-        >
-          <img
-            src={member.image}
-            alt={member.name}
-            className="w-full h-100 object-cover  "
-          />
-  
-             <div className=" bg-white/90 backdrop-blur-md text-black px-4 py-2 rounded-lg">
-            <h3 className="text-lg font-semibold">{member.name}</h3>
-            <p className="text-sm">{member.role}</p>
-          </div>
-        </div>
-      ))}
+<div className="flex flex-wrap justify-center gap-10">
+  {team.map((member, index) => (
+    <div
+      key={index}
+      className="w-64 rounded-b-xl  overflow-hidden p-3" // padding added here
+      style={{
+        background: 'linear-gradient(180deg, rgba(20,34,65,1) 0%, rgba(50,84,160,1) 100%)',
+        borderRadius: '8rem 8rem 0rem 0rem',
+      }}
+    >
+      {/* Image container without border, with full width */}
+      <div className="relative w-full h-80 rounded-t-[140px] overflow-hidden">
+        <img
+          src={member.image}
+          alt={member.name}
+          className="w-full h-full object-cover rounded-t-[140px]" // round corners on image as well
+        />
+      </div>
+
+      {/* Bottom box text */}
+      <div className="text-center py-4">
+        <h3 className="text-white font-semibold text-lg">{member.name}</h3>
+        <p className="text-white text-sm">{member.role}</p>
+      </div>
     </div>
+  ))}
+</div>
+
+
+      </div>
 </div>
    
   </div>
