@@ -196,8 +196,6 @@ const Footer = () => {
                 <li><Link to="/footerhome" className=" text-[#FFFFFFA3] hover:underline">Home</Link></li>
                 <li><Link to="/footerAbout" className=" text-[#FFFFFFA3] hover:underline">About Us</Link></li>
                 <li><Link to="/#contact" className='text-[#FFFFFFA3]'>Contact</Link></li>
-                {/* <li><a href="#" className="hover:underline text-[#FFFFFFA3]">Checkout</a></li>
-                <li><Link to="/footerservice" className="hover:underline text-[#FFFFFFA3]">Service Page</Link></li> */}
               </ul>
             </div>
 
@@ -205,10 +203,10 @@ const Footer = () => {
             <div>
               <h2 className="font-semibold mb-2">Projects</h2>
               <ul className="space-y-1 text-sm">
-                <li className='text-[#FFFFFFA3]'>Residential Projects</li>
-                <li className='text-[#FFFFFFA3]'>Commercial Projects</li>
-                <li className='text-[#FFFFFFA3]'>Corporate Projects</li>
-                <li className='text-[#FFFFFFA3]'>TurnKey Interior Projects</li>
+                <li className='text-[#FFFFFFA3]'><Link to="/footerResidentialProject" className='hover:underline'>Residential Projects</Link></li>
+                <li className='text-[#FFFFFFA3]'><Link to="/footerCommercialProject" className='hover:underline'>Commercial Projects</Link></li>
+                <li className='text-[#FFFFFFA3]'><Link to="/footerCorporateProject" className='hover:underline'>Corporate Projects</Link></li>
+                <li className='text-[#FFFFFFA3]'><Link to="/footerTurnKeyProject" className='hover:underline'>TurnKey Interior Projects</Link></li>
               </ul>
             </div>
           </div>
