@@ -31,7 +31,7 @@ const Footer = () => {
             <h2 className="font-semibold mb-4">Quick Links</h2>
             <ul className="space-y-1 text-sm">
               <li><Link to="/footerhome" className="hover:underline">Home</Link></li>
-              <li><Link href="/footerAbout" className="hover:underline">About Us</Link></li>
+              <li><Link to="/footerAbout" className="hover:underline">About Us</Link></li>
               <li><Link to="/#contact">Contact</Link></li>
               {/* <li><a href="#" className="hover:underline">Checkout</a></li>
               <li><Link to="/footerservice" className="hover:underline">Service Page</Link></li> */}
@@ -194,7 +194,7 @@ const Footer = () => {
               <h2 className="font-semibold mb-2">Quick Links</h2>
               <ul className="space-y-1 text-sm ">
                 <li><Link to="/footerhome" className=" text-[#FFFFFFA3] hover:underline">Home</Link></li>
-                <li><a href="#" className=" text-[#FFFFFFA3] hover:underline">Portfolio</a></li>
+                <li><Link to="/footerAbout" className=" text-[#FFFFFFA3] hover:underline">About Us</Link></li>
                 <li><Link to="/#contact" className='text-[#FFFFFFA3]'>Contact</Link></li>
                 {/* <li><a href="#" className="hover:underline text-[#FFFFFFA3]">Checkout</a></li>
                 <li><Link to="/footerservice" className="hover:underline text-[#FFFFFFA3]">Service Page</Link></li> */}
