@@ -124,7 +124,7 @@ useEffect(() => {
           </div>
 
           {/* Right: Menu items in two columns */}
-          <div className="flex gap-x-12 text-black text-4xl">
+          <div className="flex gap-x-25 md:gap-x-12 text-black text-xl md:text-4xl">
             <div className="flex flex-col  space-y-4  items-start">
               <Link
                 to="/#home"
