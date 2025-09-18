@@ -127,61 +127,61 @@ const AboutUs = () => {
               Meet Our Founder
             </h2>
 
-            <div className="max-w-6xl mx-auto mt-24 md:mt-36">
-              <div className="flex flex-col md:flex-row items-center md:items-start justify-center gap-y-10 md:gap-x-22">
-                {/* Image Section */}
-                <div className="relative w-60 h-96 sm:w-68 sm:h-[22rem]">
-                  {/* Gradient Background Shape */}
-                  <div
-                    className="absolute -top-10 -left-7 w-full h-full rounded-tl-[0%] rounded-tr-[40%] rounded-br-[50%] rounded-bl-[50%]"
-                    style={{
-                      background:
-                        'linear-gradient(180deg, rgba(20, 34, 65, 1) 0%, rgba(51, 87, 167, 1) 100%)',
-                    }}
-                  ></div>
+         <div className="max-w-6xl mx-auto mt-24 md:mt-36">
+  <div className="flex flex-col md:flex-row items-center md:items-start justify-center gap-y-10 md:gap-x-12 lg:gap-x-22">
+    {/* Image Section */}
+    <div className="relative w-52 h-72 sm:w-60 sm:h-96 md:w-68 md:h-[22rem]">
+      {/* Gradient Background Shape */}
+      <div
+        className="absolute -top-10 -left-7 w-full h-full rounded-tl-[0%] rounded-tr-[40%] rounded-br-[50%] rounded-bl-[50%]"
+        style={{
+          background:
+            'linear-gradient(180deg, rgba(20, 34, 65, 1) 0%, rgba(51, 87, 167, 1) 100%)',
+        }}
+      ></div>
 
-                  {/* Blue Outline + Image */}
-                  <div
-                    className="relative w-full h-full rounded-tl-[0%] rounded-tr-[40%] rounded-br-[40%] rounded-bl-[50%] overflow-hidden"
-                    style={{
-                      boxShadow: '0 0 0 4px #2563eb', // blue-600
-                    }}
-                  >
-                    <img
-                      src={about4}
-                      alt="Founder"
-                      className="w-full h-full object-cover"
-                    />
-                  </div>
-                </div>
+      {/* Blue Outline + Image */}
+      <div
+        className="relative w-full h-full rounded-tl-[0%] rounded-tr-[40%] rounded-br-[40%] rounded-bl-[50%] overflow-hidden"
+        style={{
+          boxShadow: '0 0 0 4px #2563eb',
+        }}
+      >
+        <img
+          src={about4}
+          alt="Founder"
+          className="w-full h-full object-cover"
+        />
+      </div>
+    </div>
 
-                {/* Founder Info */}
-                <div className="flex-1 text-center md:text-left px-2 sm:px-4 relative top-[-50px]">
-                  <h3 className="text-2xl sm:text-3xl font-bold text-[#000000] mb-3">
-                    Mr. Mounesh Kumar
-                  </h3>
-                  <p className="text-[#585858] font-medium mb-3 text-base sm:text-lg">
-                    CEO & Founder
-                  </p>
-                  <p className="text-[#1A1A1A] leading-relaxed text-sm sm:text-base max-w-xl mx-auto md:mx-0">
-                    Mounish Kumar, <span className="font-bold italic">Founder & Creative Head of Aruh Koncept</span>, is a Mechanical Engineer by qualification and an Interior Designer by passion. With a strong technical background, he combines  <span className="font-medium italic">Interior engineering ,precision, innovative thinking, and artistic vision</span> in every project. His journey into interiors began in <span className="font-medium italic">2015</span>, inspired by <span className="font-medium italic">Interior products design, space functionality, and the art of building environments that inspire</span>. What started as a passion soon grew into a purposeful career, leading to the creation of Aruh Koncept.</p>
+    {/* Founder Info */}
+    <div className="flex-1 text-start md:text-left px-2 sm:px-4 md:mt-10 lg:mt-0">
+      <h3 className="text-2xl sm:text-3xl font-bold text-[#000000] mb-3">
+        Mr. Mounesh Kumar
+      </h3>
+      <p className="text-[#585858] font-medium mb-3 text-base sm:text-lg">
+        CEO & Founder
+      </p>
+      <p className="text-[#1A1A1A] leading-relaxed mt-4 text-sm sm:text-base max-w-xl mx-auto md:mx-0">
+        Mounish Kumar, <span className="font-bold italic">Founder & Creative Head of Aruh Koncept</span>, is a Mechanical Engineer by qualification and an Interior Designer by passion. With a strong technical background, he combines <span className="font-medium italic">Interior engineering, precision, innovative thinking, and artistic vision</span> in every project. His journey into interiors began in <span className="font-medium italic">2015</span>, inspired by <span className="font-medium italic">Interior products design, space functionality, and the art of building environments that inspire</span>. What started as a passion soon grew into a purposeful career, leading to the creation of Aruh Koncept.
+      </p>
 
-<p className="text-[#1A1A1A] leading-relaxed text-sm sm:text-base max-w-xl mx-auto md:mx-0 mt-3"> Guided by a commitment to <span className="font-medium italic">ethical practices</span> and the values of working with <span className="font-medium italic">honesty, integrity, and transparency</span>, Mounish has built a reputation for trust and innovation. With a clear vision that <span className="font-medium italic">every space should reflect the personality, values, and purpose of its users</span>, he continues to deliver designs that balance creativity with responsibility, shaping spaces that inspire and endure.
-                  </p>
-                <blockquote
-  className="border-l-4 border-white italic text-black text-sm mt-6"
+      <p className="text-[#1A1A1A] leading-relaxed text-sm sm:text-base max-w-xl mx-auto md:mx-0 mt-3">
+        Guided by a commitment to <span className="font-medium italic">ethical practices</span> and the values of working with <span className="font-medium italic">honesty, integrity, and transparency</span>, Mounish has built a reputation for trust and innovation. With a clear vision that <span className="font-medium italic">every space should reflect the personality, values, and purpose of its users</span>, he continues to deliver designs that balance creativity with responsibility, shaping spaces that inspire and endure.
+      </p>
 
->
-  <p className="font-medium">
-    “Design is not only about how a space looks—it is about how it works,
-    how it <br /> feels,  and how ethically it is brought to life.”
-  </p>
-  <p className="text-right relative left-[-270px] text-sm not-italic mt-2">~ Mounish Kumar</p>
-</blockquote>
+      <blockquote className="border-l-4 border-white italic text-black text-sm mt-6">
+        <p className="font-medium">
+          “Design is not only about how a space looks—it is about how it works,
+          how it <br /> feels, and how ethically it is brought to life.”
+        </p>
+        <p className="text-right text-sm not-italic mt-2">~ Mounish Kumar</p>
+      </blockquote>
+    </div>
+  </div>
+</div>
 
-                </div>
-              </div>
-            </div>
           </div>
         </section>
 
