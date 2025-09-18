@@ -90,13 +90,15 @@ const Footer = () => {
           <div className='relative lg:right-[175px]'>
             <h2 className="font-semibold">Follow Us</h2>
             <div className="flex gap-3 mt-2 text-xl">
-              <a href="#" aria-label="Instagram" className="hover:opacity-80">
+              <a href="https://www.instagram.com/ak_designkoncepts?igsh=a3I2Ym9vbWI1bGoz" target="_blank"
+  rel="noopener noreferrer" aria-label="Instagram" className="hover:opacity-80">
                 <img src={instagram} alt="Instagram" className="h-4 w-4 object-contain" />
               </a>
               <a href="#" aria-label="Twitter" className="hover:opacity-80">
                 <img src={twitter} alt="Twitter" className="h-4 w-4 object-contain" />
               </a>
-              <a href="#" aria-label="Facebook" className="hover:opacity-80">
+              <a href="https://www.facebook.com/share/1VND5cUr6D/" target="_blank"
+  rel="noopener noreferrer" aria-label="Facebook" aria-label="Facebook" className="hover:opacity-80">
                 <img src={facebook} alt="Facebook" className="h-4 w-4 object-contain" />
               </a>
             </div>
@@ -213,13 +215,16 @@ const Footer = () => {
           <div className="flex flex-col items-center mt-6 order-6">
             <h2 className="font-semibold">Follow Us</h2>
             <div className="flex gap-6 md:gap-4 mt-2 text-xl">
-              <a href="#" aria-label="Instagram" className="hover:opacity-80">
+              <a href="https://www.instagram.com/ak_designkoncepts?igsh=a3I2Ym9vbWI1bGoz" target="_blank"
+  rel="noopener noreferrer" aria-label="Instagram" className="hover:opacity-80">
                 <img src={instagram} alt="Instagram" className="h-4 w-4 md:h-5 md:w-5 object-contain" />
               </a>
-              <a href="#" aria-label="Twitter" className="hover:opacity-80">
+              <a href="#" aria-label="Twitter" target="_blank"
+  rel="noopener noreferrer" className="hover:opacity-80">
                 <img src={twitter} alt="Twitter" className="h-4 w-4 md:h-5 md:w-5 object-contain" />
               </a>
-              <a href="#" aria-label="Facebook" className="hover:opacity-80">
+              <a href="https://www.facebook.com/share/1VND5cUr6D/" target="_blank"
+  rel="noopener noreferrer" aria-label="Facebook" className="hover:opacity-80">
                 <img src={facebook} alt="Facebook" className="h-4 w-4 md:h-5 md:w-5 object-contain" />
               </a>
             </div>
