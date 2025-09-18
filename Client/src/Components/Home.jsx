@@ -717,7 +717,7 @@ hero,hero11,hero12,hero13
               className="text-xl font-bold text-[#C9966B]"
               data-aos="fade-down"
             >
-              About
+              About Us
             </h1>
 
             <div className="mt-2 sm:mt-6 md:mt-4 lg:mt-20 flex flex-col lg:flex-row ...">

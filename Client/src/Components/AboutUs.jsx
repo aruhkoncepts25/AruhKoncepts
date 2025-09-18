@@ -3,18 +3,10 @@ import "aos/dist/aos.css";
 import "../Style/AboutUs.css"
 import about1 from '../assets/AboutUs/about-1.jpg';
 import about2 from '../assets/AboutUs/about-2.jpg';
-
-
 import about4 from "../assets/AboutUs/about4.jpg";  // bich ke liye Meet our founder wlala
 import about3 from "../assets/AboutUs/about3.jpg"; // meet our team
-
 import about5 from "../assets/AboutUs/about5.webp";// meet our team
-
 import about6 from "../assets/AboutUs/about6.webp";// meet our team
-
-
-
-
 import icon1 from "../assets/AboutUs/icon1.png";
 import icon2 from "../assets/AboutUs/icon2.png";
 import icon3 from "../assets/AboutUs/icon3.png";
@@ -202,7 +194,7 @@ const AboutUs = () => {
               {/* <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8"> */}
               <div className="w-[90%] mx-auto">
 
-                <div className="w-full flex flex-wrap justify-center md:justify-start gap-10">
+                <div className="w-full flex flex-wrap justify-center md:justify-between gap-10">
                   {team.map((member, index) => (
                     <div
                       key={index}
