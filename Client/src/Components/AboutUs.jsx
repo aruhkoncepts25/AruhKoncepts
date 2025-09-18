@@ -120,132 +120,148 @@ const AboutUs = () => {
         </section>
 
         {/* // Meet our Founder  */}
+<section className="bg-white" data-aos="fade-up" data-aos-duration="1000">
+  <div className="w-[90%]  mx-auto mt-12 px-4 sm:px-6 lg:px-8">
+    <h2 
+      className="text-3xl lg:text-4xl font-bold text-black mb-10 text-start"
+      data-aos="fade-right" 
+      data-aos-delay="200"
+      data-aos-duration="800"
+    >
+      Meet Our Founder
+    </h2>
 
-        <section className="bg-white">
-          <div className="w-[90%]  mx-auto mt-12 px-4 sm:px-6 lg:px-8">
-            <h2 className="text-3xl lg:text-4xl font-bold text-black mb-10 text-start">
-              Meet Our Founder
-            </h2>
+    <div className="max-w-6xl mx-auto mt-20 md:mt-18">
+      <div 
+        className="flex flex-col md:flex-row items-center md:items-center justify-center gap-y-10 md:gap-x-12 lg:gap-x-38"
+      >
+        {/* Image Section */}
+        <div 
+          className="relative w-52 h-72 sm:w-60 sm:h-96 md:w-68 md:h-[22rem]"
+          data-aos="zoom-in"
+          data-aos-delay="400"
+          data-aos-duration="1000"
+        >
+          {/* Gradient Background Shape */}
+          <div
+            className="absolute -top-10 -left-7 w-full h-full rounded-tl-[0%] rounded-tr-[30%] rounded-br-[0%] rounded-bl-[30%]"
+            style={{
+              background:
+                'linear-gradient(180deg, rgba(20, 34, 65, 1) 0%, rgba(51, 87, 167, 1) 100%)',
+            }}
+          ></div>
 
-            <div className="max-w-6xl mx-auto mt-20 md:mt-18">
-              <div className="flex flex-col md:flex-row items-center md:items-center justify-center gap-y-10 md:gap-x-12 lg:gap-x-38">
-
-                {/* Image Section */}
-                <div className="relative w-52 h-72 sm:w-60 sm:h-96 md:w-68 md:h-[22rem]">
-                  {/* Gradient Background Shape */}
-                  <div
-                    className="absolute -top-10 -left-7 w-full h-full rounded-tl-[0%] rounded-tr-[30%] rounded-br-[0%] rounded-bl-[30%]"
-                    style={{
-                      background:
-                        'linear-gradient(180deg, rgba(20, 34, 65, 1) 0%, rgba(51, 87, 167, 1) 100%)',
-                    }}
-                  ></div>
-
-                  {/* Blue Outline + Image */}
-                <div
-  className="relative w-full h-full rounded-tl-[0%] rounded-tr-[30%] rounded-br-[0%] rounded-bl-[30%] p-[4px] overflow-hidden"
-  style={{
-   background: 'linear-gradient(180deg, rgba(51, 87, 167, 1) 0%, rgba(20, 34, 65, 1) 100%)', // gradient border
-  }}
->
-  <div
-    className="w-full h-full rounded-tl-[0%] rounded-tr-[30%] rounded-br-[0%] rounded-bl-[30%] overflow-hidden"
-    style={{
-      background: 'linear-gradient(180deg, rgba(51, 87, 167, 1) 0%, rgba(20, 34, 65, 1) 100%)',
-    }}
-  >
-    <img
-      src={about4}
-      alt="Founder"
-      className="w-full h-full object-cover"
-    />
-  </div>
-</div>
-
-                </div>
-
-                {/* Founder Info */}
-                <div className="flex-1 text-start md:text-left px-2 sm:px-4 md:mt-10 lg:mt-0">
-                  <h3 className="text-2xl sm:text-3xl font-bold text-[#000000] mb-3">
-                    Mr. Mounesh Kumar
-                  </h3>
-                  <p className="text-[#585858] font-medium mb-3 text-base sm:text-lg">
-                    CEO & Founder
-                  </p>
-                  <p className="text-[#1A1A1A] leading-relaxed mt-4 text-sm sm:text-base max-w-3xl  md:mx-0">
-                    Mounish Kumar, <span className="font-bold italic">Founder & Creative Head of Aruh Koncept</span>, is a Mechanical Engineer by qualification and an Interior Designer by passion. With a strong technical background, he combines <span className="font-medium italic">Interior engineering, precision, innovative thinking, and artistic vision</span> in every project. His journey into interiors began in <span className="font-medium italic">2015</span>, inspired by <span className="font-medium italic">Interior products design, space functionality, and the art of building environments that inspire</span>. What started as a passion soon grew into a purposeful career, leading to the creation of Aruh Koncept.
-                  </p>
-
-                  <p className="text-[#1A1A1A] leading-relaxed text-sm sm:text-base max-w-3xl  md:mx-0 mt-3">
-                    Guided by a commitment to <span className="font-medium italic">ethical practices</span> and the values of working with <span className="font-medium italic">honesty, integrity, and transparency</span>, Mounish has built a reputation for trust and innovation. With a clear vision that <span className="font-medium italic">every space should reflect the personality, values, and purpose of its users</span>, he continues to deliver designs that balance creativity with responsibility, shaping spaces that inspire and endure.
-                  </p>
-
-                  <blockquote className="border-l-4 border-white italic text-black text-sm mt-6">
-                    <p className="font-medium">
-                      “Design is not only about how a space looks—it is about how it works,
-                      how it <br /> feels, and how ethically it is brought to life.”
-                    </p>
-                    <p className="text-right text-sm not-italic mt-2 relative lg:left-[-200px]">~ Mounish Kumar</p>
-                  </blockquote>
-                </div>
-
-
-              </div>
+          {/* Blue Outline + Image */}
+          <div
+            className="relative w-full h-full rounded-tl-[0%] rounded-tr-[30%] rounded-br-[0%] rounded-bl-[30%] p-[4px] overflow-hidden"
+            style={{
+              background: 'linear-gradient(180deg, rgba(51, 87, 167, 1) 0%, rgba(20, 34, 65, 1) 100%)',
+            }}
+          >
+            <div
+              className="w-full h-full rounded-tl-[0%] rounded-tr-[30%] rounded-br-[0%] rounded-bl-[30%] overflow-hidden"
+              style={{
+                background: 'linear-gradient(180deg, rgba(51, 87, 167, 1) 0%, rgba(20, 34, 65, 1) 100%)',
+              }}
+            >
+              <img
+                src={about4}
+                alt="Founder"
+                className="w-full h-full object-cover"
+              />
             </div>
-
           </div>
-        </section>
+        </div>
+
+        {/* Founder Info */}
+        <div 
+          className="flex-1 text-start md:text-left px-2 sm:px-4 md:mt-10 lg:mt-0"
+          data-aos="fade-left"
+          data-aos-delay="600"
+          data-aos-duration="1000"
+        >
+          <h3 className="text-2xl sm:text-3xl font-bold text-[#000000] mb-3">
+            Mr. Mounesh Kumar
+          </h3>
+          <p className="text-[#585858] font-medium mb-3 text-base sm:text-lg">
+            CEO & Founder
+          </p>
+          <p className="text-[#1A1A1A] leading-relaxed mt-4 text-sm sm:text-base max-w-3xl  md:mx-0">
+            Mounish Kumar, <span className="font-bold italic">Founder & Creative Head of Aruh Koncept</span>, is a Mechanical Engineer by qualification and an Interior Designer by passion. With a strong technical background, he combines <span className="font-medium italic">Interior engineering, precision, innovative thinking, and artistic vision</span> in every project. His journey into interiors began in <span className="font-medium italic">2015</span>, inspired by <span className="font-medium italic">Interior products design, space functionality, and the art of building environments that inspire</span>. What started as a passion soon grew into a purposeful career, leading to the creation of Aruh Koncept.
+          </p>
+
+          <p className="text-[#1A1A1A] leading-relaxed text-sm sm:text-base max-w-3xl  md:mx-0 mt-3">
+            Guided by a commitment to <span className="font-medium italic">ethical practices</span> and the values of working with <span className="font-medium italic">honesty, integrity, and transparency</span>, Mounish has built a reputation for trust and innovation. With a clear vision that <span className="font-medium italic">every space should reflect the personality, values, and purpose of its users</span>, he continues to deliver designs that balance creativity with responsibility, shaping spaces that inspire and endure.
+          </p>
+
+          <blockquote className="border-l-4 border-white italic text-black text-sm mt-6">
+            <p className="font-medium">
+              “Design is not only about how a space looks—it is about how it works,
+              how it <br /> feels, and how ethically it is brought to life.”
+            </p>
+            <p className="text-right text-sm not-italic mt-2 relative lg:left-[-200px]">~ Mounish Kumar</p>
+          </blockquote>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
         {/* Meet our Team  */}
 
-        <section className="w-full bg-white py-18">
-          <div className="w-[90%] mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 className="text-3xl lg:text-4xl font-bold text-black text-start">
-              Meet Our Team
-            </h2>
-            <p className="mt-6 text-gray-600 text-start mx-auto leading-relaxed">
-              The founders of Aruh Koncepts bring together a shared passion for design, planning, and visual storytelling. With creativity, precision, and vision, they shape every project into a space that reflects both functionality and personality, turning ideas into environments that truly feel like home.
-            </p>
+       <section className="w-full bg-white py-18" data-aos="fade-up" data-aos-duration="1000">
+  <div className="w-[90%] mx-auto px-4 sm:px-6 lg:px-8">
+    <h2
+      className="text-3xl lg:text-4xl font-bold text-black text-start"
+      data-aos="fade-right"
+      data-aos-delay="100"
+      data-aos-duration="800"
+    >
+      Meet Our Team
+    </h2>
+    <p
+      className="mt-6 text-gray-600 text-start mx-auto leading-relaxed"
+      data-aos="fade-left"
+      data-aos-delay="300"
+      data-aos-duration="800"
+    >
+      The founders of Aruh Koncepts bring together a shared passion for design, planning, and visual storytelling. With creativity, precision, and vision, they shape every project into a space that reflects both functionality and personality, turning ideas into environments that truly feel like home.
+    </p>
 
+    <div className="mt-10 flex justify-start">
+      <div className="w-[90%] mx-auto">
+        <div className="w-full flex flex-wrap justify-center md:justify-between gap-10">
+          {team.map((member, index) => (
+            <div
+              key={index}
+              className="w-64 rounded-b-xl overflow-hidden p-3"
+              style={{
+                background: 'linear-gradient(180deg, rgba(20,34,65,1) 0%, rgba(50,84,160,1) 100%)',
+                borderRadius: '8rem 8rem 0rem 0rem',
+              }}
+              data-aos="zoom-in"
+              data-aos-delay={400 + index * 150} // stagger cards with delay
+              data-aos-duration="800"
+            >
+              <div className="relative w-full h-80 rounded-t-[140px] overflow-hidden">
+                <img
+                  src={member.image}
+                  alt={member.name}
+                  className="w-full h-full object-cover rounded-t-[140px]"
+                />
+              </div>
 
-
-            <div className="mt-10 flex justify-start">
-              {/* <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8"> */}
-              <div className="w-[90%] mx-auto">
-
-                <div className="w-full flex flex-wrap justify-center md:justify-between gap-10">
-                  {team.map((member, index) => (
-                    <div
-                      key={index}
-                      className="w-64 rounded-b-xl  overflow-hidden p-3" // padding added here
-                      style={{
-                        background: 'linear-gradient(180deg, rgba(20,34,65,1) 0%, rgba(50,84,160,1) 100%)',
-                        borderRadius: '8rem 8rem 0rem 0rem',
-                      }}
-                    >
-                      {/* Image container without border, with full width */}
-                      <div className="relative w-full h-80 rounded-t-[140px] overflow-hidden">
-                        <img
-                          src={member.image}
-                          alt={member.name}
-                          className="w-full h-full object-cover rounded-t-[140px]" // round corners on image as well
-                        />
-                      </div>
-
-                      {/* Bottom box text */}
-                      <div className="text-center py-4">
-                        <h3 className="text-white font-semibold text-lg">{member.name}</h3>
-                        <p className="text-white text-sm">{member.role}</p>
-                      </div>
-                    </div>
-                  ))}
-                </div>
-
-
+              <div className="text-center py-4">
+                <h3 className="text-white font-semibold text-lg">{member.name}</h3>
+                <p className="text-white text-sm">{member.role}</p>
               </div>
             </div>
-
-          </div>
-        </section>
+          ))}
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
 
       </main>
