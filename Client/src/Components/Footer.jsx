@@ -98,7 +98,7 @@ const Footer = () => {
                 <img src={twitter} alt="Twitter" className="h-4 w-4 object-contain" />
               </a>
               <a href="https://www.facebook.com/share/1VND5cUr6D/" target="_blank"
-  rel="noopener noreferrer" aria-label="Facebook" aria-label="Facebook" className="hover:opacity-80">
+  rel="noopener noreferrer" aria-label="Facebook" className="hover:opacity-80">
                 <img src={facebook} alt="Facebook" className="h-4 w-4 object-contain" />
               </a>
             </div>
