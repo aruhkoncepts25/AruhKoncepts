@@ -26,14 +26,14 @@ const navigate = useNavigate();
     {
       id: 1,
       title: "Residencial Project",
-      description: "The focus was on building a professional, collaborative environment that blended functionality with sophistication, supporting both productivity and employee well-being.",
+      description: "The project began with a clear and thoughtful goal: to design a home that felt calm, welcoming, and functional for everyday living. The vision was not limited to just aesthetics. ",
       image: mproject1,
       link: "/Project"
     },
     {
       id: 2,
       title: "Commercial Project",
-      description: "The vision was to deliver a complete turnkey solution — from design to execution — ensuring a stylish, practical, and move-in-ready space with ease and precision.",
+      description: "The project aimed to create a functional, inviting commercial space that balanced efficiency with modern design, leaving a lasting impression on clients and employees alike.",
       image: mproject2,
       link: "/Project2"
     },
