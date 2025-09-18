@@ -1,4 +1,3 @@
-
 import { Api } from "./Api/Api";
 import { LazyLoadImage } from "react-lazy-load-image-component";  // LCP Means Big Imahe jo front pe rehti hai
 import { useState, useRef } from "react";
@@ -236,8 +235,7 @@ const Home = () => {
   }, [steps.length]);
 
 
-
-  //////////////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////////////
 
 // HOME section automatic slider 
 
@@ -569,7 +567,6 @@ hero,hero11,hero12,hero13
     });
   }, []);
 
-
   ///////////////////////////////////////////////////////////////////////
   return (
     <>
@@ -710,12 +707,7 @@ hero,hero11,hero12,hero13
   </div>
 </div>
 
-
-
-
         </section>
-
-
 
         {/* About Section */}
         <section className="about-section ">
@@ -1299,11 +1291,6 @@ hero,hero11,hero12,hero13
                   <p className="text-gray-700 mb-6">"{t.text}"</p>
 
                   <div className="flex items-center">
-                    {/* <img
-                      src={t.image}
-                      alt={t.name}
-                      className="w-12 h-12 rounded-full mr-4"
-                    /> */}
                     <div>
                       <h4 className="font-bold">{t.name}</h4>
                       <p className="text-sm text-gray-500">{t.role}</p>

@@ -12,9 +12,6 @@ import ind7 from '../../assets/insideService/include1.7.png'
 
 const Service2 = () => {
   const itemsPerRow = 3;
-
-
-
   const items = [
     {
       icon: ind1,

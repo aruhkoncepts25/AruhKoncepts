@@ -61,7 +61,7 @@ useEffect(() => {
           <Link to="/headNav" className="inline-block">
             <h1 className="text-xl font-bold flex items-center gap-2 cursor-pointer">
               <img src={logo} alt="Logo" className="h-8" />
-              <span className="bg-gradient-to-r from-[#AE8625] via-[#F7EF8A] to-[#D2AC47] bg-clip-text text-transparent font-bold">
+              <span className="bg-gradient-to-r from-[#d5a127] via-[#F7EF8A] to-[#D2AC47] bg-clip-text text-transparent font-bold">
                 Aruh Koncepts
               </span>
             </h1>

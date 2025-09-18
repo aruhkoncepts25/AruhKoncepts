@@ -1,4 +1,3 @@
-import React from 'react'
 import logo from "../assets/logo.png"
 import { Link } from 'react-router-dom';
 import { MdLocationOn, MdEmail } from "react-icons/md";
@@ -23,7 +22,7 @@ const Footer = () => {
                 Aruh Koncepts
               </span>
             </h1>
-            {/* <p className="mt-6 text-sm">Copyright © 2025</p> */}
+
           </div>
 
           {/* Quick Links */}
@@ -33,8 +32,7 @@ const Footer = () => {
               <li><Link to="/footerhome" className="hover:underline">Home</Link></li>
               <li><Link to="/footerAbout" className="hover:underline">About Us</Link></li>
               <li><Link to="/#contact">Contact</Link></li>
-              {/* <li><a href="#" className="hover:underline">Checkout</a></li>
-              <li><Link to="/footerservice" className="hover:underline">Service Page</Link></li> */}
+      
             </ul>
           </div>
 
@@ -123,9 +121,7 @@ const Footer = () => {
 
       </footer>
 
-
       {/* /// for mobile  */}
-
 
       <footer className="bg-[#142241] md:hidden text-white px-6 md:px-16 pt-6 md:py-10">
         {/* Top Section */}
@@ -139,7 +135,7 @@ const Footer = () => {
                 Aruh Koncepts
               </span>
             </h1>
-            {/* <p className="mt-4 text-sm">Copyright © 2025</p> */}
+        
           </div>
 
 
@@ -159,17 +155,6 @@ const Footer = () => {
   </a>
 </div>
 
-
-          {/* Contact
-          <div className="order-3">
-            <h2 className="font-semibold flex items-center gap-2">
-              <MdEmail /> Contact Us
-            </h2>
-            <p className="flex items-center text-[#FFFFFFA3] gap-2 mt-1">
-              <FiPhone /> +91 63098 92801
-            </p>
-            <p className='text-[#FFFFFFA3]'>arunkoncepts@gmail.com</p>
-          </div> */}
           {/* Contact */}
 <div className="order-3">
   <h2 className="font-semibold flex items-center gap-2">
@@ -185,7 +170,6 @@ const Footer = () => {
     arunkoncepts@gmail.com
   </a>
 </div>
-
 
           {/* Quick Links + Projects Side-by-Side on Mobile */}
           <div className="grid grid-cols-2 gap-6 md:hidden order-4">
@@ -255,11 +239,9 @@ const Footer = () => {
   >
     Zenith Studio
   </a>
-</p>
+  </p>
         </div>
       </footer>
-
-
     </>
   )
 }

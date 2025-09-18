@@ -8,7 +8,6 @@ import ind5 from "../../assets/insideService/include3.5.png";
 
 const Service3 = () => {
   const itemsPerRow = 3;
-
   const items = [
     {
       icon: ind1,

@@ -6,13 +6,8 @@ import ind2 from "../../assets/insideService/include5.2.png"
 import ind3 from "../../assets/insideService/include5.3.png"
 import ind4 from "../../assets/insideService/include5.4.png"
 
-
-
 const Service5 = () => {
   const itemsPerRow = 3;
-
-
-
   const items = [
     {
       icon: ind1,
@@ -115,10 +110,8 @@ for (let i = 0; i < items.length; i += itemsPerRow) {
         </React.Fragment>
       ))}
     </div>
-
   </div>
 </section>
-
     </>
   )
 }

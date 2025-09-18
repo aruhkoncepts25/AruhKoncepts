@@ -1,9 +1,7 @@
 import React, { useRef, useEffect } from 'react';
 import { Link } from 'react-router-dom'
 import { ChevronLeft, ChevronRight } from "lucide-react";
-// import mproject1 from "../assets/Project/Mproject-1.jpg";
 import mproject1 from "../assets/Project/Mproject-1.webp";
-
 import mproject2 from "../assets/Project/mproject2.jpg"
 import mproject3 from "../assets/Project/mproject3.jpg"
 import mproject4 from "../assets/Project/mproject4.jpg"
@@ -68,8 +66,6 @@ const navigate = useNavigate();
 
   return (
     <main className='overflow-hidden'>
-
-   
     <section className="w-full py-12 bg-gray-50">
       <div className="w-[90%] mx-auto pt-10 md:py-10">
         <h1 className="text-xl font-semibold text-[#C9966B] mb-6">Projects</h1>
