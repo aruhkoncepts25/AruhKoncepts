@@ -2,7 +2,7 @@ import React, { useEffect, useRef } from "react";
 import "../Style/Project.css";
 import project1 from "../assets/Project/Mproject-1.webp";
 import project2 from "../assets/Project/project-2.webp";
-import project3 from "../assets/Project/project-3.webp";
+import project3 from "../assets/Project/project31.jpg";
 import project4 from "../assets/Project/project-4.webp";
 import project5 from "../assets/Project/project-5.jpg";
 import project6 from "../assets/Project/project-6.png";
@@ -68,7 +68,7 @@ const Project = () => {
             {/* Left Content */}
             <div className="w-full md:w-2/3 mt-6">
               <h2 className="text-2xl md:text-3xl font-bold mb-1 md:mb-6 fade-slide">
-                Residential Interior Solutions
+                Residencial Project
               </h2>
               <p className="hidden lg:block text-gray-700 leading-relaxed mb-4 fade-slide">
                 The project began with a clear and thoughtful goal: to design a home that felt calm, welcoming, and functional for everyday living. The vision was not limited to just aesthetics but extended to creating a space that offered both comfort and meaning, reflecting the values, personality, and lifestyle of the family. The idea was to bring together relaxation and practicality in perfect harmony, ensuring that the home could serve as a peaceful retreat after long, busy days while still accommodating the various needs and routines of daily life. Every corner was to be planned with intention—whether it was a cozy space to unwind, a functional area to stay productive, or open layouts that encouraged connection and togetherness. The emphasis was on achieving balance: a design that exuded warmth and serenity while remaining durable and versatile enough to support the evolving needs of modern living.
@@ -78,12 +78,12 @@ const Project = () => {
               </p>
 
               <div className="space-y-2 mt-2 md:mt-6 text-gray-700 fade-slide">
-                <p className="flex gap-9 pb-1">
+                {/* <p className="flex gap-9 pb-1">
                   <span className="font-semibold">Client</span> <span>:</span>
                 </p>
                 <p className="flex gap-6 pb-1">
                   <span className="font-semibold">Service</span> <span>:</span>
-                </p>
+                </p> */}
                 <p className="hidden md:block text-gray-700 leading-relaxed">
                   The family had recently relocated and were looking for a design that truly reflected their lifestyle and sensibilities. They wanted their new home to feel like an extension of their personality, balancing elegance with functionality.
                 </p>

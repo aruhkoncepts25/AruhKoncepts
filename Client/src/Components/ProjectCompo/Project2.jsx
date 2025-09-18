@@ -84,63 +84,36 @@ const Project2 = () => {
           </h1>
 
           {/* Top Section */}
-          <div className="flex flex-col md:flex-row justify-between items-end mt-4 md:mt-2 gap-18">
+          <div className="flex flex-col md:flex-row justify-between items-start mt-6 md:mt-2 gap-18">
             {/* Left Content */}
             <div
               className="w-full md:w-2/2 mt-6"
               ref={(el) => textRefs.current.push(el)}
             >
               <h2 className="text-2xl md:text-3xl font-bold mb-1 md:mb-6">
-                Commercial
+                Commercial Project
               </h2>
               <p
                 className="hidden lg:block text-gray-700 leading-relaxed mb-4"
                 ref={(el) => textRefs.current.push(el)}
               >
-                The project began with a clear and thoughtful goal: to design a
-                home that felt calm, welcoming, and functional for everyday
-                living. The vision was not limited to just aesthetics but
-                extended to creating a space that offered both comfort and
-                meaning, reflecting the values, personality, and lifestyle of
-                the family. The idea was to bring together relaxation and
-                practicality in perfect harmony, ensuring that the home could
-                serve as a peaceful retreat after long, busy days while still
-                accommodating the various needs and routines of daily life.
-                Every corner was to be planned with intention—whether it was a
-                cozy space to unwind, a functional area to stay productive, or
-                open layouts that encouraged connection and togetherness. The
-                emphasis was on achieving balance: a design that exuded warmth
-                and serenity while remaining durable and versatile enough to
-                support the evolving needs of modern living.
+                The project was envisioned with a focused objective: to craft a commercial space that is professional, welcoming, and highly functional for day-to-day business operations. The design approach aimed to create an environment that enhances efficiency and productivity while seamlessly reflecting the company’s values, culture, and brand identity. By balancing functionality with aesthetics, the workspace was shaped to motivate and inspire employees, while also leaving a strong and lasting impression on clients, partners, and visitors.
               </p>
               <p
                 className="lg:hidden text-gray-700 leading-relaxed mb-6"
                 ref={(el) => textRefs.current.push(el)}
               >
-                The project began with a clear and focused goal: to design a
-                commercial space that felt professional, welcoming, and highly
-                functional for daily business operations. The vision was to
-                create an environment that not only supported efficiency and
-                productivity but also reflected the company’s values, culture,
-                and brand identity in every detail. The workplace was intended
-                to balance functionality with aesthetics, offering employees a
-                space that motivates and inspires them while also projecting a
-                strong and lasting impression on clients, partners, and
-                visitors. More than just a physical office, the idea was to
-                craft a space that seamlessly integrates work needs with
-                comfort, ensuring that every element—from layout and lighting to
-                materials and finishes—contributes to a cohesive and
-                forward-thinking design.
+                The project was envisioned with a focused objective: to craft a commercial space that is professional, welcoming, and highly functional for day-to-day business operations. The design approach aimed to create an environment that enhances efficiency and productivity while seamlessly reflecting the company’s values, culture, and brand identity. By balancing functionality with aesthetics, the workspace was shaped to motivate and inspire employees, while also leaving a strong and lasting impression on clients, partners, and visitors.
               </p>
 
               {/* Info Table */}
               <div className="space-y-2 mt-2 md:mt-6 text-gray-700">
-                <p className="flex gap-9 pb-1" ref={(el) => textRefs.current.push(el)}>
+                {/* <p className="flex gap-9 pb-1" ref={(el) => textRefs.current.push(el)}>
                   <span className="font-semibold">Client</span> <span>:</span>
                 </p>
                 <p className="flex gap-6 pb-1" ref={(el) => textRefs.current.push(el)}>
                   <span className="font-semibold">Service</span> <span>:</span>
-                </p>
+                </p> */}
                 <p className="text-gray-700 leading-relaxed" ref={(el) => textRefs.current.push(el)}>
                   The business had recently expanded and required a space that
                   truly mirrored its professional ethos. The leadership team

@@ -111,7 +111,7 @@ const Project3 = () => {
                 className="text-2xl md:text-3xl font-bold mb-1 md:mb-6"
                 ref={addToTextRefs}
               >
-                Corporate
+                Corporate Project
               </h2>
 
               <p 
@@ -129,12 +129,12 @@ const Project3 = () => {
               </p>
 
               <div className="space-y-2 mt-2 md:mt-6 text-gray-700">
-                <p className="flex gap-9 pb-1" ref={addToTextRefs}>
+                {/* <p className="flex gap-9 pb-1" ref={addToTextRefs}>
                   <span className="font-semibold">Client</span> <span>:</span>
                 </p>
                 <p className="flex gap-6 pb-1" ref={addToTextRefs}>
                   <span className="font-semibold">Service</span> <span>:</span>
-                </p>
+                </p> */}
                 <p className="hidden md:block text-gray-700 leading-relaxed" ref={addToTextRefs}>
                   The organization had recently expanded and was seeking a design that matched their evolving aspirations. They wanted their workspace to showcase modern aesthetics, paired with layouts that could adapt to the dynamic demands of their business.
                 </p>

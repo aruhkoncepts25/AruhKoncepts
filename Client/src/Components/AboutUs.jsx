@@ -127,7 +127,7 @@ const AboutUs = () => {
               Meet Our Founder
             </h2>
 
-            <div className="max-w-6xl mx-auto mt-24 md:mt-32">
+            <div className="max-w-6xl mx-auto mt-24 md:mt-36">
               <div className="flex flex-col md:flex-row items-center md:items-start justify-center gap-y-10 md:gap-x-22">
                 {/* Image Section */}
                 <div className="relative w-60 h-96 sm:w-68 sm:h-[22rem]">
@@ -156,7 +156,7 @@ const AboutUs = () => {
                 </div>
 
                 {/* Founder Info */}
-                <div className="flex-1 text-center md:text-left px-2 sm:px-4">
+                <div className="flex-1 text-center md:text-left px-2 sm:px-4 relative top-[-50px]">
                   <h3 className="text-2xl sm:text-3xl font-bold text-[#000000] mb-3">
                     Mr. Mounesh Kumar
                   </h3>
@@ -164,9 +164,21 @@ const AboutUs = () => {
                     CEO & Founder
                   </p>
                   <p className="text-[#1A1A1A] leading-relaxed text-sm sm:text-base max-w-xl mx-auto md:mx-0">
-                    The founder of Aruh Koncepts,<span className="font-bold italic">an award-winning creative designer </span>
-                    brings together a shared passion for design, planning, and visual storytelling. With creativity, precision, and vision, they shape every project into a space that reflects both functionality and personality, turning ideas into environments that truly feel like home.
+                    Mounish Kumar, <span className="font-bold italic">Founder & Creative Head of Aruh Koncept</span>, is a Mechanical Engineer by qualification and an Interior Designer by passion. With a strong technical background, he combines  <span className="font-medium italic">Interior engineering ,precision, innovative thinking, and artistic vision</span> in every project. His journey into interiors began in <span className="font-medium italic">2015</span>, inspired by <span className="font-medium italic">Interior products design, space functionality, and the art of building environments that inspire</span>. What started as a passion soon grew into a purposeful career, leading to the creation of Aruh Koncept.</p>
+
+<p className="text-[#1A1A1A] leading-relaxed text-sm sm:text-base max-w-xl mx-auto md:mx-0 mt-3"> Guided by a commitment to <span className="font-medium italic">ethical practices</span> and the values of working with <span className="font-medium italic">honesty, integrity, and transparency</span>, Mounish has built a reputation for trust and innovation. With a clear vision that <span className="font-medium italic">every space should reflect the personality, values, and purpose of its users</span>, he continues to deliver designs that balance creativity with responsibility, shaping spaces that inspire and endure.
                   </p>
+                <blockquote
+  className="border-l-4 border-white italic text-black text-sm mt-6"
+
+>
+  <p className="font-medium">
+    “Design is not only about how a space looks—it is about how it works,
+    how it <br /> feels,  and how ethically it is brought to life.”
+  </p>
+  <p className="text-right relative left-[-270px] text-sm not-italic mt-2">~ Mounish Kumar</p>
+</blockquote>
+
                 </div>
               </div>
             </div>

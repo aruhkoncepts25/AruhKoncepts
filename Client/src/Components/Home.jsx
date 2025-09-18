@@ -722,7 +722,7 @@ hero,hero11,hero12,hero13
 
             <div className="mt-2 sm:mt-6 md:mt-4 lg:mt-20 flex flex-col lg:flex-row ...">
               {/* Left Text */}
-              <div className="lg:w-1/2 self-end" data-aos="fade-right">
+              <div className="lg:w-1/2 self-center" data-aos="fade-right">
                 {/* <h1 className="md:text-4xl sm:text-4xl font-bold text-white leading-snug mt-6"> */}
                 <h1 className="text-2xl md:text-4xl font-bold text-white leading-snug mt-6">
                   Aruh Koncepts — <br />
@@ -736,12 +736,13 @@ hero,hero11,hero12,hero13
                 </h1>
 
                 <div
-                  className="text-white leading-snug mt-4"
+                  className="text-white text-lg  leading-snug mt-9"
                   data-aos="fade-up"
                   data-aos-delay="300"
                 >
                   <p>
-                    Since our beginning, we've helped homes and offices in Hyderabad come alive through thoughtful layouts, warm materials, and effortless design.
+                    At Aruh Koncept, we believe interiors go beyond aesthetics—they are <br className="md:block hidden"/> about creating environments that inspire, comfort, and last. <br className="md:block hidden"/> Founded in 2017 in Hyderabad, we have grown into a trusted <br className="md:block hidden"/> interior design studio specializing in residential, commercial, and <br className="md:block hidden"/> corporate projects. <br/>
+Guided by Creativity, Efficiency, and Ethics, we approach every <br className="md:block hidden" /> project with fresh ideas, precise execution, and transparent practices.
                   </p>
                 </div>
               </div>

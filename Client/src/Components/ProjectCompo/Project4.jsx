@@ -112,7 +112,7 @@ const Project4 = () => {
                 className="text-2xl md:text-3xl font-bold mb-1 md:mb-6"
                 ref={addToTextRefs}
               >
-                TurnKey Interior
+                TurnKey Interior Project
               </h2>
               <p
                 className="hidden lg:block text-gray-700 leading-relaxed mb-4"
@@ -128,12 +128,12 @@ const Project4 = () => {
               </p>
 
               <div className="space-y-2 mt-2 md:mt-6 text-gray-700" ref={addToTextRefs}>
-                <p className="flex gap-9 pb-1">
+                {/* <p className="flex gap-9 pb-1">
                   <span className="font-semibold">Client</span> <span>:</span>
                 </p>
                 <p className="flex gap-6 pb-1">
                   <span className="font-semibold">Service</span> <span>:</span>
-                </p>
+                </p> */}
                 <p className="hidden md:block text-gray-700 leading-relaxed" ref={addToTextRefs}>
                   The client emphasized their preference for modern aesthetics blended with comfort. They wanted their home to carry a timeless appeal while ensuring practicality in everyday use.
                 </p>
