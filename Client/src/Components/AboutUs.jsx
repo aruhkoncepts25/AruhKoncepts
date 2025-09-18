@@ -103,13 +103,13 @@ const AboutUs = () => {
                   data-aos="fade-right"
                   data-aos-delay={i * 200}
                 >
-                   <div className="w-16 h-16 md:w-18 md:h-18  rounded-full flex items-center justify-center flex-shrink-0">
-            <img
-              src={item.icon}
-              alt={`${item.title} icon`}
-              className="w-full h-full object-contain"
-            />
-          </div>
+                  <div className="w-16 h-16 md:w-18 md:h-18  rounded-full flex items-center justify-center flex-shrink-0">
+                    <img
+                      src={item.icon}
+                      alt={`${item.title} icon`}
+                      className="w-full h-full object-contain"
+                    />
+                  </div>
                   <div>
                     <h3 className=" text-lg lg:text-2xl font-bold text-gray-900">{item.title}</h3>
                     <p className="text-gray-700 mt-1 text-sm md:text-lg leading-relaxed">{item.text}</p>
@@ -129,113 +129,113 @@ const AboutUs = () => {
 
         {/* // Meet our Founder  */}
 
-<section className="bg-white">
-  <div className="w-[90%] py-12 mx-auto px-4 sm:px-6 lg:px-8">
-    <h2 className="text-3xl lg:text-4xl font-bold text-black mb-10 text-center md:text-start">
-      Meet Our Founder
-    </h2>
+        <section className="bg-white">
+          <div className="w-[90%]  mx-auto mt-12 px-4 sm:px-6 lg:px-8">
+            <h2 className="text-3xl lg:text-4xl font-bold text-black mb-10 text-start">
+              Meet Our Founder
+            </h2>
 
-    <div className="max-w-6xl mx-auto mt-32">
-      <div className="flex flex-col md:flex-row items-center md:items-start justify-center gap-y-10 md:gap-x-22">
-        {/* Image Section */}
-        <div className="relative w-64 h-96 sm:w-68 sm:h-[22rem]">
-          {/* Gradient Background Shape */}
-          <div
-            className="absolute -top-6 -left-6 w-full h-full rounded-tl-[0%] rounded-tr-[40%] rounded-br-[50%] rounded-bl-[50%]"
-            style={{
-              background:
-                'linear-gradient(180deg, rgba(20, 34, 65, 1) 0%, rgba(51, 87, 167, 1) 100%)',
-            }}
-          ></div>
+            <div className="max-w-6xl mx-auto mt-24 md:mt-32">
+              <div className="flex flex-col md:flex-row items-center md:items-start justify-center gap-y-10 md:gap-x-22">
+                {/* Image Section */}
+                <div className="relative w-60 h-96 sm:w-68 sm:h-[22rem]">
+                  {/* Gradient Background Shape */}
+                  <div
+                    className="absolute -top-10 -left-7 w-full h-full rounded-tl-[0%] rounded-tr-[40%] rounded-br-[50%] rounded-bl-[50%]"
+                    style={{
+                      background:
+                        'linear-gradient(180deg, rgba(20, 34, 65, 1) 0%, rgba(51, 87, 167, 1) 100%)',
+                    }}
+                  ></div>
 
-          {/* Blue Outline + Image */}
-          <div
-            className="relative w-full h-full rounded-tl-[0%] rounded-tr-[40%] rounded-br-[0%] rounded-bl-[50%] overflow-hidden"
-            style={{
-              boxShadow: '0 0 0 4px #2563eb', // blue-600
-            }}
-          >
-            <img
-              src={about4}
-              alt="Founder"
-              className="w-full h-full object-cover"
-            />
+                  {/* Blue Outline + Image */}
+                  <div
+                    className="relative w-full h-full rounded-tl-[0%] rounded-tr-[40%] rounded-br-[40%] rounded-bl-[50%] overflow-hidden"
+                    style={{
+                      boxShadow: '0 0 0 4px #2563eb', // blue-600
+                    }}
+                  >
+                    <img
+                      src={about4}
+                      alt="Founder"
+                      className="w-full h-full object-cover"
+                    />
+                  </div>
+                </div>
+
+                {/* Founder Info */}
+                <div className="flex-1 text-center md:text-left px-2 sm:px-4">
+                  <h3 className="text-2xl sm:text-3xl font-bold text-[#000000] mb-3">
+                    Mr. Mounesh Kumar
+                  </h3>
+                  <p className="text-[#585858] font-medium mb-3 text-base sm:text-lg">
+                    CEO & Founder
+                  </p>
+                  <p className="text-[#1A1A1A] leading-relaxed text-sm sm:text-base max-w-xl mx-auto md:mx-0">
+                    The founder of Aruh Koncepts,<span className="font-bold italic">an award-winning creative designer </span>
+                    brings together a shared passion for design, planning, and visual storytelling. With creativity, precision, and vision, they shape every project into a space that reflects both functionality and personality, turning ideas into environments that truly feel like home.
+                  </p>
+                </div>
+              </div>
+            </div>
           </div>
-        </div>
-
-        {/* Founder Info */}
-        <div className="flex-1 text-center md:text-left px-2 sm:px-4">
-          <h3 className="text-2xl sm:text-3xl font-bold text-[#000000] mb-3">
-            Mr. Mounesh Kumar
-          </h3>
-          <p className="text-[#585858] font-medium mb-3 text-base sm:text-lg">
-            CEO & Founder
-          </p>
-          <p className="text-[#1A1A1A] leading-relaxed text-sm sm:text-base max-w-xl mx-auto md:mx-0">
-            The founder of Aruh Koncepts,<span className="font-bold italic">an award-winning creative designer </span>
- brings together a shared passion for design, planning, and visual storytelling. With creativity, precision, and vision, they shape every project into a space that reflects both functionality and personality, turning ideas into environments that truly feel like home.
-          </p>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
+        </section>
 
 
 
 
 
-   {/* Meet our Team  */}
+        {/* Meet our Team  */}
 
         <section className="w-full bg-white py-18">
-  <div className="w-[90%] mx-auto px-4 sm:px-6 lg:px-8">
-    <h2 className="text-3xl lg:text-4xl font-bold text-black text-start">
-      Meet Our Team
-    </h2>
-    <p className="mt-6 text-gray-600 text-start mx-auto leading-relaxed">
-   The founders of Aruh Koncepts bring together a shared passion for design, planning, and visual storytelling. With creativity, precision, and vision, they shape every project into a space that reflects both functionality and personality, turning ideas into environments that truly feel like home.
-    </p>
+          <div className="w-[90%] mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 className="text-3xl lg:text-4xl font-bold text-black text-start">
+              Meet Our Team
+            </h2>
+            <p className="mt-6 text-gray-600 text-start mx-auto leading-relaxed">
+              The founders of Aruh Koncepts bring together a shared passion for design, planning, and visual storytelling. With creativity, precision, and vision, they shape every project into a space that reflects both functionality and personality, turning ideas into environments that truly feel like home.
+            </p>
 
 
 
-<div className="mt-10 flex justify-center">
- {/* <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8"> */}
-<div className="max-w-6xl mx-auto px-4">
+            <div className="mt-10 flex justify-start">
+              {/* <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8"> */}
+              <div className="w-[90%] mx-auto">
 
-<div className="flex flex-wrap justify-center gap-10">
-  {team.map((member, index) => (
-    <div
-      key={index}
-      className="w-64 rounded-b-xl  overflow-hidden p-3" // padding added here
-      style={{
-        background: 'linear-gradient(180deg, rgba(20,34,65,1) 0%, rgba(50,84,160,1) 100%)',
-        borderRadius: '8rem 8rem 0rem 0rem',
-      }}
-    >
-      {/* Image container without border, with full width */}
-      <div className="relative w-full h-80 rounded-t-[140px] overflow-hidden">
-        <img
-          src={member.image}
-          alt={member.name}
-          className="w-full h-full object-cover rounded-t-[140px]" // round corners on image as well
-        />
-      </div>
+                <div className="w-full flex flex-wrap justify-center md:justify-start gap-10">
+                  {team.map((member, index) => (
+                    <div
+                      key={index}
+                      className="w-64 rounded-b-xl  overflow-hidden p-3" // padding added here
+                      style={{
+                        background: 'linear-gradient(180deg, rgba(20,34,65,1) 0%, rgba(50,84,160,1) 100%)',
+                        borderRadius: '8rem 8rem 0rem 0rem',
+                      }}
+                    >
+                      {/* Image container without border, with full width */}
+                      <div className="relative w-full h-80 rounded-t-[140px] overflow-hidden">
+                        <img
+                          src={member.image}
+                          alt={member.name}
+                          className="w-full h-full object-cover rounded-t-[140px]" // round corners on image as well
+                        />
+                      </div>
 
-      {/* Bottom box text */}
-      <div className="text-center py-4">
-        <h3 className="text-white font-semibold text-lg">{member.name}</h3>
-        <p className="text-white text-sm">{member.role}</p>
-      </div>
-    </div>
-  ))}
-</div>
+                      {/* Bottom box text */}
+                      <div className="text-center py-4">
+                        <h3 className="text-white font-semibold text-lg">{member.name}</h3>
+                        <p className="text-white text-sm">{member.role}</p>
+                      </div>
+                    </div>
+                  ))}
+                </div>
 
 
-      </div>
-</div>
-   
-  </div>
-</section>
+              </div>
+            </div>
+
+          </div>
+        </section>
 
 
       </main>
