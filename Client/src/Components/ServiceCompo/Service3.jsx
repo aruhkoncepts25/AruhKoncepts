@@ -64,10 +64,7 @@ const Service3 = () => {
 
     {/* Description */}
     <p className="mt-6 text-gray-600 text-base leading-relaxed" data-aos="fade-up" data-aos-delay="100">
-      From concept to completion, we take complete responsibility for
-      delivering ready-to-use interior spaces. Our turnkey service ensures
-      stress-free experience through full-cycle project management and
-      seamless execution.
+      At Aruh Koncepts, we provide end-to-end turnkey interior solutions that cover every stage of your project—from design and planning to execution and final delivery. With a single point of responsibility, we ensure seamless coordination, timely completion, and uncompromised quality. Our holistic approach allows clients to enjoy a stress-free experience while we transform ideas into fully finished spaces that are ready to live in or work from.
     </p>
 
     {/* What Are Included */}

@@ -62,9 +62,7 @@ for (let i = 0; i < items.length; i += itemsPerRow) {
 
     {/* Description */}
     <p className="text-gray-600 mt-6 text-base leading-relaxed" data-aos="fade-up" data-aos-delay="200">
-      We refresh and transform existing interiors by rethinking layouts, updating materials, and
-      improving aesthetics. Whether it's a single room or a full property, we breathe new life into
-      outdated spaces.
+     At Aruh Koncepts, we design and craft bespoke furniture and décor pieces that perfectly complement your interiors. Every element is tailored to match your style, functionality needs, and space requirements. From statement furniture to subtle accents, our creations add character, elegance, and a personal touch to every project.
     </p>
 
     {/* What are included */}

@@ -61,9 +61,7 @@ for (let i = 0; i < items.length; i += itemsPerRow) {
 
     {/* Description */}
     <p className="text-gray-600 mt-6 text-base leading-relaxed" data-aos="fade-up" data-aos-delay="200">
-      We refresh and transform existing interiors by rethinking layouts, updating materials, and
-      improving aesthetics. Whether it's a single room or a full property, we breathe new life into
-      outdated spaces.
+      At Aruh Koncepts, we specialize in transforming existing spaces into modern, functional, and stylish environments. Whether it’s a complete home makeover or upgrading specific areas, our team focuses on enhancing aesthetics, improving usability, and adding long-lasting value. With innovative ideas and quality execution, we breathe new life into every space we remodel.
     </p>
 
     {/* What are included */}

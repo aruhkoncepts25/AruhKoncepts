@@ -53,7 +53,7 @@ const OurService = () => {
         },
         {
             id: 2,
-            title: "Commercial",
+            title: "Commercial Interior Design",
             description:
                 "We create smart and visually engaging interiors for business spaces that support productivity, reinforce brand identity, and deliver a professional impression. Each design is tailored to the specific function and audience of the commercial setting.",
             image: service2,

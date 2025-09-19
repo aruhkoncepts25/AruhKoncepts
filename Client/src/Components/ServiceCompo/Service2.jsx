@@ -63,7 +63,7 @@ for (let i = 0; i < items.length; i += itemsPerRow) {
     {/* Heading */}
     <div data-aos="fade-up">
       <p className="text-xl font-semibold text-[#C8966B]">Services</p>
-      <h1 className="text-2xl md:text-3xl font-semibold mt-6">Commercial</h1>
+      <h1 className="text-2xl md:text-3xl font-semibold mt-6">Commercial Interior Design</h1>
     </div>
 
     {/* Banner Image */}
@@ -82,9 +82,7 @@ for (let i = 0; i < items.length; i += itemsPerRow) {
       data-aos="fade-up"
       data-aos-delay="100"
     >
-      We create smart and visually engaging interiors for business spaces that support productivity,
-      reinforce brand identity, and deliver a professional impression. Each design is tailored to
-      the specific function and audience of the commercial setting.
+      At Aruh Koncepts, we design workspaces that inspire productivity, creativity, and collaboration. Our approach blends functionality with aesthetics to deliver environments that reflect your brand’s identity while supporting everyday efficiency. From offices to retail spaces, we create timeless interiors that leave a lasting impression on both clients and teams.
     </p>
 
     {/* What are included */}

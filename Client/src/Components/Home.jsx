@@ -1289,7 +1289,7 @@ Guided by Creativity, Efficiency, and Ethics, we approach every <br className="m
                     ))}
                   </div>
 
-                  <p className="text-gray-700 mb-6">"{t.text}"</p>
+                  <p className="text-gray-700 mb-6">{t.text}</p>
 
                   <div className="flex items-center">
                     <div>

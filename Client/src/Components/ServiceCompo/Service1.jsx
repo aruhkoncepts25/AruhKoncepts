@@ -82,10 +82,7 @@ for (let i = 0; i < items.length; i += itemsPerRow) {
       data-aos="fade-up"
       data-aos-delay="100"
     >
-      We design comfortable, stylish, and highly functional living spaces that
-      reflect your personality and fit seamlessly into your lifestyle. Whether
-      it’s a new home or a makeover, our goal is to create elegant environments
-      that feel both timeless and personal.
+     At Aruh Koncepts, we craft living spaces that are elegant, comfortable, and deeply personal. Every design is tailored to reflect your personality while blending seamlessly with your lifestyle. Whether it’s designing a new home or transforming an existing one, our focus is on creating timeless interiors that balance style, functionality, and warmth.
     </p>
 
     {/* What are included */}

@@ -67,9 +67,7 @@ for (let i = 0; i < items.length; i += itemsPerRow) {
 
     {/* Description */}
     <p className="text-gray-600 mt-6 text-base leading-relaxed" data-aos="fade-up" data-aos-delay="200">
-      We design with intent, aligning interiors with Vastu principles to enhance the energy flow,
-      positivity, and balance in your space. Our approach blends traditional wisdom with
-      contemporary aesthetics for well-being and harmony.
+     At Aruh Koncepts, we integrate the principles of Vastu Shastra into modern design to create spaces that promote harmony, balance, and well-being. Our expert guidance helps align your home or workplace with positive energy, ensuring functionality while fostering peace and prosperity.
     </p>
 
     {/* What are included */}

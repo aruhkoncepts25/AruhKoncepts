@@ -61,7 +61,7 @@ for (let i = 0; i < items.length; i += itemsPerRow) {
 
     {/* Description */}
     <p className="text-gray-600 mt-6 text-base leading-relaxed" data-aos="fade-up" data-aos-delay="200">
-      We create smart and visually engaging interiors for business spaces that support productivity, reinforce brand identity, and deliver a professional impression. Each design is tailored to the specific function and audience of the commercial setting.
+      At Aruh Koncepts, we bring ideas to life with detailed 3D visualizations and conceptual designs. Our process allows clients to see and experience their spaces before execution, ensuring clarity in design direction and confidence in decision-making. By blending creativity with precision, we deliver concepts that transform visions into tangible, realistic designs.
     </p>
 
     {/* What are included */}
