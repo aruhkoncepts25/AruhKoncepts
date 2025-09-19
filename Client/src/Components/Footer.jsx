@@ -89,14 +89,14 @@ const Footer = () => {
           {/* Follow Us */}
           <div className='relative lg:right-[175px]'>
             <h2 className="font-semibold">Follow Us</h2>
-            <div className="flex gap-3 mt-2 text-xl">
+            <div className="flex gap-4 justify-center mt-2 text-xl">
               <a href="https://www.instagram.com/ak_designkoncepts?igsh=a3I2Ym9vbWI1bGoz" target="_blank"
   rel="noopener noreferrer" aria-label="Instagram" className="hover:opacity-80">
                 <img src={instagram} alt="Instagram" className="h-4 w-4 object-contain" />
               </a>
-              <a href="#" aria-label="Twitter" className="hover:opacity-80">
+              {/* <a href="#" aria-label="Twitter" className="hover:opacity-80">
                 <img src={twitter} alt="Twitter" className="h-4 w-4 object-contain" />
-              </a>
+              </a> */}
               <a href="https://www.facebook.com/share/1VND5cUr6D/" target="_blank"
   rel="noopener noreferrer" aria-label="Facebook" className="hover:opacity-80">
                 <img src={facebook} alt="Facebook" className="h-4 w-4 object-contain" />
@@ -109,7 +109,7 @@ const Footer = () => {
 <div className="mt-8 pt-4 border-t border-gray-700 flex flex-col md:flex-row items-center justify-between text-xs text-gray-400">
   <p>© 2025 Aruh Koncepts | All Rights Reserved</p>
   <p>
-    Developed by{" "}
+    Developed by {" "}
     <a
       href="https://www.zenithstudio.in/"
       target="_blank"
@@ -212,17 +212,17 @@ const Footer = () => {
           </div>
 
           {/* Follow Us - Centered on Mobile */}
-          <div className="flex flex-col items-center mt-6 order-6">
+          <div className="flex flex-col items-center justify-center mt-6 order-6">
             <h2 className="font-semibold">Follow Us</h2>
-            <div className="flex gap-6 md:gap-4 mt-2 text-xl">
+            <div className="flex gap-4 md:gap-4 mt-2 text-xl">
               <a href="https://www.instagram.com/ak_designkoncepts?igsh=a3I2Ym9vbWI1bGoz" target="_blank"
   rel="noopener noreferrer" aria-label="Instagram" className="hover:opacity-80">
                 <img src={instagram} alt="Instagram" className="h-4 w-4 md:h-5 md:w-5 object-contain" />
               </a>
-              <a href="#" aria-label="Twitter" target="_blank"
+              {/* <a href="#" aria-label="Twitter" target="_blank"
   rel="noopener noreferrer" className="hover:opacity-80">
                 <img src={twitter} alt="Twitter" className="h-4 w-4 md:h-5 md:w-5 object-contain" />
-              </a>
+              </a> */}
               <a href="https://www.facebook.com/share/1VND5cUr6D/" target="_blank"
   rel="noopener noreferrer" aria-label="Facebook" className="hover:opacity-80">
                 <img src={facebook} alt="Facebook" className="h-4 w-4 md:h-5 md:w-5 object-contain" />
@@ -235,15 +235,13 @@ const Footer = () => {
         <div className="mt-8 pt-4 border-t border-gray-700 flex flex-col md:flex-row items-center justify-between text-xs text-gray-400">
           <p>© 2025 Aruh Koncepts | All Rights Reserved</p>
           <p>
-  Developed by
-  <a 
+  Developed by <a 
     href="https://www.zenithstudio.in/" 
     target="_blank" 
     rel="noopener noreferrer" 
     className="text-[#C8966B] hover:underline cursor-pointer"
   >
-    Zenith Studio
-  </a>
+     Zenith Studio</a>
   </p>
         </div>
       </footer>
