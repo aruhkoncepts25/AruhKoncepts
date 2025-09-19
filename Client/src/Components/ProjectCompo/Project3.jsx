@@ -231,7 +231,7 @@ const Project3 = () => {
             className="text-gray-600 leading-relaxed mb-6 text-sm md:text-base" 
             ref={addToTextRefs}
           >
-            With these insights, we developed a concept centered on openness, flexibility, and seamless connections across work zones. The result was a functional yet sophisticated office that supported collaboration, efficiency, and reflected the company’s vision with clarity.
+            Guided by these insights, we designed a concept focused on transparency, adaptability, and smooth integration between different work areas. The outcome was a refined and efficient office space that encouraged teamwork, enhanced productivity, and clearly embodied the company’s vision.
           </p>
 
           <a 
