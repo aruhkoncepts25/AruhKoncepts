@@ -20,7 +20,7 @@ const AboutUs = () => {
   const items = [
     {
       title: "Mission",
-      text: "At Aruh Koncepts, we simplify design with personalized, stylish, and lasting solutions—blending creativity, collaboration, and quality craftsmanship.",
+      text: "At Aruh Koncepts, we simplify design with personalized, stylish, and lasting solutions blending creativity, collaboration, and quality craftsmanship.",
       icon: icon1,
     },
     {
@@ -30,7 +30,7 @@ const AboutUs = () => {
     },
     {
       title: "Why Choose",
-      text: "At Aruh Koncepts, we craft personalized interior solutions that balance style and function—delivered with clear communication, smart planning, and a respect for your time and budget.",
+      text: "At Aruh Koncepts, we craft personalized interior solutions that balance style and function delivered with clear communication, smart planning, and a respect for your time and budget.",
       icon: icon3,
     },
   ];
@@ -183,7 +183,7 @@ Our <span className="italic  font-medium">commitment to offer premium quality ou
                   data-aos-duration="1000"
                 >
                   <h3 className="text-2xl sm:text-3xl font-bold text-[#000000] mb-3">
-                    Mr. Mounesh Kumar
+                    Mr. Mounish Kumar
                   </h3>
                   <p className="text-[#585858] font-medium mb-3 text-base sm:text-lg">
                     CEO & Founder
@@ -198,10 +198,10 @@ Our <span className="italic  font-medium">commitment to offer premium quality ou
 
                   <blockquote className="border-l-4 border-white italic text-black text-sm mt-6">
                     <p className="font-medium">
-                      “Design is not only about how a space looks—it is about how it works,
-                      how it <br /> feels, and how ethically it is brought to life.”
+                      “Design is not only about how a space looks it is about how it works,
+                      how it feels, and how ethically it is brought to life.”
                     </p>
-                    <p className="text-right text-sm not-italic mt-2 relative lg:left-[-200px]">~ Mounish Kumar</p>
+                    <p className="text-right text-sm not-italic mt-1 relative lg:left-[-40px]">~ Mounish Kumar</p>
                   </blockquote>
                 </div>
               </div>

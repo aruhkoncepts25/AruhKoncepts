@@ -726,7 +726,7 @@ hero,hero11,hero12,hero13
               <div className="lg:w-1/2 self-center" data-aos="fade-right">
                 {/* <h1 className="md:text-4xl sm:text-4xl font-bold text-white leading-snug mt-6"> */}
                 <h1 className="text-2xl md:text-4xl font-bold text-white leading-snug mt-6">
-                  Aruh Koncepts — <br />
+                  Aruh Koncepts<br />
                   <span className="text-gray-400 font-medium md:font-bold">
                     Crafting timeless{" "}
                   </span>
@@ -737,7 +737,7 @@ hero,hero11,hero12,hero13
                 </h1>
 
                 <div
-                  className="text-white text-lg  leading-snug mt-9"
+                  className="text-white  text-lg  leading-snug mt-9"
                   data-aos="fade-up"
                   data-aos-delay="300"
                 >
@@ -1079,7 +1079,7 @@ Guided by <span className="italic font-medium">Creativity, Efficiency, and Ethic
                   Crafting Dreams
                 </h1>
                 <p className="text-gray-800 mb-6 mt-6 sm:mt-10 text-base sm:text-lg">
-                  From modern minimalism to classic elegance —{" "}
+                  From modern minimalism to classic elegance
                   <br className="hidden lg:inline" />
                   explore how we transform every corner into a story.
                 </p>
