@@ -31,7 +31,7 @@ import { useLocation } from "react-router-dom";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 // Service Section Image
-import hService1 from "../assets/hService1.jpg"
+import hService1 from "../assets/hService1.webp"
 import hService2 from "../assets/hService2.webp"
 import hService3 from "../assets/hService3.jpg"
 import hService4 from "../assets/hService4.jpg"

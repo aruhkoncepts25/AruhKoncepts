@@ -32,7 +32,7 @@ const Footer = () => {
             <ul className="space-y-1 text-sm">
               <li><Link to="/footerhome" className="hover:underline">Home</Link></li>
               <li><Link to="/footerAbout" className="hover:underline">About Us</Link></li>
-              <li><Link to="/#contact">Contact</Link></li>
+              <li><Link to="/#contact " className="hover:underline" >Contact</Link></li>
       
             </ul>
           </div>
@@ -229,7 +229,7 @@ const Footer = () => {
               <ul className="space-y-1 text-sm ">
                 <li><Link to="/footerhome" className=" text-[#FFFFFFA3] hover:underline">Home</Link></li>
                 <li><Link to="/footerAbout" className=" text-[#FFFFFFA3] hover:underline">About Us</Link></li>
-                <li><Link to="/#contact" className='text-[#FFFFFFA3]'>Contact</Link></li>
+                <li><Link to="/#contact" className='text-[#FFFFFFA3] hover:underline'>Contact</Link></li>
               </ul>
             </div>
 
