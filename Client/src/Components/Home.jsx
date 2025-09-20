@@ -455,7 +455,7 @@ hero,hero11,hero12,hero13
         <>
           Creating warm, personalized spaces that reflect your
          
-          lifestyle – from cozy apartments to spacious
+          lifestyle from cozy apartments to spacious
         
           villas.
         </>
@@ -476,7 +476,7 @@ hero,hero11,hero12,hero13
       title: "Turnkey Interior Solutions",
       description:
        (<>
-       Delivering end-to-end turnkey solutions — from concept to completion — ensuring seamless design, execution, and handover of spaces tailored to your vision.
+       Delivering end-to-end turnkey solutions from concept to completion ensuring seamless design, execution, and handover of spaces tailored to your vision.
        </>),
       image: hService3,
     },
@@ -485,7 +485,7 @@ hero,hero11,hero12,hero13
       description:
         (
           <>
-          Bringing ideas to life with realistic 3D visuals and thoughtful concepts — <br />helping you see and shape your dream space before it’s built.
+          Bringing ideas to life with realistic 3D visuals and thoughtful concepts<br /> helping you see and shape your dream space before it’s built.
           </>
         ),
       image: hService4,
@@ -495,7 +495,7 @@ hero,hero11,hero12,hero13
       description:
        (
         <>
-        Transforming existing spaces with fresh ideas and smart design — <br />from modern upgrades to complete makeovers that blend style, comfort,<br /> and functionality.
+        Transforming existing spaces with fresh ideas and smart design <br />from modern upgrades to complete makeovers that blend style, comfort,<br /> and functionality.
         </>
        ),
       image: hService5,
@@ -505,7 +505,7 @@ hero,hero11,hero12,hero13
       description:
        (
         <>
-        Crafting unique, functional pieces that bring character and comfort to your <br /> home — designed to suit every style, space, and story.
+        Crafting unique, functional pieces that bring character and comfort to your <br /> home designed to suit every style, space, and story.
         </>
        ),
       image: hService6,
