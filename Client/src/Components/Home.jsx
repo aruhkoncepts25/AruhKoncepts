@@ -993,7 +993,7 @@ Guided by <span className="italic font-medium">Creativity, Efficiency, and Ethic
                     <h2 className="text-white font-semibold mb-2">
                       {step.title}
                     </h2>
-                    <p className="text-white text-sm mb-4">
+                    <p className="text-white text-sm mb-8">
                       {step.desktopDescription}
                     </p>
 
@@ -1003,7 +1003,7 @@ Guided by <span className="italic font-medium">Creativity, Efficiency, and Ethic
                     </div>
 
                     {/* Step niche */}
-                    <p className="text-gray-300 relative bottom-[30px] mt-16">
+                    <p className="text-gray-300 relative bottom-[30px] mt-18">
                       {step.step}
                     </p>
                   </div>
