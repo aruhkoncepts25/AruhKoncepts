@@ -742,8 +742,8 @@ hero,hero11,hero12,hero13
                   data-aos-delay="300"
                 >
                   <p>
-                    At Aruh Koncept, we believe interiors go beyond aesthetics—they are <br className="md:block hidden"/> about creating environments that inspire, comfort, and last. <br className="md:block hidden"/> Founded in 2017 in Hyderabad, we have grown into a trusted <br className="md:block hidden"/> interior design studio specializing in residential, commercial, and <br className="md:block hidden"/> corporate projects. <br/>
-Guided by Creativity, Efficiency, and Ethics, we approach every <br className="md:block hidden" /> project with fresh ideas, precise execution, and transparent practices.
+                    At <span className="italic">Aruh Koncept</span>, we believe interiors go beyond aesthetics they are <br className="md:block hidden"/> about creating environments that inspire, comfort, and last. <br className="md:block hidden"/> <span className="italic">Founded in 2017</span> in <span className="italic">Hyderabad</span>, we have grown into a trusted <br className="md:block hidden"/> interior design studio specializing in <span className="italic">residential, commercial, and <br className="md:block hidden"/> corporate projects.</span> <br/>
+Guided by <span className="italic">Creativity, Efficiency, and Ethics,</span> we approach every <br className="md:block hidden" /> project with <span className="italic">fresh ideas, precise execution, and transparent</span> practices.
                   </p>
                 </div>
               </div>
