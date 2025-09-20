@@ -2,8 +2,9 @@ import logo from "../assets/logo.png"
 import { Link } from 'react-router-dom';
 import { MdLocationOn, MdEmail } from "react-icons/md";
 import { FiPhone } from "react-icons/fi";
-import instagram from "../assets/instagram.png"
-import facebook from "../assets/facebook.png"
+import { SiX } from 'react-icons/si';
+import { FaInstagram, FaFacebookF,FaLinkedinIn, FaPinterestP } from 'react-icons/fa';
+import { RiThreadsLine } from 'react-icons/ri'; // Threads icon from Remix Icons
 import twitter from "../assets/twitter.png"
 
 const Footer = () => {
@@ -88,20 +89,67 @@ const Footer = () => {
 
           {/* Follow Us */}
           <div className='relative lg:right-[175px]'>
-            <h2 className="font-semibold">Follow Us</h2>
-            <div className="flex gap-4 justify-center mt-2 text-xl">
-              <a href="https://www.instagram.com/ak_designkoncepts?igsh=a3I2Ym9vbWI1bGoz" target="_blank"
-  rel="noopener noreferrer" aria-label="Instagram" className="hover:opacity-80">
-                <img src={instagram} alt="Instagram" className="h-4 w-4 object-contain" />
-              </a>
-              {/* <a href="#" aria-label="Twitter" className="hover:opacity-80">
-                <img src={twitter} alt="Twitter" className="h-4 w-4 object-contain" />
-              </a> */}
-              <a href="https://www.facebook.com/share/1VND5cUr6D/" target="_blank"
-  rel="noopener noreferrer" aria-label="Facebook" className="hover:opacity-80">
-                <img src={facebook} alt="Facebook" className="h-4 w-4 object-contain" />
-              </a>
-            </div>
+            <h2 className="font-semibold text-center">Follow Us</h2>
+            <div className="flex gap-3 justify-center mt-4 text-xl text-black">
+  <a
+    href="https://www.instagram.com/ak_designkoncepts?igsh=a3I2Ym9vbWI1bGoz"
+    target="_blank"
+    rel="noopener noreferrer"
+    aria-label="Instagram"
+    className="hover:opacity-80"
+  >
+    <FaInstagram className="h-4 w-4 text-white" />
+  </a>
+
+  <a
+    href="https://www.threads.net/@ak_designkoncepts"
+    target="_blank"
+    rel="noopener noreferrer"
+    aria-label="Threads"
+    className="hover:opacity-80"
+  >
+    <RiThreadsLine className="h-4 w-4 text-white" />
+  </a>
+
+  <a
+    href=""
+    target="_blank"
+    rel="noopener noreferrer"
+    aria-label="LinkedIn"
+    className="hover:opacity-80"
+  >
+    <FaLinkedinIn className="h-4 w-4 text-white" />
+  </a>
+
+  <a
+    href="https://pin.it/4VhKObr0m"
+    target="_blank"
+    rel="noopener noreferrer"
+    aria-label="Pinterest"
+    className="hover:opacity-80"
+  >
+    <FaPinterestP className="h-4 w-4 text-white" />
+  </a>
+
+  <a
+    href="https://www.facebook.com/share/1VND5cUr6D/"
+    target="_blank"
+    rel="noopener noreferrer"
+    aria-label="Facebook"
+    className="hover:opacity-80"
+  >
+    <FaFacebookF className="h-4 w-4 text-white" />
+  </a>
+    <a
+    href="https://x.com/AruhKoncepts?t=W3JwQLkpvg05ZnV4F_-vxw&s=09"
+    target="_blank"
+    rel="noopener noreferrer"
+    aria-label="X"
+    className="hover:opacity-80"
+  >
+    <SiX className="h-4 w-4 text-white" />
+  </a>
+</div>
           </div>
         </div>
 
@@ -214,19 +262,65 @@ const Footer = () => {
           {/* Follow Us - Centered on Mobile */}
           <div className="flex flex-col items-center justify-center mt-6 order-6">
             <h2 className="font-semibold">Follow Us</h2>
-            <div className="flex gap-4 md:gap-4 mt-2 text-xl">
-              <a href="https://www.instagram.com/ak_designkoncepts?igsh=a3I2Ym9vbWI1bGoz" target="_blank"
-  rel="noopener noreferrer" aria-label="Instagram" className="hover:opacity-80">
-                <img src={instagram} alt="Instagram" className="h-4 w-4 md:h-5 md:w-5 object-contain" />
-              </a>
-              {/* <a href="#" aria-label="Twitter" target="_blank"
-  rel="noopener noreferrer" className="hover:opacity-80">
-                <img src={twitter} alt="Twitter" className="h-4 w-4 md:h-5 md:w-5 object-contain" />
-              </a> */}
-              <a href="https://www.facebook.com/share/1VND5cUr6D/" target="_blank"
-  rel="noopener noreferrer" aria-label="Facebook" className="hover:opacity-80">
-                <img src={facebook} alt="Facebook" className="h-4 w-4 md:h-5 md:w-5 object-contain" />
-              </a>
+            <div className="flex gap-2 md:gap-4 mt-2 text-xl">
+              <a
+    href="https://www.instagram.com/ak_designkoncepts?igsh=a3I2Ym9vbWI1bGoz"
+    target="_blank"
+    rel="noopener noreferrer"
+    aria-label="Instagram"
+    className="hover:opacity-80"
+  >
+    <FaInstagram className="h-4 w-4 text-white" />
+  </a>
+
+  <a
+    href="https://www.threads.com/@ak_designkoncepts"
+    target="_blank"
+    rel="noopener noreferrer"
+    aria-label="Threads"
+    className="hover:opacity-80"
+  >
+    <RiThreadsLine className="h-4 w-4 text-white" />
+  </a>
+
+  <a
+    href=""
+    target="_blank"
+    rel="noopener noreferrer"
+    aria-label="LinkedIn"
+    className="hover:opacity-80"
+  >
+    <FaLinkedinIn className="h-4 w-4 text-white" />
+  </a>
+
+  <a
+    href="https://pin.it/4VhKObr0m"
+    target="_blank"
+    rel="noopener noreferrer"
+    aria-label="Pinterest"
+    className="hover:opacity-80"
+  >
+    <FaPinterestP className="h-4 w-4 text-white" />
+  </a>
+
+  <a
+    href="https://www.facebook.com/share/1VND5cUr6D/"
+    target="_blank"
+    rel="noopener noreferrer"
+    aria-label="Facebook"
+    className="hover:opacity-80"
+  >
+    <FaFacebookF className="h-4 w-4 text-white" />
+  </a>
+    <a
+    href="https://x.com/AruhKoncepts?t=W3JwQLkpvg05ZnV4F_-vxw&s=09"
+    target="_blank"
+    rel="noopener noreferrer"
+    aria-label="X"
+    className="hover:opacity-80"
+  >
+    <SiX className="h-4 w-4 text-white" />
+  </a>
             </div>
           </div>
         </div>
