@@ -737,7 +737,7 @@ hero,hero11,hero12,hero13
                 </h1>
 
                 <div
-                  className="text-white  text-lg  leading-snug mt-9"
+                  className="text-white  text-base  leading-snug mt-9"
                   data-aos="fade-up"
                   data-aos-delay="300"
                 >
