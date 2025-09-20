@@ -1354,7 +1354,7 @@ Guided by Creativity, Efficiency, and Ethics, we approach every <br className="m
                     <h3 className="font-semibold text-white text-lg"> Phone</h3>
                     <div className="relative right-9 mt-2">
                       <p className="text-gray-300 text-sm">
-                        Call us on weekdays from 9 AM to 5 PM
+                        Call us on weekdays from 10 AM to 7 PM
                       </p>
                       <a
                         href="tel:+916309892801"

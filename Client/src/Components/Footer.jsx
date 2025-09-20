@@ -5,7 +5,7 @@ import { FiPhone } from "react-icons/fi";
 import { SiX } from 'react-icons/si';
 import { FaInstagram, FaFacebookF,FaLinkedinIn, FaPinterestP } from 'react-icons/fa';
 import { RiThreadsLine } from 'react-icons/ri'; // Threads icon from Remix Icons
-import twitter from "../assets/twitter.png"
+
 
 const Footer = () => {
   return (
@@ -112,7 +112,7 @@ const Footer = () => {
   </a>
 
   <a
-    href=""
+    href="https://www.linkedin.com/feed/update/urn:li:activity:7374365162801258496"
     target="_blank"
     rel="noopener noreferrer"
     aria-label="LinkedIn"
@@ -284,7 +284,7 @@ const Footer = () => {
   </a>
 
   <a
-    href=""
+    href="https://www.linkedin.com/feed/update/urn:li:activity:7374365162801258496"
     target="_blank"
     rel="noopener noreferrer"
     aria-label="LinkedIn"
