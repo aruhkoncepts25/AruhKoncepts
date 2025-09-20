@@ -514,7 +514,7 @@ hero,hero11,hero12,hero13
       description:
         (
           <>
-          Harmonizing your home with positive energy — guided by Vastu principles <br />for balance, well-being, and prosperity.
+          Harmonizing your home with positive energy — Guided by Vastu principles <br />for balance, well-being, and prosperity.
           </>
         ),
       image: hService7,
