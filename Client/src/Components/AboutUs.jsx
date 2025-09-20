@@ -60,11 +60,9 @@ const AboutUs = () => {
 
               <div className="md:w-2/2">
                 <h2 className="text-lg leading-relaxed text-gray-800">
-                  Aruh Koncepts is a Hyderabad-based interior turnkey contracting firm and one of the most applauded trendsetters in the interior contracting industry. Our unique approach of transforming ‘ideas into quality work’ has enabled us to consistently deliver measurable value in every project.
-
-                  With trained carpenters, specialized skilled professionals, dedicated site engineers, and a strong managerial team at our core, Aruh Koncepts is constantly evolving. Having collaborated with some of the finest architects over time, we have built a strong reputation for delivering excellence in quality within stipulated timelines.
-
-                  Our commitment to premium quality, creativity, and innovative ideas continues to strengthen our presence in the market and drive sustainable growth for our firm.
+                  <span className="italic font-medium">Aruh Koncept</span> Interiors is <span className="italic  font-medium">Hyderabad based Interior Trunkey contracting firm</span>. One of the <span className="italic  font-medium">Applauded & Trendsetters in Interior Contracting Industry</span>. Our unique way of <span className="italic  font-medium">'giving Ideas to Quality work'</span> has helped AK make <span  className="italic  font-medium">Quantifiable value delivery in Projects</span>.
+We have <span className="italic  font-medium">trained carpenters, specialized skill set personals expertise and work style, site engineers</span>, and a <span className="italic  font-medium">managerial team</span> that forms the core of the firm. <span  className="italic  font-medium">Aruh Koncept is constantly evolving</span>. Having worked with the <span className="italic  font-medium">best of architects</span> over a period of time, we have built a <span className="italic  font-medium">reputation of delivering excellence in quality within the stipulated time</span>.
+Our <span className="italic  font-medium">commitment to offer premium quality output</span> by focusing on <span className="italic  font-medium">creativity and Innovative ideas</span> is helping us to make a <span className="italic  font-medium">potential market for our firm</span>.
                 </h2>
               </div>
 
