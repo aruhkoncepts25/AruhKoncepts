@@ -64,10 +64,25 @@ useEffect(() => {
               {/* <span className="bg-gradient-to-r from-[#d5a127] via-[#F7EF8A] to-[#D2AC47] bg-clip-text text-transparent font-bold">
                 Aruh Koncepts
               </span> */}
-              <span className="relative inline-block bg-gradient-to-r from-[#d5a127] via-[#F7EF8A] to-[#D2AC47] bg-clip-text text-transparent font-bold
-  after:content-[''] after:block after:h-[2px] after:w-full after:bg-gradient-to-r after:from-[#d5a127] after:via-[#F7EF8A] after:to-[#D2AC47] after:mt-1">
-  Aruh Koncepts
-</span>
+<div className="inline-flex">
+  {/* Aruh Konce */}
+  <span className="relative inline-block text-transparent bg-clip-text bg-gradient-to-r from-[#d5a127] via-[#F7EF8A] to-[#D2AC47] font-bold">
+    Aruh Konce
+    <span className="absolute left-0 bottom-0 h-[2px] w-full bg-gradient-to-r from-[#d5a127] via-[#F7EF8A] to-[#D2AC47]"></span>
+  </span>
+
+  {/* p without underline */}
+  <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#d5a127] via-[#F7EF8A] to-[#D2AC47] font-bold">
+    p
+  </span>
+
+  {/* ts with underline and extra left gap */}
+  <span className="relative inline-block text-transparent bg-clip-text bg-gradient-to-r from-[#d5a127] via-[#F7EF8A] to-[#D2AC47] font-bold">
+    ts
+    <span className="absolute left-[-6px] bottom-0 h-[2px] w-[calc(100%+8px)] bg-gradient-to-r from-[#d5a127] via-[#F7EF8A] to-[#D2AC47]"></span>
+  </span>
+</div>
+
 
             </h1>
           </Link>
