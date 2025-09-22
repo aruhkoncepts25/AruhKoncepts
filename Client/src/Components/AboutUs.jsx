@@ -4,7 +4,7 @@ import "../Style/AboutUs.css"
 import about1 from '../assets/AboutUs/about-1.jpg';
 import about2 from '../assets/AboutUs/about-2.jpg';
 import about4 from "../assets/AboutUs/about4.jpg";  // bich ke liye Meet our founder wlala
-import about3 from "../assets/AboutUs/about3.jpg"; // meet our team
+import about3 from "../assets/AboutUs/about3.jpeg"; // meet our team
 import about5 from "../assets/AboutUs/about5.webp";// meet our team
 import about6 from "../assets/AboutUs/about6.webp";// meet our team
 import icon1 from "../assets/AboutUs/icon1.png";
