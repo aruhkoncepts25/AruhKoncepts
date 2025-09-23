@@ -878,7 +878,7 @@ Guided by <span className="italic font-medium">Creativity, Efficiency, and Ethic
                           }
                 `}
                         onClick={() =>
-                          setActiveIndex(index === activeIndex ? null : index)
+                          setActiveIndex(index)
                         }
                       >
                         {service.title}
