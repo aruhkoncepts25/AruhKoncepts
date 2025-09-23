@@ -17,7 +17,9 @@ const contactRoute = require("./App/Routes/contact");
 app.use(express.json({ limit: "10kb" })); // Prevent large payload attacks
 const allowedOrigins = [
   "http://localhost:5173",
-  "https://aruhkoncepts.onrender.com"
+  "https://aruhkoncepts.onrender.com",    
+  "https://www.aruhkoncepts.com",       // live site (www)
+  "https://aruhkoncepts.com"            // live site (non-www)
 ];
 
 app.use(cors({
