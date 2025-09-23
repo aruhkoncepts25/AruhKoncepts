@@ -37,7 +37,7 @@ const insertUser = async (req, res) => {
      // Mail options
     const mailOptions = {
       from: email,  // customer gmail
-      to: "shivanshuofficial123@gmail.com", // or Owner gmail
+      to: "aruhkoncepts25@gmail.com", // or Owner gmail
       subject: `New Client Form Submission - ${service}`,
       text: `
         Name: ${name}
