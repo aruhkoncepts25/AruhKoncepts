@@ -15,7 +15,22 @@ const contactRoute = require("./App/Routes/contact");
 
 // ---- Middlewares ----
 app.use(express.json({ limit: "10kb" })); // Prevent large payload attacks
-app.use(cors({ origin: "http://localhost:5173" })); // Allow only frontend domain
+const allowedOrigins = [
+  "http://localhost:5173",
+  "https://aruhkoncepts.onrender.com"
+];
+
+app.use(cors({
+  origin: function(origin, callback) {
+    if (!origin || allowedOrigins.indexOf(origin) !== -1) {
+      callback(null, true);
+    } else {
+      callback(new Error("Not allowed by CORS"));
+    }
+  },
+  credentials: true
+}));
+// Allow only frontend domain
 app.use(helmet()); // Secure headers
 // ✅ Fix: mongo-sanitize with Express v5
 // app.use(
@@ -46,7 +61,12 @@ mongoose
   .then(() => {
     console.log("✅ Mongoose Connected...");
     app.listen(PORT, () => {
-      console.log(`🚀 Server running on http://localhost:${PORT}`);
+      console.log(`🚀 Server running on port ${PORT}`);
+      if (process.env.NODE_ENV === "production") {
+        console.log(`🌐 Production URL: https://aruhkoncepts.onrender.com`);
+      } else {
+        console.log(`🌐 Local URL: http://localhost:${PORT}`);
+      }
     });
   })
   .catch((err) => {
