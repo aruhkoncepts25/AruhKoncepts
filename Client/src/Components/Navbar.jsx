@@ -1,54 +1,37 @@
-import React, { useState, useRef, useEffect } from "react";
+import { useState, useRef, useEffect } from "react";
 import logo from "../assets/logo.png";
 import { Link } from "react-router-dom";
 import gsap from "gsap";
-import { HashLink } from "react-router-hash-link"; // for home pe contact ke liye
+import { HashLink } from "react-router-hash-link";
 
 
 const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
   const menuRef = useRef(null);
 
-  // Animation effect for opening/closing menu
-  // useEffect(() => {
-  //   if (menuOpen) {
-  //     gsap.fromTo(
-  //       menuRef.current,
-  //       { y: "-100%", opacity: 0 },
-  //       { y: 0, opacity: 1, duration: 0.6, ease: "power3.out" }
-  //     );
-  //   } else {
-  //     gsap.to(menuRef.current, {
-  //       y: "-100%",
-  //       opacity: 0,
-  //       duration: 0.5,
-  //       ease: "power3.in",
-  //     });
-  //   }
-  // }, [menuOpen]);
-useEffect(() => {
-  if (menuOpen) {
-    gsap.fromTo(
-      menuRef.current,
-      { yPercent: -100, opacity: 0, scale: 0.95 },
-      {
-        yPercent: 0,
-        opacity: 1,
-        scale: 1,
-        duration: 0.7,
-        ease: "power4.out",
-      }
-    );
-  } else {
-    gsap.to(menuRef.current, {
-      yPercent: -100,
-      opacity: 0,
-      scale: 0.95,
-      duration: 0.6,
-      ease: "power4.in",
-    });
-  }
-}, [menuOpen]);
+  useEffect(() => {
+    if (menuOpen) {
+      gsap.fromTo(
+        menuRef.current,
+        { yPercent: -100, opacity: 0, scale: 0.95 },
+        {
+          yPercent: 0,
+          opacity: 1,
+          scale: 1,
+          duration: 0.7,
+          ease: "power4.out",
+        }
+      );
+    } else {
+      gsap.to(menuRef.current, {
+        yPercent: -100,
+        opacity: 0,
+        scale: 0.95,
+        duration: 0.6,
+        ease: "power4.in",
+      });
+    }
+  }, [menuOpen]);
 
   return (
     <nav
@@ -61,27 +44,25 @@ useEffect(() => {
           <Link to="/headNav" className="inline-block">
             <h1 className="text-xl font-bold flex items-center gap-2 cursor-pointer">
               <img src={logo} alt="Logo" className="h-8" />
-              {/* <span className="bg-gradient-to-r from-[#d5a127] via-[#F7EF8A] to-[#D2AC47] bg-clip-text text-transparent font-bold">
-                Aruh Koncepts
-              </span> */}
-<div className="inline-flex">
-  {/* Aruh Konce */}
-  <span className="relative inline-block text-transparent bg-clip-text bg-gradient-to-r from-[#d5a127] via-[#F7EF8A] to-[#D2AC47] font-bold">
-    Aruh Konce
-    <span className="absolute left-0 bottom-0 h-[2px] w-full bg-gradient-to-r from-[#d5a127] via-[#F7EF8A] to-[#D2AC47]"></span>
-  </span>
 
-  {/* p without underline */}
-  <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#d5a127] via-[#F7EF8A] to-[#D2AC47] font-bold">
-    p
-  </span>
+              <div className="inline-flex">
+                {/* Aruh Koncept */}
+                <span className="relative inline-block text-transparent bg-clip-text bg-gradient-to-r from-[#d5a127] via-[#F7EF8A] to-[#D2AC47] font-bold">
+                  Aruh Konce
+                  <span className="absolute left-0 bottom-0 h-[2px] w-full bg-gradient-to-r from-[#d5a127] via-[#F7EF8A] to-[#D2AC47]"></span>
+                </span>
 
-  {/* ts with underline and extra left gap */}
-  <span className="relative inline-block text-transparent bg-clip-text bg-gradient-to-r from-[#d5a127] via-[#F7EF8A] to-[#D2AC47] font-bold">
-    ts
-    <span className="absolute left-[-6px] bottom-0 h-[2px] w-[calc(100%+8px)] bg-gradient-to-r from-[#d5a127] via-[#F7EF8A] to-[#D2AC47]"></span>
-  </span>
-</div>
+                {/* p without underline */}
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#d5a127] via-[#F7EF8A] to-[#D2AC47] font-bold">
+                  p
+                </span>
+
+                {/* ts with underline and extra left gap */}
+                <span className="relative inline-block text-transparent bg-clip-text bg-gradient-to-r from-[#d5a127] via-[#F7EF8A] to-[#D2AC47] font-bold">
+                  ts
+                  <span className="absolute left-[-6px] bottom-0 h-[2px] w-[calc(100%+8px)] bg-gradient-to-r from-[#d5a127] via-[#F7EF8A] to-[#D2AC47]"></span>
+                </span>
+              </div>
 
 
             </h1>

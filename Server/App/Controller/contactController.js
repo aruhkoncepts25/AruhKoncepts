@@ -1,5 +1,5 @@
 const contactModel = require("../Model/contactModel");
-const nodemailer=require("nodemailer")
+const nodemailer=require("nodemailer");
 
 const insertUser = async (req, res) => {
   try {
