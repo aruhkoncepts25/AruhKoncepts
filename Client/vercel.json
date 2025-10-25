@@ -1,7 +1,5 @@
 {
   "rewrites": [
-    
-    // --- ADD THESE TWO NEW LINES ---
     {
       "source": "/googleads-1",
       "destination": "https://aruhkoncepts-landing.vercel.app/googleads-1"
