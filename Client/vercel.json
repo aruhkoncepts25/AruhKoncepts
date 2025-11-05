@@ -1,5 +1,14 @@
 {
+  "trailingSlash": false,
   "rewrites": [
+    {
+      "source": "/googleads-1",
+      "destination": "https://aruhkoncepts-landing.vercel.app/googleads-1"
+    },
+    {
+      "source": "/googleads-1/:path*",
+      "destination": "https://aruhkoncepts-landing.vercel.app/googleads-1/:path*"
+    },
     { "source": "/(.*)", "destination": "/" }
   ]
 }
