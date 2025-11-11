@@ -1,6 +1,6 @@
 import React, { useEffect, useRef } from "react";
 import "../../Style/Project.css";
-import project1 from "../../assets/Project/MoreProject/Cproject1.webp";
+import project1 from "../../assets/Project/MoreProject/Cproject1.png";
 import project2 from "../../assets/Project/MoreProject/Cproject2.webp";
 import project3 from "../../assets/Project/MoreProject/Cproject3.webp";
 import project4 from "../../assets/Project/MoreProject/Cproject4.jpg";
@@ -108,12 +108,7 @@ const Project2 = () => {
 
               {/* Info Table */}
               <div className="space-y-2 mt-2 md:mt-6 text-gray-700">
-                {/* <p className="flex gap-9 pb-1" ref={(el) => textRefs.current.push(el)}>
-                  <span className="font-semibold">Client</span> <span>:</span>
-                </p>
-                <p className="flex gap-6 pb-1" ref={(el) => textRefs.current.push(el)}>
-                  <span className="font-semibold">Service</span> <span>:</span>
-                </p> */}
+             
                 <p className="text-gray-700 leading-relaxed" ref={(el) => textRefs.current.push(el)}>
                   The business had recently expanded and required a space that
                   truly mirrored its professional ethos. The leadership team

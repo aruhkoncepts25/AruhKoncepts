@@ -1,12 +1,42 @@
 import React from 'react'
+import {useState} from 'react';  
 import '../../Style/OurService.css'
 import service44 from '../../assets/OurService/service44.jpg'
 import ind1 from '../../assets/insideService/include4.1.png'
 import ind2 from '../../assets/insideService/include4.2.png'
 import ind3 from '../../assets/insideService/include4.3.png'
 import ind4 from '../../assets/insideService/include4.4.png'
-
+import { ToastContainer, toast } from 'react-toastify';
+import GImg from '../../assets/insideService/VgImg.png'
+import 'react-toastify/dist/ReactToastify.css';
+import { Api } from '../Api/Api';
 const Service4 = () => {
+  const [formData, setFormData] =useState({
+    firstName:"",
+    lastName:"",
+    email:"",
+    phone:"",
+    message:"",
+  });
+
+  const handleSubmit =async (e) => {
+    e.preventDefault();
+    // Handle form submission logic here
+    try{
+      await Api.createContact({
+        firstName: formData.firstName,
+        lastName:formData.lastName,
+        eamil:formData.email,
+        phone:formData.phone,
+        message:formData.message,
+      });
+      toast.success("Message Submitted Sucessfully!");
+      setFormData({firstName:"", lastName:"", email:"", phone:"", message:""})
+    }catch(err){
+      console.log(err); // for debugging
+      toast.error(err.response?.data?.err || "Something went wrong!");
+    }
+  }
   const itemsPerRow = 3;
   const items = [
     {
@@ -110,6 +140,95 @@ for (let i = 0; i < items.length; i += itemsPerRow) {
     </div>
   </div>
 </section>
+
+  <section className='w-full px-6 md:px-10 lg:px-15 xl:px-24 mt-2 md:mt-16'>
+        <div className='bg-white md:bg-[#F4EFE9] pt-9'>
+
+         <div className="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center gap-10 relative  px-4">
+  
+  {/* Image Section */}
+  <div className="w-full md:w-1/2 flex justify-center">
+    <img
+      src={GImg}
+      alt="Group of images"
+      className="w-full max-w-[550px] object-contain"
+    />
+  </div>
+
+  {/* Form Section */}
+  <div className="w-full md:w-1/2 flex justify-center">
+    <form
+      className="w-full max-w-md p-6 flex flex-col gap-5 bg-white"
+      onSubmit={handleSubmit}
+    >
+      {/* Name Fields */}
+<div className="flex flex-col md:flex-col lg:flex-row gap-4">
+  <input
+    type="text"
+    placeholder="First Name"
+    value={formData.firstName}
+    onChange={(e) =>
+      setFormData({ ...formData, firstName: e.target.value })
+    }
+    className="flex-1 border-b border-gray-400 focus:border-black outline-none text-md h-8 leading-5 placeholder:text-gray-400 md:placeholder-black"
+    required
+  />
+  <input
+    type="text"
+    placeholder="Last Name"
+    value={formData.lastName}
+    onChange={(e) =>
+      setFormData({ ...formData, lastName: e.target.value })
+    }
+    className="flex-1 border-b border-gray-400 focus:border-black outline-none text-md h-8 leading-5 placeholder:text-gray-400 md:placeholder-black"
+    required
+  />
+</div>
+
+
+      {/* Email */}
+      <input
+        type="email"
+        placeholder="Email"
+        value={formData.email}
+        onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+        className="border-b border-gray-400 focus:border-black outline-none text-md h-6 md:h-8 leading-5 placeholder:text-gray-400 md:placeholder-black"
+        required
+      />
+
+      {/* Phone */}
+      <input
+        type="tel"
+        placeholder="Phone Number"
+        value={formData.phone}
+        onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
+        className="border-b border-gray-400 focus:border-black outline-none text-md h-6 md:h-8 leading-5 placeholder:text-gray-400 md:placeholder-black"
+      />
+
+      {/* Message */}
+      <input
+        type="text"
+        placeholder="Message"
+        value={formData.message}
+        onChange={(e) => setFormData({ ...formData, message: e.target.value })}
+        className="border-b border-gray-400 focus:border-black outline-none text-md h-6 md:h-8 leading-5 placeholder:text-gray-400 md:placeholder-black"
+        required
+      />
+
+      {/* Submit */}
+      <button
+        type="submit"
+        className="mt-4 bg-[#142241] text-white py-2 rounded hover:bg-gray-800 transition-all duration-300"
+      >
+        Submit
+      </button>
+    </form>
+  </div>
+</div>
+          <ToastContainer position="bottom-right" autoClose={3000} />
+          <h1 id='service-text' className='text-center text-[#142241] text-[210px] font-medium relative bottom-[-65px]'>Get a Quote</h1>
+        </div>
+      </section>
     </>
   )
 }

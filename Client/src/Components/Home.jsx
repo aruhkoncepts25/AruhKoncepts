@@ -31,12 +31,13 @@ import { useLocation } from "react-router-dom";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 // Service Section Image
-import hService1 from "../assets/hService1.webp"
-import hService2 from "../assets/hService2.webp"
-import hService3 from "../assets/hService3.jpg"
+
+import hService1 from "../assets/hService1.png"
+import hService2 from "../assets/hService2.png"
+import hService3 from "../assets/hService3.png"
 import hService4 from "../assets/hService4.jpg"
 import hService5 from "../assets/hService5.jpg"
-import hService6 from "../assets/hService6.jpg"
+import hService6 from "../assets/hService6.png"
 import hService7 from "../assets/hService7.jpg"
 
 
@@ -568,147 +569,337 @@ hero,hero11,hero12,hero13
     });
   }, []);
 
+  // save my spot from logic 
+   const [isOpen, setIsOpen] = useState(false);
+
+
+   /// ye transorm my status
+    const [formDataButton, setFormDataButton] = useState({
+    name: "",
+    phone: "",
+    email: "",
+    service: "",
+  });
+
+  const [status, setStatus] = useState("");
+
+  // handle input change
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormDataButton((prev) => ({ ...prev, [name]: value }));
+  };
+
+  // handle form submit
+const handleSubmit = async (e) => {
+  e.preventDefault();
+  setStatus("Submitting...");
+
+  try {
+    await Api.createContact({
+      name: formDataButton.name,   // ✅ lowercase
+      phone: formDataButton.phone, // ✅ lowercase
+      email: formDataButton.email, // ✅ lowercase
+      service: formDataButton.service, // ✅ lowercase
+    });
+
+    toast.success("Message Submitted Successfully!");
+    setFormDataButton({ name: "", phone: "", email: "", service: "" });
+    setStatus(""); // clear status
+  } catch (error) {
+    console.error("Form submission error:", error);
+    setStatus("❌ Something went wrong. Please try again!");
+  }
+};
+
+ 
+
+
+
   ///////////////////////////////////////////////////////////////////////
   return (
     <>
       <main className="overflow-hidden">
         {/* Home Section */}
 
-        <section id="home" className="home-section relative mx-auto text-white min-h-[400px] md:min-h-screen scale-z-100 flex flex-col justify-start sm:justify-center">
-          {/* desktop  */}
+      <section id="home" className="home-section relative mx-auto text-white min-h-[400px] md:min-h-screen scale-z-100 flex flex-col justify-start sm:justify-center">
+  {/* desktop  */}
 
-          {/* Background Image */}
-          <div className="hidden w-full relative sm:absolute inset-0 md:flex justify-center items-center px-2 pt-4 z-0">
-            <div
-              className="relative w-[97%] h-[300px] sm:w-[97%] sm:h-[650px] overflow-hidden rounded-xl shadow-xl mx-auto"
-              data-aos="zoom-in"
-              data-aos-delay="100"
-            >
-              <img
-               ref={imgRef}
-                 src={imageSrc}
-                alt="Interior Design"
-                className="w-full h-full object-cover"
-                loading="eager" // preload for LCP
-                fetchpriority="high" // ✅ Helps browser prioritize this image
-              />
-              <div className="absolute inset-0 bg-black opacity-40 pointer-events-none" />
-            </div>
-          </div>
-
-          {/* Main Content Grid */}
-          <div className="container mx-auto relative z-10 hidden md:grid grid-cols-1 md:grid-cols-2 gap-8 px-6 md:px-12 pt-[-20px] sm:pt-0">
-            {/* Text Section */}
-            <div
-              className="flex flex-col justify-center space-y-6"
-              data-aos="fade-right"
-              data-aos-delay="200"
-            >
-              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight">
-                Designing Spaces <br /> That Reflect Your Soul
-              </h1>
-              <p className="hidden md:block text-gray-200 text-lg md:text-xl">
-                Simplicity, elegance, and function crafted uniquely for you.
-              </p>
-              <button
-                onClick={() => navigate("/aboutus")}
-                className="w-fit px-7 py-2 backdrop-blur-lg bg-white/10 cursor-pointer text-white border border-white/20 rounded-2xl shadow-md transition-all duration-300 ease-in-out hover:scale-105 hover:bg-white/20 hover:shadow-xl"
-              >
-                Explore
-              </button>
-            </div>
-            {/* Featured Projects */}
-            <div
-              className="hidden md:flex flex-col justify-center space-y-6 items-start md:items-end"
-              data-aos="fade-left"
-              data-aos-delay="300"
-            >
-              <h2 className="text-xl font-semibold mb-9">Featured Projects</h2>
-
-              <div className="space-y-8">
-                {/* Project 1 */}
-
-                <Link
-                  to="/featuredProject"
-                  className="bg-white/0 backdrop-blur-md border border-white flex flex-col justify-center rounded-xl px-4 pt-8 pb-4 hover:bg-white/20 h-[130px] transition-all duration-300 ease-in-out w-[130px]"
-                  data-aos="zoom-in"
-                  data-aos-delay="400"
-                >
-                  <img
-                    src={hero1}
-                    alt="Cozy Urban Apartment"
-                    className="w-20 h-20 object-cover relative top-[-35px] left-[-30px] border-2 border-white rounded-lg shadow-md"
-                  />
-                  <p className="text-[#EBCFAC] text-sm mt-[-20px]">
-                    Residencial Project
-                  </p>
-                </Link>
-
-                {/* Project 2 */}
-                <Link
-                to="/featuredProject2"
-                  className="bg-white/0 backdrop-blur-md border flex flex-col justify-center border-white rounded-xl px-4 pt-8 pb-4 hover:bg-white/20 transition-all duration-300 ease-in-out h-[130px] w-[130px]"
-                  data-aos="zoom-in"
-                  data-aos-delay="600"
-                >
-                  <img
-                    src={hero2}
-                    alt="Luxury Penthouse"
-                    className="w-20 h-20 object-cover relative top-[-35px] left-[-30px] border-2 border-white rounded-lg shadow-md"
-                  />
-                  <p className="text-[#EBCFAC] text-sm mt-[-20px]">
-                    Commercial Project
-                  </p>
-                </Link>
-
-                {/* Link */}
-                <button
-                  onClick={() => navigate("/projectKnowMore")}
-                  className="inline-block text-sm cursor-pointer text-gray-300 hover:text-white transition"
-                  data-aos="fade-up"
-                  data-aos-delay="800"
-                >
-                  Know More →
-                </button>
-              </div>
-            </div>
-          </div>
-          {/* //// */}
-
-
-          {/* /// Mobile Home Section */}
-      <div className="w-full relative mx-auto md:hidden px-4 py-2" data-aos="fade-up" data-aos-duration="1000">
-  {/* Image + overlay wrapper */}
-  <div className="relative rounded-2xl overflow-hidden h-[320px]" data-aos="zoom-in" data-aos-delay="300">
-    <img
-      ref={imgRef}
-      src={imageSrc}
-      alt="Interior Design"
-      className="w-full h-full object-cover"
-      loading="eager"
-      fetchpriority="high"
-    />
-    {/* Overlay only on image */}
-    <div className="absolute inset-0 bg-black opacity-40 pointer-events-none" />
-  </div>
-
-  {/* Content over the image, aligned to bottom */}
-  <div className="absolute bottom-6 left-0 right-0 z-10 px-6" data-aos="fade-left" data-aos-delay="500">
-    <div className="flex flex-col items-start gap-1 text-start space-y-4">
-      <h1 className="text-2xl font-semibold text-white leading-snug">
-        Designing Spaces That <br /> Reflect Your Soul
-      </h1>
-      <button
-        onClick={() => navigate("/aboutus")}
-        className="px-7 py-2 backdrop-blur-lg bg-white/10 cursor-pointer text-white border border-white/20 rounded-2xl shadow-md"
-      >
-        Explore
-      </button>
+  {/* Background Image */}
+  <div className="hidden w-full relative sm:absolute inset-0 md:flex justify-center items-center px-2 pt-4 z-0">
+    <div
+      className="relative w-[97%] h-[300px] sm:w-[97%] sm:h-[650px] overflow-hidden rounded-xl shadow-xl mx-auto"
+      data-aos="zoom-in"
+      data-aos-delay="100"
+    >
+      <img
+        ref={imgRef}
+        src={imageSrc}
+        alt="Interior Design"
+        className="w-full h-full object-cover"
+        loading="eager"
+        fetchpriority="high"
+      />
+      <div className="absolute inset-0 bg-black opacity-40 pointer-events-none" />
     </div>
   </div>
-</div>
 
-        </section>
+  {/* Main Content Grid */}
+  <div className="container mx-auto relative z-10 hidden md:grid grid-cols-1 md:grid-cols-2 gap-8 px-6 md:px-12 pt-[-20px] sm:pt-0">
+    {/* Text Section */}
+    <div
+      className="flex flex-col justify-center space-y-6"
+      data-aos="fade-right"
+      data-aos-delay="200"
+    >
+      <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight">
+        Designing Spaces <br /> That Reflect Your Soul
+      </h1>
+      <p className="hidden md:block text-gray-200 text-lg md:text-xl">
+        Simplicity, elegance, and function crafted uniquely for you.
+      </p>
+      <button
+        onClick={() => setIsOpen(true)}
+        className="w-fit px-7 py-2 backdrop-blur-lg bg-white/10 cursor-pointer text-white border border-white/20 rounded-2xl shadow-md transition-all duration-300 ease-in-out hover:scale-105 hover:bg-white/20 hover:shadow-xl"
+      >
+        Transform My Home
+      </button>
+
+      {/* ====== POPUP MODAL DESKTOP ====== */}
+      {isOpen && (
+        <div className="fixed md:bottom-[-150px] lg:bottom-[-170px] flex justify-center items-end z-100 pointer-events-auto">
+          <div className="relative bottom-[-150px] md:bottom-0 bg-white/10 border backdrop-blur-2xl border-white/20 p-9 rounded-2xl w-[90%] sm:w-[400px] text-white">
+            {/* Close Button */}
+            <button
+              onClick={() => setIsOpen(false)}
+              className="absolute top-2 right-4 text-gray-200 text-xl font-bold hover:text-red-400 transition"
+            >
+              ✕
+            </button>
+
+            {/* Form */}
+            <form className="space-y-4" onSubmit={handleSubmit}>
+              <div className="flex gap-2">
+                <input
+                  type="text"
+                  name="name"
+                  placeholder="Name"
+                  value={formDataButton.name}
+                  onChange={handleChange}
+                  className="w-full p-3 bg-white/0 backdrop-blur-2xl border border-white/20 text-white placeholder-gray-200 rounded-2xl outline-none focus:ring-2 focus:ring-blue-400 focus:bg-white/20 transition-all duration-300"
+                  required
+                />
+                <input
+                  type="text"
+                  name="phone"
+                  placeholder="Phone Number"
+                  value={formDataButton.phone}
+                  onChange={handleChange}
+                  className="w-full p-3 bg-white/0 backdrop-blur-2xl border border-white/20 text-white placeholder-gray-200 rounded-2xl outline-none focus:ring-2 focus:ring-blue-400 focus:bg-white/20 transition-all duration-300"
+                  required
+                />
+              </div>
+
+              <input
+                type="email"
+                name="email"
+                placeholder="Your Email"
+                value={formDataButton.email}
+                onChange={handleChange}
+                className="w-full p-3 bg-white/0 backdrop-blur-2xl border border-white/20 text-white placeholder-gray-200 rounded-2xl outline-none focus:ring-2 focus:ring-blue-400 focus:bg-white/20 transition-all duration-300"
+                required
+              />
+
+              <input
+                type="text"
+                name="service"
+                placeholder="Service Type"
+                value={formDataButton.service}
+                onChange={handleChange}
+                className="w-full p-3 bg-white/0 backdrop-blur-2xl border border-white/20 text-white placeholder-gray-200 rounded-2xl outline-none focus:ring-2 focus:ring-blue-400 focus:bg-white/20 transition-all duration-300"
+                required
+              />
+
+              <button
+                type="submit"
+                className="w-full py-2.5 hover:cursor-pointer bg-white/0 backdrop-blur-2xl border border-white/20 rounded-2xl text-white font-medium shadow-md hover:shadow-lg hover:scale-105 transition-all duration-200"
+              >
+                Submit
+              </button>
+
+              {status && (
+                <p className="text-center text-sm text-gray-200 mt-2">{status}</p>
+              )}
+            </form>
+          </div>
+        </div>
+      )}
+    </div>
+    
+    {/* Featured Projects */}
+    <div
+      className="hidden md:flex flex-col justify-center space-y-6 items-start md:items-end"
+      data-aos="fade-left"
+      data-aos-delay="300"
+    >
+      <h2 className="text-xl font-semibold mb-9">Featured Projects</h2>
+      <div className="space-y-8">
+        {/* Project 1 */}
+        <Link
+          to="/featuredProject"
+          className="bg-white/0 backdrop-blur-md border border-white flex flex-col justify-center rounded-xl px-4 pt-8 pb-4 hover:bg-white/20 h-[130px] transition-all duration-300 ease-in-out w-[130px]"
+          data-aos="zoom-in"
+          data-aos-delay="400"
+        >
+          <img
+            src={hero1}
+            alt="Cozy Urban Apartment"
+            className="w-20 h-20 object-cover relative top-[-35px] left-[-30px] border-2 border-white rounded-lg shadow-md"
+          />
+          <p className="text-[#EBCFAC] text-sm mt-[-20px]">
+            Residencial Project
+          </p>
+        </Link>
+
+        {/* Project 2 */}
+        <Link
+          to="/featuredProject2"
+          className="bg-white/0 backdrop-blur-md border flex flex-col justify-center border-white rounded-xl px-4 pt-8 pb-4 hover:bg-white/20 transition-all duration-300 ease-in-out h-[130px] w-[130px]"
+          data-aos="zoom-in"
+          data-aos-delay="600"
+        >
+          <img
+            src={hero2}
+            alt="Luxury Penthouse"
+            className="w-20 h-20 object-cover relative top-[-35px] left-[-30px] border-2 border-white rounded-lg shadow-md"
+          />
+          <p className="text-[#EBCFAC] text-sm mt-[-20px]">
+            Commercial Project
+          </p>
+        </Link>
+
+        {/* Link */}
+        <button
+          onClick={() => navigate("/projectKnowMore")}
+          className="inline-block text-sm cursor-pointer text-gray-300 hover:text-white transition"
+          data-aos="fade-up"
+          data-aos-delay="800"
+        >
+          Know More →
+        </button>
+      </div>
+    </div>
+  </div>
+
+  {/* /// Mobile Home Section */}
+  <div className="w-full relative mx-auto md:hidden px-4 py-2" data-aos="fade-up" data-aos-duration="1000">
+    {/* Image + overlay wrapper */}
+    <div className="relative rounded-2xl overflow-hidden h-[320px]" data-aos="zoom-in" data-aos-delay="300">
+      <img
+        ref={imgRef}
+        src={imageSrc}
+        alt="Interior Design"
+        className="w-full h-full object-cover"
+        loading="eager"
+        fetchpriority="high"
+      />
+      {/* Overlay only on image */}
+      <div className="absolute inset-0 bg-black opacity-40 pointer-events-none" />
+    </div>
+
+    {/* Content over the image, aligned to bottom */}
+    <div className="absolute bottom-6 left-0 right-0 z-10 px-6" data-aos="fade-left" data-aos-delay="500">
+      <div className="flex flex-col items-start gap-1 text-start space-y-4">
+        <h1 className="text-2xl font-semibold text-white leading-snug">
+          Designing Spaces That <br /> Reflect Your Soul
+        </h1>
+        <button
+          onClick={() => setIsOpen(true)}
+          className="px-7 py-2 backdrop-blur-lg bg-white/10 cursor-pointer text-white border border-white/20 rounded-2xl shadow-md"
+        >
+          Transform My Home
+        </button>
+      </div>
+    </div>
+
+    {/* ====== POPUP MODAL MOBILE - CORRECTED ====== */}
+    {isOpen && (
+      <div className="fixed inset-0 z-100 flex justify-center items-end pointer-events-auto pb-4">
+        {/* Background Overlay - Yeh important hai */}
+        <div
+          className="absolute inset-0 bg-black/50 backdrop-blur-sm"
+          onClick={() => setIsOpen(false)}
+        ></div>
+
+        {/* Popup Container */}
+        <div className="relative z-50 bg-white/10 border border-white/30 backdrop-blur-[20px] shadow-[0_0_40px_rgba(255,255,255,0.15)] p-6 rounded-2xl w-[90%] max-w-[400px] text-white transition-transform duration-300">
+          
+          {/* Close Button */}
+          <button
+            onClick={() => setIsOpen(false)}
+            className="absolute top-3 right-4 text-gray-200 text-xl font-bold hover:text-red-400 transition"
+          >
+            ✕
+          </button>
+
+          {/* Form */}
+          <form className="space-y-4 mt-2" onSubmit={handleSubmit}>
+            <div className="flex flex-col gap-3">
+              <input
+                type="text"
+                name="name"
+                placeholder="Name"
+                value={formDataButton.name}
+                onChange={handleChange}
+                className="w-full p-3 bg-white/5 border border-white/20 text-white placeholder-gray-200 rounded-2xl outline-none focus:ring-2 focus:ring-blue-400 focus:bg-white/10 transition-all duration-300"
+                required
+              />
+              <input
+                type="text"
+                name="phone"
+                placeholder="Phone Number"
+                value={formDataButton.phone}
+                onChange={handleChange}
+                className="w-full p-3 bg-white/5 border border-white/20 text-white placeholder-gray-200 rounded-2xl outline-none focus:ring-2 focus:ring-blue-400 focus:bg-white/10 transition-all duration-300"
+                required
+              />
+            </div>
+
+            <input
+              type="email"
+              name="email"
+              placeholder="Your Email"
+              value={formDataButton.email}
+              onChange={handleChange}
+              className="w-full p-3 bg-white/5 border border-white/20 text-white placeholder-gray-200 rounded-2xl outline-none focus:ring-2 focus:ring-blue-400 focus:bg-white/10 transition-all duration-300"
+              required
+            />
+
+            <input
+              type="text"
+              name="service"
+              placeholder="Service Type"
+              value={formDataButton.service}
+              onChange={handleChange}
+              className="w-full p-3 bg-white/5 border border-white/20 text-white placeholder-gray-200 rounded-2xl outline-none focus:ring-2 focus:ring-blue-400 focus:bg-white/10 transition-all duration-300"
+              required
+            />
+
+            <button
+              type="submit"
+              className="w-full py-3 bg-gradient-to-r from-blue-400/30 to-pink-400/30 border border-white/30 rounded-2xl text-white font-semibold shadow-lg hover:scale-105 transition-all duration-300"
+            >
+              Submit
+            </button>
+
+            {status && (
+              <p className="text-center text-sm text-gray-200 mt-2">{status}</p>
+            )}
+          </form>
+        </div>
+      </div>
+    )}
+  </div>
+</section>
 
         {/* About Section */}
         <section className="about-section ">

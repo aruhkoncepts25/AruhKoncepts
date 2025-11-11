@@ -6,7 +6,9 @@ import about2 from '../assets/AboutUs/about-2.jpg';
 import about4 from "../assets/AboutUs/about4.jpg";  // bich ke liye Meet our founder wlala
 import about3 from "../assets/AboutUs/about3.jpeg"; // meet our team
 import about5 from "../assets/AboutUs/about5.webp";// meet our team
-import about6 from "../assets/AboutUs/about6.webp";// meet our team
+import about6 from "../assets/AboutUs/about6.png";// meet our team
+import about7 from "../assets/AboutUs/about7.png";// meet our team
+import about8 from "../assets/AboutUs/about8.png";// meet our team
 import icon1 from "../assets/AboutUs/icon1.png";
 import icon2 from "../assets/AboutUs/icon2.png";
 import icon3 from "../assets/AboutUs/icon3.png";
@@ -39,7 +41,10 @@ const AboutUs = () => {
     // { name: "Alexander", role: "Founder", image: about },
     { name: "Mr. Numaan Siddiqui ", role: "Project Lead ", image: about3 },
     { name: "Ms. Nirmala", role: "Creative Designer", image: about5 },
-    { name: "Mr. Upendra", role: "Creative Designer", image: about6 },
+    { name: "Ms. Pravalika", role: "Creative Designer", image: about6 },
+    { name: "Ms. Lavanya", role: "Creative Designer", image: about7 },
+    { name: "Ms. Swathi", role: "Creative Designer", image: about8 },
+
   ];
 
   return (
@@ -231,36 +236,66 @@ Our <span className="italic  font-medium">commitment to offer premium quality ou
             </p>
 
             <div className="mt-10 flex justify-start">
-              <div className="w-[90%] mx-auto">
-                <div className="w-full flex flex-wrap justify-center md:justify-between gap-10">
-                  {team.map((member, index) => (
-                    <div
-                      key={index}
-                      className="w-64 rounded-b-xl overflow-hidden p-3"
-                      style={{
-                        background: 'linear-gradient(180deg, rgba(20,34,65,1) 0%, rgba(50,84,160,1) 100%)',
-                        borderRadius: '8rem 8rem 0rem 0rem',
-                      }}
-                      data-aos="zoom-in"
-                      data-aos-delay={400 + index * 150} // stagger cards with delay
-                      data-aos-duration="800"
-                    >
-                      <div className="relative w-full h-80 rounded-t-[140px] overflow-hidden">
-                        <img
-                          src={member.image}
-                          alt={member.name}
-                          className="w-full h-full object-cover rounded-t-[140px]"
-                        />
-                      </div>
+           <div className="w-[90%] mx-auto flex flex-col gap-10">
+  {/* First Row - 3 cards */}
+  <div className="flex justify-center gap-16 flex-wrap">
+    {team.slice(0, 3).map((member, index) => (
+      <div
+        key={index}
+        className="w-64 rounded-b-xl overflow-hidden p-3"
+        style={{
+          background: 'linear-gradient(180deg, rgba(20,34,65,1) 0%, rgba(50,84,160,1) 100%)',
+          borderRadius: '8rem 8rem 0rem 0rem',
+        }}
+        data-aos="zoom-in"
+        data-aos-delay={400 + index * 150}
+        data-aos-duration="800"
+      >
+        <div className="relative w-full h-80 rounded-t-[140px] overflow-hidden">
+          <img
+            src={member.image}
+            alt={member.name}
+            className="w-full h-full object-cover rounded-t-[140px]"
+          />
+        </div>
+        <div className="text-center py-4">
+          <h3 className="text-white font-semibold text-lg">{member.name}</h3>
+          <p className="text-white text-sm">{member.role}</p>
+        </div>
+      </div>
+    ))}
+  </div>
 
-                      <div className="text-center py-4">
-                        <h3 className="text-white font-semibold text-lg">{member.name}</h3>
-                        <p className="text-white text-sm">{member.role}</p>
-                      </div>
-                    </div>
-                  ))}
-                </div>
-              </div>
+  {/* Second Row - 2 cards centered */}
+  <div className="flex justify-center gap-16 flex-wrap">
+    {team.slice(3, 5).map((member, index) => (
+      <div
+        key={index}
+        className="w-64 rounded-b-xl overflow-hidden p-3"
+        style={{
+          background: 'linear-gradient(180deg, rgba(20,34,65,1) 0%, rgba(50,84,160,1) 100%)',
+          borderRadius: '8rem 8rem 0rem 0rem',
+        }}
+        data-aos="zoom-in"
+        data-aos-delay={400 + (index + 3) * 150}
+        data-aos-duration="800"
+      >
+        <div className="relative w-full h-80 rounded-t-[140px] overflow-hidden">
+          <img
+            src={member.image}
+            alt={member.name}
+            className="w-full h-full object-cover rounded-t-[140px]"
+          />
+        </div>
+        <div className="text-center py-4">
+          <h3 className="text-white font-semibold text-lg">{member.name}</h3>
+          <p className="text-white text-sm">{member.role}</p>
+        </div>
+      </div>
+    ))}
+  </div>
+</div>
+
             </div>
           </div>
         </section>

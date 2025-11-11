@@ -1,9 +1,9 @@
 import React, { useEffect, useRef } from "react";
 import "../Style/Project.css";
-import project1 from "../assets/Project/Mproject-1.webp";
-import project2 from "../assets/Project/project-2.webp";
-import project3 from "../assets/Project/project31.jpg";
-import project4 from "../assets/Project/project-4.webp";
+import project1 from "../assets/Project/project-1.png";
+import project2 from "../assets/Project/project-2.png";
+import project3 from "../assets/Project/project-3.png";
+import project4 from "../assets/Project/project-4.jpg";
 import project5 from "../assets/Project/project-5.jpg";
 import project6 from "../assets/Project/project-6.png";
 import { useNavigate } from "react-router-dom";

@@ -2,12 +2,12 @@
 import { ArrowRight } from "lucide-react";
 import '../Style/OurService.css'
 // Service Image
-import service1 from "../assets/OurService/service-1.webp"
-import service2 from "../assets/OurService/service-2.jpg"
-import service3 from "../assets/OurService/service-3.jpg"
+import service1 from "../assets/OurService/service-1.png"
+import service2 from "../assets/OurService/service-2.png"
+import service3 from "../assets/OurService/service-3.png"
 import service4 from "../assets/OurService/service-4.jpg"
 import service5 from "../assets/OurService/service-5.jpg"
-import service6 from "../assets/OurService/service-6.jpg"
+import service6 from "../assets/OurService/service-6.png"
 import service7 from "../assets/OurService/service-7.jpg"
 // Icon Image 
 import Icon1 from '../assets/OurService/icon1.svg?react';

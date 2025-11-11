@@ -1,6 +1,6 @@
 import React, { useEffect, useRef } from "react";
 import "../../Style/Project.css";
-import project1 from "../../assets/Project/MoreProject/CoProject1.jpg";
+import project1 from "../../assets/Project/MoreProject/CoProject1.png";
 import project2 from "../../assets/Project/MoreProject/CoProject2.jpg";
 import project3 from "../../assets/Project/MoreProject/CoProject3.jpg";
 import project4 from "../../assets/Project/MoreProject/CoProject4.jpg";
