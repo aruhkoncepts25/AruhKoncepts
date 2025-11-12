@@ -768,7 +768,7 @@ useEffect(() => {
   <div className="fixed inset-0 z-[100] flex items-center justify-center p-4">
     {/* Full Screen Overlay */}
     <div 
-      className="absolute inset-0 bg-black/60 backdrop-blur-md"
+      className="absolute inset-0 bg-black/60 backdrop-blur-sm"
       onClick={() => setIsOpen(false)}
     />
     
@@ -781,7 +781,7 @@ useEffect(() => {
       <button
         type="button"
         onClick={() => setIsOpen(false)}
-        className="absolute -top-1 -right-1 bg-red-500 hover:bg-red-600 text-white w-8 h-8 rounded-full flex items-center justify-center text-lg font-bold transition-all duration-200 shadow-lg hover:scale-110"
+        className="absolute -top-1 -right-1 bg-[#C9966B] text-[#142241] w-8 h-8 rounded-full flex items-center justify-center text-lg font-bold transition-all duration-200 shadow-lg hover:scale-110"
         disabled={isSubmitting}
       >
         ✕
@@ -838,10 +838,10 @@ useEffect(() => {
           <button
             type="submit"
             disabled={isSubmitting}
-            className={`w-full py-3.5 border border-white/20 rounded-xl text-white font-semibold shadow-lg transition-all duration-200 mt-2 ${
+            className={`w-full py-3.5 border-2 border-white/20 rounded-xl text-[#142241] font-semibold shadow-lg transition-all duration-200 mt-2 ${
               isSubmitting 
-                ? 'bg-gray-500/50 cursor-not-allowed' 
-                : 'bg-white/10 hover:bg-white/20 hover:scale-[1.02]'
+                ? 'bg-[#C9966B] cursor-not-allowed' 
+                : 'bg-[#C9966B] hover:scale-[1.02]'
             }`}
           >
             {isSubmitting ? 'Submitting...' : 'Submit'}
@@ -1769,12 +1769,12 @@ Guided by <span className="italic font-medium">Creativity, Efficiency, and Ethic
           </div>
         </section>
 
-       {/* ====== MOBILE MODAL (Now responsive) ====== */}
+        {/* ====== MOBILE MODAL (Now responsive) ====== */}
         {isOpenMobile && (
           <div className="fixed inset-0 z-[100] flex items-center justify-center p-4 md:hidden">
             {/* Full Screen Overlay */}
             <div
-              className="absolute inset-0 bg-black/60 backdrop-blur-md"
+              className="absolute inset-0 bg-black/60 backdrop-blur-xs"
               onClick={() => setIsOpenMobile(false)}
             />
 
@@ -1787,7 +1787,7 @@ Guided by <span className="italic font-medium">Creativity, Efficiency, and Ethic
               <button
                 type="button"
                 onClick={() => setIsOpenMobile(false)}
-                className="absolute -top-1 -right-1 bg-red-500 hover:bg-red-600 text-white w-8 h-8 rounded-full flex items-center justify-center text-lg font-bold transition-all duration-200 shadow-lg hover:scale-110"
+                className="absolute -top-1 -right-1 bg-[#C9966B] text-[#142241] w-8 h-8 rounded-full flex items-center justify-center text-lg font-bold transition-all duration-200 shadow-lg hover:scale-110"
                 disabled={isSubmitting}
               >
                 ✕
@@ -1844,10 +1844,10 @@ Guided by <span className="italic font-medium">Creativity, Efficiency, and Ethic
                   <button
                     type="submit"
                     disabled={isSubmitting}
-                    className={`w-full py-3.5 border-2 border-white rounded-xl text-white font-semibold shadow-lg transition-all duration-200 mt-2 ${
+                    className={`w-full py-3.5 border-2 border-white/20 rounded-xl text-[#142241] bg-[#C9966B]font-bold shadow-lg transition-all duration-200 mt-2 ${
                       isSubmitting
                         ? 'bg-gray-500/50 cursor-not-allowed'
-                        : 'bg-white/10 hover:bg-white/20 hover:scale-[1.02]'
+                        : 'bg-[#C9966B] hover:bg-white/20 hover:scale-[1.02]'
                     }`}
                   >
                     {isSubmitting ? 'Submitting...' : 'Submit'}
