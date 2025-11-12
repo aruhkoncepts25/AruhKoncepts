@@ -1769,70 +1769,103 @@ Guided by <span className="italic font-medium">Creativity, Efficiency, and Ethic
           </div>
         </section>
 
-        {/* ====== MOBILE MODAL (Now responsive) ====== */}
+       {/* ====== MOBILE MODAL (Now responsive) ====== */}
         {isOpenMobile && (
-          <div className="fixed bottom-0 left-0 right-0 z-50 flex justify-center items-end pointer-events-none pb-2 md:hidden">
+          <div className="fixed inset-0 z-[100] flex items-center justify-center p-4 md:hidden">
+            {/* Full Screen Overlay */}
+            <div
+              className="absolute inset-0 bg-black/60 backdrop-blur-md"
+              onClick={() => setIsOpenMobile(false)}
+            />
 
-            {/* Popup Container */}
-            <div className="relative z-50 bg-white/10 border border-white/30 backdrop-blur-[15px] shadow-[0_0_40px_rgba(255,255,255,0.15)] p-6 rounded-2xl w-[90%] max-w-[400px] text-white transition-transform duration-300 pointer-events-auto">
+            {/* Centered Popup */}
+            <div
+              className="relative z-[101] bg-white/10 border border-white/20 backdrop-blur-2xl rounded-2xl w-full max-w-md text-white shadow-2xl transform transition-all duration-300 scale-100"
+              onClick={(e) => e.stopPropagation()}
+            >
               {/* Close Button */}
               <button
+                type="button"
                 onClick={() => setIsOpenMobile(false)}
-                className="absolute top-3 right-4 text-gray-200 text-xl font-bold hover:text-red-400 transition"
+                className="absolute -top-1 -right-1 bg-red-500 hover:bg-red-600 text-white w-8 h-8 rounded-full flex items-center justify-center text-lg font-bold transition-all duration-200 shadow-lg hover:scale-110"
+                disabled={isSubmitting}
               >
                 ✕
               </button>
 
-              {/* Form */}
-              <form className="space-y-4 mt-2" onSubmit={handleSubmit}>
-                <div className="flex flex-col gap-3">
+              {/* Form Content */}
+              <div className="p-8">
+                <form className="space-y-4" onSubmit={handleSubmit}>
+                  <div className="flex flex-col gap-3">
+                    <input
+                      type="text"
+                      name="name"
+                      placeholder="Your Name"
+                      value={formDataButton.name}
+                      onChange={handleChange}
+                      className="w-full p-3 bg-white/5 border border-white/20 text-white placeholder-gray-300 rounded-xl outline-none focus:ring-2 focus:ring-blue-400 focus:bg-white/10 transition-all duration-300"
+                      required
+                      disabled={isSubmitting}
+                    />
+                    <input
+                      type="tel"
+                      name="phone"
+                      placeholder="Phone Number"
+                      value={formDataButton.phone}
+                      onChange={handleChange}
+                      className="w-full p-3 bg-white/5 border border-white/20 text-white placeholder-gray-300 rounded-xl outline-none focus:ring-2 focus:ring-blue-400 focus:bg-white/10 transition-all duration-300"
+                      required
+                      disabled={isSubmitting}
+                    />
+                  </div>
+
+                  <input
+                    type="email"
+                    name="email"
+                    placeholder="Your Email Address"
+                    value={formDataButton.email}
+                    onChange={handleChange}
+                    className="w-full p-3 bg-white/5 border border-white/20 text-white placeholder-gray-300 rounded-xl outline-none focus:ring-2 focus:ring-blue-400 focus:bg-white/10 transition-all duration-300"
+                    required
+                    disabled={isSubmitting}
+                  />
+
                   <input
                     type="text"
-                    name="name"
-                    placeholder="Name"
-                    value={formDataButton.name}
+                    name="service"
+                    placeholder="What Service Do You Need?"
+                    value={formDataButton.service}
                     onChange={handleChange}
-                    className="w-full p-3 bg-white/5 border border-white/20 text-white placeholder-gray-200 rounded-2xl outline-none focus:ring-2 focus:ring-blue-400 focus:bg-white/10 transition-all duration-300"
+                    className="w-full p-3 bg-white/5 border border-white/20 text-white placeholder-gray-300 rounded-xl outline-none focus:ring-2 focus:ring-blue-400 focus:bg-white/10 transition-all duration-300"
                     required
+                    disabled={isSubmitting}
                   />
-                  <input
-                    type="text"
-                    name="phone"
-                    placeholder="Phone Number"
-                    value={formDataButton.phone}
-                    onChange={handleChange}
-                    className="w-full p-3 bg-white/5 border border-white/20 text-white placeholder-gray-200 rounded-2xl outline-none focus:ring-2 focus:ring-blue-400 focus:bg-white/10 transition-all duration-300"
-                    required
-                  />
-                </div>
-                <input
-                  type="email"
-                  name="email"
-                  placeholder="Your Email"
-                  value={formDataButton.email}
-                  onChange={handleChange}
-                  className="w-full p-3 bg-white/5 border border-white/20 text-white placeholder-gray-200 rounded-2xl outline-none focus:ring-2 focus:ring-blue-400 focus:bg-white/10 transition-all duration-300"
-                  required
-                />
-                <input
-                  type="text"
-                  name="service"
-                  placeholder="Service Type"
-                  value={formDataButton.service}
-                  onChange={handleChange}
-                  className="w-full p-3 bg-white/5 border border-white/20 text-white placeholder-gray-200 rounded-2xl outline-none focus:ring-2 focus:ring-blue-400 focus:bg-white/10 transition-all duration-300"
-                  required
-                />
-                <button
-                  type="submit"
-                  className="w-full py-3 bg-gradient-to-r from-blue-400/30 to-pink-400/30 border border-white/30 rounded-2xl text-white font-semibold shadow-lg hover:scale-105 transition-all duration-300"
-                >
-                  Submit
-                </button>
-                {status && (
-                  <p className="text-center text-sm text-gray-200 mt-2">{status}</p>
-                )}
-              </form>
+
+                  <button
+                    type="submit"
+                    disabled={isSubmitting}
+                    className={`w-full py-3.5 border-2 border-white rounded-xl text-white font-semibold shadow-lg transition-all duration-200 mt-2 ${
+                      isSubmitting
+                        ? 'bg-gray-500/50 cursor-not-allowed'
+                        : 'bg-white/10 hover:bg-white/20 hover:scale-[1.02]'
+                    }`}
+                  >
+                    {isSubmitting ? 'Submitting...' : 'Submit'}
+                  </button>
+
+                  {status && (
+                    <p
+                      className={`text-center text-sm mt-3 py-2 rounded-lg ${
+                        status.includes('❌')
+                          ? 'text-red-300 bg-red-500/20'
+                          : 'text-green-300 bg-green-500/20'
+                      }`}
+                    >
+                      {status}
+                    </p>
+                  )}
+                </form>
+              </div>
             </div>
           </div>
         )}
