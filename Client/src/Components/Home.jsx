@@ -768,7 +768,7 @@ useEffect(() => {
   <div className="fixed inset-0 z-[100] flex items-center justify-center p-4">
     {/* Full Screen Overlay */}
     <div 
-      className="absolute inset-0 bg-black/60 backdrop-blur-xs"
+      className="absolute inset-0 bg-black/60 backdrop-blur-[2px]"
       onClick={() => setIsOpen(false)}
     />
     
@@ -1774,7 +1774,7 @@ Guided by <span className="italic font-medium">Creativity, Efficiency, and Ethic
           <div className="fixed inset-0 z-[100] flex items-center justify-center p-4 md:hidden">
             {/* Full Screen Overlay */}
             <div
-              className="absolute inset-0 bg-black/60 backdrop-blur-xs"
+              className="absolute inset-0 bg-black/60 backdrop-blur-[2px]"
               onClick={() => setIsOpenMobile(false)}
             />
 
