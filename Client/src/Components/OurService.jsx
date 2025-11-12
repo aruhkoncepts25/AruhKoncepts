@@ -123,7 +123,7 @@ const OurService = () => {
                             <div className="w-full" data-aos="zoom-in">
                                 <img
                                     src={service.image}
-                                    alt={service.title}
+                             z       alt={service.title}
                                     loading="lazy"
                                     className="md:w-[500px]  md:h-[400px]  object-cover shadow-sm"
                                 />

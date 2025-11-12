@@ -570,50 +570,82 @@ hero,hero11,hero12,hero13
   }, []);
 
   // save my spot from logic 
-   const [isOpen, setIsOpen] = useState(false);
+  const [isOpen, setIsOpen] = useState(false);
+const [isOpenMobile, setIsOpenMobile] = useState(false);
 
+const [formDataButton, setFormDataButton] = useState({
+  name: "",
+  phone: "",
+  email: "",
+  service: "",
+});
 
-   /// ye transorm my status
-    const [formDataButton, setFormDataButton] = useState({
-    name: "",
-    phone: "",
-    email: "",
-    service: "",
-  });
+const [status, setStatus] = useState("");
+const [isSubmitting, setIsSubmitting] = useState(false);
 
-  const [status, setStatus] = useState("");
+// Handle input change
+const handleChange = (e) => {
+  const { name, value } = e.target;
+  setFormDataButton((prev) => ({ 
+    ...prev, 
+    [name]: value 
+  }));
+};
 
-  // handle input change
-  const handleChange = (e) => {
-    const { name, value } = e.target;
-    setFormDataButton((prev) => ({ ...prev, [name]: value }));
-  };
-
-  // handle form submit
+// Handle form submit
 const handleSubmit = async (e) => {
   e.preventDefault();
+  
+  if (isSubmitting) return; // Prevent multiple submissions
+  
+  setIsSubmitting(true);
   setStatus("Submitting...");
 
   try {
     await Api.createContact({
-      name: formDataButton.name,   // ✅ lowercase
-      phone: formDataButton.phone, // ✅ lowercase
-      email: formDataButton.email, // ✅ lowercase
-      service: formDataButton.service, // ✅ lowercase
+      name: formDataButton.name,
+      phone: formDataButton.phone,
+      email: formDataButton.email,
+      service: formDataButton.service,
     });
 
     toast.success("Message Submitted Successfully!");
-    setFormDataButton({ name: "", phone: "", email: "", service: "" });
-    setStatus(""); // clear status
+    
+    // Reset form and close modal
+    setFormDataButton({ 
+      name: "", 
+      phone: "", 
+      email: "", 
+      service: "" 
+    });
+    
+    setStatus("");
+    setIsOpen(false); // Close the modal on success
+    setIsOpenMobile(false); // Close mobile modal if open
+    
   } catch (error) {
     console.error("Form submission error:", error);
     setStatus("❌ Something went wrong. Please try again!");
+    toast.error("Failed to submit form. Please try again.");
+  } finally {
+    setIsSubmitting(false);
   }
 };
 
+// Reset form when modal opens/closes
+useEffect(() => {
+  if (!isOpen && !isOpenMobile) {
+    setFormDataButton({ 
+      name: "", 
+      phone: "", 
+      email: "", 
+      service: "" 
+    });
+    setStatus("");
+    setIsSubmitting(false);
+  }
+}, [isOpen, isOpenMobile]);
  
-
-
 
   ///////////////////////////////////////////////////////////////////////
   return (
@@ -621,7 +653,7 @@ const handleSubmit = async (e) => {
       <main className="overflow-hidden">
         {/* Home Section */}
 
-      <section id="home" className="home-section relative mx-auto text-white min-h-[400px] md:min-h-screen scale-z-100 flex flex-col justify-start sm:justify-center">
+<section id="home" className="home-section relative mx-auto text-white min-h-[400px] md:min-h-screen scale-z-100 flex flex-col justify-start sm:justify-center">
   {/* desktop  */}
 
   {/* Background Image */}
@@ -663,76 +695,6 @@ const handleSubmit = async (e) => {
       >
         Transform My Home
       </button>
-
-      {/* ====== POPUP MODAL DESKTOP ====== */}
-      {isOpen && (
-        <div className="fixed md:bottom-[-150px] lg:bottom-[-170px] flex justify-center items-end z-100 pointer-events-auto">
-          <div className="relative bottom-[-150px] md:bottom-0 bg-white/10 border backdrop-blur-2xl border-white/20 p-9 rounded-2xl w-[90%] sm:w-[400px] text-white">
-            {/* Close Button */}
-            <button
-              onClick={() => setIsOpen(false)}
-              className="absolute top-2 right-4 text-gray-200 text-xl font-bold hover:text-red-400 transition"
-            >
-              ✕
-            </button>
-
-            {/* Form */}
-            <form className="space-y-4" onSubmit={handleSubmit}>
-              <div className="flex gap-2">
-                <input
-                  type="text"
-                  name="name"
-                  placeholder="Name"
-                  value={formDataButton.name}
-                  onChange={handleChange}
-                  className="w-full p-3 bg-white/0 backdrop-blur-2xl border border-white/20 text-white placeholder-gray-200 rounded-2xl outline-none focus:ring-2 focus:ring-blue-400 focus:bg-white/20 transition-all duration-300"
-                  required
-                />
-                <input
-                  type="text"
-                  name="phone"
-                  placeholder="Phone Number"
-                  value={formDataButton.phone}
-                  onChange={handleChange}
-                  className="w-full p-3 bg-white/0 backdrop-blur-2xl border border-white/20 text-white placeholder-gray-200 rounded-2xl outline-none focus:ring-2 focus:ring-blue-400 focus:bg-white/20 transition-all duration-300"
-                  required
-                />
-              </div>
-
-              <input
-                type="email"
-                name="email"
-                placeholder="Your Email"
-                value={formDataButton.email}
-                onChange={handleChange}
-                className="w-full p-3 bg-white/0 backdrop-blur-2xl border border-white/20 text-white placeholder-gray-200 rounded-2xl outline-none focus:ring-2 focus:ring-blue-400 focus:bg-white/20 transition-all duration-300"
-                required
-              />
-
-              <input
-                type="text"
-                name="service"
-                placeholder="Service Type"
-                value={formDataButton.service}
-                onChange={handleChange}
-                className="w-full p-3 bg-white/0 backdrop-blur-2xl border border-white/20 text-white placeholder-gray-200 rounded-2xl outline-none focus:ring-2 focus:ring-blue-400 focus:bg-white/20 transition-all duration-300"
-                required
-              />
-
-              <button
-                type="submit"
-                className="w-full py-2.5 hover:cursor-pointer bg-white/0 backdrop-blur-2xl border border-white/20 rounded-2xl text-white font-medium shadow-md hover:shadow-lg hover:scale-105 transition-all duration-200"
-              >
-                Submit
-              </button>
-
-              {status && (
-                <p className="text-center text-sm text-gray-200 mt-2">{status}</p>
-              )}
-            </form>
-          </div>
-        </div>
-      )}
     </div>
     
     {/* Featured Projects */}
@@ -790,6 +752,105 @@ const handleSubmit = async (e) => {
     </div>
   </div>
 
+  {/* ====== POPUP MODAL DESKTOP - CENTERED ====== */}
+{isOpen && (
+  <div className="fixed inset-0 z-[100] flex items-center justify-center p-4">
+    {/* Full Screen Overlay */}
+    <div 
+      className="absolute inset-0 bg-black/60 backdrop-blur-md"
+      onClick={() => setIsOpen(false)}
+    />
+    
+    {/* Centered Popup */}
+    <div 
+      className="relative z-[101] bg-white/10 border border-white/20 backdrop-blur-2xl rounded-2xl w-full max-w-md text-white shadow-2xl transform transition-all duration-300 scale-100"
+      onClick={(e) => e.stopPropagation()}
+    >
+      {/* Close Button */}
+      <button
+        type="button"
+        onClick={() => setIsOpen(false)}
+        className="absolute -top-1 -right-1 bg-red-500 hover:bg-red-600 text-white w-8 h-8 rounded-full flex items-center justify-center text-lg font-bold transition-all duration-200 shadow-lg hover:scale-110"
+        disabled={isSubmitting}
+      >
+        ✕
+      </button>
+
+      {/* Form Content */}
+      <div className="p-8">
+        <form className="space-y-4" onSubmit={handleSubmit}>
+          <div className="flex gap-3">
+            <input
+              type="text"
+              name="name"
+              placeholder="Your Name"
+              value={formDataButton.name}
+              onChange={handleChange}
+              className="w-full p-3 bg-white/5 border border-white/20 text-white placeholder-gray-300 rounded-xl outline-none focus:ring-2 focus:ring-blue-400 focus:bg-white/10 transition-all duration-300"
+              required
+              disabled={isSubmitting}
+            />
+            <input
+              type="tel"
+              name="phone"
+              placeholder="Phone Number"
+              value={formDataButton.phone}
+              onChange={handleChange}
+              className="w-full p-3 bg-white/5 border border-white/20 text-white placeholder-gray-300 rounded-xl outline-none focus:ring-2 focus:ring-blue-400 focus:bg-white/10 transition-all duration-300"
+              required
+              disabled={isSubmitting}
+            />
+          </div>
+
+          <input
+            type="email"
+            name="email"
+            placeholder="Your Email Address"
+            value={formDataButton.email}
+            onChange={handleChange}
+            className="w-full p-3 bg-white/5 border border-white/20 text-white placeholder-gray-300 rounded-xl outline-none focus:ring-2 focus:ring-blue-400 focus:bg-white/10 transition-all duration-300"
+            required
+            disabled={isSubmitting}
+          />
+
+          <input
+            type="text"
+            name="service"
+            placeholder="What Service Do You Need?"
+            value={formDataButton.service}
+            onChange={handleChange}
+            className="w-full p-3 bg-white/5 border border-white/20 text-white placeholder-gray-300 rounded-xl outline-none focus:ring-2 focus:ring-blue-400 focus:bg-white/10 transition-all duration-300"
+            required
+            disabled={isSubmitting}
+          />
+
+          <button
+            type="submit"
+            disabled={isSubmitting}
+            className={`w-full py-3.5 border border-white/20 rounded-xl text-white font-semibold shadow-lg transition-all duration-200 mt-2 ${
+              isSubmitting 
+                ? 'bg-gray-500/50 cursor-not-allowed' 
+                : 'bg-white/10 hover:bg-white/20 hover:scale-[1.02]'
+            }`}
+          >
+            {isSubmitting ? 'Submitting...' : 'Submit'}
+          </button>
+
+          {status && (
+            <p className={`text-center text-sm mt-3 py-2 rounded-lg ${
+              status.includes('❌') 
+                ? 'text-red-300 bg-red-500/20' 
+                : 'text-green-300 bg-green-500/20'
+            }`}>
+              {status}
+            </p>
+          )}
+        </form>
+      </div>
+    </div>
+  </div>
+)}
+
   {/* /// Mobile Home Section */}
   <div className="w-full relative mx-auto md:hidden px-4 py-2" data-aos="fade-up" data-aos-duration="1000">
     {/* Image + overlay wrapper */}
@@ -813,7 +874,7 @@ const handleSubmit = async (e) => {
           Designing Spaces That <br /> Reflect Your Soul
         </h1>
         <button
-          onClick={() => setIsOpen(true)}
+          onClick={() => setIsOpenMobile(true)}
           className="px-7 py-2 backdrop-blur-lg bg-white/10 cursor-pointer text-white border border-white/20 rounded-2xl shadow-md"
         >
           Transform My Home
@@ -821,36 +882,42 @@ const handleSubmit = async (e) => {
       </div>
     </div>
 
-    {/* ====== POPUP MODAL MOBILE - CORRECTED ====== */}
-    {isOpen && (
-      <div className="fixed bottom-[-380px] z-100 flex justify-center items-end pointer-events-auto pb-4">
-        {/* Background Overlay - Yeh important hai */}
-        <div
-          className="absolute inset-0 bg-black/50 backdrop-blur-sm"
-          onClick={() => setIsOpen(false)}
-        ></div>
-
-        {/* Popup Container */}
-        <div className="relative z-50 bg-white/10 border border-white/30 backdrop-blur-[20px] shadow-[0_0_40px_rgba(255,255,255,0.15)] p-6 rounded-2xl w-[90%] max-w-[400px] text-white transition-transform duration-300">
-          
-          {/* Close Button */}
+    {/* ====== POPUP MODAL MOBILE - CENTERED ====== */}
+    {/* {isOpenMobile && (
+      <div className="fixed inset-0 z-[100] flex items-center justify-center p-4 md:hidden">
+      
+        <div 
+          className="absolute inset-0 bg-black/60 backdrop-blur-md"
+          onClick={() => setIsOpenMobile(false)}
+        />
+        
+       
+        <div 
+          className="relative z-[101] bg-white/10 border border-white/20 backdrop-blur-2xl rounded-2xl w-full max-w-sm text-white shadow-2xl mx-4"
+          onClick={(e) => e.stopPropagation()}
+        >
+ 
           <button
-            onClick={() => setIsOpen(false)}
-            className="absolute top-3 right-4 text-gray-200 text-xl font-bold hover:text-red-400 transition"
+            type="button"
+            onClick={() => setIsOpenMobile(false)}
+            className="absolute -top-3 -right-3 bg-red-500 hover:bg-red-600 text-white w-8 h-8 rounded-full flex items-center justify-center text-lg font-bold transition-all duration-200 shadow-lg"
           >
             ✕
           </button>
 
-          {/* Form */}
-          <form className="space-y-4 mt-2" onSubmit={handleSubmit}>
-            <div className="flex flex-col gap-3">
+     
+          <div className="p-6">
+            <h3 className="text-xl font-bold mb-2 text-center">Transform Your Home</h3>
+            <p className="text-gray-300 text-center mb-4 text-sm">Get started with our design services</p>
+            
+            <form className="space-y-3" onSubmit={handleSubmit}>
               <input
                 type="text"
                 name="name"
-                placeholder="Name"
+                placeholder="Your Name"
                 value={formDataButton.name}
                 onChange={handleChange}
-                className="w-full p-3 bg-white/5 border border-white/20 text-white placeholder-gray-200 rounded-2xl outline-none focus:ring-2 focus:ring-blue-400 focus:bg-white/10 transition-all duration-300"
+                className="w-full p-3 bg-white/5 border border-white/20 text-white placeholder-gray-300 rounded-xl outline-none focus:ring-2 focus:ring-blue-400 focus:bg-white/10 transition-all duration-300"
                 required
               />
               <input
@@ -859,45 +926,45 @@ const handleSubmit = async (e) => {
                 placeholder="Phone Number"
                 value={formDataButton.phone}
                 onChange={handleChange}
-                className="w-full p-3 bg-white/5 border border-white/20 text-white placeholder-gray-200 rounded-2xl outline-none focus:ring-2 focus:ring-blue-400 focus:bg-white/10 transition-all duration-300"
+                className="w-full p-3 bg-white/5 border border-white/20 text-white placeholder-gray-300 rounded-xl outline-none focus:ring-2 focus:ring-blue-400 focus:bg-white/10 transition-all duration-300"
                 required
               />
-            </div>
+              <input
+                type="email"
+                name="email"
+                placeholder="Your Email"
+                value={formDataButton.email}
+                onChange={handleChange}
+                className="w-full p-3 bg-white/5 border border-white/20 text-white placeholder-gray-300 rounded-xl outline-none focus:ring-2 focus:ring-blue-400 focus:bg-white/10 transition-all duration-300"
+                required
+              />
+              <input
+                type="text"
+                name="service"
+                placeholder="Service Type"
+                value={formDataButton.service}
+                onChange={handleChange}
+                className="w-full p-3 bg-white/5 border border-white/20 text-white placeholder-gray-300 rounded-xl outline-none focus:ring-2 focus:ring-blue-400 focus:bg-white/10 transition-all duration-300"
+                required
+              />
 
-            <input
-              type="email"
-              name="email"
-              placeholder="Your Email"
-              value={formDataButton.email}
-              onChange={handleChange}
-              className="w-full p-3 bg-white/5 border border-white/20 text-white placeholder-gray-200 rounded-2xl outline-none focus:ring-2 focus:ring-blue-400 focus:bg-white/10 transition-all duration-300"
-              required
-            />
+              <button
+                type="submit"
+                className="w-full py-3 bg-white/10 border border-white/20 rounded-xl text-white font-semibold hover:bg-white/20 transition-all duration-200 mt-2"
+              >
+                Get Free Consultation
+              </button>
 
-            <input
-              type="text"
-              name="service"
-              placeholder="Service Type"
-              value={formDataButton.service}
-              onChange={handleChange}
-              className="w-full p-3 bg-white/5 border border-white/20 text-white placeholder-gray-200 rounded-2xl outline-none focus:ring-2 focus:ring-blue-400 focus:bg-white/10 transition-all duration-300"
-              required
-            />
-
-            <button
-              type="submit"
-              className="w-full py-3 bg-gradient-to-r from-blue-400/30 to-pink-400/30 border border-white/30 rounded-2xl text-white font-semibold shadow-lg hover:scale-105 transition-all duration-300"
-            >
-              Submit
-            </button>
-
-            {status && (
-              <p className="text-center text-sm text-gray-200 mt-2">{status}</p>
-            )}
-          </form>
+              {status && (
+                <p className="text-center text-sm text-green-300 mt-2 bg-green-500/20 py-2 rounded-lg">
+                  {status}
+                </p>
+              )}
+            </form>
+          </div>
         </div>
       </div>
-    )}
+    // )} */}
   </div>
 </section>
 
@@ -1690,6 +1757,74 @@ Guided by <span className="italic font-medium">Creativity, Efficiency, and Ethic
             </div>
           </div>
         </section>
+
+        {/* ====== MOBILE MODAL (Now responsive) ====== */}
+        {isOpenMobile && (
+          <div className="fixed bottom-0 left-0 right-0 z-50 flex justify-center items-end pointer-events-none pb-2 md:hidden">
+
+            {/* Popup Container */}
+            <div className="relative z-50 bg-white/10 border border-white/30 backdrop-blur-[15px] shadow-[0_0_40px_rgba(255,255,255,0.15)] p-6 rounded-2xl w-[90%] max-w-[400px] text-white transition-transform duration-300 pointer-events-auto">
+              {/* Close Button */}
+              <button
+                onClick={() => setIsOpenMobile(false)}
+                className="absolute top-3 right-4 text-gray-200 text-xl font-bold hover:text-red-400 transition"
+              >
+                ✕
+              </button>
+
+              {/* Form */}
+              <form className="space-y-4 mt-2" onSubmit={handleSubmit}>
+                <div className="flex flex-col gap-3">
+                  <input
+                    type="text"
+                    name="name"
+                    placeholder="Name"
+                    value={formDataButton.name}
+                    onChange={handleChange}
+                    className="w-full p-3 bg-white/5 border border-white/20 text-white placeholder-gray-200 rounded-2xl outline-none focus:ring-2 focus:ring-blue-400 focus:bg-white/10 transition-all duration-300"
+                    required
+                  />
+                  <input
+                    type="text"
+                    name="phone"
+                    placeholder="Phone Number"
+                    value={formDataButton.phone}
+                    onChange={handleChange}
+                    className="w-full p-3 bg-white/5 border border-white/20 text-white placeholder-gray-200 rounded-2xl outline-none focus:ring-2 focus:ring-blue-400 focus:bg-white/10 transition-all duration-300"
+                    required
+                  />
+                </div>
+                <input
+                  type="email"
+                  name="email"
+                  placeholder="Your Email"
+                  value={formDataButton.email}
+                  onChange={handleChange}
+                  className="w-full p-3 bg-white/5 border border-white/20 text-white placeholder-gray-200 rounded-2xl outline-none focus:ring-2 focus:ring-blue-400 focus:bg-white/10 transition-all duration-300"
+                  required
+                />
+                <input
+                  type="text"
+                  name="service"
+                  placeholder="Service Type"
+                  value={formDataButton.service}
+                  onChange={handleChange}
+                  className="w-full p-3 bg-white/5 border border-white/20 text-white placeholder-gray-200 rounded-2xl outline-none focus:ring-2 focus:ring-blue-400 focus:bg-white/10 transition-all duration-300"
+                  required
+                />
+                <button
+                  type="submit"
+                  className="w-full py-3 bg-gradient-to-r from-blue-400/30 to-pink-400/30 border border-white/30 rounded-2xl text-white font-semibold shadow-lg hover:scale-105 transition-all duration-300"
+                >
+                  Submit
+                </button>
+                {status && (
+                  <p className="text-center text-sm text-gray-200 mt-2">{status}</p>
+                )}
+              </form>
+            </div>
+          </div>
+        )}
       </main>
       {/* /// Footer */}
     </>

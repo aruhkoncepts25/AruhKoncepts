@@ -13,32 +13,32 @@ import { Api } from '../Api/Api';
 
 const Service5 = () => {
 
-   const [formData, setFormData] =useState({
-      firstName:"",
-      lastName:"",
-      email:"",
-      phone:"",
-      message:"",
-    });
-  
-    const handleSubmit =async (e) => {
-      e.preventDefault();
-      // Handle form submission logic here
-      try{
-        await Api.createContact({
-          firstName: formData.firstName,
-          lastName:formData.lastName,
-          eamil:formData.email,
-          phone:formData.phone,
-          message:formData.message,
-        });
-        toast.success("Message Submitted Sucessfully!");
-        setFormData({firstName:"", lastName:"", email:"", phone:"", message:""})
-      }catch(err){
-        console.log(err); // for debugging
-        toast.error(err.response?.data?.err || "Something went wrong!");
-      }
-    }
+  const [formData, setFormData] = useState({
+     firstName: "",
+     lastName: "",
+     email: "",
+     phone: "",
+     message: ""
+   });
+ 
+ const handleSubmit = async (e) => {
+   e.preventDefault();
+   try {
+     await Api.createContact({
+       firstName: formData.firstName,
+       lastName: formData.lastName,
+       email: formData.email,
+       phone: formData.phone,
+       message: formData.message,
+       service: "Residential Interior Design"
+     });
+     toast.success("Message Submitted Successfully!");
+     setFormData({ firstName: "", lastName: "", email: "", phone: "", message: "" });
+   } catch (err) {
+     console.log(err); // for debugging
+     toast.error(err.response?.data?.err || "Something went wrong!");
+   }
+ };
   const itemsPerRow = 3;
   const items = [
     {
