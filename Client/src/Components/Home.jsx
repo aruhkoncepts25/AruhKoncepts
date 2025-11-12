@@ -573,6 +573,17 @@ hero,hero11,hero12,hero13
   const [isOpen, setIsOpen] = useState(false);
 const [isOpenMobile, setIsOpenMobile] = useState(false);
 
+   useEffect(() => {
+  if (isOpen || isOpenMobile) {
+    document.body.style.overflow = 'hidden';
+  } else {
+    document.body.style.overflow = 'auto';
+  }
+  return () => {
+    document.body.style.overflow = 'auto';
+  };
+}, [isOpen, isOpenMobile]);
+
 const [formDataButton, setFormDataButton] = useState({
   name: "",
   phone: "",
