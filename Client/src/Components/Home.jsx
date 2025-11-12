@@ -823,7 +823,7 @@ const handleSubmit = async (e) => {
 
     {/* ====== POPUP MODAL MOBILE - CORRECTED ====== */}
     {isOpen && (
-      <div className="fixed inset-0 z-100 flex justify-center items-end pointer-events-auto pb-4">
+      <div className="fixed bottom-[-380px] z-100 flex justify-center items-end pointer-events-auto pb-4">
         {/* Background Overlay - Yeh important hai */}
         <div
           className="absolute inset-0 bg-black/50 backdrop-blur-sm"
