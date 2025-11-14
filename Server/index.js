@@ -70,7 +70,7 @@
 
 const express = require("express");
 const helmet = require("helmet");
-const rateLimit = require("express-rate-limit");
+
 const mongoose = require("mongoose");
 const cors = require("cors");
 require("dotenv").config();
@@ -82,6 +82,8 @@ const PORT = process.env.PORT || 3000;
 const contactRoute = require("./App/Routes/contact");
 
 // ---- Middlewares ----
+app.set('trust proxy', 1);
+
 app.use(express.json({ limit: "10kb" })); 
 
 // ADD YOUR VERSEL FRONTEND URL HERE
@@ -103,14 +105,8 @@ app.use(cors({
 // Helmet security
 app.use(helmet());
 
-// Rate limiter
-const limiter = rateLimit({
-  windowMs: 15 * 60 * 1000,
-  max: 20,
-  message: "Too many requests from this IP, please try again later",
-});
 
-app.use("/contactRoute", limiter, contactRoute);
+app.use("/contactRoute",contactRoute);
 
 // Base
 app.get("/", (req, res) => {
