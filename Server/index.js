@@ -1,8 +1,7 @@
 const express = require("express");
 const helmet = require("helmet");
 const rateLimit = require("express-rate-limit");
-// const mongoSanitize = require("express-mongo-sanitize");  // not use becose new version mai valid nahi hai
-// const xss = require("xss-clean"); // not use becose new version mai valid nahi hai
+
 const mongoose = require("mongoose");
 const cors = require("cors");
 require("dotenv").config();
@@ -34,13 +33,7 @@ app.use(cors({
 }));
 // Allow only frontend domain
 app.use(helmet()); // Secure headers
-// ✅ Fix: mongo-sanitize with Express v5
-// app.use(
-//   mongoSanitize({
-//     sanitizeQuery: false, // Prevents crash in Express v5
-//   })
-// );
-// app.use(xss()); // Prevent XSS attacks
+
 
 // ---- Rate Limiter ----
 const limiter = rateLimit({
