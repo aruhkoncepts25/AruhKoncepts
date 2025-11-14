@@ -120,10 +120,14 @@ const insertUser = async (req, res) => {
       `,
     };
 
-    await transporter.sendMail(mailOptions, (err, info) => {
-      if (err) console.error("Error sending email:", err);
-      else console.log("Email sent:", info.response);
-    });
+    try {
+        const info = await transporter.sendMail(mailOptions);
+        console.log("Email sent successfully:", info.response);
+        res.status(201).json({ msg: "Message submitted successfully", emailInfo: info.response });
+    } catch (err) {
+        console.error("Error sending email:", err);
+        res.status(500).json({ err: "Failed to send email", details: err.message });
+    }
 
     res.status(201).json({ msg: "Message submitted successfully" });
   } catch (error) {
