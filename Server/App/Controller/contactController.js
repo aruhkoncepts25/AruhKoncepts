@@ -108,7 +108,7 @@ const insertUser = async (req, res) => {
     });
 
     const mailOptions = {
-      from: email,
+      from: `"Aruh Koncepts" <${process.env.MY_EMAIL}>`,
       to: "aruhkoncepts25@gmail.com",
       subject: `New Form Submission${service ? " - " + service : ""}`,
       text: `
