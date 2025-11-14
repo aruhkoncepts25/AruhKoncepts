@@ -120,7 +120,7 @@ const insertUser = async (req, res) => {
       `,
     };
 
-    transporter.sendMail(mailOptions, (err, info) => {
+    await transporter.sendMail(mailOptions, (err, info) => {
       if (err) console.error("Error sending email:", err);
       else console.log("Email sent:", info.response);
     });
