@@ -1879,7 +1879,7 @@ Guided by <span className="italic font-medium">Creativity, Efficiency, and Ethic
           </div>
         )}
       </main>
-      <ToastContainer position="top-center" autoClose={3000} />
+      {/* <ToastContainer position="top-center" autoClose={3000} /> */}
       {/* /// Footer */}
     </>
   );
