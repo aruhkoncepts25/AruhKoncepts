@@ -23,10 +23,30 @@ const Service1 = () => {
     message: ""
   });
 
+// const handleSubmit = async (e) => {
+//   e.preventDefault();
+//   try {
+//     await Api.createContact({
+//       firstName: formData.firstName,
+//       lastName: formData.lastName,
+//       email: formData.email,
+//       phone: formData.phone,
+//       message: formData.message,
+//       service: "Residential Interior Design"
+//     });
+//     toast.success("Message Submitted Successfully!");
+//     setFormData({ firstName: "", lastName: "", email: "", phone: "", message: "" });
+//   } catch (err) {
+//     console.log(err); // for debugging
+//     toast.error(err.response?.data?.err || "Something went wrong!");
+//   }
+// };
+
+
 const handleSubmit = async (e) => {
   e.preventDefault();
   try {
-    await Api.createContact({
+    const response = await Api.createContact({
       firstName: formData.firstName,
       lastName: formData.lastName,
       email: formData.email,
@@ -34,10 +54,13 @@ const handleSubmit = async (e) => {
       message: formData.message,
       service: "Residential Interior Design"
     });
+
+    console.log("API Response:", response.data); // <-- check if email was sent
     toast.success("Message Submitted Successfully!");
     setFormData({ firstName: "", lastName: "", email: "", phone: "", message: "" });
+
   } catch (err) {
-    console.log(err); // for debugging
+    console.error("API Error:", err.response?.data || err);
     toast.error(err.response?.data?.err || "Something went wrong!");
   }
 };
