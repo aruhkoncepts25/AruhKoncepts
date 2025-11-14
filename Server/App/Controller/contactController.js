@@ -154,7 +154,7 @@ const insertUser = async (req, res) => {
       message,
     });
 
-    await newContact.save();
+     newContact.save();
     console.log("Contact saved to DB:", newContact);
 
     // Nodemailer setup
