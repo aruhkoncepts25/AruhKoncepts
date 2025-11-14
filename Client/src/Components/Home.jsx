@@ -620,7 +620,16 @@ const handleSubmit = async (e) => {
       service: formDataButton.service,
     });
 
-    toast.success("Message Submitted Successfully!");
+    toast.success("Message Submitted Successfully!", {
+      position: "top-center",
+      style: {
+        backgroundColor: "green",
+        borderLeft: "4px solid #142241",
+        color: "white",
+        boxShadow: "0 4px 12px rgba(0, 0, 0, 0.1)",
+      },
+    }
+    );
     
     // Reset form and close modal
     setFormDataButton({ 
@@ -847,7 +856,7 @@ useEffect(() => {
             {isSubmitting ? 'Submitting...' : 'Submit'}
           </button>
 
-          {status && (
+          {/* {status && (
             <p className={`text-center text-sm mt-3 py-2 rounded-lg ${
               status.includes('❌') 
                 ? 'text-red-300 bg-red-500/20' 
@@ -855,7 +864,7 @@ useEffect(() => {
             }`}>
               {status}
             </p>
-          )}
+          )} */}
         </form>
       </div>
     </div>
@@ -1846,14 +1855,14 @@ Guided by <span className="italic font-medium">Creativity, Efficiency, and Ethic
                     disabled={isSubmitting}
                     className={`w-full py-3.5 border-2 border-white/20 rounded-xl text-[#142241] bg-[#C9966B]font-bold shadow-lg transition-all duration-200 mt-2 ${
                       isSubmitting
-                        ? 'bg-gray-500/50 cursor-not-allowed'
+                        ? 'bg-[#C9966B] cursor-not-allowed'
                         : 'bg-[#C9966B] hover:bg-white/20 hover:scale-[1.02]'
                     }`}
                   >
                     {isSubmitting ? 'Submitting...' : 'Submit'}
                   </button>
 
-                  {status && (
+                  {/* {status && (
                     <p
                       className={`text-center text-sm mt-3 py-2 rounded-lg ${
                         status.includes('❌')
@@ -1863,13 +1872,14 @@ Guided by <span className="italic font-medium">Creativity, Efficiency, and Ethic
                     >
                       {status}
                     </p>
-                  )}
+                  )} */}
                 </form>
               </div>
             </div>
           </div>
         )}
       </main>
+      <ToastContainer position="top-center" autoClose={3000} />
       {/* /// Footer */}
     </>
   );
