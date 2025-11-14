@@ -89,7 +89,8 @@ const allowedOrigins = [
   "http://localhost:5173",
   "https://www.aruhkoncepts.com",
   "https://aruhkoncepts.com",
-  "https://aruh-koncepts.vercel.app"   // 🔥 IMPORTANT
+  // "https://aruh-koncepts.vercel.app" // OLD - REMOVE LATER
+  "https://aruhkoncepts-landing.vercel.app"  // 🔥 IMPORTANT
 ];
 
 // CORS
