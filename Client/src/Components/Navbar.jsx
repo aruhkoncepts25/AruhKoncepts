@@ -2,15 +2,15 @@ import { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { HashLink } from "react-router-hash-link";
 import logo from "../assets/logo.png";
-import { ChevronDown, Phone, Menu, X, ArrowRight } from "lucide-react";
+import { ChevronDown, Phone, Menu, X } from "lucide-react";
 import PopupForm from "../Components/PopupForm";
 
 const Navbar = () => {
   const [showPopup, setShowPopup] = useState(false);
-const [scrolled, setScrolled] = useState(false);
-const [open, setOpen] = useState(false); // desktop dropdown
-const [mobileMenuOpen, setMobileMenuOpen] = useState(false); // mobile menu
-const [mobileDropdownOpen, setMobileDropdownOpen] = useState(false); // mobile services dropdown
+  const [scrolled, setScrolled] = useState(false);
+  const [open, setOpen] = useState(false); // desktop dropdown
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false); // mobile menu
+  const [mobileDropdownOpen, setMobileDropdownOpen] = useState(false); // mobile services dropdown
   
   const location = useLocation();
 
@@ -76,8 +76,8 @@ const [mobileDropdownOpen, setMobileDropdownOpen] = useState(false); // mobile s
         }}
       >
         <div className="w-[92%] mx-auto flex items-center justify-between">
-          {/* Logo */}
-          <div className="flex-1 flex justify-start">
+          {/* Logo - Hidden on mobile, shown on desktop */}
+          <div className="hidden lg:flex flex-1 justify-start">
             <Link to="/headNav" className="inline-block">
               <h1 className="text-xl font-bold flex items-center gap-2 cursor-pointer">
                 <img src={logo} alt="Logo" className="h-8" />
@@ -160,191 +160,208 @@ const [mobileDropdownOpen, setMobileDropdownOpen] = useState(false); // mobile s
             </button>
           </div>
 
-          {/* Mobile Menu Button - Visible only on mobile */}
-{/* Mobile Top Bar */}
-<div className="flex lg:hidden items-center justify-between w-full px-1 py-2">
- <Link to="/headNav" className="inline-flex items-center gap-2">
-          <img src={logo} alt="Logo" className="h-8" />
-          <div className="inline-flex">
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#d5a127] via-[#F7EF8A] to-[#D2AC47] font-bold text-lg">
-              Aruh Koncepts
-            </span>
+          {/* Mobile Top Bar - Visible only on mobile */}
+          <div className="flex lg:hidden items-center justify-between w-full">
+            {/* Mobile Logo */}
+            <Link to="/headNav" className="inline-flex items-center gap-2">
+              <img src={logo} alt="Logo" className="h-8" />
+              <div className="inline-flex">
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#d5a127] via-[#F7EF8A] to-[#D2AC47] font-bold text-lg">
+                  Aruh Koncepts
+                </span>
+              </div>
+            </Link>
+
+            {/* Mobile Menu Toggle */}
+            <button
+              onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+              className="p-2 text-gray-100 hover:text-white transition-colors duration-200"
+            >
+              {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
+            </button>
           </div>
-        </Link>
-
-  {/* Mobile Menu Toggle */}
-  <button
-    onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-    className="p-2 text-gray-100 hover:text-white transition-colors duration-200"
-  >
-    {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
-  </button>
-</div>
-
-
         </div>
 
         {/* Mobile Menu Overlay */}
-   
-{mobileMenuOpen && (
-  <>
-    {/* Backdrop */}
-    <div
-      className="lg:hidden fixed inset-0 bg-black/50 z-40"
-      onClick={() => setMobileMenuOpen(false)}
-    />
+        {mobileMenuOpen && (
+          <>
+            {/* Backdrop */}
+            <div
+              className="lg:hidden fixed inset-0 bg-black/50 z-40"
+              onClick={() => setMobileMenuOpen(false)}
+            />
 
-    {/* Mobile Menu Sidebar */}
-    <div className="lg:hidden fixed top-0 right-0 bottom-0 w-[80%] max-w-sm bg-[#142241] border-l border-white/20 shadow-xl z-50 transform transition-transform duration-300 ease-out">
-      {/* Close Button */}
-      <div className="flex justify-between p-4 border-b border-white/10">
-        <Link to="/headNav" className="inline-flex items-center gap-2">
-          <img src={logo} alt="Logo" className="h-8" />
-          <div className="inline-flex">
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#d5a127] via-[#F7EF8A] to-[#D2AC47] font-bold text-lg">
-              Aruh Koncepts
-            </span>
-          </div>
-        </Link>
+            {/* Mobile Menu Sidebar */}
+            <div className="lg:hidden fixed top-0 right-0 bottom-0 w-[80%] max-w-sm bg-[#142241] border-l border-white/20 shadow-xl z-50 transform transition-transform duration-300 ease-out">
+              {/* Close Button */}
+              <div className="flex justify-between p-4 border-b border-white/10">
+                <Link to="/headNav" className="inline-flex items-center gap-2">
+                  <img src={logo} alt="Logo" className="h-8" />
+                  <div className="inline-flex">
+                    <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#d5a127] via-[#F7EF8A] to-[#D2AC47] font-bold text-lg">
+                      Aruh Koncepts
+                    </span>
+                  </div>
+                </Link>
 
-        <button
-          onClick={() => setMobileMenuOpen(false)}
-          className="p-2 text-gray-100 hover:text-white transition-colors duration-200"
-        >
-          <X size={24} />
-        </button>
-      </div>
+                <button
+                  onClick={() => setMobileMenuOpen(false)}
+                  className="p-2 text-gray-100 hover:text-white transition-colors duration-200"
+                >
+                  <X size={24} />
+                </button>
+              </div>
 
-      {/* Menu Items */}
-      <div className="py-6 px-6 space-y-4">
-        {/* About */}
-        <Link
-          to="/about"
-          className={`flex items-center gap-2 ${isActive("/about") ? "text-[#C8966B]" : "text-gray-100"}`}
-        >
-          <span className="text-gray-300">→</span>
-          <span>About</span>
-        </Link>
-        <div className="h-[1px] bg-white my-3 -mx-6 w-screen"></div>
+              {/* Menu Items */}
+              <div className="py-6 px-6 space-y-4">
+                {/* About */}
+                <Link
+                  to="/about"
+                  className={`flex items-center gap-2 ${isActive("/about") ? "text-[#C8966B]" : "text-gray-100"}`}
+                  onClick={() => setMobileMenuOpen(false)}
+                >
+                  <span className="text-gray-300">→</span>
+                  <span>About</span>
+                </Link>
+                <div className="h-[1px] bg-white my-3 -mx-6 w-screen"></div>
 
-        {/* Projects */}
-        <Link
-          to="/mainproject"
-          className={`flex items-center gap-2 ${isActive("/mainproject") ? "text-[#C8966B]" : "text-gray-100"}`}
-        >
-          <span className="text-gray-300">→</span>
-          <span>Projects</span>
-        </Link>
-        <div className="h-[1px] bg-white my-3 -mx-6 w-screen"></div>
+                {/* Projects */}
+                <Link
+                  to="/mainproject"
+                  className={`flex items-center gap-2 ${isActive("/mainproject") ? "text-[#C8966B]" : "text-gray-100"}`}
+                  onClick={() => setMobileMenuOpen(false)}
+                >
+                  <span className="text-gray-300">→</span>
+                  <span>Projects</span>
+                </Link>
+                <div className="h-[1px] bg-white my-3 -mx-6 w-screen"></div>
 
-        {/* Services Dropdown */}
-        <div className="space-y-2">
-          <button
-            onClick={() => setMobileDropdownOpen(!mobileDropdownOpen)}
-            className={`w-full flex items-center justify-between ${mobileDropdownOpen ? "text-[#C8966B]" : "text-gray-100"}`}
-          >
-            <span className="flex items-center gap-2">
-              <span className="text-gray-300">→</span>
-              Services
-            </span>
-            <ChevronDown size={18} className={`transition-transform duration-300 ${mobileDropdownOpen ? "rotate-180" : "rotate-0"}`} />
-          </button>
+                {/* Services Dropdown */}
+                <div className="space-y-2">
+                  <button
+                    onClick={() => setMobileDropdownOpen(!mobileDropdownOpen)}
+                    className={`w-full flex items-center justify-between ${mobileDropdownOpen ? "text-[#C8966B]" : "text-gray-100"}`}
+                  >
+                    <span className="flex items-center gap-2">
+                      <span className="text-gray-300">→</span>
+                      Services
+                    </span>
+                    <ChevronDown size={18} className={`transition-transform duration-300 ${mobileDropdownOpen ? "rotate-180" : "rotate-0"}`} />
+                  </button>
 
-          {mobileDropdownOpen && (
-            <div className="ml-4 space-y-3 font-medium text-white">
-              <Link
-                to="/service/residential"
-                className="flex items-center gap-2 px-4"
-                onClick={() => setMobileMenuOpen(false)}
-              >
-                <span className="font-light">Residential Interior Design</span>
-              </Link>
-              <Link
-                to="/service/commercial"
-                className="flex items-center gap-2 px-4"
-                onClick={() => setMobileMenuOpen(false)}
-              >
-                <span className="font-light">Commercial Interior Design</span>
-              </Link>
-              <Link
-                to="/service/turnkey"
-                className="flex items-center gap-2 px-4"
-                onClick={() => setMobileMenuOpen(false)}
-              >
-                <span className="font-light">TurnKey Interior Solutions</span>
-              </Link>
-              <Link
-                to="/service/visualization"
-                className="flex items-center gap-2 px-4"
-                onClick={() => setMobileMenuOpen(false)}
-              >
-                <span className="font-light">3D Visualization & Conceptual Design</span>
-              </Link>
-              <Link
-                to="/service/renovation"
-                className="flex items-center gap-2 px-4"
-                onClick={() => setMobileMenuOpen(false)}
-              >
-                <span className="font-light">Renovation & Remodeling</span>
-              </Link>
-              <Link
-                to="/service/furniture"
-                className="flex items-center gap-2 px-4"
-                onClick={() => setMobileMenuOpen(false)}
-              >
-                <span className="font-light">Custom Furniture & Decor</span>
-              </Link>
-              <Link
-                to="/service/vastu"
-                className="flex items-center gap-2 px-4"
-                onClick={() => setMobileMenuOpen(false)}
-              >
-                <span className="font-light">Vastu Consultation</span>
-              </Link>
+                  {mobileDropdownOpen && (
+                    <div className="ml-4 space-y-3 font-medium text-white">
+                      <Link
+                        to="/service/residential"
+                        className="flex items-center gap-2 px-4"
+                        onClick={() => setMobileMenuOpen(false)}
+                      >
+                        <span className="font-light">Residential Interior Design</span>
+                      </Link>
+                      <Link
+                        to="/service/commercial"
+                        className="flex items-center gap-2 px-4"
+                        onClick={() => setMobileMenuOpen(false)}
+                      >
+                        <span className="font-light">Commercial Interior Design</span>
+                      </Link>
+                      <Link
+                        to="/service/turnkey"
+                        className="flex items-center gap-2 px-4"
+                        onClick={() => setMobileMenuOpen(false)}
+                      >
+                        <span className="font-light">TurnKey Interior Solutions</span>
+                      </Link>
+                      <Link
+                        to="/service/visualization"
+                        className="flex items-center gap-2 px-4"
+                        onClick={() => setMobileMenuOpen(false)}
+                      >
+                        <span className="font-light">3D Visualization & Conceptual Design</span>
+                      </Link>
+                      <Link
+                        to="/service/renovation"
+                        className="flex items-center gap-2 px-4"
+                        onClick={() => setMobileMenuOpen(false)}
+                      >
+                        <span className="font-light">Renovation & Remodeling</span>
+                      </Link>
+                      <Link
+                        to="/service/furniture"
+                        className="flex items-center gap-2 px-4"
+                        onClick={() => setMobileMenuOpen(false)}
+                      >
+                        <span className="font-light">Custom Furniture & Decor</span>
+                      </Link>
+                      <Link
+                        to="/service/vastu"
+                        className="flex items-center gap-2 px-4"
+                        onClick={() => setMobileMenuOpen(false)}
+                      >
+                        <span className="font-light">Vastu Consultation</span>
+                      </Link>
+                    </div>
+                  )}
+                </div>
+                <div className="h-[1px] bg-white my-3 -mx-6 w-screen"></div>
+
+                {/* Testimonials */}
+                <HashLink
+                  smooth
+                  to="/#testimonials"
+                  className={`flex items-center gap-2 ${isActiveHash("#testimonials") ? "text-[#C8966B]" : "text-gray-100"}`}
+                  onClick={() => setMobileMenuOpen(false)}
+                >
+                  <span className="text-gray-300">→</span>
+                  <span>Testimonials</span>
+                </HashLink>
+                <div className="h-[1px] bg-white my-3 -mx-6 w-screen"></div>
+
+                {/* FAQ */}
+                <HashLink
+                  smooth
+                  to="/#faq"
+                  className={`flex items-center gap-2 ${isActiveHash("#faq") ? "text-[#C8966B]" : "text-gray-100"}`}
+                  onClick={() => setMobileMenuOpen(false)}
+                >
+                  <span className="text-gray-300">→</span>
+                  <span>FAQs</span>
+                </HashLink>
+                <div className="h-[1px] bg-white my-3 -mx-6 w-screen"></div>
+
+                {/* Contact */}
+                <HashLink
+                  smooth
+                  to="/#contact"
+                  className={`flex items-center gap-2 ${isActiveHash("#contact") ? "text-[#C8966B]" : "text-gray-100"}`}
+                  onClick={() => setMobileMenuOpen(false)}
+                >
+                  <span className="text-gray-300">→</span>
+                  <span>Contact</span>
+                </HashLink>
+                <div className="h-[1px] bg-white my-3 -mx-6 w-screen"></div>
+
+                {/* Mobile Book a Call Button */}
+                <button
+                  onClick={() => {
+                    setShowPopup(true);
+                    setMobileMenuOpen(false);
+                  }}
+                  className="w-full mt-4 py-3 px-4 border border-[#C9966B] rounded-full flex items-center justify-center gap-2 bg-white"
+                >
+                  <div className="bg-[#C8966B] rounded-full p-2 flex items-center justify-center">
+                    <Phone className="w-4 h-4 text-[#142241]" />
+                  </div>
+                  <span className="text-[#142241] font-semibold">Book a Call</span>
+                </button>
+              </div>
             </div>
-          )}
-        </div>
-        <div className="h-[1px] bg-white my-3 -mx-6 w-screen"></div>
-
-        {/* Testimonials */}
-        <HashLink
-          smooth
-          to="/#testimonials"
-          className={`flex items-center gap-2 ${isActiveHash("#testimonials") ? "text-[#C8966B]" : "text-gray-100"}`}
-        >
-          <span className="text-gray-300">→</span>
-          <span>Testimonials</span>
-        </HashLink>
-        <div className="h-[1px] bg-white my-3 -mx-6 w-screen"></div>
-
-        {/* FAQ */}
-        <HashLink
-          smooth
-          to="/#faq"
-          className={`flex items-center gap-2 ${isActiveHash("#faq") ? "text-[#C8966B]" : "text-gray-100"}`}
-        >
-          <span className="text-gray-300">→</span>
-          <span>FAQs</span>
-        </HashLink>
-        <div className="h-[1px] bg-white my-3 -mx-6 w-screen"></div>
-
-        {/* Contact */}
-        <HashLink
-          smooth
-          to="/#contact"
-          className={`flex items-center gap-2 ${isActiveHash("#contact") ? "text-[#C8966B]" : "text-gray-100"}`}
-        >
-          <span className="text-gray-300">→</span>
-          <span>Contact</span>
-        </HashLink>
-        <div className="h-[1px] bg-white my-3 -mx-6 w-screen"></div>
-      </div>
-    </div>
-  </>
-)}
-
+          </>
+        )}
       </nav>
 
+      {/* PopupForm */}
+      <PopupForm showForm={showPopup} onClose={() => setShowPopup(false)} />
     </>
   );
 };
