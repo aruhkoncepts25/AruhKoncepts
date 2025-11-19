@@ -10,6 +10,7 @@ import ind5 from '../../assets/insideService/include1.5.png'
 import ind6 from '../../assets/insideService/include1.6.png'
 import ind7 from '../../assets/insideService/include1.7.png'
 import sofa from '../../assets/insideService/sofa.png';
+import mobileSofa from "../../assets/insideService/mobilesofa.png";
 
 import 'react-toastify/dist/ReactToastify.css';
 
@@ -66,14 +67,21 @@ const Service2 = () => {
   </div>
 
   <div className="mt-16 w-full relative" data-aos="fade-up" data-aos-delay="200">
-  <img src={sofa} alt="" className="w-full h-auto object-cover" />
+  <img src={sofa} alt="" className="w-full hidden md:block h-auto object-cover" />
+   {/* Mobile Image */}
+    <img 
+      src={mobileSofa} 
+      alt="" 
+      className="w-full h-auto object-cover block md:hidden" 
+    />
+  
 
-  <div className="absolute top-[180px] left-[250px] flex flex-col justify-start items-center text-black text-center">
-    <h1 className="text-3xl md:text-5xl font-medium">
-      Let’s talk about <br /> how can help you
+  <div id="service-text" className="absolute top-[180px] left-[250px] flex flex-col justify-start items-center text-black text-center">
+    <h1 className="text-3xl text-center md:text-start md:text-5xl font-medium">
+      Let’s talk about <br className="hidden md:block"/> how <br className="block md:hidden"/> can help you
     </h1>
 
-   <button onClick={handleClick} className="group mt-6 px-6 py-3 bg-[#C8966B] hover:cursor-pointer self-start text-[#142241] rounded-lg font-semibold flex items-center gap-1">
+   <button onClick={handleClick} className="group mt-6 px-6 py-3 bg-[#C8966B] hover:cursor-pointer md:self-start text-[#142241] rounded-lg font-semibold flex items-center gap-1">
   contact us  
   <ArrowRight className="w-4 h-4 relative top-[1px]  -rotate-45" />
 </button>

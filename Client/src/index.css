@@ -2,46 +2,73 @@
 
 
 
-@media (max-width: 1378px) {
-  #service-text {
-    font-size: 120px !important;
-    bottom: -38px !important;
+@media (max-width: 1110px) {
+    #service-text{
+      top: 150px;
+      left: 200px;
+    }
+  
   }
-}
+@media (max-width: 1014px) {
+    #service-text{
+      top: 150px;
+      left: 150px;
+    }
+  
+  }
 
-@media (max-width: 702px) {
-  #service-text {
-    font-size: 100px !important;
-    bottom: -31px !important;
+  @media (max-width: 951px) {
+    #service-text{
+      top: 100px;
+      left: 100px;
+
+    }
+  
   }
-}
-@media (max-width: 598px) {
-  #service-text {
-    font-size: 80px !important;
-    bottom: -25px !important;
+   @media (max-width: 857px) {
+    #service-text{
+      top: 100px;
+      left: 100px;
+      
+    }
+      #service-text h1{
+    font-size: 35px;
+      
+    }
+  
   }
-}
-@media (max-width: 489px) {
-  #service-text {
-    font-size: 70px !important;
-    bottom: -22px !important;
+
+    @media (max-width: 763px) {
+    #service-text{
+      top: 50px;
+      left: 100px;
+
+      
+    }
+      #service-text h1{
+    font-size: 35px;
+      
+    }
+      #service-text button{
+    padding: 10px;
+      
+    }
+  
   }
-}
-@media (max-width: 428px) {
-  #service-text {
-    font-size: 60px !important;
-    bottom: -19px !important;
+    @media (max-width: 632px) {
+    #service-text{
+      top: 50px;
+      left: 100px;
+
+      
+    }
+      #service-text h1{
+    font-size: 25px;
+      
+    }
+      #service-text button{
+    padding: 10px;
+      
+    }
+  
   }
-}
-@media (max-width: 379px) {
-  #service-text {
-    font-size: 50px !important;
-    bottom: -16px !important;
-  }
-}
-@media (max-width: 327px) {
-  #service-text {
-    font-size: 40px !important;
-    bottom: -12px !important;
-  }
-}

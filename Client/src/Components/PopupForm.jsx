@@ -102,11 +102,32 @@ const PopupForm = ({ showForm, onClose }) => {
         )}
 
         {/* Social Icons */}
-        <div className="flex justify-center gap-6 mt-6 text-[#C9966B]">
-          <a href="https://facebook.com" target="_blank"><Facebook className="w-6 h-6" /></a>
-          <a href="https://instagram.com" target="_blank"><Instagram className="w-6 h-6" /></a>
-          <a href="https://x.com" target="_blank"><X className="w-6 h-6" /></a>
-        </div>
+       <div className="flex justify-center gap-6 mt-6 text-[#C9966B]">
+  <a 
+    href="https://www.facebook.com/share/1VND5cUr6D/" 
+    target="_blank" 
+    rel="noopener noreferrer"
+  >
+    <Facebook className="w-6 h-6" />
+  </a>
+
+  <a 
+    href="https://www.instagram.com/ak_designkoncepts?igsh=a3I2Ym9vbWI1bGoz" 
+    target="_blank" 
+    rel="noopener noreferrer"
+  >
+    <Instagram className="w-6 h-6" />
+  </a>
+
+  <a 
+    href="https://x.com/AruhKoncepts?t=W3JwQLkpvg05ZnV4F_-vxw&s=09" 
+    target="_blank" 
+    rel="noopener noreferrer"
+  >
+    <X className="w-6 h-6" />
+  </a>
+</div>
+
       </div>
     </div>
   );

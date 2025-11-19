@@ -806,7 +806,7 @@ useEffect(() => {
   </div>
 
 
-<div className="w-full mx-auto z-10 px-28 mt-8">
+<div className="hidden lg:block w-full mx-auto z-10 px-28 mt-8">
   <div className="grid grid-cols-1 sm:grid-cols-3 gap-8 w-full">
 
     <Link
