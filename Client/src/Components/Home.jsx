@@ -1771,93 +1771,109 @@ Guided by <span className="italic font-medium">Creativity, Efficiency, and Ethic
 
         {/* ====== MOBILE MODAL (Now responsive) ====== */}
         {isOpenMobile && (
-          <div className="fixed inset-0 z-[100] flex items-center justify-center p-4 md:hidden">
-            {/* Full Screen Overlay */}
-            <div
-              className="absolute inset-0 bg-black/60 backdrop-blur-[2px]"
-              onClick={() => setIsOpenMobile(false)}
+  <div className="fixed inset-0 z-[100] flex items-center justify-center p-4 md:hidden">
+    {/* Full Screen Overlay */}
+    <div
+      className="absolute inset-0 bg-black/60 backdrop-blur-[2px]"
+      onClick={() => setIsOpenMobile(false)}
+    />
+
+    {/* Centered Popup */}
+    <div
+      className="relative z-[101] bg-white/10 border border-white/20 backdrop-blur-2xl rounded-2xl w-full max-w-md text-white shadow-2xl transform transition-all duration-300 scale-100"
+      onClick={(e) => e.stopPropagation()}
+    >
+      {/* Close Button */}
+      <button
+        type="button"
+        onClick={() => setIsOpenMobile(false)}
+        className="absolute -top-1 -right-1 bg-[#C9966B] text-[#142241] w-8 h-8 rounded-full flex items-center justify-center text-lg font-bold transition-all duration-200 shadow-lg hover:scale-110"
+        disabled={isSubmitting}
+      >
+        ✕
+      </button>
+
+      <div className="p-8">
+        {submitted ? (
+          // Success Message
+          <div className="text-center py-10 relative">
+            {/* Top Center Icon */}
+            <div className="absolute top-9 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
+              <CheckCircle className="w-16 h-16 text-[#C9966B] drop-shadow-lg" />
+            </div>
+
+            {/* Text */}
+            <h2 className="text-3xl font-semibold mt-10 mb-2">Submission Received!</h2>
+            <p className="text-gray-300 text-lg">
+              Thank you for your time — our team will connect with you shortly.
+            </p>
+          </div>
+        ) : (
+          // Form
+          <form className="space-y-4" onSubmit={handleSubmit}>
+            <div className="flex flex-col gap-3">
+              <input
+                type="text"
+                name="name"
+                placeholder="Your Name"
+                value={formDataButton.name}
+                onChange={handleChange}
+                className="w-full p-3 bg-white/5 border border-white/20 text-white placeholder-gray-300 rounded-xl outline-none focus:ring-2 focus:ring-blue-400 focus:bg-white/10 transition-all duration-300"
+                required
+                disabled={isSubmitting}
+              />
+              <input
+                type="tel"
+                name="phone"
+                placeholder="Phone Number"
+                value={formDataButton.phone}
+                onChange={handleChange}
+                className="w-full p-3 bg-white/5 border border-white/20 text-white placeholder-gray-300 rounded-xl outline-none focus:ring-2 focus:ring-blue-400 focus:bg-white/10 transition-all duration-300"
+                required
+                disabled={isSubmitting}
+              />
+            </div>
+
+            <input
+              type="email"
+              name="email"
+              placeholder="Your Email Address"
+              value={formDataButton.email}
+              onChange={handleChange}
+              className="w-full p-3 bg-white/5 border border-white/20 text-white placeholder-gray-300 rounded-xl outline-none focus:ring-2 focus:ring-blue-400 focus:bg-white/10 transition-all duration-300"
+              required
+              disabled={isSubmitting}
             />
 
-            {/* Centered Popup */}
-            <div
-              className="relative z-[101] bg-white/10 border border-white/20 backdrop-blur-2xl rounded-2xl w-full max-w-md text-white shadow-2xl transform transition-all duration-300 scale-100"
-              onClick={(e) => e.stopPropagation()}
+            <input
+              type="text"
+              name="service"
+              placeholder="What Service Do You Need?"
+              value={formDataButton.service}
+              onChange={handleChange}
+              className="w-full p-3 bg-white/5 border border-white/20 text-white placeholder-gray-300 rounded-xl outline-none focus:ring-2 focus:ring-blue-400 focus:bg-white/10 transition-all duration-300"
+              required
+              disabled={isSubmitting}
+            />
+
+            <button
+              type="submit"
+              disabled={isSubmitting}
+              className={`w-full py-3.5 border-2 border-white/20 rounded-xl text-[#142241] bg-[#C9966B] font-bold shadow-lg transition-all duration-200 mt-2 ${
+                isSubmitting
+                  ? 'bg-[#C9966B] cursor-not-allowed'
+                  : 'bg-[#C9966B] hover:bg-white/20 hover:scale-[1.02]'
+              }`}
             >
-              {/* Close Button */}
-              <button
-                type="button"
-                onClick={() => setIsOpenMobile(false)}
-                className="absolute -top-1 -right-1 bg-[#C9966B] text-[#142241] w-8 h-8 rounded-full flex items-center justify-center text-lg font-bold transition-all duration-200 shadow-lg hover:scale-110"
-                disabled={isSubmitting}
-              >
-                ✕
-              </button>
-
-              {/* Form Content */}
-              <div className="p-8">
-                <form className="space-y-4" onSubmit={handleSubmit}>
-                  <div className="flex flex-col gap-3">
-                    <input
-                      type="text"
-                      name="name"
-                      placeholder="Your Name"
-                      value={formDataButton.name}
-                      onChange={handleChange}
-                      className="w-full p-3 bg-white/5 border border-white/20 text-white placeholder-gray-300 rounded-xl outline-none focus:ring-2 focus:ring-blue-400 focus:bg-white/10 transition-all duration-300"
-                      required
-                      disabled={isSubmitting}
-                    />
-                    <input
-                      type="tel"
-                      name="phone"
-                      placeholder="Phone Number"
-                      value={formDataButton.phone}
-                      onChange={handleChange}
-                      className="w-full p-3 bg-white/5 border border-white/20 text-white placeholder-gray-300 rounded-xl outline-none focus:ring-2 focus:ring-blue-400 focus:bg-white/10 transition-all duration-300"
-                      required
-                      disabled={isSubmitting}
-                    />
-                  </div>
-
-                  <input
-                    type="email"
-                    name="email"
-                    placeholder="Your Email Address"
-                    value={formDataButton.email}
-                    onChange={handleChange}
-                    className="w-full p-3 bg-white/5 border border-white/20 text-white placeholder-gray-300 rounded-xl outline-none focus:ring-2 focus:ring-blue-400 focus:bg-white/10 transition-all duration-300"
-                    required
-                    disabled={isSubmitting}
-                  />
-
-                  <input
-                    type="text"
-                    name="service"
-                    placeholder="What Service Do You Need?"
-                    value={formDataButton.service}
-                    onChange={handleChange}
-                    className="w-full p-3 bg-white/5 border border-white/20 text-white placeholder-gray-300 rounded-xl outline-none focus:ring-2 focus:ring-blue-400 focus:bg-white/10 transition-all duration-300"
-                    required
-                    disabled={isSubmitting}
-                  />
-
-                  <button
-                    type="submit"
-                    disabled={isSubmitting}
-                    className={`w-full py-3.5 border-2 border-white/20 rounded-xl text-[#142241] bg-[#C9966B]font-bold shadow-lg transition-all duration-200 mt-2 ${
-                      isSubmitting
-                        ? 'bg-[#C9966B] cursor-not-allowed'
-                        : 'bg-[#C9966B] hover:bg-white/20 hover:scale-[1.02]'
-                    }`}
-                  >
-                    {isSubmitting ? 'Submitting...' : 'Submit'}
-                  </button>
-
-                </form>
-              </div>
-            </div>
-          </div>
+              {isSubmitting ? 'Submitting...' : 'Submit'}
+            </button>
+          </form>
         )}
+      </div>
+    </div>
+  </div>
+)}
+
       </main>
    
     </>
