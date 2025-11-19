@@ -1,4 +1,5 @@
-import React from 'react'
+import { ArrowRight } from "lucide-react";
+import sofa from '../../assets/insideService/sofa.png';
 import '../../Style/OurService.css'
 import { useState } from 'react'
 import service66 from "../../assets/OurService/service66.png"
@@ -6,69 +7,16 @@ import ind1 from "../../assets/insideService/include6.1.png"
 import ind2 from "../../assets/insideService/include6.2.png"
 import ind3 from "../../assets/insideService/include6.3.png"
 import ind4 from "../../assets/insideService/include6.4.png"
-import { ToastContainer, toast } from 'react-toastify';
-import GImg from '../../assets/insideService/CfgImg.png'
+import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { Api } from '../Api/Api';
-
+import { useNavigate } from "react-router-dom";
 
 const Service5 = () => {
-
-  const [formData, setFormData] = useState({
-     firstName: "",
-     lastName: "",
-     email: "",
-     phone: "",
-     message: ""
-   });
- 
- const handleSubmit = async (e) => {
-   e.preventDefault();
-   try {
-     await Api.createContact({
-       firstName: formData.firstName,
-       lastName: formData.lastName,
-       email: formData.email,
-       phone: formData.phone,
-       message: formData.message,
-       service: "Residential Interior Design"
-     });
-     toast.success("Message Submitted Successfully!");
-     setFormData({ firstName: "", lastName: "", email: "", phone: "", message: "" });
-   } catch (err) {
-     console.log(err); // for debugging
-     toast.error(err.response?.data?.err || "Something went wrong!");
-   }
- };
-  const itemsPerRow = 3;
-  const items = [
-    {
-      icon: ind1,
-      title: "Bespoke furniture",
-      desc: "Bespoke furniture design and production",
-    },
-    {
-      icon: ind2,
-      title: "Decorative accents",
-      desc: "Decorative accents like wall art, installations, and sculptures",
-    },
-    {
-      icon: ind3,
-      title: "Styling accessories",
-      desc: "Styling accessories for shelves, tabletops, and entryways",
-    },
-    {
-      icon: ind4,
-      title: "Seamless design blend",
-      desc: "Coordination of materials, textures, and themes",
-    },
-    
-  ];
-  const groupedItems = [];
-for (let i = 0; i < items.length; i += itemsPerRow) {
-  groupedItems.push(items.slice(i, i + itemsPerRow));
-}
-
+ const navigate=useNavigate();
+  const handleClick = () => {
+    navigate("/", { state: { scrollToBooking: true } });
+  };
 
   return (
     <>
@@ -92,146 +40,49 @@ for (let i = 0; i < items.length; i += itemsPerRow) {
       />
     </div>
 
-    {/* Description */}
-    <p className="text-gray-600 mt-6 text-base leading-relaxed" data-aos="fade-up" data-aos-delay="200">
-     At Aruh Koncepts, we design and craft bespoke furniture and décor pieces that perfectly complement your interiors. Every element is tailored to match your style, functionality needs, and space requirements. From statement furniture to subtle accents, our creations add character, elegance, and a personal touch to every project.
-    </p>
+   <div className="mt-10" data-aos="fade-up" data-aos-delay="200">
+            <div className="mt-10" data-aos="fade-up" data-aos-delay="200">
+              <h2 className='text-2xl md:text-3xl font-semibold mt-6 '>Service Overview</h2>
+              <p className='mt-5 text-base text-gray-800'>Our custom furniture and décor service empowers clients to personalize their spaces with unique, thoughtfully crafted pieces that align perfectly with the overall interior concept. We design furniture and decorative elements that elevate style, enhance comfort, and improve functionality. Every piece is tailored to the space, ensuring a cohesive look that feels both distinctive and deeply connected to the client’s lifestyle and design preferences.</p>
+            </div>
 
-    {/* What are included */}
-    <div className="mt-10" data-aos="fade-up" data-aos-delay="300">
-      <h2 className="text-2xl font-semibold mb-4 md:mb-12">What are included</h2>
+            <div className="mt-10" data-aos="fade-up" data-aos-delay="200">
+              <h2 className='text-2xl md:text-3xl font-semibold mt-6 '>Our Custom Furniture & Decor Solutions Services Include</h2>
+              <p className='mt-5 text-base text-gray-800'>We design and craft bespoke furniture, modular units, smart storage solutions, curated décor pieces, soft furnishings, and theme-aligned accessories. Each element is tailor-made to blend seamlessly into the space while enhancing its overall aesthetic and functionality. Our custom creations add character, balance, and harmony, ensuring every project feels cohesive, personalized, and beautifully executed.
+              </p>
 
-      {groupedItems.map((group, i) => (
-        <React.Fragment key={i}>
-          <div
-            className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-9 mb-9 md:gap-10 px-4 md:px-6 py-2"
-            data-aos="fade-up"
-            data-aos-delay={400 + i * 100}
-          >
-            {group.map((item, idx) => (
-              <div
-                key={idx}
-                className="flex items-start gap-4 pr-2 md:pr-6 md:border-r md:border-[#464646] last:md:border-none"
-                data-aos="zoom-in"
-                data-aos-delay={500 + idx * 100}
-              >
-                <div className="w-14 h-14 flex-shrink-0 text-gray-700">
-                  {typeof item.icon === "string" ? (
-                    <img
-                      src={item.icon}
-                      alt={item.title}
-                      className="w-full h-full object-contain"
-                    />
-                  ) : (
-                    item.icon
-                  )}
-                </div>
-                <div>
-                  <h3 className="font-semibold text-lg">{item.title}</h3>
-                  <p className="text-gray-600 text-sm">{item.desc}</p>
-                </div>
-              </div>
-            ))}
+            </div>
+
+
+            <div className="mt-10" data-aos="fade-up" data-aos-delay="200">
+              <h2 className='text-2xl md:text-3xl font-semibold mt-6 '>Why Choose Us</h2>
+              <p className='mt-5 text-base text-gray-800'>We combine refined design sensibility with skilled craftsmanship to create furniture and décor pieces that genuinely feel one-of-a-kind. Every item is thoughtfully designed, meticulously detailed, and crafted with a focus on lasting quality and personalization. This commitment ensures each piece contributes to both the usability and the visual harmony of the space. With a fully tailored approach, we help clients achieve interiors that are cohesive, stylish, and deeply personal—reflecting their taste in every detail.</p>
+            </div>
           </div>
 
-          {/* Divider between groups – only on desktop */}
-          {i !== groupedItems.length - 1 && (
-            <hr className="hidden md:block border-t border-[#464646] my-6" />
-          )}
-        </React.Fragment>
-      ))}
-    </div>
   </div>
+
+
+  <div className="mt-16 w-full relative" data-aos="fade-up" data-aos-delay="200">
+          <img src={sofa} alt="" className="w-full h-auto object-cover" />
+
+          <div className="absolute top-[180px] left-[250px] flex flex-col justify-start items-center text-black text-center">
+            <h1 className="text-3xl md:text-5xl font-medium">
+              Let’s talk about <br /> how can help you
+            </h1>
+
+            <button onClick={handleClick} className="group mt-6 px-6 py-3 bg-[#C8966B] hover:cursor-pointer self-start text-[#142241] rounded-lg font-semibold flex items-center gap-1">
+              contact us
+              <ArrowRight className="w-4 h-4 relative top-[1px]  -rotate-45" />
+            </button>
+
+          </div>
+        </div>
+
+
 </section>
 
- <section className='w-full px-6 md:px-10 lg:px-15 xl:px-24 mt-2 md:mt-16'>
-        <div className='bg-white md:bg-[#F4EFE9] pt-9'>
 
-         <div className="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center gap-10 relative  px-4">
-  
-  {/* Image Section */}
-  <div className="w-full md:w-1/2 flex justify-center">
-    <img
-      src={GImg}
-      alt="Group of images"
-      className="w-full max-w-[550px] object-contain"
-    />
-  </div>
-
-  {/* Form Section */}
-  <div className="w-full md:w-1/2 flex justify-center">
-    <form
-      className="w-full max-w-md p-6 flex flex-col gap-5 bg-white"
-      onSubmit={handleSubmit}
-    >
-      {/* Name Fields */}
-<div className="flex flex-col md:flex-col lg:flex-row gap-4">
-  <input
-    type="text"
-    placeholder="First Name"
-    value={formData.firstName}
-    onChange={(e) =>
-      setFormData({ ...formData, firstName: e.target.value })
-    }
-    className="flex-1 border-b border-gray-400 focus:border-black outline-none text-md h-8 leading-5 placeholder:text-gray-400 md:placeholder-black"
-    required
-  />
-  <input
-    type="text"
-    placeholder="Last Name"
-    value={formData.lastName}
-    onChange={(e) =>
-      setFormData({ ...formData, lastName: e.target.value })
-    }
-    className="flex-1 border-b border-gray-400 focus:border-black outline-none text-md h-8 leading-5 placeholder:text-gray-400 md:placeholder-black"
-    required
-  />
-</div>
-
-
-      {/* Email */}
-      <input
-        type="email"
-        placeholder="Email"
-        value={formData.email}
-        onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-        className="border-b border-gray-400 focus:border-black outline-none text-md h-6 md:h-8 leading-5 placeholder:text-gray-400 md:placeholder-black"
-        required
-      />
-
-      {/* Phone */}
-      <input
-        type="tel"
-        placeholder="Phone Number"
-        value={formData.phone}
-        onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-        className="border-b border-gray-400 focus:border-black outline-none text-md h-6 md:h-8 leading-5 placeholder:text-gray-400 md:placeholder-black"
-      />
-
-      {/* Message */}
-      <input
-        type="text"
-        placeholder="Message"
-        value={formData.message}
-        onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-        className="border-b border-gray-400 focus:border-black outline-none text-md h-6 md:h-8 leading-5 placeholder:text-gray-400 md:placeholder-black"
-        required
-      />
-
-      {/* Submit */}
-      <button
-        type="submit"
-        className="mt-4 bg-[#142241] text-white py-2 rounded hover:bg-gray-800 transition-all duration-300"
-      >
-        Submit
-      </button>
-    </form>
-  </div>
-</div>
-          <ToastContainer position="bottom-right" autoClose={3000} />
-          <h1 id='service-text' className='text-center text-[#142241] text-[210px] font-medium relative bottom-[-65px]'>Get a Quote</h1>
-        </div>
-      </section>
 
     </>
   )

@@ -1,8 +1,10 @@
 import { Api } from "./Api/Api";
 // hello shivanshu prajapati
+import { CheckCircle } from "lucide-react";
 import { LazyLoadImage } from "react-lazy-load-image-component";  // LCP Means Big Imahe jo front pe rehti hai
 import { useState, useRef } from "react";
 import { useNavigate, Link } from "react-router-dom";
+import { ArrowRight } from "lucide-react";
 import "../Style/Home.css";
 import { FaBuffer } from "react-icons/fa";
 import { FaCity } from "react-icons/fa";
@@ -61,9 +63,29 @@ const Home = () => {
       }
     }
   }, [location]);
+
+//
+// for service 
+const bookingRef = useRef(null);
+  useEffect(() => {
+    if (location.state?.scrollToBooking) {
+      // Ensure page fully rendered including images, animations
+      const timeout = setTimeout(() => {
+        bookingRef.current?.scrollIntoView({ behavior: "smooth", block: "start" });
+      }, 500); // Increase delay to 500ms or adjust if page is heavy
+
+      return () => clearTimeout(timeout);
+    }
+  }, [location]);
+
+
+//
+
   const scrollRef = useRef(null); // testinomialss
   const [isPaused, setIsPaused] = useState(false); // testinomials
   const speed = 1; // scroll speed
+  const [loading, setLoading] = useState(false);
+
   const animationRef = useRef(null);
   const [openIndex, setOpenIndex] = useState(null); // FAQ
   const [activeIndex, setActiveIndex] = useState(0); // for service
@@ -99,41 +121,45 @@ const Home = () => {
 
     return true;
   }
-  const contactHandle = async (e) => {
-    e.preventDefault();
-    if (!contactValidationForm()) return; // ❌ Invalid hua toh aage nahi jaayega
-    try {
-      const response = await Api.createContact(
-        {
-          name: formData.name,
-          email: formData.email,
-          service: formData.service,
-          message: formData.message,
-        }
-      );
-      if (response.status === 201) {
-        toast.success("Message Submitted Successfully", {
-          position: "bottom-right",
-          style: {
-            backgroundColor: "Green",
-            borderLeft: "4px solid #142241", // Tailwind green-500 hex
-            color: "white",
-            boxShadow: "0 4px 12px rgba(0, 0, 0, 0.1)",
-          },
-        });
+const contactHandle = async (e) => {
+  e.preventDefault();
+  if (!contactValidationForm()) return;
 
-        // Optional: Reset the form
-        setFormData({
-          name: "",
-          email: "",
-          service: "",
-          message: "",
-        });
-      }
-    } catch (err) {
-      console.log("Not Fetch In Frontend Error");
+  setLoading(true); // start loading
+
+  try {
+    const response = await Api.createContact({
+      name: formData.name,
+      email: formData.email,
+      service: formData.service,
+      message: formData.message,
+    });
+
+    if (response.status === 201) {
+      toast.success("Message Submitted Successfully", {
+        position: "bottom-right",
+        style: {
+          backgroundColor: "Green",
+          borderLeft: "4px solid #142241",
+          color: "white",
+          boxShadow: "0 4px 12px rgba(0, 0, 0, 0.1)",
+        },
+      });
+
+      setFormData({
+        name: "",
+        email: "",
+        service: "",
+        message: "",
+      });
     }
-  };
+  } catch (err) {
+    console.log("Not Fetch In Frontend Error");
+  }
+
+  setLoading(false); // stop loading
+};
+
 
 
   useEffect(() => {
@@ -604,11 +630,12 @@ const handleChange = (e) => {
 };
 
 // Handle form submit
+const [submitted, setSubmitted] = useState(false);
+
 const handleSubmit = async (e) => {
   e.preventDefault();
-  
-  if (isSubmitting) return; // Prevent multiple submissions
-  
+  if (isSubmitting) return;
+
   setIsSubmitting(true);
   setStatus("Submitting...");
 
@@ -620,28 +647,9 @@ const handleSubmit = async (e) => {
       service: formDataButton.service,
     });
 
-    toast.success("Message Submitted Successfully!", {
-      position: "top-center",
-      style: {
-        backgroundColor: "green",
-        borderLeft: "4px solid #142241",
-        color: "white",
-        boxShadow: "0 4px 12px rgba(0, 0, 0, 0.1)",
-      },
-    }
-    );
-    
-    // Reset form and close modal
-    setFormDataButton({ 
-      name: "", 
-      phone: "", 
-      email: "", 
-      service: "" 
-    });
-    
+    setSubmitted(true); // Show success message
+    setFormDataButton({ name: "", phone: "", email: "", service: "" });
     setStatus("");
-    setIsOpen(false); // Close the modal on success
-    setIsOpenMobile(false); // Close mobile modal if open
     
   } catch (error) {
     console.error("Form submission error:", error);
@@ -652,20 +660,15 @@ const handleSubmit = async (e) => {
   }
 };
 
-// Reset form when modal opens/closes
+// Reset form and submission state when modal closes
 useEffect(() => {
   if (!isOpen && !isOpenMobile) {
-    setFormDataButton({ 
-      name: "", 
-      phone: "", 
-      email: "", 
-      service: "" 
-    });
+    setFormDataButton({ name: "", phone: "", email: "", service: "" });
     setStatus("");
+    setSubmitted(false);
     setIsSubmitting(false);
   }
 }, [isOpen, isOpenMobile]);
- 
 
   ///////////////////////////////////////////////////////////////////////
   return (
@@ -718,69 +721,131 @@ useEffect(() => {
     </div>
     
     {/* Featured Projects */}
-    <div
-      className="hidden md:flex flex-col justify-center space-y-6 items-start md:items-end"
-      data-aos="fade-left"
-      data-aos-delay="300"
-    >
-      <h2 className="text-xl font-semibold mb-9">Featured Projects</h2>
-      <div className="space-y-8">
-        {/* Project 1 */}
-        <Link
-          to="/featuredProject"
-          className="bg-white/0 backdrop-blur-md border border-white flex flex-col justify-center rounded-xl px-4 pt-8 pb-4 hover:bg-white/20 h-[130px] transition-all duration-300 ease-in-out w-[130px]"
-          data-aos="zoom-in"
-          data-aos-delay="400"
-        >
-          <img
-            src={hero1}
-            alt="Cozy Urban Apartment"
-            className="w-20 h-20 object-cover relative top-[-35px] left-[-30px] border-2 border-white rounded-lg shadow-md"
-          />
-          <p className="text-[#EBCFAC] text-sm mt-[-20px]">
-            Residencial Project
-          </p>
-        </Link>
+<div
+  className="hidden md:flex flex-col justify-center items-end"
+  data-aos="fade-left"
+  data-aos-delay="300"
+>
 
-        {/* Project 2 */}
-        <Link
-          to="/featuredProject2"
-          className="bg-white/0 backdrop-blur-md border flex flex-col justify-center border-white rounded-xl px-4 pt-8 pb-4 hover:bg-white/20 transition-all duration-300 ease-in-out h-[130px] w-[130px]"
-          data-aos="zoom-in"
-          data-aos-delay="600"
-        >
-          <img
-            src={hero2}
-            alt="Luxury Penthouse"
-            className="w-20 h-20 object-cover relative top-[-35px] left-[-30px] border-2 border-white rounded-lg shadow-md"
-          />
-          <p className="text-[#EBCFAC] text-sm mt-[-20px]">
-            Commercial Project
-          </p>
-        </Link>
+  <div className="flex items-start space-x-8 relative">
 
-        {/* Link */}
-        <button
-          onClick={() => navigate("/projectKnowMore")}
-          className="inline-block text-sm cursor-pointer text-gray-300 hover:text-white transition"
-          data-aos="fade-up"
-          data-aos-delay="800"
-        >
-          Know More →
-        </button>
-      </div>
+    {/* Left Column → Heading + Residential Box */}
+    <div className="flex flex-col items-start">
+      {/* Heading above Residential project */}
+      <h2 className="text-xl font-semibold mb-3">
+        Featured
+      </h2>
+
+      {/* Project 1 - LEFT (DOWN) */}
+      <Link
+        to="/featuredProject"
+        className="bg-white/0 backdrop-blur-md border border-white flex flex-col justify-center
+        rounded-xl px-4 pt-8 pb-4 hover:bg-white/20 h-[130px] w-[130px] transition-all 
+        duration-300 ease-in-out transform translate-y-4"
+        data-aos="zoom-in"
+        data-aos-delay="400"
+      >
+        <img
+          src={hero1}
+          alt="Cozy Urban Apartment"
+          className="w-20 h-20 object-cover relative top-[-35px] left-[-30px] 
+          border-2 border-white rounded-lg shadow-md"
+        />
+        <p className="text-[#EBCFAC] text-sm mt-[-20px]">
+          Residential Project
+        </p>
+      </Link>
     </div>
+
+    {/* Right Column → Commercial + Know More */}
+    <div className="flex flex-col items-center">
+      {/* Project 2 - RIGHT (UP) */}
+      <Link
+        to="/featuredProject2"
+        className="bg-white/0 backdrop-blur-md border border-white flex flex-col justify-center
+        rounded-xl px-4 pt-8 pb-4 hover:bg-white/20 transition-all duration-300 ease-in-out
+        h-[130px] w-[130px] transform -translate-y-4"
+        data-aos="zoom-in"
+        data-aos-delay="600"
+      >
+        <img
+          src={hero2}
+          alt="Luxury Penthouse"
+          className="w-20 h-20 object-cover relative top-[-35px] left-[-30px] 
+          border-2 border-white rounded-lg shadow-md"
+        />
+        <p className="text-[#EBCFAC] text-sm mt-[-20px]">
+          Commercial Project
+        </p>
+      </Link>
+
+      {/* Know More below right box */}
+      <button
+        onClick={() => navigate("/projectKnowMore")}
+        className=" text-sm cursor-pointer text-gray-300 hover:text-white transition"
+        data-aos="fade-up"
+        data-aos-delay="800"
+      >
+        Know More →
+      </button>
+    </div>
+
   </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+  </div>
+
+
+<div className="w-full mx-auto z-10 px-28 mt-8">
+  <div className="grid grid-cols-1 sm:grid-cols-3 gap-8 w-full">
+
+    <Link
+      to="/residential"
+      className="w-full border-b-2 text-white px-2 py-3 flex items-center justify-between"
+    >
+      Residential Interior Design
+      <ArrowRight className="w-4 h-4 -rotate-45" />
+    </Link>
+
+    <Link
+      to="/renovation"
+      className="w-full border-b-2 text-white px-2 py-3 flex items-center justify-between"
+    >
+      Renovation & Remodeling
+      <ArrowRight className="w-4 h-4 -rotate-45" />
+    </Link>
+
+    <Link
+      to="/vastu"
+      className="w-full border-b-2 text-white px-2 py-3 flex items-center justify-between"
+    >
+      Vastu Consultation
+      <ArrowRight className="w-4 h-4 -rotate-45" />
+    </Link>
+
+  </div>
+</div>
+
 
   {/* ====== POPUP MODAL DESKTOP - CENTERED ====== */}
 {isOpen && (
-  <div className="fixed inset-0 z-[100] flex items-center justify-center p-4">
+   <div className="fixed inset-0 z-[100] flex items-center justify-center p-4">
     {/* Full Screen Overlay */}
     <div 
       className="absolute inset-0 bg-black/60 backdrop-blur-[2px]"
-      onClick={() => setIsOpen(false)}
+      onClick={() => { setIsOpen(false); setIsOpenMobile(false); }}
     />
-    
+
     {/* Centered Popup */}
     <div 
       className="relative z-[101] bg-white/10 border border-white/20 backdrop-blur-2xl rounded-2xl w-full max-w-md text-white shadow-2xl transform transition-all duration-300 scale-100"
@@ -789,83 +854,88 @@ useEffect(() => {
       {/* Close Button */}
       <button
         type="button"
-        onClick={() => setIsOpen(false)}
-        className="absolute -top-1 -right-1 bg-[#C9966B] text-[#142241] w-8 h-8 rounded-full flex items-center justify-center text-lg font-bold transition-all duration-200 shadow-lg hover:scale-110"
+        onClick={() => { setIsOpen(false); setIsOpenMobile(false); }}
+        className="absolute -top-1 -right-1 hover:cursor-pointer bg-[#C9966B] text-[#142241] w-8 h-8 rounded-full flex items-center justify-center text-lg font-bold transition-all duration-200 shadow-lg hover:scale-110"
         disabled={isSubmitting}
       >
         ✕
       </button>
 
-      {/* Form Content */}
+      {/* Form / Success Message */}
       <div className="p-8">
-        <form className="space-y-4" onSubmit={handleSubmit}>
-          <div className="flex gap-3">
+        {submitted ? (
+          <div className="text-center py-10 relative">
+  {/* Top Center Icon */}
+  <div className="absolute top-9 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
+    <CheckCircle className="w-16 h-16 text-[#C9966B] drop-shadow-lg" />
+  </div>
+
+  {/* Text */}
+  <h2 className="text-3xl font-semibold mt-10 mb-2">Submission Received!</h2>
+  <p className="text-gray-300 text-lg">
+    Thank you for your time — our team will connect with you shortly.
+  </p>
+</div>
+        ) : (
+          <form className="space-y-4" onSubmit={handleSubmit}>
+            <div className="flex gap-3">
+              <input
+                type="text"
+                name="name"
+                placeholder="Your Name"
+                value={formDataButton.name}
+                onChange={handleChange}
+                className="w-full p-3 bg-white/5 border border-white/20 text-white placeholder-gray-300 rounded-xl outline-none focus:ring-2 focus:ring-blue-400 focus:bg-white/10 transition-all duration-300"
+                required
+                disabled={isSubmitting}
+              />
+              <input
+                type="tel"
+                name="phone"
+                placeholder="Phone Number"
+                value={formDataButton.phone}
+                onChange={handleChange}
+                className="w-full p-3 bg-white/5 border border-white/20 text-white placeholder-gray-300 rounded-xl outline-none focus:ring-2 focus:ring-blue-400 focus:bg-white/10 transition-all duration-300"
+                required
+                disabled={isSubmitting}
+              />
+            </div>
+
+            <input
+              type="email"
+              name="email"
+              placeholder="Your Email Address"
+              value={formDataButton.email}
+              onChange={handleChange}
+              className="w-full p-3 bg-white/5 border border-white/20 text-white placeholder-gray-300 rounded-xl outline-none focus:ring-2 focus:ring-blue-400 focus:bg-white/10 transition-all duration-300"
+              required
+              disabled={isSubmitting}
+            />
+
             <input
               type="text"
-              name="name"
-              placeholder="Your Name"
-              value={formDataButton.name}
+              name="service"
+              placeholder="What Service Do You Need?"
+              value={formDataButton.service}
               onChange={handleChange}
               className="w-full p-3 bg-white/5 border border-white/20 text-white placeholder-gray-300 rounded-xl outline-none focus:ring-2 focus:ring-blue-400 focus:bg-white/10 transition-all duration-300"
               required
               disabled={isSubmitting}
             />
-            <input
-              type="tel"
-              name="phone"
-              placeholder="Phone Number"
-              value={formDataButton.phone}
-              onChange={handleChange}
-              className="w-full p-3 bg-white/5 border border-white/20 text-white placeholder-gray-300 rounded-xl outline-none focus:ring-2 focus:ring-blue-400 focus:bg-white/10 transition-all duration-300"
-              required
+
+            <button
+              type="submit"
               disabled={isSubmitting}
-            />
-          </div>
-
-          <input
-            type="email"
-            name="email"
-            placeholder="Your Email Address"
-            value={formDataButton.email}
-            onChange={handleChange}
-            className="w-full p-3 bg-white/5 border border-white/20 text-white placeholder-gray-300 rounded-xl outline-none focus:ring-2 focus:ring-blue-400 focus:bg-white/10 transition-all duration-300"
-            required
-            disabled={isSubmitting}
-          />
-
-          <input
-            type="text"
-            name="service"
-            placeholder="What Service Do You Need?"
-            value={formDataButton.service}
-            onChange={handleChange}
-            className="w-full p-3 bg-white/5 border border-white/20 text-white placeholder-gray-300 rounded-xl outline-none focus:ring-2 focus:ring-blue-400 focus:bg-white/10 transition-all duration-300"
-            required
-            disabled={isSubmitting}
-          />
-
-          <button
-            type="submit"
-            disabled={isSubmitting}
-            className={`w-full py-3.5 border-2 border-white/20 rounded-xl text-[#142241] font-semibold shadow-lg transition-all duration-200 mt-2 ${
-              isSubmitting 
-                ? 'bg-[#C9966B] cursor-not-allowed' 
-                : 'bg-[#C9966B] hover:scale-[1.02]'
-            }`}
-          >
-            {isSubmitting ? 'Submitting...' : 'Submit'}
-          </button>
-
-          {/* {status && (
-            <p className={`text-center text-sm mt-3 py-2 rounded-lg ${
-              status.includes('❌') 
-                ? 'text-red-300 bg-red-500/20' 
-                : 'text-green-300 bg-green-500/20'
-            }`}>
-              {status}
-            </p>
-          )} */}
-        </form>
+              className={`w-full py-3.5 hover:cursor-pointer border-2 border-white/20 rounded-xl text-[#142241] font-semibold shadow-lg transition-all duration-200 mt-2 ${
+                isSubmitting 
+                  ? 'bg-[#C9966B] cursor-not-allowed' 
+                  : 'bg-[#C9966B] hover:scale-[1.02]'
+              }`}
+            >
+              {isSubmitting ? 'Submitting...' : 'Submit'}
+            </button>
+          </form>
+        )}
       </div>
     </div>
   </div>
@@ -902,89 +972,7 @@ useEffect(() => {
       </div>
     </div>
 
-    {/* ====== POPUP MODAL MOBILE - CENTERED ====== */}
-    {/* {isOpenMobile && (
-      <div className="fixed inset-0 z-[100] flex items-center justify-center p-4 md:hidden">
-      
-        <div 
-          className="absolute inset-0 bg-black/60 backdrop-blur-md"
-          onClick={() => setIsOpenMobile(false)}
-        />
-        
-       
-        <div 
-          className="relative z-[101] bg-white/10 border border-white/20 backdrop-blur-2xl rounded-2xl w-full max-w-sm text-white shadow-2xl mx-4"
-          onClick={(e) => e.stopPropagation()}
-        >
- 
-          <button
-            type="button"
-            onClick={() => setIsOpenMobile(false)}
-            className="absolute -top-3 -right-3 bg-red-500 hover:bg-red-600 text-white w-8 h-8 rounded-full flex items-center justify-center text-lg font-bold transition-all duration-200 shadow-lg"
-          >
-            ✕
-          </button>
-
-     
-          <div className="p-6">
-            <h3 className="text-xl font-bold mb-2 text-center">Transform Your Home</h3>
-            <p className="text-gray-300 text-center mb-4 text-sm">Get started with our design services</p>
-            
-            <form className="space-y-3" onSubmit={handleSubmit}>
-              <input
-                type="text"
-                name="name"
-                placeholder="Your Name"
-                value={formDataButton.name}
-                onChange={handleChange}
-                className="w-full p-3 bg-white/5 border border-white/20 text-white placeholder-gray-300 rounded-xl outline-none focus:ring-2 focus:ring-blue-400 focus:bg-white/10 transition-all duration-300"
-                required
-              />
-              <input
-                type="text"
-                name="phone"
-                placeholder="Phone Number"
-                value={formDataButton.phone}
-                onChange={handleChange}
-                className="w-full p-3 bg-white/5 border border-white/20 text-white placeholder-gray-300 rounded-xl outline-none focus:ring-2 focus:ring-blue-400 focus:bg-white/10 transition-all duration-300"
-                required
-              />
-              <input
-                type="email"
-                name="email"
-                placeholder="Your Email"
-                value={formDataButton.email}
-                onChange={handleChange}
-                className="w-full p-3 bg-white/5 border border-white/20 text-white placeholder-gray-300 rounded-xl outline-none focus:ring-2 focus:ring-blue-400 focus:bg-white/10 transition-all duration-300"
-                required
-              />
-              <input
-                type="text"
-                name="service"
-                placeholder="Service Type"
-                value={formDataButton.service}
-                onChange={handleChange}
-                className="w-full p-3 bg-white/5 border border-white/20 text-white placeholder-gray-300 rounded-xl outline-none focus:ring-2 focus:ring-blue-400 focus:bg-white/10 transition-all duration-300"
-                required
-              />
-
-              <button
-                type="submit"
-                className="w-full py-3 bg-white/10 border border-white/20 rounded-xl text-white font-semibold hover:bg-white/20 transition-all duration-200 mt-2"
-              >
-                Get Free Consultation
-              </button>
-
-              {status && (
-                <p className="text-center text-sm text-green-300 mt-2 bg-green-500/20 py-2 rounded-lg">
-                  {status}
-                </p>
-              )}
-            </form>
-          </div>
-        </div>
-      </div>
-    // )} */}
+  
   </div>
 </section>
 
@@ -1481,7 +1469,7 @@ Guided by <span className="italic font-medium">Creativity, Efficiency, and Ethic
         </section>
 
         {/* //// FAQ  */}
-        <section className="faqs-section">
+        <section id='faq' className="faqs-section scroll-mt-14">
           <div className="w-[90%] mx-auto mt-8 md:mt-0">
             <h1
               className="text-xl font-bold text-[#C9966B] mb-6 md:mb-18"
@@ -1547,7 +1535,7 @@ Guided by <span className="italic font-medium">Creativity, Efficiency, and Ethic
         </section>
 
         {/* Testinomials  */}
-        <section className="testinomials-section py-10  bg-white">
+        <section id='testimonials' className="testinomials-section scroll-mt-24 py-10  bg-white">
           <div className="w-[90%] mx-auto">
             <div
               ref={scrollRef}
@@ -1583,7 +1571,7 @@ Guided by <span className="italic font-medium">Creativity, Efficiency, and Ethic
         </section>
 
         {/* contact  */}
-        <section id="contact" className="contact-section md:pt-28  ">
+        <section id="contact" ref={bookingRef} className="contact-section scroll-mt-12 md:pt-28  ">
           <div className="w-[90%] mx-auto">
             {/* Heading */}
             <h1
@@ -1754,11 +1742,14 @@ Guided by <span className="italic font-medium">Creativity, Efficiency, and Ethic
                   {/* Submit */}
                   <div className="flex w-[90%] justify-start">
                     <button
-                      type="submit"
-                      className="bg-[#C8966B] cursor-pointer text-black py-2 px-12 lg:py-3 lg:px-18 rounded-full font-semibold hover:text-white hover:bg-[#142241] transition"
-                    >
-                      Submit
-                    </button>
+  type="submit"
+  disabled={loading}
+  className={`bg-[#C8966B] cursor-pointer text-black py-2 px-12 lg:py-3 lg:px-18 
+  rounded-full font-semibold hover:text-white hover:bg-[#142241] transition 
+  ${loading && "opacity-70 cursor-not-allowed"}`}
+>
+  {loading ? "Submitting..." : "Submit"}
+</button>
                   </div>
                 </form>
                 <ToastContainer
@@ -1862,25 +1853,13 @@ Guided by <span className="italic font-medium">Creativity, Efficiency, and Ethic
                     {isSubmitting ? 'Submitting...' : 'Submit'}
                   </button>
 
-                  {/* {status && (
-                    <p
-                      className={`text-center text-sm mt-3 py-2 rounded-lg ${
-                        status.includes('❌')
-                          ? 'text-red-300 bg-red-500/20'
-                          : 'text-green-300 bg-green-500/20'
-                      }`}
-                    >
-                      {status}
-                    </p>
-                  )} */}
                 </form>
               </div>
             </div>
           </div>
         )}
       </main>
-      {/* <ToastContainer position="top-center" autoClose={3000} /> */}
-      {/* /// Footer */}
+   
     </>
   );
 };

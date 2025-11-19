@@ -109,63 +109,54 @@ const OurService = () => {
     ];
     return (
         <>
-            <section className='service w-full py-6 md:py-12'>
-                <div className="w-[90%] mx-auto flex flex-col gap-6 md:gap-16">
-                    <h1 className='text-xl font-semibold text-[#C8966B]'>Our Services</h1>
-                    {services.map((service, index) => (
-                        <div
-                            key={service.id}
-                            className={`group grid md:grid-cols-2 gap-8 p-2 md:p-6 shadow-md items-center transition-all duration-500 ease-in-out transform 
-  hover:-translate-y-3 hover:scale-105 hover:shadow-2xl hover:bg-[#F1F2EB] ${index % 2 === 1 ? "md:flex-row-reverse" : ""}`}
-                        >
+            <section className="service w-full py-6 md:py-12">
+  <div className="w-[80%] mx-auto flex flex-col gap-6 md:gap-16">
+    <h1 className="text-xl font-semibold text-[#C8966B]">Our Services</h1>
 
-                            {/* Left Image */}
-                            <div className="w-full" data-aos="zoom-in">
-                                <img
-                                    src={service.image}
-                             z       alt={service.title}
-                                    loading="lazy"
-                                    className="md:w-[500px]  md:h-[400px]  object-cover shadow-sm"
-                                />
-                            </div>
+    {/* Grid for 2 cards per row */}
+<div className="grid grid-cols-1 md:grid-cols-2 gap-10">
+  {services.map((service) => (
+    <div
+      key={service.id}
+      className="relative group shadow-md overflow-hidden rounded-lg transition-all duration-500 ease-in-out hover:scale-105 hover:shadow-2xl"
+    >
+      {/* Image */}
+      <div className="relative w-full h-64 md:h-80">
+        <img
+          src={service.image}
+          alt={service.title}
+          className="w-full h-full object-cover transition-all duration-500 group-hover:brightness-75"
+        />
 
-                            {/* Right Content */}
-                            <div className="w-full h-auto md:h-[400px] md:p-6 flex flex-col justify-between" data-aos="fade-up">
-                                <div>
-                                    <div className="flex md:flex-col flex-row gap-4 md:items-start items-center ">
-                                        <div className="relative group w-12 h-12 md:w-16 md:h-16">
-                                            <div className="absolute inset-0 group-hover:hidden">
-                                                <service.icon className="w-full h-full text-[#C8966B]" />
-                                            </div>
-                                            <div className="absolute inset-0 hidden group-hover:block">
-                                                <service.hoverIcon className="w-full h-full text-red-500" />
-                                            </div>
-                                        </div>
+        {/* Overlay Button on Hover */}
+        <div className="absolute bottom-2 left-0 w-full px-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+          {/* Overlay behind button */}
+          {/* <div className="absolute inset-0 bg-black/30 rounded-lg pointer-events-none"></div> */}
+
+          {/* Button */}
+          <button
+            onClick={() => handleViewServiceClick(service.link)}
+            className="relative w-full flex justify-between items-center border-b-2 border-white text-white font-medium text-lg pb-1"
+          >
+            <span>Read More</span>
+            <ArrowRight className="w-4 h-4 -rotate-45" />
+          </button>
+        </div>
+      </div>
+
+      {/* Description below image */}
+      <div className="p-4 bg-white">
+        <h2 className="text-2xl font-semibold mb-2">{service.title}</h2>
+        <p className="text-gray-600">{service.description}</p>
+      </div>
+    </div>
+  ))}
+</div>
 
 
+  </div>
+</section>
 
-                                        <h2 className="text-2xl font-semibold mb-3">
-                                            {service.title}
-                                        </h2>
-                                    </div>
-
-
-                                    <p className="text-gray-600 leading-relaxed">
-                                        {service.description}
-                                    </p>
-                                </div>
-                                <button
-                                    onClick={() => handleViewServiceClick(service.link)}
-                                    className="group inline-flex mb-2 justify-end md:justify-start items-center gap-2 text-[#C8966B] md:text-black hover:text-[#C8966B] font-medium hover:underline cursor-pointer"
-                                >
-                                    <span>View Service</span>
-                                    <ArrowRight className="w-4 h-4 relative top-[1px] transition-transform duration-300 group-hover:translate-x-1 group-hover:-rotate-[40deg]" />
-                                </button>
-                            </div>
-                        </div>
-                    ))}
-                </div>
-            </section>
         </>
     )
 }

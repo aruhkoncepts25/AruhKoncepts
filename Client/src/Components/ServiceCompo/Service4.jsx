@@ -1,71 +1,23 @@
 import React from 'react'
 import {useState} from 'react';  
+import { ArrowRight } from "lucide-react";
+import sofa from '../../assets/insideService/sofa.png';
 import '../../Style/OurService.css'
 import service44 from '../../assets/OurService/service44.jpg'
 import ind1 from '../../assets/insideService/include4.1.png'
 import ind2 from '../../assets/insideService/include4.2.png'
 import ind3 from '../../assets/insideService/include4.3.png'
 import ind4 from '../../assets/insideService/include4.4.png'
-import { ToastContainer, toast } from 'react-toastify';
-import GImg from '../../assets/insideService/VgImg.png'
+import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { Api } from '../Api/Api';
+import { useNavigate } from "react-router-dom";
 const Service4 = () => {
-  const [formData, setFormData] = useState({
-    firstName: "",
-    lastName: "",
-    email: "",
-    phone: "",
-    message: ""
-  });
 
-const handleSubmit = async (e) => {
-  e.preventDefault();
-  try {
-    await Api.createContact({
-      firstName: formData.firstName,
-      lastName: formData.lastName,
-      email: formData.email,
-      phone: formData.phone,
-      message: formData.message,
-      service: "Residential Interior Design"
-    });
-    toast.success("Message Submitted Successfully!");
-    setFormData({ firstName: "", lastName: "", email: "", phone: "", message: "" });
-  } catch (err) {
-    console.log(err); // for debugging
-    toast.error(err.response?.data?.err || "Something went wrong!");
-  }
-};
-  const itemsPerRow = 3;
-  const items = [
-    {
-      icon: ind1,
-      title: "Mood boards",
-      desc: "Mood boards with design inspirations and styles",
-    },
-    {
-      icon: ind2,
-      title: "3D visualization",
-      desc: "3D visualizations and walkthrough animations",
-    },
-    {
-      icon: ind3,
-      title: "Sample materials",
-      desc: "Sample materials and surface finish options",
-    },
-    {
-      icon: ind4,
-      title: "Lighting Suggestions",
-      desc: "Personalized color palette development and lighting suggestions",
-    },
-    
-  ];
-  const groupedItems = [];
-for (let i = 0; i < items.length; i += itemsPerRow) {
-  groupedItems.push(items.slice(i, i + itemsPerRow));
-}
-
+  const navigate=useNavigate();
+  const handleClick = () => {
+    navigate("/", { state: { scrollToBooking: true } });
+  };
 
   return (
     <>
@@ -89,146 +41,55 @@ for (let i = 0; i < items.length; i += itemsPerRow) {
       />
     </div>
 
-    {/* Description */}
-    <p className="text-gray-600 mt-6 text-base leading-relaxed" data-aos="fade-up" data-aos-delay="200">
-      At Aruh Koncepts, we bring ideas to life with detailed 3D visualizations and conceptual designs. Our process allows clients to see and experience their spaces before execution, ensuring clarity in design direction and confidence in decision-making. By blending creativity with precision, we deliver concepts that transform visions into tangible, realistic designs.
-    </p>
 
-    {/* What are included */}
-    <div className="mt-10" data-aos="fade-up" data-aos-delay="300">
-      <h2 className="text-2xl font-semibold mb-4 md:mb-12">What are included</h2>
 
-      {groupedItems.map((group, i) => (
-        <React.Fragment key={i}>
-          <div 
-            className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-9 mb-9 md:gap-10 px-6 py-2"
-            data-aos="fade-up"
-            data-aos-delay={400 + i * 100}
-          >
-            {group.map((item, idx) => (
-              <div
-                key={idx}
-                className="flex items-start gap-4 pr-2 md:pr-6 md:border-r md:border-[#464646] last:md:border-none"
-                data-aos="zoom-in"
-                data-aos-delay={500 + idx * 100}
-              >
-                <div className="w-14 h-14 flex-shrink-0 text-gray-700">
-                  {typeof item.icon === "string" ? (
-                    <img
-                      src={item.icon}
-                      alt={item.title}
-                      className="w-full h-full object-contain"
-                    />
-                  ) : (
-                    item.icon
-                  )}
-                </div>
-                <div>
-                  <h3 className="font-semibold text-lg">{item.title}</h3>
-                  <p className="text-gray-600 text-sm">{item.desc}</p>
-                </div>
-              </div>
-            ))}
+
+     <div className="mt-10" data-aos="fade-up" data-aos-delay="200">
+            <div className="mt-10" data-aos="fade-up" data-aos-delay="200">
+              <h2 className='text-2xl md:text-3xl font-semibold mt-6 '>Service Overview</h2>
+              <p className='mt-5 text-base text-gray-800'>Our 3D visualization and conceptual design service allows clients to experience their space long before the execution stage, offering complete clarity and confidence in every decision. With highly realistic renders, curated concepts, and detailed visual storytelling, we bring ideas to life in a way that is easy to understand and refine. This process not only helps you visualize layouts, materials, and ambiance, but also ensures smarter planning, fewer revisions, and a design direction that feels clear and connected to your vision.</p>
+            </div>
+
+            <div className="mt-10" data-aos="fade-up" data-aos-delay="200">
+              <h2 className='text-2xl md:text-3xl font-semibold mt-6 '>Our 3D Visualization & Conceptual Design
+Services Include</h2>
+              <p className='mt-5 text-base text-gray-800'>We craft detailed 3D renders, mood boards, conceptual layouts, color palettes, and material previews to give clients a complete visual understanding of their future space. These curated visuals make it easy to explore multiple design directions, compare options, and clearly understand how each element fits within the overall layout. By previewing materials, textures, and aesthetics beforehand, clients can refine their vision with confidence. This thorough visual process ensures every choice aligns with expectations, reduces uncertainties, and leads to a smoother, more accurate execution on-site.
+
+              </p>
+
+            </div>
+
+
+            <div className="mt-10" data-aos="fade-up" data-aos-delay="200">
+              <h2 className='text-2xl md:text-3xl font-semibold mt-6 '>Why Choose Us</h2>
+              <p className='mt-5 text-base text-gray-800'>With strong visualization expertise and a deeply design-focused approach, we help clients clearly understand how their space will look, feel, and function before work begins. Our thoughtfully crafted visuals enable confident decision-making, streamline the design workflow, and enhance accuracy during execution. By turning abstract ideas into clear, tangible representations, we bridge the gap between imagination and reality—ensuring the final outcome remains true to the original vision in every detail.</p>
+            </div>
           </div>
 
-          {/* Divider only between rows (desktop only) */}
-          {i !== groupedItems.length - 1 && (
-            <hr className="md:block hidden border-t border-[#464646] my-6" />
-          )}
-        </React.Fragment>
-      ))}
-    </div>
-  </div>
-</section>
 
-  <section className='w-full px-6 md:px-10 lg:px-15 xl:px-24 mt-2 md:mt-16'>
-        <div className='bg-white md:bg-[#F4EFE9] pt-9'>
 
-         <div className="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center gap-10 relative  px-4">
-  
-  {/* Image Section */}
-  <div className="w-full md:w-1/2 flex justify-center">
-    <img
-      src={GImg}
-      alt="Group of images"
-      className="w-full max-w-[550px] object-contain"
-    />
+
   </div>
 
-  {/* Form Section */}
-  <div className="w-full md:w-1/2 flex justify-center">
-    <form
-      className="w-full max-w-md p-6 flex flex-col gap-5 bg-white"
-      onSubmit={handleSubmit}
-    >
-      {/* Name Fields */}
-<div className="flex flex-col md:flex-col lg:flex-row gap-4">
-  <input
-    type="text"
-    placeholder="First Name"
-    value={formData.firstName}
-    onChange={(e) =>
-      setFormData({ ...formData, firstName: e.target.value })
-    }
-    className="flex-1 border-b border-gray-400 focus:border-black outline-none text-md h-8 leading-5 placeholder:text-gray-400 md:placeholder-black"
-    required
-  />
-  <input
-    type="text"
-    placeholder="Last Name"
-    value={formData.lastName}
-    onChange={(e) =>
-      setFormData({ ...formData, lastName: e.target.value })
-    }
-    className="flex-1 border-b border-gray-400 focus:border-black outline-none text-md h-8 leading-5 placeholder:text-gray-400 md:placeholder-black"
-    required
-  />
-</div>
 
 
-      {/* Email */}
-      <input
-        type="email"
-        placeholder="Email"
-        value={formData.email}
-        onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-        className="border-b border-gray-400 focus:border-black outline-none text-md h-6 md:h-8 leading-5 placeholder:text-gray-400 md:placeholder-black"
-        required
-      />
 
-      {/* Phone */}
-      <input
-        type="tel"
-        placeholder="Phone Number"
-        value={formData.phone}
-        onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-        className="border-b border-gray-400 focus:border-black outline-none text-md h-6 md:h-8 leading-5 placeholder:text-gray-400 md:placeholder-black"
-      />
+       <div className="mt-16 w-full relative" data-aos="fade-up" data-aos-delay="200">
+          <img src={sofa} alt="" className="w-full h-auto object-cover" />
 
-      {/* Message */}
-      <input
-        type="text"
-        placeholder="Message"
-        value={formData.message}
-        onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-        className="border-b border-gray-400 focus:border-black outline-none text-md h-6 md:h-8 leading-5 placeholder:text-gray-400 md:placeholder-black"
-        required
-      />
+          <div className="absolute top-[180px] left-[250px] flex flex-col justify-start items-center text-black text-center">
+            <h1 className="text-3xl md:text-5xl font-medium">
+              Let’s talk about <br /> how can help you
+            </h1>
 
-      {/* Submit */}
-      <button
-        type="submit"
-        className="mt-4 bg-[#142241] text-white py-2 rounded hover:bg-gray-800 transition-all duration-300"
-      >
-        Submit
-      </button>
-    </form>
-  </div>
-</div>
-          <ToastContainer position="bottom-right" autoClose={3000} />
-          <h1 id='service-text' className='text-center text-[#142241] text-[210px] font-medium relative bottom-[-65px]'>Get a Quote</h1>
+            <button onClick={handleClick} className="group mt-6 px-6 py-3 bg-[#C8966B] hover:cursor-pointer self-start text-[#142241] rounded-lg font-semibold flex items-center gap-1">
+              contact us
+              <ArrowRight className="w-4 h-4 relative top-[1px]  -rotate-45" />
+            </button>
+
+          </div>
         </div>
-      </section>
+</section>
     </>
   )
 }

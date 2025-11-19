@@ -5,6 +5,7 @@ import "aos/dist/aos.css";
 
 import ScrollToTop from './Components/ScrollToTop';
 import ScrollToHash from "./Components/ScrollToHash";
+import PopupForm from "./Components/PopupForm";
 
 
 // ✅ Lazy load components
@@ -81,6 +82,11 @@ function App() {
             {/* Featured Project Home Hero Section */}
             <Route path="featuredProject" element={<Project />} />
             <Route path="featuredProject2" element={<Project2 />} />
+            <Route path="residential" element={<Service1/>}/>
+            <Route path="renovation" element={<Service5/>}/>
+            <Route path="vastu" element={<Service7/>}/>
+
+
 
 
             {/* Footer Links */}
@@ -110,6 +116,7 @@ function App() {
            </Route>
         </Routes>
       </Suspense>
+        <PopupForm />
     </>
   );
 }
