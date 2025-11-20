@@ -887,28 +887,29 @@ useEffect(() => {
 
   {/* Dropdown List */}
   {showServiceList && (
-    <div className="absolute top-full left-0 w-full mt-2 bg-white/5 backdrop-blur-lg border border-white/20 rounded-xl shadow-lg text-white z-50">
-      {[
-        "Residential Interior Design",
-        "Commercial Interior Design",
-        "TurnKey Interior Solutions",
-        "3D Visualization & Conceptual Design",
-        "Renovation & Remodeling",
-        "Custom Furniture & Decor",
-        "Vastu Consultation",
-      ].map((item) => (
-        <div
-          key={item}
-          onClick={() => {
-            setFormDataButton({ ...formDataButton, service: item });
-            setShowServiceList(false);
-          }}
-          className="px-4 py-2 hover:bg-white/20 cursor-pointer"
-        >
-          {item}
-        </div>
-      ))}
+  <div className="absolute top-full left-0 w-full mt-2 bg-white/50 backdrop-blur-lg border border-white/20 rounded-xl shadow-lg text-black z-50">
+  {[
+    "Residential Interior Design",
+    "Commercial Interior Design",
+    "TurnKey Interior Solutions",
+    "3D Visualization & Conceptual Design",
+    "Renovation & Remodeling",
+    "Custom Furniture & Decor",
+    "Vastu Consultation",
+  ].map((item) => (
+    <div
+      key={item}
+      onClick={() => {
+        setFormDataButton({ ...formDataButton, service: item });
+        setShowServiceList(false);
+      }}
+      className="px-4 py-2 hover:bg-white/20 cursor-pointer border-b border-black/40 last:border-b-0"
+    >
+      {item}
     </div>
+  ))}
+</div>
+
   )}
 </div>
 
@@ -1827,28 +1828,30 @@ Guided by <span className="italic font-medium">Creativity, Efficiency, and Ethic
 
               {/* Dropdown List */}
               {showServiceList && (
-                <div className="absolute top-full left-0 w-full mt-2 bg-white/5 backdrop-blur-lg border border-white/20 rounded-xl shadow-lg text-white z-50 max-h-48 overflow-y-auto">
-                  {[
-                    "Residential Interior Design",
-                    "Commercial Interior Design",
-                    "TurnKey Interior Solutions",
-                    "3D Visualization & Conceptual Design",
-                    "Renovation & Remodeling",
-                    "Custom Furniture & Decor",
-                    "Vastu Consultation",
-                  ].map((item) => (
-                    <div
-                      key={item}
-                      onClick={() => {
-                        setFormDataButton({ ...formDataButton, service: item });
-                        setShowServiceList(false);
-                      }}
-                      className="px-4 py-2 hover:bg-white/20 cursor-pointer"
-                    >
-                      {item}
-                    </div>
-                  ))}
-                </div>
+  <div className="absolute top-full left-0 w-full mt-2 bg-white/80 backdrop-blur-lg border border-white/20 rounded-xl shadow-lg text-black z-50 max-h-48 overflow-y-auto">
+  {[
+    "Residential Interior Design",
+    "Commercial Interior Design",
+    "TurnKey Interior Solutions",
+    "3D Visualization & Conceptual Design",
+    "Renovation & Remodeling",
+    "Custom Furniture & Decor",
+    "Vastu Consultation",
+  ].map((item) => (
+    <div
+      key={item}
+      onClick={() => {
+        setFormDataButton({ ...formDataButton, service: item });
+        setShowServiceList(false);
+      }}
+      className="px-4 py-2 hover:bg-black/10 cursor-pointer border-b border-black/30 last:border-b-0"
+    >
+      {item}
+    </div>
+  ))}
+</div>
+
+
               )}
             </div>
 
@@ -1856,7 +1859,7 @@ Guided by <span className="italic font-medium">Creativity, Efficiency, and Ethic
             <button
               type="submit"
               disabled={isSubmitting}
-              className={`w-full py-3.5 hover:cursor-pointer border-2 border-white/20 rounded-xl text-white font-semibold shadow-lg transition-all duration-200 mt-2 backdrop-blur-md ${
+              className={`w-full py-3.5 hover:cursor-pointer border-2 border-white/10 rounded-xl text-white font-semibold shadow-lg transition-all duration-200 mt-2 backdrop-blur-md ${
                 isSubmitting 
                   ? 'bg-white/10 cursor-not-allowed' 
                   : 'bg-white/10 hover:bg-white/20 hover:scale-[1.02] hover:border-white/30'

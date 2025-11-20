@@ -16,9 +16,7 @@ const PopupForm = ({ showForm, onClose }) => {
   useEffect(() => {
     const timer = setTimeout(() => {
       if (!showForm) {
-        // Assuming you have a way to show the form
-        // You might need to pass a prop to control this
-        window.showPopupForm?.(); // Or use your preferred method
+        window.showPopupForm?.();
       }
     }, 5000);
 
@@ -49,8 +47,8 @@ const PopupForm = ({ showForm, onClose }) => {
   };
 
   return (
-    <div className="fixed inset-0 flex items-center justify-center bg-black/50 z-50">
-      <div className="bg-[#142241] p-8 rounded-lg shadow-lg w-96 h-auto relative flex flex-col justify-center">
+    <div className="fixed inset-0 flex items-center justify-center bg-black/50 z-50 p-4">
+      <div className="bg-[#142241] p-6 sm:p-8 rounded-lg shadow-lg w-full max-w-xs sm:max-w-sm md:max-w-md lg:w-96 h-auto relative flex flex-col justify-center mx-auto">
 
         {/* Close button */}
         <button
@@ -60,19 +58,19 @@ const PopupForm = ({ showForm, onClose }) => {
           ✕
         </button>
 
-        <h2 className="text-3xl md:text-4xl text-white font-semibold mb-6 text-start">
-          Let’s create the <br /> home you imagine.
+        <h2 className="text-2xl sm:text-3xl md:text-4xl text-white font-semibold mb-4 sm:mb-6 text-start">
+          Let's create the <br /> home you imagine.
         </h2>
 
         {!submitted ? (
-          <form className="flex flex-col gap-4" onSubmit={handleSubmit}>
+          <form className="flex flex-col gap-3 sm:gap-4" onSubmit={handleSubmit}>
             <input
               type="text"
               name="name"
               placeholder="Name"
               value={formData.name}
               onChange={handleChange}
-              className="bg-white/20 backdrop-blur-md border border-white/30 p-3 rounded text-white placeholder-white/70"
+              className="bg-white/20 backdrop-blur-md border border-white/30 p-3 rounded text-white placeholder-white/70 text-sm sm:text-base"
               required
             />
 
@@ -82,7 +80,7 @@ const PopupForm = ({ showForm, onClose }) => {
               placeholder="Phone"
               value={formData.phone}
               onChange={handleChange}
-              className="bg-white/20 backdrop-blur-md border border-white/30 p-3 rounded text-white placeholder-white/70"
+              className="bg-white/20 backdrop-blur-md border border-white/30 p-3 rounded text-white placeholder-white/70 text-sm sm:text-base"
               required
             />
 
@@ -92,13 +90,13 @@ const PopupForm = ({ showForm, onClose }) => {
               placeholder="Email"
               value={formData.email}
               onChange={handleChange}
-              className="bg-white/20 backdrop-blur-md border border-white/30 p-3 rounded text-white placeholder-white/70"
+              className="bg-white/20 backdrop-blur-md border border-white/30 p-3 rounded text-white placeholder-white/70 text-sm sm:text-base"
             />
 
             <button
               type="submit"
               disabled={loading}
-              className={`bg-white/20 backdrop-blur-md hover:cursor-pointer border border-white/30 text-white p-3 rounded transition-all mt-2 
+              className={`bg-white/20 backdrop-blur-md hover:cursor-pointer border border-white/30 text-white p-3 rounded transition-all mt-2 text-sm sm:text-base
                 ${loading ? "opacity-50 cursor-not-allowed" : "hover:bg-white/30 hover:text-blue-100"}
               `}
             >
@@ -106,21 +104,21 @@ const PopupForm = ({ showForm, onClose }) => {
             </button>
           </form>
         ) : (
-          <div className="flex flex-col items-center justify-start gap-4 p-3">
-            <p className="text-green-400 text-start font-semibold text-2xl">
+          <div className="flex flex-col items-start justify-start gap-3">
+            <p className="text-green-400 text-start font-semibold text-xl sm:text-2xl">
               Thanks for submission! <br /> We will contact you soon.
             </p>
           </div>
         )}
 
         {/* Social Icons */}
-        <div className="flex justify-center gap-6 mt-6 text-[#C9966B]">
+        <div className="flex justify-center gap-4 sm:gap-6 mt-4 sm:mt-6 text-[#C9966B]">
           <a 
             href="https://www.facebook.com/share/1VND5cUr6D/" 
             target="_blank" 
             rel="noopener noreferrer"
           >
-            <Facebook className="w-6 h-6" />
+            <Facebook className="w-5 h-5 sm:w-6 sm:h-6" />
           </a>
 
           <a 
@@ -128,7 +126,7 @@ const PopupForm = ({ showForm, onClose }) => {
             target="_blank" 
             rel="noopener noreferrer"
           >
-            <Instagram className="w-6 h-6" />
+            <Instagram className="w-5 h-5 sm:w-6 sm:h-6" />
           </a>
 
           <a 
@@ -136,7 +134,7 @@ const PopupForm = ({ showForm, onClose }) => {
             target="_blank" 
             rel="noopener noreferrer"
           >
-            <X className="w-6 h-6" />
+            <X className="w-5 h-5 sm:w-6 sm:h-6" />
           </a>
         </div>
 
