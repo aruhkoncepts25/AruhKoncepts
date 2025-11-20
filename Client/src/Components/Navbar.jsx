@@ -229,13 +229,16 @@ const Navbar = () => {
   </Link>
 
   {/* RIGHT — Call Button */}
-  <button
-    onClick={() => setShowPopup(true)}
-    className="p-2 rounded-full bg-[#C8966B] text-[#142241] flex items-center justify-center 
-    hover:scale-105 transition-all duration-200"
-  >
-    <Phone size={18} />
-  </button>
+<button
+  onClick={() => setShowPopup(true)}
+  className="py-2 px-3 border border-white rounded-full text-white flex items-center gap-2 justify-center
+  shadow-[0_0_2px_rgba(255,255,255,0.4)] hover:shadow-[0_0_2px_rgba(255,255,255,0.7)]
+  hover:scale-105 transition-all duration-200"
+>
+  Call <Phone size={18} className="text-[#C8A75E]" />
+</button>
+
+
 
 </div>
         </div>

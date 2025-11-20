@@ -54,6 +54,7 @@ gsap.registerPlugin(ScrollTrigger);
 const Home = () => {
 
 const [showServiceList, setShowServiceList] = useState(false);  // TRANSFROM MY FORM KA SERVICE KA USE STATE
+const [isSelectOpen, setIsSelectOpen] = useState(false);  // contact service arrow
 
   const navigate = useNavigate();
   const location = useLocation(); // for contact
@@ -766,11 +767,15 @@ useEffect(() => {
 
   {/* ====== POPUP MODAL DESKTOP - CENTERED ====== */}
 {isOpen && (
-   <div className="fixed inset-0 z-[100] flex items-center justify-center p-4">
+  <div className="fixed inset-0 z-[100] flex items-center justify-center p-4">
     {/* Full Screen Overlay */}
     <div 
       className="absolute inset-0 bg-black/60 backdrop-blur-[2px]"
-      onClick={() => { setIsOpen(false); setIsOpenMobile(false); }}
+      onClick={() => { 
+        setIsOpen(false); 
+        setIsOpenMobile(false); 
+        setShowServiceList(false); // Reset dropdown state on close
+      }}
     />
 
     {/* Centered Popup */}
@@ -781,8 +786,12 @@ useEffect(() => {
       {/* Close Button */}
       <button
         type="button"
-        onClick={() => { setIsOpen(false); setIsOpenMobile(false); }}
-        className="absolute top-1 right-1 hover:cursor-pointer  text-white w-8 h-8  flex items-center justify-center text-lg font-bold transition-all duration-200 shadow-lg hover:scale-110 "
+        onClick={() => { 
+          setIsOpen(false); 
+          setIsOpenMobile(false); 
+          setShowServiceList(false); // Reset dropdown state on close
+        }}
+        className="absolute top-1 right-1 hover:cursor-pointer text-white w-8 h-8 flex items-center justify-center text-lg font-bold transition-all duration-200 shadow-lg hover:scale-110"
         disabled={isSubmitting}
       >
         ✕
@@ -792,41 +801,41 @@ useEffect(() => {
       <div className="p-8">
         {submitted ? (
           <div className="text-center py-9 relative overflow-hidden">
-  {/* Bubbles Background */}
-  <div className="absolute inset-0 overflow-hidden">
-    {/* Bubble 1 */}
-    <div className="absolute top-3 left-5 w-8 h-8 bg-white/10 rounded-full animate-float"></div>
-    {/* Bubble 2 */}
-    <div className="absolute top-2 right-12 w-6 h-6 bg-white/5 rounded-full animate-float" style={{ animationDelay: '1s' }}></div>
-    {/* Bubble 3 */}
-    <div className="absolute top-5 left-21 w-5 h-5 bg-white/8 rounded-full animate-float" style={{ animationDelay: '2s' }}></div>
-    {/* Bubble 4 */}
-    <div className="absolute top-2 right-24 w-6 h-6 bg-white/3 rounded-full animate-float" style={{ animationDelay: '1.5s' }}></div>
-    {/* Bubble 5 */}
-    <div className="absolute top-18 left-20 w-8 h-8 bg-white/6 rounded-full animate-float" style={{ animationDelay: '0.5s' }}></div>
-    {/* Bubble 6 */}
-    <div className="absolute top-16 right-8 w-6 h-6 bg-white/7 rounded-full animate-float" style={{ animationDelay: '2.5s' }}></div>
-  </div>
+            {/* Bubbles Background */}
+            <div className="absolute inset-0 overflow-hidden">
+              {/* Bubble 1 */}
+              <div className="absolute top-3 left-5 w-8 h-8 bg-white/10 rounded-full animate-float"></div>
+              {/* Bubble 2 */}
+              <div className="absolute top-2 right-12 w-6 h-6 bg-white/5 rounded-full animate-float" style={{ animationDelay: '1s' }}></div>
+              {/* Bubble 3 */}
+              <div className="absolute top-5 left-21 w-5 h-5 bg-white/8 rounded-full animate-float" style={{ animationDelay: '2s' }}></div>
+              {/* Bubble 4 */}
+              <div className="absolute top-2 right-24 w-6 h-6 bg-white/3 rounded-full animate-float" style={{ animationDelay: '1.5s' }}></div>
+              {/* Bubble 5 */}
+              <div className="absolute top-18 left-20 w-8 h-8 bg-white/6 rounded-full animate-float" style={{ animationDelay: '0.5s' }}></div>
+              {/* Bubble 6 */}
+              <div className="absolute top-16 right-8 w-6 h-6 bg-white/7 rounded-full animate-float" style={{ animationDelay: '2.5s' }}></div>
+            </div>
 
-  {/* Top Center Icon */}
-  <div className="absolute top-12 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-10">
-  <div className="relative">
-    {/* Glassmorphism Circle Background */}
-    <div className="w-24 h-24 bg-white/10 backdrop-blur-md border border-white/20 rounded-full flex items-center justify-center shadow-2xl">
-      <CheckCircle className="w-12 h-12 text-[#C9966B] drop-shadow-lg" />
-    </div>
-    
-    {/* Optional: Shine effect */}
-    <div className="absolute inset-0 rounded-full bg-gradient-to-br from-white/20 to-transparent opacity-50"></div>
-  </div>
-</div>
+            {/* Top Center Icon */}
+            <div className="absolute top-12 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-10">
+              <div className="relative">
+                {/* Glassmorphism Circle Background */}
+                <div className="w-24 h-24 bg-white/10 backdrop-blur-md border border-white/20 rounded-full flex items-center justify-center shadow-2xl">
+                  <CheckCircle className="w-12 h-12 text-[#C9966B] drop-shadow-lg" />
+                </div>
+                
+                {/* Optional: Shine effect */}
+                <div className="absolute inset-0 rounded-full bg-gradient-to-br from-white/20 to-transparent opacity-50"></div>
+              </div>
+            </div>
 
-  {/* Text */}
-  <h2 className="text-3xl font-semibold mt-16 mb-2 relative z-10">Submission Received!</h2>
-  <p className="text-gray-300 text-lg relative z-10">
-    Thank you for your time — our team will connect with you shortly.
-  </p>
-</div>
+            {/* Text */}
+            <h2 className="text-3xl font-semibold mt-16 mb-2 relative z-10">Submission Received!</h2>
+            <p className="text-gray-300 text-lg relative z-10">
+              Thank you for your time — our team will connect with you shortly.
+            </p>
+          </div>
         ) : (
           <form className="space-y-4" onSubmit={handleSubmit}>
             <div className="flex gap-3">
@@ -863,57 +872,54 @@ useEffect(() => {
               disabled={isSubmitting}
             />
 
-<div className="relative w-full">
-  <input
-    type="text"
-    name="service"
-    placeholder="Service"
-    value={formDataButton.service}
-    onClick={() => setShowServiceList(!showServiceList)}
-    readOnly
-    className="w-full p-3 bg-white/5 border border-white/20 text-white placeholder-gray-300 rounded-xl outline-none focus:ring-2 focus:ring-blue-400 focus:bg-white/10 transition-all duration-300 backdrop-blur-sm cursor-pointer"
-    required
-    disabled={isSubmitting}
-  />
+            <div className="relative w-full">
+              <input
+                type="text"
+                name="service"
+                placeholder="Service"
+                value={formDataButton.service}
+                onClick={() => setShowServiceList(!showServiceList)}
+                readOnly
+                className="w-full p-3 bg-white/5 border border-white/20 text-white placeholder-gray-300 rounded-xl outline-none focus:ring-2 focus:ring-blue-400 focus:bg-white/10 transition-all duration-300 backdrop-blur-sm cursor-pointer"
+                required
+                disabled={isSubmitting}
+              />
 
-  {/* Arrow Icon */}
-  <ChevronDown
-    size={20}
-    className={`absolute right-3 top-1/2 -translate-y-1/2 text-white transition-transform duration-300 cursor-pointer ${
-      showServiceList ? "rotate-180" : "rotate-0"
-    }`}
-    onClick={() => setShowServiceList(!showServiceList)}
-  />
+              {/* Arrow Icon */}
+              <ChevronDown
+                size={20}
+                className={`absolute right-3 top-1/2 -translate-y-1/2 text-white transition-transform duration-300 cursor-pointer ${
+                  showServiceList ? "rotate-180" : "rotate-0"
+                }`}
+                onClick={() => setShowServiceList(!showServiceList)}
+              />
 
-  {/* Dropdown List */}
-  {showServiceList && (
-  <div className="absolute top-full left-0 w-full mt-2 bg-white/50 backdrop-blur-lg border border-white/20 rounded-xl shadow-lg text-black z-50">
-  {[
-    "Residential Interior Design",
-    "Commercial Interior Design",
-    "TurnKey Interior Solutions",
-    "3D Visualization & Conceptual Design",
-    "Renovation & Remodeling",
-    "Custom Furniture & Decor",
-    "Vastu Consultation",
-  ].map((item) => (
-    <div
-      key={item}
-      onClick={() => {
-        setFormDataButton({ ...formDataButton, service: item });
-        setShowServiceList(false);
-      }}
-      className="px-4 py-2 hover:bg-white/20 cursor-pointer border-b border-black/40 last:border-b-0"
-    >
-      {item}
-    </div>
-  ))}
-</div>
-
-  )}
-</div>
-
-
+              {/* Dropdown List */}
+              {showServiceList && (
+                <div className="absolute top-full left-0 w-full mt-2 bg-white/80 backdrop-blur-lg border border-white/20 rounded-xl shadow-lg text-black z-50">
+                  {[
+                    "Residential Interior Design",
+                    "Commercial Interior Design",
+                    "TurnKey Interior Solutions",
+                    "3D Visualization & Conceptual Design",
+                    "Renovation & Remodeling",
+                    "Custom Furniture & Decor",
+                    "Vastu Consultation",
+                  ].map((item) => (
+                    <div
+                      key={item}
+                      onClick={() => {
+                        setFormDataButton({ ...formDataButton, service: item });
+                        setShowServiceList(false);
+                      }}
+                      className="px-4 py-2 hover:bg-white/20 cursor-pointer border-b border-black/40 last:border-b-0"
+                    >
+                      {item}
+                    </div>
+                  ))}
+                </div>
+              )}
+            </div>
 
             <button
               type="submit"
@@ -1628,34 +1634,53 @@ Guided by <span className="italic font-medium">Creativity, Efficiency, and Ethic
                   </div>
 
                   {/* Services */}
-                <div className="w-[90%]">
+<div className="w-[90%] relative">
   <label htmlFor="service" className="block mb-1 font-medium">
     Service*
   </label>
 
-  <select
-    className="w-full p-3 bg-[#F0E7D8] rounded-lg focus:outline-none focus:ring-2 focus:ring-[#C8966B]"
-    value={formData.service}
-    onChange={(e) =>
-      setFormData({ ...formData, service: e.target.value })
-    }
-    required
-  >
-    {/* DEFAULT placeholder option */}
-    <option value="" disabled hidden>
-      Select the service
-    </option>
+  <div className="relative">
+    <select
+      className="w-full p-3 bg-[#F0E7D8] rounded-lg focus:outline-none focus:ring-2 focus:ring-[#C8966B] appearance-none pr-10"
+      value={formData.service}
+      onChange={(e) =>
+        setFormData({ ...formData, service: e.target.value })
+      }
+      onFocus={() => setIsSelectOpen(true)}
+      onBlur={() => setIsSelectOpen(false)}
+      onClick={() => setIsSelectOpen(!isSelectOpen)}
+      required
+    >
+      {/* DEFAULT placeholder option */}
+      <option value="" disabled hidden>
+        Select the service
+      </option>
 
-    <option value="residential">Residential Interior Design</option>
-    <option value="commercial">Commercial</option>
-    <option value="turnkey">TurnKey Interior Solutions</option>
-    <option value="3Dvisualization">3D Visualization & Conceptual Design</option>
-    <option value="renovation">Renovation & Remodeling</option>
-    <option value="furniture">Custom Furniture & Decor</option>
-    <option value="vastu">Vastu Consultation</option>
-  </select>
+      <option value="residential">Residential Interior Design</option>
+      <option value="commercial">Commercial</option>
+      <option value="turnkey">TurnKey Interior Solutions</option>
+      <option value="3Dvisualization">3D Visualization & Conceptual Design</option>
+      <option value="renovation">Renovation & Remodeling</option>
+      <option value="furniture">Custom Furniture & Decor</option>
+      <option value="vastu">Vastu Consultation</option>
+    </select>
+    
+    {/* Custom Arrow with state-based rotation */}
+    <div className={`absolute right-3 top-1/2 transform -translate-y-1/2 pointer-events-none transition-transform duration-200 ${
+      isSelectOpen ? 'rotate-180' : 'rotate-0'
+    }`}>
+      <svg 
+        className="w-4 h-4 text-gray-600" 
+        fill="none" 
+        stroke="currentColor" 
+        viewBox="0 0 24 24" 
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+      </svg>
+    </div>
+  </div>
 </div>
-
 
                   {/* Message */}
                   <div className="w-[90%]">
@@ -1703,6 +1728,9 @@ Guided by <span className="italic font-medium">Creativity, Efficiency, and Ethic
             </div>
           </div>
         </section>
+
+
+        
 {/* ====== MOBILE MODAL (Now responsive) ====== */}
 {isOpenMobile && (
   <div className="fixed inset-0 z-[100] flex items-center justify-center p-4 md:hidden">
