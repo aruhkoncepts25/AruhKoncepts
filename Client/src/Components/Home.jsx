@@ -1,5 +1,6 @@
 import { Api } from "./Api/Api";
 // hello shivanshu prajapati
+import { ChevronDown } from "lucide-react";
 import { CheckCircle } from "lucide-react";
 import { LazyLoadImage } from "react-lazy-load-image-component";  // LCP Means Big Imahe jo front pe rehti hai
 import { useState, useRef } from "react";
@@ -33,14 +34,14 @@ import { useLocation } from "react-router-dom";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 // Service Section Image
-
-import hService1 from "../assets/hService1.png"
-import hService2 from "../assets/hService2.png"
-import hService3 from "../assets/hService3.png"
-import hService4 from "../assets/hService4.jpg"
-import hService5 from "../assets/hService5.jpg"
-import hService6 from "../assets/hService6.png"
-import hService7 from "../assets/hService7.jpg"
+import service from "../assets/homeService.webp"
+// import hService1 from "../assets/hService1.png"
+// import hService2 from "../assets/hService2.png"
+// import hService3 from "../assets/hService3.png"
+// import hService4 from "../assets/hService4.jpg"
+// import hService5 from "../assets/hService5.jpg"
+// import hService6 from "../assets/hService6.png"
+// import hService7 from "../assets/hService7.jpg"
 
 
 
@@ -52,6 +53,7 @@ gsap.registerPlugin(ScrollTrigger);
 
 const Home = () => {
 
+const [showServiceList, setShowServiceList] = useState(false);  // TRANSFROM MY FORM KA SERVICE KA USE STATE
 
   const navigate = useNavigate();
   const location = useLocation(); // for contact
@@ -472,82 +474,7 @@ hero,hero11,hero12,hero13
 
   ];
 
-  ////////////////////////////////////////////////////////////////////////////////////////////////
 
-  // for Service
-  const services = [
-    {
-      title: "Residential",
-      description: (
-        <>
-          Creating warm, personalized spaces that reflect your
-         
-          lifestyle from cozy apartments to spacious
-        
-          villas.
-        </>
-      ),
-      image: hService1,
-    },
-
-    {
-      title: "Commercial",
-      description:(
-       <>
-       Designing smart, impactful business spaces that boost productivity, reflect <br /> brand identity, and leave a lasting professional impression.
-       </>
-      ),
-      image: hService2,
-    },
-    {
-      title: "Turnkey Interior Solutions",
-      description:
-       (<>
-       Delivering end-to-end turnkey solutions from concept to completion ensuring seamless design, execution, and handover of spaces tailored to your vision.
-       </>),
-      image: hService3,
-    },
-    {
-      title: "3D Visualization & Conceptual Design",
-      description:
-        (
-          <>
-          Bringing ideas to life with realistic 3D visuals and thoughtful concepts<br /> helping you see and shape your dream space before it’s built.
-          </>
-        ),
-      image: hService4,
-    },
-    {
-      title: "Renovation & Remodeling",
-      description:
-       (
-        <>
-        Transforming existing spaces with fresh ideas and smart design <br />from modern upgrades to complete makeovers that blend style, comfort,<br /> and functionality.
-        </>
-       ),
-      image: hService5,
-    },
-    {
-      title: "Custom Furniture & Decor",
-      description:
-       (
-        <>
-        Crafting unique, functional pieces that bring character and comfort to your <br /> home designed to suit every style, space, and story.
-        </>
-       ),
-      image: hService6,
-    },
-    {
-      title: "Vastu Consultation",
-      description:
-        (
-          <>
-          Harmonizing your home with positive energy guided by Vastu principles <br />for balance, well-being, and prosperity.
-          </>
-        ),
-      image: hService7,
-    },
-  ];
   ////////////////////////////////////////////////////////////////////////////////////////////////////
 
 
@@ -806,7 +733,7 @@ useEffect(() => {
   </div>
 
 
-<div className="hidden lg:block w-full mx-auto z-10 px-28 mt-8">
+<div className="hidden lg:block w-full mx-auto z-10 px-28 mt-30">
   <div className="grid grid-cols-1 sm:grid-cols-3 gap-8 w-full">
 
     <Link
@@ -855,7 +782,7 @@ useEffect(() => {
       <button
         type="button"
         onClick={() => { setIsOpen(false); setIsOpenMobile(false); }}
-        className="absolute -top-1 -right-1 hover:cursor-pointer bg-[#C9966B] text-[#142241] w-8 h-8 rounded-full flex items-center justify-center text-lg font-bold transition-all duration-200 shadow-lg hover:scale-110"
+        className="absolute top-1 right-1 hover:cursor-pointer  text-white w-8 h-8  flex items-center justify-center text-lg font-bold transition-all duration-200 shadow-lg hover:scale-110 "
         disabled={isSubmitting}
       >
         ✕
@@ -864,15 +791,39 @@ useEffect(() => {
       {/* Form / Success Message */}
       <div className="p-8">
         {submitted ? (
-          <div className="text-center py-10 relative">
-  {/* Top Center Icon */}
-  <div className="absolute top-9 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
-    <CheckCircle className="w-16 h-16 text-[#C9966B] drop-shadow-lg" />
+          <div className="text-center py-9 relative overflow-hidden">
+  {/* Bubbles Background */}
+  <div className="absolute inset-0 overflow-hidden">
+    {/* Bubble 1 */}
+    <div className="absolute top-3 left-5 w-8 h-8 bg-white/10 rounded-full animate-float"></div>
+    {/* Bubble 2 */}
+    <div className="absolute top-2 right-12 w-6 h-6 bg-white/5 rounded-full animate-float" style={{ animationDelay: '1s' }}></div>
+    {/* Bubble 3 */}
+    <div className="absolute top-5 left-21 w-5 h-5 bg-white/8 rounded-full animate-float" style={{ animationDelay: '2s' }}></div>
+    {/* Bubble 4 */}
+    <div className="absolute top-2 right-24 w-6 h-6 bg-white/3 rounded-full animate-float" style={{ animationDelay: '1.5s' }}></div>
+    {/* Bubble 5 */}
+    <div className="absolute top-18 left-20 w-8 h-8 bg-white/6 rounded-full animate-float" style={{ animationDelay: '0.5s' }}></div>
+    {/* Bubble 6 */}
+    <div className="absolute top-16 right-8 w-6 h-6 bg-white/7 rounded-full animate-float" style={{ animationDelay: '2.5s' }}></div>
   </div>
 
+  {/* Top Center Icon */}
+  <div className="absolute top-12 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-10">
+  <div className="relative">
+    {/* Glassmorphism Circle Background */}
+    <div className="w-24 h-24 bg-white/10 backdrop-blur-md border border-white/20 rounded-full flex items-center justify-center shadow-2xl">
+      <CheckCircle className="w-12 h-12 text-[#C9966B] drop-shadow-lg" />
+    </div>
+    
+    {/* Optional: Shine effect */}
+    <div className="absolute inset-0 rounded-full bg-gradient-to-br from-white/20 to-transparent opacity-50"></div>
+  </div>
+</div>
+
   {/* Text */}
-  <h2 className="text-3xl font-semibold mt-10 mb-2">Submission Received!</h2>
-  <p className="text-gray-300 text-lg">
+  <h2 className="text-3xl font-semibold mt-16 mb-2 relative z-10">Submission Received!</h2>
+  <p className="text-gray-300 text-lg relative z-10">
     Thank you for your time — our team will connect with you shortly.
   </p>
 </div>
@@ -882,20 +833,20 @@ useEffect(() => {
               <input
                 type="text"
                 name="name"
-                placeholder="Your Name"
+                placeholder="Name"
                 value={formDataButton.name}
                 onChange={handleChange}
-                className="w-full p-3 bg-white/5 border border-white/20 text-white placeholder-gray-300 rounded-xl outline-none focus:ring-2 focus:ring-blue-400 focus:bg-white/10 transition-all duration-300"
+                className="w-full p-3 bg-white/5 border border-white/20 text-white placeholder-gray-300 rounded-xl outline-none focus:ring-2 focus:ring-blue-400 focus:bg-white/10 transition-all duration-300 backdrop-blur-sm"
                 required
                 disabled={isSubmitting}
               />
               <input
                 type="tel"
                 name="phone"
-                placeholder="Phone Number"
+                placeholder="Phone No"
                 value={formDataButton.phone}
                 onChange={handleChange}
-                className="w-full p-3 bg-white/5 border border-white/20 text-white placeholder-gray-300 rounded-xl outline-none focus:ring-2 focus:ring-blue-400 focus:bg-white/10 transition-all duration-300"
+                className="w-full p-3 bg-white/5 border border-white/20 text-white placeholder-gray-300 rounded-xl outline-none focus:ring-2 focus:ring-blue-400 focus:bg-white/10 transition-all duration-300 backdrop-blur-sm"
                 required
                 disabled={isSubmitting}
               />
@@ -904,32 +855,72 @@ useEffect(() => {
             <input
               type="email"
               name="email"
-              placeholder="Your Email Address"
+              placeholder="Email"
               value={formDataButton.email}
               onChange={handleChange}
-              className="w-full p-3 bg-white/5 border border-white/20 text-white placeholder-gray-300 rounded-xl outline-none focus:ring-2 focus:ring-blue-400 focus:bg-white/10 transition-all duration-300"
+              className="w-full p-3 bg-white/5 border border-white/20 text-white placeholder-gray-300 rounded-xl outline-none focus:ring-2 focus:ring-blue-400 focus:bg-white/10 transition-all duration-300 backdrop-blur-sm"
               required
               disabled={isSubmitting}
             />
 
-            <input
-              type="text"
-              name="service"
-              placeholder="What Service Do You Need?"
-              value={formDataButton.service}
-              onChange={handleChange}
-              className="w-full p-3 bg-white/5 border border-white/20 text-white placeholder-gray-300 rounded-xl outline-none focus:ring-2 focus:ring-blue-400 focus:bg-white/10 transition-all duration-300"
-              required
-              disabled={isSubmitting}
-            />
+<div className="relative w-full">
+  <input
+    type="text"
+    name="service"
+    placeholder="Service"
+    value={formDataButton.service}
+    onClick={() => setShowServiceList(!showServiceList)}
+    readOnly
+    className="w-full p-3 bg-white/5 border border-white/20 text-white placeholder-gray-300 rounded-xl outline-none focus:ring-2 focus:ring-blue-400 focus:bg-white/10 transition-all duration-300 backdrop-blur-sm cursor-pointer"
+    required
+    disabled={isSubmitting}
+  />
+
+  {/* Arrow Icon */}
+  <ChevronDown
+    size={20}
+    className={`absolute right-3 top-1/2 -translate-y-1/2 text-white transition-transform duration-300 cursor-pointer ${
+      showServiceList ? "rotate-180" : "rotate-0"
+    }`}
+    onClick={() => setShowServiceList(!showServiceList)}
+  />
+
+  {/* Dropdown List */}
+  {showServiceList && (
+    <div className="absolute top-full left-0 w-full mt-2 bg-white/5 backdrop-blur-lg border border-white/20 rounded-xl shadow-lg text-white z-50">
+      {[
+        "Residential Interior Design",
+        "Commercial Interior Design",
+        "TurnKey Interior Solutions",
+        "3D Visualization & Conceptual Design",
+        "Renovation & Remodeling",
+        "Custom Furniture & Decor",
+        "Vastu Consultation",
+      ].map((item) => (
+        <div
+          key={item}
+          onClick={() => {
+            setFormDataButton({ ...formDataButton, service: item });
+            setShowServiceList(false);
+          }}
+          className="px-4 py-2 hover:bg-white/20 cursor-pointer"
+        >
+          {item}
+        </div>
+      ))}
+    </div>
+  )}
+</div>
+
+
 
             <button
               type="submit"
               disabled={isSubmitting}
-              className={`w-full py-3.5 hover:cursor-pointer border-2 border-white/20 rounded-xl text-[#142241] font-semibold shadow-lg transition-all duration-200 mt-2 ${
+              className={`w-full py-3.5 hover:cursor-pointer border-2 border-white/20 rounded-xl text-white font-semibold shadow-lg transition-all duration-200 mt-2 backdrop-blur-md ${
                 isSubmitting 
-                  ? 'bg-[#C9966B] cursor-not-allowed' 
-                  : 'bg-[#C9966B] hover:scale-[1.02]'
+                  ? 'bg-white/10 cursor-not-allowed' 
+                  : 'bg-white/10 hover:bg-white/20 hover:scale-[1.02] hover:border-white/30'
               }`}
             >
               {isSubmitting ? 'Submitting...' : 'Submit'}
@@ -1124,110 +1115,55 @@ Guided by <span className="italic font-medium">Creativity, Efficiency, and Ethic
         </section>
 
         {/* ////// Service section */}
-        <section className="service-section">
-          <div className="w-[90%] mx-auto">
-            <h1 className="text-xl font-bold text-[#C9966B]" data-aos="fade-up">
-              Services
-            </h1>
+<section className="service-section py-12 lg:py-24 bg-white">
+  <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
-            {/* Grid Layout for Desktop */}
-            <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-30 mt-6 md:mt-20">
-              {/* Left Side Desktop - Service List */}
-              <div data-aos="fade-right">
-                <ul className="space-y-3">
-                  {services.map((service, index) => (
-                    <li className="space-y-2" key={index}>
-                      <div
-                        className={`flex justify-between items-center text-xl md:text-3xl p-2 lg:border-b cursor-pointer transition-colors duration-300 ${index === activeIndex
-                          ? "text-[#1A1A1A] font-semibold"
-                          : "text-[#A6A6A6]"
-                          }
-                `}
-                        onClick={() =>
-                          setActiveIndex(index)
-                        }
-                      >
-                        {service.title}
+    {/* Grid Layout */}
+    <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-center">
 
-                        {/* Arrow icon */}
-                        <span
-                          className={`
-                    flex items-center justify-center w-8 h-8 rounded-full 
-                    transition-transform duration-300
-                    ${index === activeIndex
-                              ? "bg-[#C8966B] text-white "
-                              : "border-none lg:border lg:border-[#A6A6A6] text-[#A6A6A6]"
-                            }
-                  `}
-                        >
-                          {/* Arrow Right for Large Screens */}
-                          <FaArrowRight className="text-sm hidden lg:block" />
+      {/* Right Side - Service Image */}
+      <div
+        className="lg:order-2 w-full flex justify-center mb-6 lg:mb-0"
+        data-aos="fade-left"
+        data-aos-delay="200"
+      >
+        <img
+          src={service}
+          alt="Service"
+          loading="eager"
+          className="shadow-md w-full max-w-[750px] h-[380px] object-cover transition-transform duration-500 ease-in-out hover:scale-105 hover:shadow-xl cursor-pointer"
+        />
+      </div>
 
-                          {/* Arrow Down for Mobile */}
-                          <FaArrowDown className="text-sm block lg:hidden" />
-                        </span>
-                      </div>
+      {/* Left Side - Service Text */}
+      <div className="lg:order-1" data-aos="fade-right">
+        <h2 className="text-lg font-semibold text-[#C9966B]" data-aos="fade-up">
+          What we do
+        </h2>
 
-                      {/* Mobile Only - Show content below title when active */}
-                      {index === activeIndex && (
-                        <div
-                          className="lg:hidden mt-2 mb-8 pl-2 transition-all duration-300"
-                          data-aos="fade-up"
-                        >
-                          <LazyLoadImage
-                            src={service.image}
-                            alt={service.title}
+        <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold mt-4 leading-tight">
+          We know how to <br /> deliver your vision
+        </h1>
 
-                            className="rounded-tl-lg rounded-br-lg shadow-md w-full object-cover h-[200px] 
-                            transition-transform duration-500 ease-in-out hover:scale-105 hover:shadow-xl cursor-pointer"
-                          />
-                          <p className="mt-4 text-[#1A1A1A]">
-                            {service.description}
-                          </p>
-                          <div className="w-full flex justify-end">
-                            <button
-                              onClick={() => navigate("/ourservice")}
-                              className=" mt-1 lg:mt-6 lg:px-6 lg:py-2 px-4 py-1 text-xs bg-[#C9966B] text-gray-800 rounded-full 
-                                hover:bg-[#142241] hover:text-white transition"
-                            >
-                              Know more →
-                            </button>
-                          </div>
-                          <div className="border-b mt-6 lg:hidden" />
-                        </div>
-                      )}
-                    </li>
-                  ))}
-                </ul>
-              </div>
+        <p className="mt-6 text-gray-700 text-base sm:text-lg leading-relaxed">
+          At Aruh Koncepts, we design spaces that are functional, stylish, and deeply connected to your lifestyle. 
+          Our team blends creativity with practical planning to transform homes, offices, and commercial spaces into 
+          environments that feel balanced and inspiring.
+        </p>
 
-              {/* Right Side Desktop - Service Content */}
-              <div
-                className="hidden lg:flex flex-col items-start"
-                data-aos="fade-left"
-                data-aos-delay="200"
-              >
-                <img
-                  src={services[activeIndex].image}
-                  alt={services[activeIndex].title}
-                  loading="eager" // Preload main image for faster LCP
-                  className="rounded-tl-lg rounded-br-lg shadow-md w-[550px] object-cover h-[350px] transition-transform duration-500 ease-in-out hover:scale-105 hover:shadow-xl cursor-pointer"
-                />
-                <p className="mt-4 text-[#1A1A1A]">
-                  {services[activeIndex].description}
-                </p>
-                <div className="w-full max-w-[550px] flex justify-end">
-                  <button
-                    onClick={() => navigate("/ourservice")}
-                    className="mt-6 px-6 py-2 bg-[#C9966B] text-gray-800 rounded-full hover:bg-[#142241] hover:text-white transition"
-                  >
-                    Know more →
-                  </button>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
+        <button
+          onClick={() => navigate("/ourservice")}
+          className="mt-8 px-6 py-3 bg-[#C9966B] text-white rounded-lg hover:bg-[#142241] hover:text-white transition duration-300 ease-in-out"
+        >
+          Our Service →
+        </button>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
 
         {/* /// Process Section */}
         <section className="process-section" ref={containerRef}>
@@ -1691,36 +1627,34 @@ Guided by <span className="italic font-medium">Creativity, Efficiency, and Ethic
                   </div>
 
                   {/* Services */}
-                  <div className="w-[90%]">
-                    <label htmlFor="service" className="block mb-1 font-medium">
-                      Service*
-                    </label>
-                    <select
-                      className="w-full p-3 bg-[#F0E7D8] rounded-lg focus:outline-none focus:ring-2 focus:ring-[#C8966B]"
-                      value={formData.service}
-                      onChange={(e) =>
-                        setFormData({ ...formData, service: e.target.value })
-                      }
-                      required
-                    >
-                      <option value="">Select the Service</option>
-                      <option value="residential">Residential</option>
-                      <option value="commercial">Commercial</option>
-                      <option value="turnkey">
-                        Turnkey Interior Solutionsg
-                      </option>
-                      <option value="3Dvisualization">
-                        3D Visualization & Conceptual Design
-                      </option>
-                      <option value="renovation">
-                        Renovation & Remodeling
-                      </option>
-                      <option value="furniture">
-                        Custom Furniture & Decor
-                      </option>
-                      <option value="vastu">Vastu Consultation</option>
-                    </select>
-                  </div>
+                <div className="w-[90%]">
+  <label htmlFor="service" className="block mb-1 font-medium">
+    Service*
+  </label>
+
+  <select
+    className="w-full p-3 bg-[#F0E7D8] rounded-lg focus:outline-none focus:ring-2 focus:ring-[#C8966B]"
+    value={formData.service}
+    onChange={(e) =>
+      setFormData({ ...formData, service: e.target.value })
+    }
+    required
+  >
+    {/* DEFAULT placeholder option */}
+    <option value="" disabled hidden>
+      Select the service
+    </option>
+
+    <option value="residential">Residential Interior Design</option>
+    <option value="commercial">Commercial</option>
+    <option value="turnkey">TurnKey Interior Solutions</option>
+    <option value="3Dvisualization">3D Visualization & Conceptual Design</option>
+    <option value="renovation">Renovation & Remodeling</option>
+    <option value="furniture">Custom Furniture & Decor</option>
+    <option value="vastu">Vastu Consultation</option>
+  </select>
+</div>
+
 
                   {/* Message */}
                   <div className="w-[90%]">
@@ -1768,9 +1702,8 @@ Guided by <span className="italic font-medium">Creativity, Efficiency, and Ethic
             </div>
           </div>
         </section>
-
-        {/* ====== MOBILE MODAL (Now responsive) ====== */}
-        {isOpenMobile && (
+{/* ====== MOBILE MODAL (Now responsive) ====== */}
+{isOpenMobile && (
   <div className="fixed inset-0 z-[100] flex items-center justify-center p-4 md:hidden">
     {/* Full Screen Overlay */}
     <div
@@ -1787,7 +1720,7 @@ Guided by <span className="italic font-medium">Creativity, Efficiency, and Ethic
       <button
         type="button"
         onClick={() => setIsOpenMobile(false)}
-        className="absolute -top-1 -right-1 bg-[#C9966B] text-[#142241] w-8 h-8 rounded-full flex items-center justify-center text-lg font-bold transition-all duration-200 shadow-lg hover:scale-110"
+        className="absolute top-1 right-1 hover:cursor-pointer text-white w-8 h-8 flex items-center justify-center text-lg font-bold transition-all duration-200 shadow-lg hover:scale-110"
         disabled={isSubmitting}
       >
         ✕
@@ -1795,40 +1728,64 @@ Guided by <span className="italic font-medium">Creativity, Efficiency, and Ethic
 
       <div className="p-8">
         {submitted ? (
-          // Success Message
-          <div className="text-center py-10 relative">
-            {/* Top Center Icon */}
-            <div className="absolute top-9 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
-              <CheckCircle className="w-16 h-16 text-[#C9966B] drop-shadow-lg" />
+          // Success Message with Bubbles and Glassmorphism Icon
+          <div className="text-center py-9 relative overflow-hidden">
+            {/* Bubbles Background */}
+            <div className="absolute inset-0 overflow-hidden">
+              {/* Bubble 1 */}
+              <div className="absolute top-3 left-5 w-8 h-8 bg-white/10 rounded-full animate-float"></div>
+              {/* Bubble 2 */}
+              <div className="absolute top-2 right-12 w-6 h-6 bg-white/5 rounded-full animate-float" style={{ animationDelay: '1s' }}></div>
+              {/* Bubble 3 */}
+              <div className="absolute top-5 left-21 w-5 h-5 bg-white/8 rounded-full animate-float" style={{ animationDelay: '2s' }}></div>
+              {/* Bubble 4 */}
+              <div className="absolute top-2 right-24 w-6 h-6 bg-white/3 rounded-full animate-float" style={{ animationDelay: '1.5s' }}></div>
+              {/* Bubble 5 */}
+              <div className="absolute top-18 left-20 w-8 h-8 bg-white/6 rounded-full animate-float" style={{ animationDelay: '0.5s' }}></div>
+              {/* Bubble 6 */}
+              <div className="absolute top-16 right-8 w-6 h-6 bg-white/7 rounded-full animate-float" style={{ animationDelay: '2.5s' }}></div>
+            </div>
+
+            {/* Top Center Icon with Glassmorphism */}
+            <div className="absolute top-12 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-10">
+              <div className="relative">
+                {/* Glassmorphism Circle Background */}
+                <div className="w-24 h-24 bg-white/10 backdrop-blur-md border border-white/20 rounded-full flex items-center justify-center shadow-2xl">
+                  <CheckCircle className="w-12 h-12 text-[#C9966B] drop-shadow-lg" />
+                </div>
+                
+                {/* Optional: Shine effect */}
+                <div className="absolute inset-0 rounded-full bg-gradient-to-br from-white/20 to-transparent opacity-50"></div>
+              </div>
             </div>
 
             {/* Text */}
-            <h2 className="text-3xl font-semibold mt-10 mb-2">Submission Received!</h2>
-            <p className="text-gray-300 text-lg">
+            <h2 className="text-3xl font-semibold mt-16 mb-2 relative z-10">Submission Received!</h2>
+            <p className="text-gray-300 text-lg relative z-10">
               Thank you for your time — our team will connect with you shortly.
             </p>
           </div>
         ) : (
-          // Form
+          // Form with Same Design as Desktop
           <form className="space-y-4" onSubmit={handleSubmit}>
             <div className="flex flex-col gap-3">
               <input
                 type="text"
                 name="name"
-                placeholder="Your Name"
+                placeholder="Name"
                 value={formDataButton.name}
                 onChange={handleChange}
-                className="w-full p-3 bg-white/5 border border-white/20 text-white placeholder-gray-300 rounded-xl outline-none focus:ring-2 focus:ring-blue-400 focus:bg-white/10 transition-all duration-300"
+                className="w-full p-3 bg-white/5 border border-white/20 text-white placeholder-gray-300 rounded-xl outline-none focus:ring-2 focus:ring-blue-400 focus:bg-white/10 transition-all duration-300 backdrop-blur-sm"
                 required
                 disabled={isSubmitting}
               />
               <input
                 type="tel"
                 name="phone"
-                placeholder="Phone Number"
+                placeholder="Phone No"
                 value={formDataButton.phone}
                 onChange={handleChange}
-                className="w-full p-3 bg-white/5 border border-white/20 text-white placeholder-gray-300 rounded-xl outline-none focus:ring-2 focus:ring-blue-400 focus:bg-white/10 transition-all duration-300"
+                className="w-full p-3 bg-white/5 border border-white/20 text-white placeholder-gray-300 rounded-xl outline-none focus:ring-2 focus:ring-blue-400 focus:bg-white/10 transition-all duration-300 backdrop-blur-sm"
                 required
                 disabled={isSubmitting}
               />
@@ -1837,32 +1794,72 @@ Guided by <span className="italic font-medium">Creativity, Efficiency, and Ethic
             <input
               type="email"
               name="email"
-              placeholder="Your Email Address"
+              placeholder="Email"
               value={formDataButton.email}
               onChange={handleChange}
-              className="w-full p-3 bg-white/5 border border-white/20 text-white placeholder-gray-300 rounded-xl outline-none focus:ring-2 focus:ring-blue-400 focus:bg-white/10 transition-all duration-300"
+              className="w-full p-3 bg-white/5 border border-white/20 text-white placeholder-gray-300 rounded-xl outline-none focus:ring-2 focus:ring-blue-400 focus:bg-white/10 transition-all duration-300 backdrop-blur-sm"
               required
               disabled={isSubmitting}
             />
 
-            <input
-              type="text"
-              name="service"
-              placeholder="What Service Do You Need?"
-              value={formDataButton.service}
-              onChange={handleChange}
-              className="w-full p-3 bg-white/5 border border-white/20 text-white placeholder-gray-300 rounded-xl outline-none focus:ring-2 focus:ring-blue-400 focus:bg-white/10 transition-all duration-300"
-              required
-              disabled={isSubmitting}
-            />
+            {/* Service Dropdown */}
+            <div className="relative w-full">
+              <input
+                type="text"
+                name="service"
+                placeholder="Service"
+                value={formDataButton.service}
+                onClick={() => setShowServiceList(!showServiceList)}
+                readOnly
+                className="w-full p-3 bg-white/5 border border-white/20 text-white placeholder-gray-300 rounded-xl outline-none focus:ring-2 focus:ring-blue-400 focus:bg-white/10 transition-all duration-300 backdrop-blur-sm cursor-pointer"
+                required
+                disabled={isSubmitting}
+              />
 
+              {/* Arrow Icon */}
+              <ChevronDown
+                size={20}
+                className={`absolute right-3 top-1/2 -translate-y-1/2 text-white transition-transform duration-300 cursor-pointer ${
+                  showServiceList ? "rotate-180" : "rotate-0"
+                }`}
+                onClick={() => setShowServiceList(!showServiceList)}
+              />
+
+              {/* Dropdown List */}
+              {showServiceList && (
+                <div className="absolute top-full left-0 w-full mt-2 bg-white/5 backdrop-blur-lg border border-white/20 rounded-xl shadow-lg text-white z-50 max-h-48 overflow-y-auto">
+                  {[
+                    "Residential Interior Design",
+                    "Commercial Interior Design",
+                    "TurnKey Interior Solutions",
+                    "3D Visualization & Conceptual Design",
+                    "Renovation & Remodeling",
+                    "Custom Furniture & Decor",
+                    "Vastu Consultation",
+                  ].map((item) => (
+                    <div
+                      key={item}
+                      onClick={() => {
+                        setFormDataButton({ ...formDataButton, service: item });
+                        setShowServiceList(false);
+                      }}
+                      className="px-4 py-2 hover:bg-white/20 cursor-pointer"
+                    >
+                      {item}
+                    </div>
+                  ))}
+                </div>
+              )}
+            </div>
+
+            {/* Submit Button with Glassmorphism */}
             <button
               type="submit"
               disabled={isSubmitting}
-              className={`w-full py-3.5 border-2 border-white/20 rounded-xl text-[#142241] bg-[#C9966B] font-bold shadow-lg transition-all duration-200 mt-2 ${
-                isSubmitting
-                  ? 'bg-[#C9966B] cursor-not-allowed'
-                  : 'bg-[#C9966B] hover:bg-white/20 hover:scale-[1.02]'
+              className={`w-full py-3.5 hover:cursor-pointer border-2 border-white/20 rounded-xl text-white font-semibold shadow-lg transition-all duration-200 mt-2 backdrop-blur-md ${
+                isSubmitting 
+                  ? 'bg-white/10 cursor-not-allowed' 
+                  : 'bg-white/10 hover:bg-white/20 hover:scale-[1.02] hover:border-white/30'
               }`}
             >
               {isSubmitting ? 'Submitting...' : 'Submit'}

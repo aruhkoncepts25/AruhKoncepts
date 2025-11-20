@@ -1,4 +1,4 @@
-import { useEffect, lazy, Suspense } from "react";
+import { useEffect, lazy, Suspense,useState } from "react";
 import { Routes, Route } from "react-router-dom";
 import AOS from "aos";
 import "aos/dist/aos.css";
@@ -36,6 +36,16 @@ const Project4 =lazy(()=>import("./Components/ProjectCompo/Project4"));
 function App() {
   useEffect(() => {
     AOS.init({ duration: 1000 });
+  }, []);
+   const [showForm, setShowForm] = useState(false);
+
+  // 5 second ke baad automatically popup open
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setShowForm(true);
+    }, 5000);
+
+    return () => clearTimeout(timer);
   }, []);
 
   return (
@@ -116,7 +126,10 @@ function App() {
            </Route>
         </Routes>
       </Suspense>
-        <PopupForm />
+        <PopupForm 
+        showForm={showForm} 
+        onClose={() => setShowForm(false)} 
+      />
     </>
   );
 }

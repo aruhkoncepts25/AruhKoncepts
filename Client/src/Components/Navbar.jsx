@@ -112,22 +112,68 @@ const Navbar = () => {
 
             {/* Services Dropdown */}
             <div className="relative services-dropdown">
-              <button onClick={() => setOpen(!open)} className={`flex items-center gap-1 relative pb-1 transition-all duration-300 ease-out hover:text-white ${open || isActive("/ourservice") ? "text-white" : "text-gray-100"}`}>
-                <span>Services</span>
-                <ChevronDown size={18} className={`transition-all duration-300 ease-out ${open ? "rotate-180" : "rotate-0"}`} />
-                {(open || isActive("/ourservice")) && <span className="absolute left-0 -bottom-1 w-full h-[1px] bg-white rounded-full transition-all duration-300 ease-out"></span>}
-              </button>
+              <button 
+  onClick={() => setOpen(!open)} 
+  className={`flex items-center gap-1 relative pb-1 transition-all duration-300 ease-out hover:text-white ${open || isActive("/ourservice") ? "text-white" : "text-gray-100"}`}
+>
+  <span className="leading-none">Services</span>
+  <ChevronDown 
+    size={18} 
+    className={`mt-0.5 transition-all duration-300 ease-out ${open ? "rotate-180" : "rotate-0"}`} 
+  />
+  {(open || isActive("/ourservice")) && (
+    <span className="absolute left-0 -bottom-1 w-full h-[1px] bg-white rounded-full transition-all duration-300 ease-out"></span>
+  )}
+</button>
 
               {open && (
-                <div className="absolute left-0 mt-2 w-66 bg-white/10 backdrop-blur-md text-black rounded-lg shadow-lg p-2 z-50 border border-white/20 transition-all duration-300 ease-out">
-                  <Link to="/service/furniture" className="block px-3 py-2 rounded hover:bg-white/20 transition-all duration-200 ease-out" onClick={() => setOpen(false)}>Custom Furniture & Decor</Link>
-                  <div className="w-full h-[1px] bg-[#142241] my-2 transition-all duration-200"></div>
-                  <Link to="/service/turnkey" className="block px-3 py-2 rounded hover:bg-white/20 transition-all duration-200 ease-out" onClick={() => setOpen(false)}>TurnKey Interior Solutions</Link>
-                  <div className="w-full h-[1px] bg-[#142241] my-2 transition-all duration-200"></div>
-                  <Link to="/service/commercial" className="block px-3 py-2 rounded hover:bg-white/20 transition-all duration-200 ease-out" onClick={() => setOpen(false)}>Commercial Interior Design</Link>
-                  <div className="w-full h-[1px] bg-[#142241] my-2 transition-all duration-200"></div>
-                  <Link to="/ourservice" className="block px-3 py-2 rounded text-center hover:bg-white/20 transition-all duration-200 ease-out" onClick={() => setOpen(false)}>View All Services</Link>
-                </div>
+                // <div className="absolute left-0 mt-2 w-66 bg-white/10 backdrop-blur-md text-black rounded-lg shadow-lg p-2 z-50 border border-white/20 transition-all duration-300 ease-out">
+                //   <Link to="/service/furniture" className="block px-3 py-2 rounded hover:bg-white/20 transition-all duration-200 ease-out" onClick={() => setOpen(false)}>Custom Furniture & Decor</Link>
+                //   <div className="w-full h-[1px] bg-[#142241] my-2 transition-all duration-200"></div>
+                //   <Link to="/service/turnkey" className="block px-3 py-2 rounded hover:bg-white/20 transition-all duration-200 ease-out" onClick={() => setOpen(false)}>TurnKey Interior Solutions</Link>
+                //   <div className="w-full h-[1px] bg-[#142241] my-2 transition-all duration-200"></div>
+                //   <Link to="/service/commercial" className="block px-3 py-2 rounded hover:bg-white/20 transition-all duration-200 ease-out" onClick={() => setOpen(false)}>Commercial Interior Design</Link>
+                //   <div className="w-full h-[1px] bg-[#142241] my-2 transition-all duration-200"></div>
+                //   <Link to="/ourservice" className="block px-3 py-2 rounded text-center hover:bg-white/20 transition-all duration-200 ease-out" onClick={() => setOpen(false)}>View All Services</Link>
+                // </div>
+
+                <div className="absolute left-0 mt-2 w-66 bg-[#C9966B] backdrop-blur-md text-black rounded-lg shadow-lg p-2 z-50 border border-[#C9966B] transition-all duration-300 ease-out">
+  <Link
+    to="/service/furniture"
+    className="block px-3 py-2 rounded hover:bg-[#B78450] transition-all duration-200 ease-out"
+    onClick={() => setOpen(false)}
+  >
+    Custom Furniture & Decor
+  </Link>
+  <div className="w-full h-[1px] bg-[#B78450] my-2 transition-all duration-200"></div>
+
+  <Link
+    to="/service/turnkey"
+    className="block px-3 py-2 rounded hover:bg-[#B78450] transition-all duration-200 ease-out"
+    onClick={() => setOpen(false)}
+  >
+    TurnKey Interior Solutions
+  </Link>
+  <div className="w-full h-[1px] bg-[#B78450] my-2 transition-all duration-200"></div>
+
+  <Link
+    to="/service/commercial"
+    className="block px-3 py-2 rounded hover:bg-[#B78450] transition-all duration-200 ease-out"
+    onClick={() => setOpen(false)}
+  >
+    Commercial Interior Design
+  </Link>
+  <div className="w-full h-[1px] bg-[#B78450] my-2 transition-all duration-200"></div>
+
+  <Link
+    to="/ourservice"
+    className="block px-3 py-2 rounded text-center hover:bg-[#B78450] transition-all duration-200 ease-out"
+    onClick={() => setOpen(false)}
+  >
+    View All Services
+  </Link>
+</div>
+
               )}
             </div>
 
@@ -160,26 +206,38 @@ const Navbar = () => {
             </button>
           </div>
 
-          {/* Mobile Top Bar - Visible only on mobile */}
-          <div className="flex lg:hidden items-center justify-between w-full">
-            {/* Mobile Logo */}
-            <Link to="/headNav" className="inline-flex items-center gap-2">
-              <img src={logo} alt="Logo" className="h-8" />
-              <div className="inline-flex">
-                <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#d5a127] via-[#F7EF8A] to-[#D2AC47] font-bold text-lg">
-                  Aruh Koncepts
-                </span>
-              </div>
-            </Link>
+     
+{/* Mobile Top Bar - Visible only on mobile */}
 
-            {/* Mobile Menu Toggle */}
-            <button
-              onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="p-2 text-gray-100 hover:text-white transition-colors duration-200"
-            >
-              {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
-            </button>
-          </div>
+
+<div className="flex lg:hidden items-center justify-between w-full">
+
+  {/* LEFT — Hamburger */}
+  <button
+    onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+    className="p-2 text-gray-100 hover:text-white transition-colors duration-200"
+  >
+    {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
+  </button>
+
+  {/* CENTER — Logo */}
+  <Link to="/headNav" className="inline-flex flex-row items-center gap-1 absolute left-1/2 -translate-x-1/2">
+    <img src={logo} alt="Logo" className="h-7" />
+    <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#d5a127] via-[#F7EF8A] to-[#D2AC47] font-bold text-sm">
+      Aruh Koncepts
+    </span>
+  </Link>
+
+  {/* RIGHT — Call Button */}
+  <button
+    onClick={() => setShowPopup(true)}
+    className="p-2 rounded-full bg-[#C8966B] text-[#142241] flex items-center justify-center 
+    hover:scale-105 transition-all duration-200"
+  >
+    <Phone size={18} />
+  </button>
+
+</div>
         </div>
 
         {/* Mobile Menu Overlay */}
@@ -192,7 +250,7 @@ const Navbar = () => {
             />
 
             {/* Mobile Menu Sidebar */}
-            <div className="lg:hidden fixed top-0 right-0 bottom-0 w-[80%] max-w-sm bg-[#142241] border-l border-white/20 shadow-xl z-50 transform transition-transform duration-300 ease-out">
+            <div className="lg:hidden fixed top-0 left-0 bottom-0 w-[80%] max-w-sm bg-[#142241] border-l border-white/20 shadow-xl z-50 transform transition-transform duration-300 ease-out">
               {/* Close Button */}
               <div className="flex justify-between p-4 border-b border-white/10">
                 <Link to="/headNav" className="inline-flex items-center gap-2">
@@ -223,7 +281,7 @@ const Navbar = () => {
                   <span className="text-gray-300">→</span>
                   <span>About</span>
                 </Link>
-                <div className="h-[1px] bg-white my-3 -mx-6 w-screen"></div>
+                <div className="h-[1px] bg-white my-3 -mx-6 w-[116%]"></div>
 
                 {/* Projects */}
                 <Link
@@ -234,20 +292,32 @@ const Navbar = () => {
                   <span className="text-gray-300">→</span>
                   <span>Projects</span>
                 </Link>
-                <div className="h-[1px] bg-white my-3 -mx-6 w-screen"></div>
+                <div className="h-[1px] bg-white my-3 -mx-6 w-[116%]"></div>
 
                 {/* Services Dropdown */}
                 <div className="space-y-2">
-                  <button
-                    onClick={() => setMobileDropdownOpen(!mobileDropdownOpen)}
-                    className={`w-full flex items-center justify-between ${mobileDropdownOpen ? "text-[#C8966B]" : "text-gray-100"}`}
-                  >
-                    <span className="flex items-center gap-2">
-                      <span className="text-gray-300">→</span>
-                      Services
-                    </span>
-                    <ChevronDown size={18} className={`transition-transform duration-300 ${mobileDropdownOpen ? "rotate-180" : "rotate-0"}`} />
-                  </button>
+              <button
+  onClick={() => setMobileDropdownOpen(!mobileDropdownOpen)}
+  className={`w-full flex items-center justify-between ${mobileDropdownOpen ? "text-[#C8966B]" : "text-gray-100"}`}
+>
+  <span className="flex items-center gap-2">
+    <span className="text-gray-300">→</span>
+    <span className="flex items-center">
+      Services
+    </span>
+  </span>
+
+  {/* Arrow horizontally center aligned with the text */}
+  <div className="flex items-center">
+    <ChevronDown
+      size={18}
+      className={`transition-transform duration-300 ${
+        mobileDropdownOpen ? "rotate-180" : "rotate-0"
+      }`}
+    />
+  </div>
+</button>
+
 
                   {mobileDropdownOpen && (
                     <div className="ml-4 space-y-3 font-medium text-white">
@@ -303,7 +373,7 @@ const Navbar = () => {
                     </div>
                   )}
                 </div>
-                <div className="h-[1px] bg-white my-3 -mx-6 w-screen"></div>
+                <div className="h-[1px] bg-white my-3 -mx-6 w-[116%]"></div>
 
                 {/* Testimonials */}
                 <HashLink
@@ -315,7 +385,7 @@ const Navbar = () => {
                   <span className="text-gray-300">→</span>
                   <span>Testimonials</span>
                 </HashLink>
-                <div className="h-[1px] bg-white my-3 -mx-6 w-screen"></div>
+                <div className="h-[1px] bg-white my-3 -mx-6 w-[116%]"></div>
 
                 {/* FAQ */}
                 <HashLink
@@ -327,7 +397,7 @@ const Navbar = () => {
                   <span className="text-gray-300">→</span>
                   <span>FAQs</span>
                 </HashLink>
-                <div className="h-[1px] bg-white my-3 -mx-6 w-screen"></div>
+                <div className="h-[1px] bg-white my-3 -mx-6 w-[116%]"></div>
 
                 {/* Contact */}
                 <HashLink
@@ -339,21 +409,7 @@ const Navbar = () => {
                   <span className="text-gray-300">→</span>
                   <span>Contact</span>
                 </HashLink>
-                <div className="h-[1px] bg-white my-3 -mx-6 w-screen"></div>
-
-                {/* Mobile Book a Call Button */}
-                <button
-                  onClick={() => {
-                    setShowPopup(true);
-                    setMobileMenuOpen(false);
-                  }}
-                  className="w-full mt-4 py-3 px-4 border border-[#C9966B] rounded-full flex items-center justify-center gap-2 bg-white"
-                >
-                  <div className="bg-[#C8966B] rounded-full p-2 flex items-center justify-center">
-                    <Phone className="w-4 h-4 text-[#142241]" />
-                  </div>
-                  <span className="text-[#142241] font-semibold">Book a Call</span>
-                </button>
+                <div className="h-[1px] bg-white my-3 -mx-6 w-[116%]"></div>
               </div>
             </div>
           </>
