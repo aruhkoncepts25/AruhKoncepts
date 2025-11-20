@@ -1657,7 +1657,7 @@ Guided by <span className="italic font-medium">Creativity, Efficiency, and Ethic
       </option>
 
       <option value="residential">Residential Interior Design</option>
-      <option value="commercial">Commercial</option>
+      <option value="commercial">Commercial Interior Design</option>
       <option value="turnkey">TurnKey Interior Solutions</option>
       <option value="3Dvisualization">3D Visualization & Conceptual Design</option>
       <option value="renovation">Renovation & Remodeling</option>

@@ -119,7 +119,7 @@ const Navbar = () => {
   <span className="leading-none">Services</span>
   <ChevronDown 
     size={18} 
-    className={`mt-0.5 transition-all duration-300 ease-out ${open ? "rotate-180" : "rotate-0"}`} 
+    className={`mt-1 transition-all duration-300 ease-out ${open ? "rotate-180" : "rotate-0"}`} 
   />
   {(open || isActive("/ourservice")) && (
     <span className="absolute left-0 -bottom-1 w-full h-[1px] bg-white rounded-full transition-all duration-300 ease-out"></span>
@@ -127,52 +127,17 @@ const Navbar = () => {
 </button>
 
               {open && (
-                // <div className="absolute left-0 mt-2 w-66 bg-white/10 backdrop-blur-md text-black rounded-lg shadow-lg p-2 z-50 border border-white/20 transition-all duration-300 ease-out">
-                //   <Link to="/service/furniture" className="block px-3 py-2 rounded hover:bg-white/20 transition-all duration-200 ease-out" onClick={() => setOpen(false)}>Custom Furniture & Decor</Link>
-                //   <div className="w-full h-[1px] bg-[#142241] my-2 transition-all duration-200"></div>
-                //   <Link to="/service/turnkey" className="block px-3 py-2 rounded hover:bg-white/20 transition-all duration-200 ease-out" onClick={() => setOpen(false)}>TurnKey Interior Solutions</Link>
-                //   <div className="w-full h-[1px] bg-[#142241] my-2 transition-all duration-200"></div>
-                //   <Link to="/service/commercial" className="block px-3 py-2 rounded hover:bg-white/20 transition-all duration-200 ease-out" onClick={() => setOpen(false)}>Commercial Interior Design</Link>
-                //   <div className="w-full h-[1px] bg-[#142241] my-2 transition-all duration-200"></div>
-                //   <Link to="/ourservice" className="block px-3 py-2 rounded text-center hover:bg-white/20 transition-all duration-200 ease-out" onClick={() => setOpen(false)}>View All Services</Link>
-                // </div>
+                <div className="absolute left-0 mt-2 w-66 bg-white/10 backdrop-blur-md text-black rounded-lg shadow-lg p-2 z-50 border border-white/20 transition-all duration-300 ease-out">
+                  <Link to="/service/furniture" className="block px-3 py-2 rounded hover:text-[#C9966B] hover:bg-white/5 transition-all duration-200 ease-out" onClick={() => setOpen(false)}>Custom Furniture & Decor</Link>
+                  <div className="w-full h-[1px]  bg-[#142241] my-2 transition-all duration-200"></div>
+                  <Link to="/service/turnkey" className="block hover:text-[#C9966B] px-3 py-2 rounded hover:bg-white/5 transition-all duration-200 ease-out" onClick={() => setOpen(false)}>TurnKey Interior Solutions</Link>
+                  <div className="w-full h-[1px] bg-[#142241] my-2 transition-all duration-200"></div>
+                  <Link to="/service/commercial" className="block px-3 py-2 hover:text-[#C9966B] rounded hover:bg-white/5 transition-all duration-200 ease-out" onClick={() => setOpen(false)}>Commercial Interior Design</Link>
+                  <div className="w-full h-[1px] bg-[#142241] my-2 transition-all duration-200"></div>
+                  <Link to="/ourservice" className="block px-3 py-2 rounded hover:text-[#C9966B] text-center hover:bg-white/5 transition-all duration-200 ease-out" onClick={() => setOpen(false)}>View All Services</Link>
+                </div>
 
-                <div className="absolute left-0 mt-2 w-66 bg-[#C9966B] backdrop-blur-md text-black rounded-lg shadow-lg p-2 z-50 border border-[#C9966B] transition-all duration-300 ease-out">
-  <Link
-    to="/service/furniture"
-    className="block px-3 py-2 rounded hover:bg-[#B78450] transition-all duration-200 ease-out"
-    onClick={() => setOpen(false)}
-  >
-    Custom Furniture & Decor
-  </Link>
-  <div className="w-full h-[1px] bg-[#B78450] my-2 transition-all duration-200"></div>
-
-  <Link
-    to="/service/turnkey"
-    className="block px-3 py-2 rounded hover:bg-[#B78450] transition-all duration-200 ease-out"
-    onClick={() => setOpen(false)}
-  >
-    TurnKey Interior Solutions
-  </Link>
-  <div className="w-full h-[1px] bg-[#B78450] my-2 transition-all duration-200"></div>
-
-  <Link
-    to="/service/commercial"
-    className="block px-3 py-2 rounded hover:bg-[#B78450] transition-all duration-200 ease-out"
-    onClick={() => setOpen(false)}
-  >
-    Commercial Interior Design
-  </Link>
-  <div className="w-full h-[1px] bg-[#B78450] my-2 transition-all duration-200"></div>
-
-  <Link
-    to="/ourservice"
-    className="block px-3 py-2 rounded text-center hover:bg-[#B78450] transition-all duration-200 ease-out"
-    onClick={() => setOpen(false)}
-  >
-    View All Services
-  </Link>
-</div>
+                
 
               )}
             </div>

@@ -75,7 +75,7 @@ const Service5 = () => {
 
           <div id='service-text' className="absolute top-[180px] left-[250px] flex flex-col justify-start items-center text-black text-center">
             <h1 className="text-3xl text-center md:text-start md:text-5xl font-medium">
-              Let’s talk about <br className="hidden md:block"/> how <br className="md:hidden block"/>can help you
+              Let’s talk about <br className="hidden md:block"/> how <br className="md:hidden block"/>we can help you
             </h1>
 
             <button onClick={handleClick} className="group mt-6 px-6 py-3 bg-[#C8966B] hover:cursor-pointer md:self-start text-[#142241] rounded-lg font-semibold flex items-center gap-1">

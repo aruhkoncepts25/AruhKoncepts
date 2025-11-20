@@ -5,14 +5,14 @@
 @media (max-width: 1110px) {
     #service-text{
       top: 150px;
-      left: 200px;
+      left: 90px;
     }
   
   }
 @media (max-width: 1014px) {
     #service-text{
       top: 150px;
-      left: 150px;
+      left: 90px;
     }
   
   }
@@ -20,7 +20,7 @@
   @media (max-width: 951px) {
     #service-text{
       top: 100px;
-      left: 100px;
+      left: 50px;
 
     }
   
@@ -40,8 +40,8 @@
 
     @media (max-width: 763px) {
     #service-text{
-      top: 50px;
-      left: 100px;
+      top: 140px;
+      left: 220px;
 
       
     }
@@ -57,8 +57,62 @@
   }
     @media (max-width: 632px) {
     #service-text{
-      top: 50px;
-      left: 100px;
+      top: 120px;
+      left: 180px;
+
+      
+    }
+      #service-text h1{
+    font-size: 25px;
+      
+    }
+      #service-text button{
+    padding: 10px;
+      
+    }
+  
+  }
+      @media (max-width: 426px) {
+    #service-text{
+      top: 60px;
+      left: 90px;
+     
+
+      
+    }
+      #service-text h1{
+    font-size: 25px;
+      
+    }
+      #service-text button{
+    padding: 10px;
+      
+    }
+  
+  }
+   @media (max-width: 376px) {
+    #service-text{
+      top: 60px;
+      left: 60px;
+     
+
+      
+    }
+      #service-text h1{
+    font-size: 25px;
+      
+    }
+      #service-text button{
+    padding: 10px;
+      
+    }
+  
+  }
+   @media (max-width: 321px) {
+    #service-text{
+      top: 60px;
+      left: 40px;
+     
 
       
     }
