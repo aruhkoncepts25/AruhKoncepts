@@ -186,7 +186,7 @@ const Navbar = () => {
             </button>
 
             {/* CENTER — Logo */}
-            <Link to="/headNav" id='mobileNav' className="inline-flex flex-row items-center  justify-center gap-1 absolute left-[190px] -translate-x-1/2">
+            <Link to="/headNav" id='mobileNav' className="inline-flex flex-row items-center  justify-center gap-1 absolute left-[180px] -translate-x-1/2">
               <img src={logo} alt="Logo" className="h-7" />
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#d5a127] via-[#F7EF8A] to-[#D2AC47] font-bold text-sm">
                 Aruh Koncepts
