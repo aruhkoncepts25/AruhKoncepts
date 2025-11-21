@@ -1,133 +1,107 @@
 @import "tailwindcss";
 
-
-
 @media (max-width: 1110px) {
-    #service-text{
-      top: 150px;
-      left: 90px;
-    }
-  
+  #service-text {
+    top: 150px;
+    left: 90px;
   }
+}
 @media (max-width: 1014px) {
-    #service-text{
-      top: 150px;
-      left: 90px;
-    }
-  
+  #service-text {
+    top: 150px;
+    left: 90px;
   }
+}
 
-  @media (max-width: 951px) {
-    #service-text{
-      top: 100px;
-      left: 50px;
-
-    }
-  
+@media (max-width: 951px) {
+  #service-text {
+    top: 100px;
+    left: 50px;
   }
-   @media (max-width: 857px) {
-    #service-text{
-      top: 100px;
-      left: 100px;
-      
-    }
-      #service-text h1{
+}
+@media (max-width: 857px) {
+  #service-text {
+    top: 100px;
+    left: 100px;
+  }
+  #service-text h1 {
     font-size: 35px;
-      
-    }
-  
   }
+}
 
-    @media (max-width: 763px) {
-    #service-text{
-      top: 140px;
-      left: 220px;
-
-      
-    }
-      #service-text h1{
+@media (max-width: 763px) {
+  #service-text {
+    top: 140px;
+    left: 220px;
+  }
+  #service-text h1 {
     font-size: 35px;
-      
-    }
-      #service-text button{
-    padding: 10px;
-      
-    }
-  
   }
-    @media (max-width: 632px) {
-    #service-text{
-      top: 120px;
-      left: 180px;
-
-      
-    }
-      #service-text h1{
+  #service-text button {
+    padding: 10px;
+  }
+}
+@media (max-width: 632px) {
+  #service-text {
+    top: 120px;
+    left: 180px;
+  }
+  #service-text h1 {
     font-size: 25px;
-      
-    }
-      #service-text button{
-    padding: 10px;
-      
-    }
-  
   }
-      @media (max-width: 426px) {
-    #service-text{
-      top: 60px;
-      left: 90px;
-     
-
-      
-    }
-      #service-text h1{
+  #service-text button {
+    padding: 10px;
+  }
+}
+@media (max-width: 426px) {
+  #service-text {
+    top: 60px;
+    left: 90px;
+  }
+  #service-text h1 {
     font-size: 25px;
-      
-    }
-      #service-text button{
-    padding: 10px;
-      
-    }
-  
   }
-   @media (max-width: 376px) {
-    #service-text{
-      top: 60px;
-      left: 60px;
-     
-
-      
-    }
-      #service-text h1{
+  #service-text button {
+    padding: 10px;
+  }
+}
+@media (max-width: 376px) {
+  #service-text {
+    top: 60px;
+    left: 60px;
+  }
+  #service-text h1 {
     font-size: 25px;
-      
-    }
-      #service-text button{
-    padding: 10px;
-      
-    }
-  
   }
-   @media (max-width: 321px) {
-    #service-text{
-      top: 60px;
-      left: 40px;
-     
-
-      
-    }
-      #service-text h1{
+  #service-text button {
+    padding: 10px;
+  }
+}
+@media (max-width: 321px) {
+  #service-text {
+    top: 60px;
+    left: 40px;
+  }
+  #service-text h1 {
     font-size: 25px;
-      
-    }
-      #service-text button{
-    padding: 10px;
-      
-    }
-  
   }
+  #service-text button {
+    padding: 10px;
+  }
+}
+@media (max-width: 376px) {
+  #mobileNav {
+    left: 165px;
+  }
+}
+@media (max-width: 321px) {
+  #mobileNav {
+    left: 140px;
+  }
+}
 @keyframes float {
-  0%, 100% {
+  0%,
+  100% {
     transform: translateY(0) translateX(0);
   }
   25% {

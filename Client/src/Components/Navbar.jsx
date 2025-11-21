@@ -11,7 +11,7 @@ const Navbar = () => {
   const [open, setOpen] = useState(false); // desktop dropdown
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false); // mobile menu
   const [mobileDropdownOpen, setMobileDropdownOpen] = useState(false); // mobile services dropdown
-  
+
   const location = useLocation();
 
   // Scroll for shrinking navbar
@@ -112,19 +112,19 @@ const Navbar = () => {
 
             {/* Services Dropdown */}
             <div className="relative services-dropdown">
-              <button 
-  onClick={() => setOpen(!open)} 
-  className={`flex items-center gap-1 relative pb-1 transition-all duration-300 ease-out hover:text-white ${open || isActive("/ourservice") ? "text-white" : "text-gray-100"}`}
->
-  <span className="leading-none">Services</span>
-  <ChevronDown 
-    size={18} 
-    className={`mt-1 transition-all duration-300 ease-out ${open ? "rotate-180" : "rotate-0"}`} 
-  />
-  {(open || isActive("/ourservice")) && (
-    <span className="absolute left-0 -bottom-1 w-full h-[1px] bg-white rounded-full transition-all duration-300 ease-out"></span>
-  )}
-</button>
+              <button
+                onClick={() => setOpen(!open)}
+                className={`flex items-center gap-1 relative pb-1 transition-all duration-300 ease-out hover:text-white ${open || isActive("/ourservice") ? "text-white" : "text-gray-100"}`}
+              >
+                <span className="leading-none">Services</span>
+                <ChevronDown
+                  size={18}
+                  className={`mt-1 transition-all duration-300 ease-out ${open ? "rotate-180" : "rotate-0"}`}
+                />
+                {(open || isActive("/ourservice")) && (
+                  <span className="absolute left-0 -bottom-1 w-full h-[1px] bg-white rounded-full transition-all duration-300 ease-out"></span>
+                )}
+              </button>
 
               {open && (
                 <div className="absolute left-0 mt-2 w-66 bg-white/10 backdrop-blur-md text-black rounded-lg shadow-lg p-2 z-50 border border-white/20 transition-all duration-300 ease-out">
@@ -137,7 +137,7 @@ const Navbar = () => {
                   <Link to="/ourservice" className="block px-3 py-2 rounded hover:text-[#C9966B] text-center hover:bg-white/5 transition-all duration-200 ease-out" onClick={() => setOpen(false)}>View All Services</Link>
                 </div>
 
-                
+
 
               )}
             </div>
@@ -171,41 +171,42 @@ const Navbar = () => {
             </button>
           </div>
 
-     
-{/* Mobile Top Bar - Visible only on mobile */}
+
+          {/* Mobile Top Bar - Visible only on mobile */}
 
 
-<div className="flex lg:hidden items-center justify-between w-full">
+          <div className="flex lg:hidden items-center justify-between w-full">
 
-  {/* LEFT — Hamburger */}
-  <button
-    onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-    className="p-2 text-gray-100 hover:text-white transition-colors duration-200"
-  >
-    {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
-  </button>
+            {/* LEFT — Hamburger */}
+            <button
+              onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+              className="p-2 text-gray-100 hover:text-white transition-colors duration-200"
+            >
+              {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
+            </button>
 
-  {/* CENTER — Logo */}
-  <Link to="/headNav" className="inline-flex flex-row items-center gap-1 absolute left-1/2 -translate-x-1/2">
-    <img src={logo} alt="Logo" className="h-7" />
-    <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#d5a127] via-[#F7EF8A] to-[#D2AC47] font-bold text-sm">
-      Aruh Koncepts
-    </span>
-  </Link>
+            {/* CENTER — Logo */}
+            <Link to="/headNav" id='mobileNav' className="inline-flex flex-row items-center  justify-center gap-1 absolute left-[190px] -translate-x-1/2">
+              <img src={logo} alt="Logo" className="h-7" />
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#d5a127] via-[#F7EF8A] to-[#D2AC47] font-bold text-sm">
+                Aruh Koncepts
+              </span>
+            </Link>
 
-  {/* RIGHT — Call Button */}
-<button
-  onClick={() => setShowPopup(true)}
+            {/* RIGHT — Call Button */}
+          <a
+  href="tel:+916309892801"
   className="py-2 px-3 border border-white rounded-full text-white flex items-center gap-2 justify-center
   shadow-[0_0_2px_rgba(255,255,255,0.4)] hover:shadow-[0_0_2px_rgba(255,255,255,0.7)]
   hover:scale-105 transition-all duration-200"
 >
   Call <Phone size={18} className="text-[#C8A75E]" />
-</button>
+</a>
 
 
 
-</div>
+
+          </div>
         </div>
 
         {/* Mobile Menu Overlay */}
@@ -264,27 +265,26 @@ const Navbar = () => {
 
                 {/* Services Dropdown */}
                 <div className="space-y-2">
-              <button
-  onClick={() => setMobileDropdownOpen(!mobileDropdownOpen)}
-  className={`w-full flex items-center justify-between ${mobileDropdownOpen ? "text-[#C8966B]" : "text-gray-100"}`}
->
-  <span className="flex items-center gap-2">
-    <span className="text-gray-300">→</span>
-    <span className="flex items-center">
-      Services
-    </span>
-  </span>
+                  <button
+                    onClick={() => setMobileDropdownOpen(!mobileDropdownOpen)}
+                    className={`w-full flex items-center justify-between ${mobileDropdownOpen ? "text-[#C8966B]" : "text-gray-100"}`}
+                  >
+                    <span className="flex items-center gap-2">
+                      <span className="text-gray-300">→</span>
+                      <span className="flex items-center">
+                        Services
+                      </span>
+                    </span>
 
-  {/* Arrow horizontally center aligned with the text */}
-  <div className="flex items-center">
-    <ChevronDown
-      size={18}
-      className={`transition-transform duration-300 ${
-        mobileDropdownOpen ? "rotate-180" : "rotate-0"
-      }`}
-    />
-  </div>
-</button>
+                    {/* Arrow horizontally center aligned with the text */}
+                    <div className="flex items-center">
+                      <ChevronDown
+                        size={18}
+                        className={`transition-transform duration-300 ${mobileDropdownOpen ? "rotate-180" : "rotate-0"
+                          }`}
+                      />
+                    </div>
+                  </button>
 
 
                   {mobileDropdownOpen && (

@@ -95,7 +95,7 @@ const Footer = () => {
     <div className='relative lg:right-[175px]'>
       <h2 className="font-semibold text-center">Follow Us</h2>
       <div className="flex gap-3 justify-center mt-4 text-xl text-black">
-        <a href="https://www.instagram.com/ak_designkoncepts?igsh=a3I2Ym9vbWI1bGoz" target="_blank" rel="noopener noreferrer" aria-label="Instagram" className="hover:opacity-80"><FaInstagram className="h-4 w-4 text-white" /></a>
+        <a href="https://www.instagram.com/aruh_koncepts?igsh=aWNhNmpoMnZ5NGIy" target="_blank" rel="noopener noreferrer" aria-label="Instagram" className="hover:opacity-80"><FaInstagram className="h-4 w-4 text-white" /></a>
         <a href="https://www.threads.net/@ak_designkoncepts" target="_blank" rel="noopener noreferrer" aria-label="Threads" className="hover:opacity-80"><RiThreadsLine className="h-4 w-4 text-white" /></a>
         <a href="https://www.linkedin.com/feed/update/urn:li:activity:7374365162801258496" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" className="hover:opacity-80"><FaLinkedinIn className="h-4 w-4 text-white" /></a>
         <a href="https://pin.it/4VhKObr0m" target="_blank" rel="noopener noreferrer" aria-label="Pinterest" className="hover:opacity-80"><FaPinterestP className="h-4 w-4 text-white" /></a>
@@ -211,7 +211,7 @@ const Footer = () => {
             <h2 className="font-semibold">Follow Us</h2>
             <div className="flex gap-2 md:gap-4 mt-2 text-xl">
               <a
-    href="https://www.instagram.com/ak_designkoncepts?igsh=a3I2Ym9vbWI1bGoz"
+    href="https://www.instagram.com/aruh_koncepts?igsh=aWNhNmpoMnZ5NGIy"
     target="_blank"
     rel="noopener noreferrer"
     aria-label="Instagram"
