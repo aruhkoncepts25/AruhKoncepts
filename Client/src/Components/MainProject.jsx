@@ -25,7 +25,7 @@ const navigate = useNavigate();
   const projects = [
     {
       id: 1,
-      title: "Residencial Project",
+      title: "Residential Project",
       description: "The project began with a clear and thoughtful goal: to design a home that felt calm, welcoming, and functional for everyday living. The vision was not limited to just aesthetics. ",
       image: mproject1,
       link: "/Project"
