@@ -96,7 +96,7 @@
 }
 @media (max-width: 321px) {
   #mobileNav {
-    left: 140px;
+    left: 125px;
   }
 }
 @keyframes float {
