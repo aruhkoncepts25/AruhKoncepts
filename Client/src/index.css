@@ -89,19 +89,22 @@
     padding: 10px;
   }
 }
-@media (max-width: 376px) {
+@media (max-width: 321px) {
   #mobileNav {
-    left: 157px;
+    left: 120px;
+    /* right:55px */
   }
 }
-@media (max-width: 376px) {
+/* @media (max-width: 376px) {
   #mobileNav {
+    position: absolute;
     left: 157px;
+    /* right:200px 
   }
-}
+} */
 @media (max-width: 427px) {
   #mobileNav {
-    left: 180px;
+    left: 190px;
   }
 }
 @keyframes float {
