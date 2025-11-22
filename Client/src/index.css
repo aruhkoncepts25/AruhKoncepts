@@ -94,9 +94,14 @@
     left: 157px;
   }
 }
-@media (max-width: 321px) {
+@media (max-width: 376px) {
   #mobileNav {
-    left: 125px;
+    left: 157px;
+  }
+}
+@media (max-width: 427px) {
+  #mobileNav {
+    left: 180px;
   }
 }
 @keyframes float {
