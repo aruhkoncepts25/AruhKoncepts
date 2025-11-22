@@ -177,32 +177,37 @@ const Navbar = () => {
 
           <div className="flex lg:hidden items-center justify-between w-full">
 
-            {/* LEFT — Hamburger */}
-            <button
-              onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="p-2 text-gray-100 hover:text-white transition-colors duration-200"
-            >
-              {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
-            </button>
+  {/* LEFT — Hamburger */}
+  <button
+    onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+    className="p-2 text-gray-100 hover:text-white transition-colors duration-200"
+  >
+    {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
+  </button>
 
-            {/* CENTER — Logo */}
-            <Link to="/headNav" id='mobileNav' className="inline-flex flex-row items-center  justify-center gap-1 absolute left-[365px] lg:left-[180px] -translate-x-1/2">
-              <img src={logo} alt="Logo" className="h-7" />
-              <span style={{fontFamily: "Arial"}} className="text-transparent bg-clip-text bg-gradient-to-r from-[#d5a127] via-[#F7EF8A] to-[#D2AC47] font-bold text-sm">
-                Aruh Koncepts
-              </span>
-            </Link>
+  {/* CENTER — Logo (automatically centered by flex) */}
+  <Link to="/headNav" id="mobileNav" className="flex items-center justify-center gap-1 flex-1">
+    <img src={logo} alt="Logo" className="h-7" />
+    <span
+      style={{ fontFamily: "Arial" }}
+      className="text-transparent bg-clip-text bg-gradient-to-r from-[#d5a127] via-[#F7EF8A] to-[#D2AC47] font-bold text-sm"
+    >
+      Aruh Koncepts
+    </span>
+  </Link>
 
-            {/* RIGHT — Call Button */}
-          <a
-  href="tel:+916309892801"
-  className="py-2 px-3 border border-white rounded-full text-white flex items-center gap-2 justify-center
-  shadow-[0_0_2px_rgba(255,255,255,0.4)] hover:shadow-[0_0_2px_rgba(255,255,255,0.7)]
-  hover:scale-105 transition-all duration-200"
->
-  Call <Phone size={18} className="text-[#C8A75E]" />
-</a>
-          </div>
+  {/* RIGHT — Call Button */}
+  <a
+    href="tel:+916309892801"
+    className="py-2 px-3 border border-white rounded-full text-white flex items-center gap-2 justify-center
+    shadow-[0_0_2px_rgba(255,255,255,0.4)] hover:shadow-[0_0_2px_rgba(255,255,255,0.7)]
+    hover:scale-105 transition-all duration-200"
+  >
+    Call <Phone size={18} className="text-[#C8A75E]" />
+  </a>
+
+</div>
+
         </div>
 
         {/* Mobile Menu Overlay */}
