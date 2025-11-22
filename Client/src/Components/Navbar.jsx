@@ -82,12 +82,12 @@ const Navbar = () => {
               <h1 className="text-xl font-bold flex items-center gap-2 cursor-pointer">
                 <img src={logo} alt="Logo" className="h-8" />
                 <div className="hidden sm:inline-flex">
-                  <span className="relative inline-block text-transparent bg-clip-text bg-gradient-to-r from-[#d5a127] via-[#F7EF8A] to-[#D2AC47] font-bold">
+                  <span style={{fontFamily: "Arial"}} className="relative inline-block text-transparent bg-clip-text bg-gradient-to-r from-[#d5a127] via-[#F7EF8A] to-[#D2AC47] font-bold">
                     Aruh Konce
-                    <span className="absolute left-0 bottom-0 h-[2px] w-full bg-gradient-to-r from-[#d5a127] via-[#F7EF8A] to-[#D2AC47]"></span>
+                    <span style={{fontFamily: "Arial"}} className="absolute left-0 bottom-0 h-[2px] w-full bg-gradient-to-r from-[#d5a127] via-[#F7EF8A] to-[#D2AC47]"></span>
                   </span>
-                  <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#d5a127] via-[#F7EF8A] to-[#D2AC47] font-bold">p</span>
-                  <span className="relative inline-block text-transparent bg-clip-text bg-gradient-to-r from-[#d5a127] via-[#F7EF8A] to-[#D2AC47] font-bold">
+                  <span style={{fontFamily: "Arial"}} className="text-transparent bg-clip-text bg-gradient-to-r from-[#d5a127] via-[#F7EF8A] to-[#D2AC47] font-bold">p</span>
+                  <span style={{fontFamily: "Arial"}} className="relative inline-block text-transparent bg-clip-text bg-gradient-to-r from-[#d5a127] via-[#F7EF8A] to-[#D2AC47] font-bold">
                     ts
                     <span className="absolute left-[-6px] bottom-0 h-[2px] w-[calc(100%+8px)] bg-gradient-to-r from-[#d5a127] via-[#F7EF8A] to-[#D2AC47]"></span>
                   </span>
@@ -188,7 +188,7 @@ const Navbar = () => {
             {/* CENTER — Logo */}
             <Link to="/headNav" id='mobileNav' className="inline-flex flex-row items-center  justify-center gap-1 absolute left-[180px] -translate-x-1/2">
               <img src={logo} alt="Logo" className="h-7" />
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#d5a127] via-[#F7EF8A] to-[#D2AC47] font-bold text-sm">
+              <span style={{fontFamily: "Arial"}} className="text-transparent bg-clip-text bg-gradient-to-r from-[#d5a127] via-[#F7EF8A] to-[#D2AC47] font-bold text-sm">
                 Aruh Koncepts
               </span>
             </Link>
@@ -202,10 +202,6 @@ const Navbar = () => {
 >
   Call <Phone size={18} className="text-[#C8A75E]" />
 </a>
-
-
-
-
           </div>
         </div>
 
@@ -225,7 +221,7 @@ const Navbar = () => {
                 <Link to="/headNav" className="inline-flex items-center gap-2">
                   <img src={logo} alt="Logo" className="h-8" />
                   <div className="inline-flex">
-                    <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#d5a127] via-[#F7EF8A] to-[#D2AC47] font-bold text-lg">
+                    <span style={{fontFamily: "Arial"}} className="text-transparent bg-clip-text bg-gradient-to-r from-[#d5a127] via-[#F7EF8A] to-[#D2AC47] font-bold text-lg">
                       Aruh Koncepts
                     </span>
                   </div>
