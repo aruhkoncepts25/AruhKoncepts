@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { HashLink } from "react-router-hash-link";
-import logo from "../assets/logo.png";
+import logo from "../assets/logo1.png";
 import { ChevronDown, Phone, Menu, X } from "lucide-react";
 import PopupForm from "../Components/PopupForm";
 
