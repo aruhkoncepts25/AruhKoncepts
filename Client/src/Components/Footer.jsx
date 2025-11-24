@@ -65,17 +65,44 @@ const Footer = () => {
   <div className="mt-10 pt-6 flex flex-col md:flex-row items-start md:items-center justify-between gap-8 text-sm">
 
     {/* Address */}
-    <div className="flex items-start gap-2 max-w-xs">
-      <MdLocationOn className="text-white w-5 h-5 mt-1 flex-shrink-0" />
-      <a 
-        href="https://www.google.com/maps/search/?api=1&query=5th+Floor,+Plot+No.138,+HIG,+6th+Phase,+above+Bank+of+India,+Kukatpally+Housing+Board+Colony,+Kukatpally,+Hyderabad,+Telangana+500072" 
-        target="_blank" 
-        rel="noopener noreferrer"
-        className="hover:underline"
-      >
-        5th Floor, Plot No.138, HIG, 6th Phase, above Bank of India bank, Kukatpally Housing Board Colony, Kukatpally, Hyderabad, Telangana 500072
-      </a>
-    </div>
+    <div className="flex flex-col gap-3 max-w-md">
+  
+  {/* Map on top */}
+  <div className="w-full rounded-xl overflow-hidden shadow-lg">
+    <a 
+      href="https://www.google.com/maps/search/?api=1&query=5th+Floor,+Plot+No.138,+HIG,+6th+Phase,+above+Bank+of+India,+Kukatpally+Housing+Board+Colony,+Kukatpally,+Hyderabad,+Telangana+500072"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      
+      <iframe
+        title="location-map"
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d237.83944946038895!2d78.38504577479934!3d17.4869183!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bcb9163861801dd%3A0x5a291ff741dc7506!2sAruh%20Koncepts!5e0!3m2!1sen!2sin!4v1763990426673!5m2!1sen!2sin"
+        width="100%"
+        height="250"
+        loading="lazy"
+        allowFullScreen=""
+        referrerPolicy="no-referrer-when-downgrade"
+      ></iframe>
+    </a>
+  </div>
+
+  {/* Address section */}
+  <div className="flex items-start gap-2">
+    <MdLocationOn className="text-white w-5 h-5 mt-1 flex-shrink-0" />
+    <a 
+      // href="https://www.google.com/maps/search/?api=1&query=5th+Floor,+Plot+No.138,+HIG,+6th+Phase,+above+Bank+of+India,+Kukatpally+Housing+Board+Colony,+Kukatpally,+Hyderabad,+Telangana+500072"
+      target="_blank"
+      rel="noopener noreferrer"
+      
+    >
+      5th Floor, Plot No.138, HIG, 6th Phase, above Bank of India bank,<br />
+      Kukatpally Housing Board Colony, Kukatpally, Hyderabad, Telangana 500072
+    </a>
+  </div>
+
+</div>
+
 
     {/* Contact */}
     <div className='relative lg:left-[-165px]'>
