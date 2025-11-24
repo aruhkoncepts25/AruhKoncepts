@@ -29,9 +29,9 @@ const Footer = () => {
     <div>
       <h2 className="font-semibold mb-4">Quick Links</h2>
       <ul className="space-y-1 text-sm">
-        <li><Link to="/footerhome" className="hover:underline">Home</Link></li>
-        <li><Link to="/footerAbout" className="hover:underline">About Us</Link></li>
-        <li><Link to="/#contact" className="hover:underline">Contact</Link></li>
+        <li><Link to="/footerhome" className="hover:underline hover:text-[#C9966B]">Home</Link></li>
+        <li><Link to="/footerAbout" className="hover:underline hover:text-[#C9966B]">About Us</Link></li>
+        <li><Link to="/#contact" className="hover:underline hover:text-[#C9966B]">Contact</Link></li>
       </ul>
     </div>
 
@@ -39,13 +39,13 @@ const Footer = () => {
     <div>
       <h2 className="font-semibold mb-4">Services</h2>
       <ul className="space-y-1 text-sm">
-        <li><Link to="/footResidential" className="hover:underline">Residential Interior Design</Link></li>
-        <li><Link to="/footerCommercial" className="hover:underline">Commercial Interior Design</Link></li>
-        <li><Link to="/footerTurnkey" className="hover:underline">TurnKey Interior Solutions</Link></li>
-        <li><Link to="/footerVisualization" className="hover:underline">3D Visualization & Conceptual Design</Link></li>
-        <li><Link to="/footerRenovation" className="hover:underline">Renovation & Remodeling</Link></li>
-        <li><Link to="/footerFurniture" className="hover:underline">Custom Furniture & Decor</Link></li>
-        <li><Link to="/footerVastu" className="hover:underline">Vastu Consultation</Link></li>
+        <li><Link to="/footResidential" className="hover:underline hover:text-[#C9966B] ">Residential Interior Design</Link></li>
+        <li><Link to="/footerCommercial" className="hover:underline hover:text-[#C9966B]">Commercial Interior Design</Link></li>
+        <li><Link to="/footerTurnkey" className="hover:underline hover:text-[#C9966B]">TurnKey Interior Solutions</Link></li>
+        <li><Link to="/footerVisualization" className="hover:underline hover:text-[#C9966B]">3D Visualization & Conceptual Design</Link></li>
+        <li><Link to="/footerRenovation" className="hover:underline hover:text-[#C9966B]">Renovation & Remodeling</Link></li>
+        <li><Link to="/footerFurniture" className="hover:underline hover:text-[#C9966B]">Custom Furniture & Decor</Link></li>
+        <li><Link to="/footerVastu" className="hover:underline hover:text-[#C9966B]">Vastu Consultation</Link></li>
       </ul>
     </div>
 
@@ -53,10 +53,10 @@ const Footer = () => {
     <div>
       <h2 className="font-semibold mb-4">Projects</h2>
       <ul className="space-y-1 text-sm">
-        <li><Link to="/footerResidentialProject" className='hover:underline'>Residential Projects</Link></li>
-        <li><Link to="/footerCommercialProject" className='hover:underline'>Commercial Projects</Link></li>
-        <li><Link to="/footerCorporateProject" className='hover:underline'>Corporate Projects</Link></li>
-        <li><Link to="/footerTurnKeyProject" className='hover:underline'>TurnKey Interior Projects</Link></li>
+        <li><Link to="/footerResidentialProject" className='hover:underline hover:text-[#C9966B]'>Residential Projects</Link></li>
+        <li><Link to="/footerCommercialProject" className='hover:underline hover:text-[#C9966B]'>Commercial Projects</Link></li>
+        <li><Link to="/footerCorporateProject" className='hover:underline hover:text-[#C9966B]'>Corporate Projects</Link></li>
+        <li><Link to="/footerTurnKeyProject" className='hover:underline hover:text-[#C9966B]'>TurnKey Interior Projects</Link></li>
       </ul>
     </div>
   </div>
@@ -111,10 +111,10 @@ const Footer = () => {
       </h2>
       <p className="flex items-center gap-2 mt-1">
         <FiPhone /> 
-        <a href="tel:+916309892801" className="hover:underline">+91 63098 92801</a>
+        <a href="tel:+916309892801" className="hover:underline hover:text-[#C9966B]">+91 63098 92801</a>
       </p>
       <p>
-        <a href="mailto:arunkoncepts@gmail.com" className="hover:underline">arunkoncepts@gmail.com</a>
+        <a href="mailto:arunkoncepts@gmail.com" className="hover:underline hover:text-[#C9966B]">arunkoncepts@gmail.com</a>
       </p>
     </div>
 
@@ -122,12 +122,12 @@ const Footer = () => {
     <div className='relative lg:right-[175px]'>
       <h2 className="font-semibold text-center">Follow Us</h2>
       <div className="flex gap-3 justify-center mt-4 text-xl text-black">
-        <a href="https://www.instagram.com/aruh_koncepts?igsh=aWNhNmpoMnZ5NGIy" target="_blank" rel="noopener noreferrer" aria-label="Instagram" className="hover:opacity-80"><FaInstagram className="h-4 w-4 text-white" /></a>
-        <a href="https://www.threads.net/@ak_designkoncepts" target="_blank" rel="noopener noreferrer" aria-label="Threads" className="hover:opacity-80"><RiThreadsLine className="h-4 w-4 text-white" /></a>
-        <a href="https://www.linkedin.com/feed/update/urn:li:activity:7374365162801258496" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" className="hover:opacity-80"><FaLinkedinIn className="h-4 w-4 text-white" /></a>
-        <a href="https://pin.it/4VhKObr0m" target="_blank" rel="noopener noreferrer" aria-label="Pinterest" className="hover:opacity-80"><FaPinterestP className="h-4 w-4 text-white" /></a>
-        <a href="https://www.facebook.com/share/1VND5cUr6D/" target="_blank" rel="noopener noreferrer" aria-label="Facebook" className="hover:opacity-80"><FaFacebookF className="h-4 w-4 text-white" /></a>
-        <a href="https://x.com/AruhKoncepts?t=W3JwQLkpvg05ZnV4F_-vxw&s=09" target="_blank" rel="noopener noreferrer" aria-label="X" className="hover:opacity-80"><SiX className="h-4 w-4 text-white" /></a>
+        <a href="https://www.instagram.com/aruh_koncepts?igsh=aWNhNmpoMnZ5NGIy" target="_blank" rel="noopener noreferrer" aria-label="Instagram" className="hover:opacity-80"><FaInstagram className="h-4 w-4 hover:text-[#C9966B] text-white" /></a>
+        <a href="https://www.threads.net/@ak_designkoncepts" target="_blank" rel="noopener noreferrer" aria-label="Threads" className="hover:opacity-80"><RiThreadsLine className="h-4 w-4 hover:text-[#C9966B] text-white" /></a>
+        <a href="https://www.linkedin.com/feed/update/urn:li:activity:7374365162801258496" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" className="hover:opacity-80"><FaLinkedinIn className="h-4 w-4 hover:text-[#C9966B] text-white" /></a>
+        <a href="https://pin.it/4VhKObr0m" target="_blank" rel="noopener noreferrer" aria-label="Pinterest" className="hover:opacity-80"><FaPinterestP className="h-4 w-4 hover:text-[#C9966B] text-white" /></a>
+        <a href="https://www.facebook.com/share/1VND5cUr6D/" target="_blank" rel="noopener noreferrer" aria-label="Facebook" className="hover:opacity-80"><FaFacebookF className="h-4 w-4 hover:text-[#C9966B] text-white" /></a>
+        <a href="https://x.com/AruhKoncepts?t=W3JwQLkpvg05ZnV4F_-vxw&s=09" target="_blank" rel="noopener noreferrer" aria-label="X" className="hover:opacity-80"><SiX className="h-4 w-4 hover:text-[#C9966B] text-white" /></a>
       </div>
     </div>
   </div>
@@ -186,11 +186,11 @@ const Footer = () => {
   </h2>
   
 
-  <a href="tel:+916309892801" className="flex items-center text-[#FFFFFFA3] gap-2 mt-1 hover:underline">
+  <a href="tel:+916309892801" className="flex items-center hover:text-[#C9966B] text-[#FFFFFFA3] gap-2 mt-1 hover:underline">
     <FiPhone /> +91 63098 92801
   </a>
   
-  <a href="mailto:arunkoncepts@gmail.com" className="text-[#FFFFFFA3] hover:underline">
+  <a href="mailto:arunkoncepts@gmail.com" className=" hover:text-[#C9966B] text-[#FFFFFFA3] hover:underline">
     arunkoncepts@gmail.com
   </a>
 </div>
@@ -201,9 +201,9 @@ const Footer = () => {
             <div>
               <h2 className="font-semibold mb-2">Quick Links</h2>
               <ul className="space-y-1 text-sm ">
-                <li><Link to="/footerhome" className=" text-[#FFFFFFA3] hover:underline">Home</Link></li>
-                <li><Link to="/footerAbout" className=" text-[#FFFFFFA3] hover:underline">About Us</Link></li>
-                <li><Link to="/#contact" className='text-[#FFFFFFA3] hover:underline'>Contact</Link></li>
+                <li><Link to="/footerhome" className=" text-[#FFFFFFA3] hover:underline hover:text-[#C9966B]">Home</Link></li>
+                <li><Link to="/footerAbout" className=" text-[#FFFFFFA3] hover:underline hover:text-[#C9966B]">About Us</Link></li>
+                <li><Link to="/#contact" className='text-[#FFFFFFA3] hover:underline hover:text-[#C9966B]'>Contact</Link></li>
               </ul>
             </div>
 
@@ -211,10 +211,10 @@ const Footer = () => {
             <div>
               <h2 className="font-semibold mb-2">Projects</h2>
               <ul className="space-y-1 text-sm">
-                <li className='text-[#FFFFFFA3]'><Link to="/footerResidentialProject" className='hover:underline'>Residential Projects</Link></li>
-                <li className='text-[#FFFFFFA3]'><Link to="/footerCommercialProject" className='hover:underline'>Commercial Projects</Link></li>
-                <li className='text-[#FFFFFFA3]'><Link to="/footerCorporateProject" className='hover:underline'>Corporate Projects</Link></li>
-                <li className='text-[#FFFFFFA3]'><Link to="/footerTurnKeyProject" className='hover:underline'>TurnKey Interior Projects</Link></li>
+                <li className='text-[#FFFFFFA3]'><Link to="/footerResidentialProject" className='hover:underline hover:text-[#C9966B]'>Residential Projects</Link></li>
+                <li className='text-[#FFFFFFA3]'><Link to="/footerCommercialProject" className='hover:underline hover:text-[#C9966B]'>Commercial Projects</Link></li>
+                <li className='text-[#FFFFFFA3]'><Link to="/footerCorporateProject" className='hover:underline hover:text-[#C9966B]'>Corporate Projects</Link></li>
+                <li className='text-[#FFFFFFA3]'><Link to="/footerTurnKeyProject" className='hover:underline hover:text-[#C9966B]'>TurnKey Interior Projects</Link></li>
               </ul>
             </div>
           </div>
@@ -223,13 +223,13 @@ const Footer = () => {
           <div className="order-5 md:hidden">
             <h2 className="font-semibold mb-2">Services</h2>
             <ul className="space-y-1 text-sm">
-              <li><Link to="/footResidential" className="hover:underline text-[#FFFFFFA3]">Residential Interior Design</Link></li>
-              <li><Link to="/footerCommercial" className="hover:underline text-[#FFFFFFA3]">Commercial Interior Design</Link></li>
-              <li><Link to="/footerTurnkey" className="hover:underline text-[#FFFFFFA3]">TurnKey Interior Solutions</Link></li>
-              <li><Link to="/footerVisualization" className="hover:underline text-[#FFFFFFA3]">3D Visualization & Conceptual Design</Link></li>
-              <li><Link to="/footerRenovation" className="hover:underline text-[#FFFFFFA3]">Renovation & Remodeling</Link></li>
-              <li><Link to="/footerFurniture" className="hover:underline text-[#FFFFFFA3]">Custom Furniture & Decor</Link></li>
-              <li><Link to="/footerVastu" className="hover:underline text-[#FFFFFFA3]">Vastu Consultation</Link></li>
+              <li><Link to="/footResidential" className="hover:underline text-[#FFFFFFA3] hover:text-[#C9966B]">Residential Interior Design</Link></li>
+              <li><Link to="/footerCommercial" className="hover:underline text-[#FFFFFFA3] hover:text-[#C9966B]">Commercial Interior Design</Link></li>
+              <li><Link to="/footerTurnkey" className="hover:underline text-[#FFFFFFA3] hover:text-[#C9966B]">TurnKey Interior Solutions</Link></li>
+              <li><Link to="/footerVisualization" className="hover:underline text-[#FFFFFFA3] hover:text-[#C9966B]">3D Visualization & Conceptual Design</Link></li>
+              <li><Link to="/footerRenovation" className="hover:underline text-[#FFFFFFA3] hover:text-[#C9966B]">Renovation & Remodeling</Link></li>
+              <li><Link to="/footerFurniture" className="hover:underline text-[#FFFFFFA3] hover:text-[#C9966B]">Custom Furniture & Decor</Link></li>
+              <li><Link to="/footerVastu" className="hover:underline text-[#FFFFFFA3] hover:text-[#C9966B]">Vastu Consultation</Link></li>
             </ul>
           </div>
 
@@ -244,7 +244,7 @@ const Footer = () => {
     aria-label="Instagram"
     className="hover:opacity-80"
   >
-    <FaInstagram className="h-4 w-4 text-white" />
+    <FaInstagram className="h-4 w-4 hover:text-[#C9966B] text-white" />
   </a>
 
   <a
@@ -254,7 +254,7 @@ const Footer = () => {
     aria-label="Threads"
     className="hover:opacity-80"
   >
-    <RiThreadsLine className="h-4 w-4 text-white" />
+    <RiThreadsLine className="h-4 w-4 hover:text-[#C9966B] text-white" />
   </a>
 
   <a
@@ -264,7 +264,7 @@ const Footer = () => {
     aria-label="LinkedIn"
     className="hover:opacity-80"
   >
-    <FaLinkedinIn className="h-4 w-4 text-white" />
+    <FaLinkedinIn className="h-4 w-4 hover:text-[#C9966B] text-white" />
   </a>
 
   <a
@@ -274,7 +274,7 @@ const Footer = () => {
     aria-label="Pinterest"
     className="hover:opacity-80"
   >
-    <FaPinterestP className="h-4 w-4 text-white" />
+    <FaPinterestP className="h-4 w-4 hover:text-[#C9966B] text-white" />
   </a>
 
   <a
@@ -284,7 +284,7 @@ const Footer = () => {
     aria-label="Facebook"
     className="hover:opacity-80"
   >
-    <FaFacebookF className="h-4 w-4 text-white" />
+    <FaFacebookF className="h-4 w-4 hover:text-[#C9966B] text-white" />
   </a>
     <a
     href="https://x.com/AruhKoncepts?t=W3JwQLkpvg05ZnV4F_-vxw&s=09"
@@ -293,7 +293,7 @@ const Footer = () => {
     aria-label="X"
     className="hover:opacity-80"
   >
-    <SiX className="h-4 w-4 text-white" />
+    <SiX className="h-4 w-4 hover:text-[#C9966B] text-white" />
   </a>
             </div>
           </div>
