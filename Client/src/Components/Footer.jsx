@@ -65,7 +65,7 @@ const Footer = () => {
   <div className="mt-10 pt-6 flex flex-col md:flex-row items-start md:items-center justify-between gap-8 text-sm">
 
     {/* Address */}
-    <div className="flex flex-col gap-3 max-w-md">
+    <div className="flex flex-col gap-3 max-w-sm">
   
   {/* Map on top */}
   <div className="w-full rounded-xl overflow-hidden shadow-lg">
@@ -96,7 +96,7 @@ const Footer = () => {
       rel="noopener noreferrer"
       
     >
-      5th Floor, Plot No.138, HIG, 6th Phase, above Bank of India bank,<br />
+      5th Floor, Plot No.138, HIG, 6th Phase, above Bank of India bank,
       Kukatpally Housing Board Colony, Kukatpally, Hyderabad, Telangana 500072
     </a>
   </div>
