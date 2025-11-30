@@ -1610,7 +1610,10 @@ Guided by <span className="italic font-medium">Creativity, Efficiency, and Ethic
                       onChange={(e) =>
                         setFormData({ ...formData, name: e.target.value })
                       }
-                      className="w-full p-3 bg-[#F0E7D8] rounded-lg focus:outline-none focus:ring-2 focus:ring-[#C8966B]"
+                      className="w-full p-3 bg-[#F0E7D8] placeholder-gray-600 rounded-lg focus:outline-none  focus:ring-2 focus:ring-[#C8966B] 
+           [-webkit-autofill]:!bg-[#F0E7D8] [-webkit-autofill]:!text-black 
+           [-webkit-text-fill-color:_black] 
+           [&:-webkit-autofill]:!shadow-[0_0_0_30px_#F0E7D8_inset]"
                       required
                     />
                   </div>
@@ -1627,7 +1630,10 @@ Guided by <span className="italic font-medium">Creativity, Efficiency, and Ethic
                       onChange={(e) =>
                         setFormData({ ...formData, email: e.target.value })
                       }
-                      className="w-full p-3 bg-[#F0E7D8] rounded-lg focus:outline-none focus:ring-2 focus:ring-[#C8966B]"
+                      className="w-full p-3 bg-[#F0E7D8] placeholder-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#C8966B] 
+           [-webkit-autofill]:!bg-[#F0E7D8] [-webkit-autofill]:!text-black 
+           [-webkit-text-fill-color:_black] 
+           [&:-webkit-autofill]:!shadow-[0_0_0_30px_#F0E7D8_inset]"
                       required
                     />
                   </div>
@@ -1693,7 +1699,7 @@ Guided by <span className="italic font-medium">Creativity, Efficiency, and Ethic
                       onChange={(e) =>
                         setFormData({ ...formData, message: e.target.value })
                       }
-                      className="w-full p-3 bg-[#F0E7D8] rounded-lg focus:outline-none focus:ring-2 focus:ring-[#C8966B]"
+                      className="w-full p-3 placeholder-black bg-[#F0E7D8] rounded-lg focus:outline-none focus:ring-2 focus:ring-[#C8966B]"
                       required
                     ></textarea>
                   </div>
