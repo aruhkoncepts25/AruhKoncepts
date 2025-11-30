@@ -33,15 +33,9 @@ import { useLocation } from "react-router-dom";
 
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-// Service Section Image
+
 import service from "../assets/homeService.webp"
-// import hService1 from "../assets/hService1.png"
-// import hService2 from "../assets/hService2.png"
-// import hService3 from "../assets/hService3.png"
-// import hService4 from "../assets/hService4.jpg"
-// import hService5 from "../assets/hService5.jpg"
-// import hService6 from "../assets/hService6.png"
-// import hService7 from "../assets/hService7.jpg"
+
 
 
 
@@ -720,17 +714,6 @@ useEffect(() => {
 
   </div>
 </div>
-
-
-
-
-
-
-
-
-
-
-
   </div>
 
 
@@ -1478,40 +1461,56 @@ Guided by <span className="italic font-medium">Creativity, Efficiency, and Ethic
         </section>
 
         {/* Testinomials  */}
-        <section id='testimonials' className="testinomials-section scroll-mt-24 py-10  bg-white">
-          <div className="w-[90%] mx-auto">
-            <div
-              ref={scrollRef}
-              className="flex overflow-hidden whitespace-nowrap gap-6"
-              onMouseEnter={() => setIsPaused(true)} // ✅ hover → pause
-              onMouseLeave={() => setIsPaused(false)} // ✅ leave → resume
-            >
-              {[...testimonials, ...testimonials].map((t, index) => (
-                <div
-                  key={index}
-                  className="bg-[#F8F8F8] p-6 rounded-lg shadow-md border border-gray-200 min-w-[280px] max-w-[300px]"
-                >
-                  <FaQuoteLeft className="text-2xl text-blue-900 mb-4" />
+<section
+  id="testimonials"
+  className="testimonials-section scroll-mt-24 py-10 bg-white"
+>
+  <div className="w-[90%] mx-auto">
+    
+    {/* OUTER SCROLL WRAPPER */}
+    <div ref={scrollRef} className="overflow-hidden relative py-4"> {/* Added padding and relative positioning */}
+      
+      {/* INNER FLEX TRACK (VISIBLE) */}
+      <div
+        className="flex whitespace-nowrap gap-6 overflow-visible"
+        onMouseEnter={() => setIsPaused(true)}
+        onMouseLeave={() => setIsPaused(false)}
+      >
+        {[...testimonials, ...testimonials].map((t, index) => (
+          
+          /* CARD */
+          <div
+            key={index}
+            className="bg-[#F8F8F8] p-6 rounded-lg shadow-md border border-gray-200
+              min-w-[280px] max-w-[300px]
+              transform transition-all duration-300
+              hover:scale-105 hover:-translate-y-2 hover:shadow-xl
+              relative z-10" /* Added z-index to ensure cards appear above other elements */
+          >
+            <FaQuoteLeft className="text-2xl text-blue-900 mb-4" />
 
-                  <div className="flex text-yellow-500 mb-4">
-                    {[...Array(5)].map((_, i) => (
-                      <FaStar key={i} />
-                    ))}
-                  </div>
-
-                  <p className="text-gray-700 mb-6">{t.text}</p>
-
-                  <div className="flex items-center">
-                    <div>
-                      <h4 className="font-bold">{t.name}</h4>
-                      <p className="text-sm text-gray-500">{t.role}</p>
-                    </div>
-                  </div>
-                </div>
+            <div className="flex text-yellow-500 mb-4">
+              {[...Array(5)].map((_, i) => (
+                <FaStar key={i} />
               ))}
             </div>
+
+            <p className="text-gray-700 mb-6">{t.text}</p>
+
+            <div className="flex items-center">
+              <div>
+                <h4 className="font-bold">{t.name}</h4>
+                <p className="text-sm text-gray-500">{t.role}</p>
+              </div>
+            </div>
           </div>
-        </section>
+
+        ))}
+      </div>
+    </div>
+  </div>
+</section>
+
 
         {/* contact  */}
         <section id="contact" ref={bookingRef} className="contact-section scroll-mt-12 md:pt-28  ">

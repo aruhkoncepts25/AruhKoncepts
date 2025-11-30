@@ -121,17 +121,20 @@ const OurService = () => {
       className="relative group shadow-md overflow-hidden rounded-lg transition-all duration-500 ease-in-out hover:scale-105 hover:shadow-2xl"
     >
       {/* Image */}
-      <div className="relative w-full h-64 md:h-80">
-        <img
-          src={service.image}
-          alt={service.title}
-          className="w-full h-full object-cover transition-all duration-500 group-hover:brightness-75"
-        />
+<div 
+  className="relative w-full h-64 md:h-80 cursor-pointer"
+  onClick={() => handleViewServiceClick(service.link)}
+>
+  <img
+    src={service.image}
+    alt={service.title}
+    className="w-full h-full object-cover transition-all duration-500 group-hover:brightness-75"
+  />
+
 
         {/* Overlay Button on Hover */}
         <div className="absolute bottom-2 left-0 w-full px-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-          {/* Overlay behind button */}
-          {/* <div className="absolute inset-0 bg-black/30 rounded-lg pointer-events-none"></div> */}
+
 
           {/* Button */}
           <button

@@ -127,7 +127,7 @@ const Navbar = () => {
               </button>
 
               {open && (
-                <div className="absolute left-0 mt-2 w-66 bg-white/10 backdrop-blur-md text-black rounded-lg shadow-lg p-2 z-50 border border-white/20 transition-all duration-300 ease-out">
+                <div className="absolute left-0 mt-2 w-66 bg-white/100 backdrop-blur-md text-black rounded-lg shadow-lg p-2 z-50 border border-white/20 transition-all duration-300 ease-out">
                   <Link to="/service/furniture" className="block px-3 py-2 rounded hover:text-[#C9966B] hover:bg-white/5 transition-all duration-200 ease-out" onClick={() => setOpen(false)}>Custom Furniture & Decor</Link>
                   <div className="w-full h-[1px]  bg-[#142241] my-2 transition-all duration-200"></div>
                   <Link to="/service/turnkey" className="block hover:text-[#C9966B] px-3 py-2 rounded hover:bg-white/5 transition-all duration-200 ease-out" onClick={() => setOpen(false)}>TurnKey Interior Solutions</Link>
@@ -136,8 +136,6 @@ const Navbar = () => {
                   <div className="w-full h-[1px] bg-[#142241] my-2 transition-all duration-200"></div>
                   <Link to="/ourservice" className="block px-3 py-2 rounded hover:text-[#C9966B] text-center hover:bg-white/5 transition-all duration-200 ease-out" onClick={() => setOpen(false)}>View All Services</Link>
                 </div>
-
-
 
               )}
             </div>
@@ -290,56 +288,79 @@ const Navbar = () => {
 
                   {mobileDropdownOpen && (
                     <div className="ml-4 space-y-3 font-medium text-white">
-                      <Link
-                        to="/service/residential"
-                        className="flex items-center gap-2 px-4"
-                        onClick={() => setMobileMenuOpen(false)}
-                      >
-                        <span className="font-light">Residential Interior Design</span>
-                      </Link>
-                      <Link
-                        to="/service/commercial"
-                        className="flex items-center gap-2 px-4"
-                        onClick={() => setMobileMenuOpen(false)}
-                      >
-                        <span className="font-light">Commercial Interior Design</span>
-                      </Link>
-                      <Link
-                        to="/service/turnkey"
-                        className="flex items-center gap-2 px-4"
-                        onClick={() => setMobileMenuOpen(false)}
-                      >
-                        <span className="font-light">TurnKey Interior Solutions</span>
-                      </Link>
-                      <Link
-                        to="/service/visualization"
-                        className="flex items-center gap-2 px-4"
-                        onClick={() => setMobileMenuOpen(false)}
-                      >
-                        <span className="font-light">3D Visualization & Conceptual Design</span>
-                      </Link>
-                      <Link
-                        to="/service/renovation"
-                        className="flex items-center gap-2 px-4"
-                        onClick={() => setMobileMenuOpen(false)}
-                      >
-                        <span className="font-light">Renovation & Remodeling</span>
-                      </Link>
-                      <Link
-                        to="/service/furniture"
-                        className="flex items-center gap-2 px-4"
-                        onClick={() => setMobileMenuOpen(false)}
-                      >
-                        <span className="font-light">Custom Furniture & Decor</span>
-                      </Link>
-                      <Link
-                        to="/service/vastu"
-                        className="flex items-center gap-2 px-4"
-                        onClick={() => setMobileMenuOpen(false)}
-                      >
-                        <span className="font-light">Vastu Consultation</span>
-                      </Link>
-                    </div>
+
+  <Link
+    to="/service/residential"
+    className={`flex items-center gap-2 px-4 ${
+      location.pathname === "/service/residential" ? "text-[#C8966B]" : "text-white"
+    }`}
+    onClick={() => setMobileMenuOpen(false)}
+  >
+    <span className="font-light">Residential Interior Design</span>
+  </Link>
+
+  <Link
+    to="/service/commercial"
+    className={`flex items-center gap-2 px-4 ${
+      location.pathname === "/service/commercial" ? "text-[#C8966B]" : "text-white"
+    }`}
+    onClick={() => setMobileMenuOpen(false)}
+  >
+    <span className="font-light">Commercial Interior Design</span>
+  </Link>
+
+  <Link
+    to="/service/turnkey"
+    className={`flex items-center gap-2 px-4 ${
+      location.pathname === "/service/turnkey" ? "text-[#C8966B]" : "text-white"
+    }`}
+    onClick={() => setMobileMenuOpen(false)}
+  >
+    <span className="font-light">TurnKey Interior Solutions</span>
+  </Link>
+
+  <Link
+    to="/service/visualization"
+    className={`flex items-center gap-2 px-4 ${
+      location.pathname === "/service/visualization" ? "text-[#C8966B]" : "text-white"
+    }`}
+    onClick={() => setMobileMenuOpen(false)}
+  >
+    <span className="font-light">3D Visualization & Conceptual Design</span>
+  </Link>
+
+  <Link
+    to="/service/renovation"
+    className={`flex items-center gap-2 px-4 ${
+      location.pathname === "/service/renovation" ? "text-[#C8966B]" : "text-white"
+    }`}
+    onClick={() => setMobileMenuOpen(false)}
+  >
+    <span className="font-light">Renovation & Remodeling</span>
+  </Link>
+
+  <Link
+    to="/service/furniture"
+    className={`flex items-center gap-2 px-4 ${
+      location.pathname === "/service/furniture" ? "text-[#C8966B]" : "text-white"
+    }`}
+    onClick={() => setMobileMenuOpen(false)}
+  >
+    <span className="font-light">Custom Furniture & Decor</span>
+  </Link>
+
+  <Link
+    to="/service/vastu"
+    className={`flex items-center gap-2 px-4 ${
+      location.pathname === "/service/vastu" ? "text-[#C8966B]" : "text-white"
+    }`}
+    onClick={() => setMobileMenuOpen(false)}
+  >
+    <span className="font-light">Vastu Consultation</span>
+  </Link>
+
+</div>
+
                   )}
                 </div>
                 <div className="h-[1px] bg-white my-3 -mx-6 w-[116%]"></div>

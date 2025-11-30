@@ -216,18 +216,19 @@ const Project2 = () => {
           </p>
 
           {/* Connect Now Button */}
-          <a
-            onClick={handleClick}
-            className="inline-flex items-center cursor-pointer gap-4 mt-1 mb-1 md:mt-6 md:mb-6 text-3xl font-medium text-gray-800 hover:text-[#C8966B] transition"
-            ref={(el) => textRefs.current.push(el)}
-          >
-            Connect Now
-            <img
-              src={project6}
-              alt="arrow icon"
-              className="w-10 h-10 object-contain inline-block"
-            />
-          </a>
+        <button
+  onClick={handleClick}
+  className="inline-flex items-center cursor-pointer gap-4 mt-1 mb-1 md:mt-6 md:mb-6 text-2xl font-medium text-gray-800 hover:text-[#C8966B] "
+  ref={(el) => textRefs.current.push(el)}
+>
+  Connect Now
+  <img
+    src={project6}
+    alt="arrow icon"
+    className="w-10 h-10 object-contain inline-block"
+  />
+</button>
+
         </div>
       </section>
     </>

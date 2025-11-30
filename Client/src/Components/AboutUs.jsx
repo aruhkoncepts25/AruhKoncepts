@@ -65,14 +65,14 @@ const AboutUs = () => {
 
               <div className="md:w-2/2">
                 <h2 className="text-lg leading-relaxed text-gray-800">
-                  <span className="italic font-medium">Aruh Koncept</span> Interiors is <span className="italic  font-medium">Hyderabad based Interior Trunkey contracting firm</span>. One of the <span className="italic  font-medium">Applauded & Trendsetters in Interior Contracting Industry</span>. Our unique way of <span className="italic  font-medium">'Giving Ideas to Quality Work'</span> has helped AK make <span  className="italic  font-medium">Quantifiable value delivery in Projects</span>.
-We have <span className="italic  font-medium">trained carpenters, specialized skill set personals expertise and work style, site engineers</span>, and a <span className="italic  font-medium">managerial team</span> that forms the core of the firm. <span  className="italic  font-medium">Aruh Koncept is constantly evolving</span>. Having worked with the <span className="italic  font-medium">best of architects</span> over a period of time, we have built a <span className="italic  font-medium">reputation of delivering excellence in quality within the stipulated time</span>.
-Our <span className="italic  font-medium">commitment to offer premium quality output</span> by focusing on <span className="italic  font-medium">creativity and Innovative ideas</span> is helping us to make a <span className="italic  font-medium">potential market for our firm</span>.
+                  <span className="italic font-medium">Aruh Koncept</span> Interiors is <span className="italic  font-medium">Hyderabad based Interior Trunkey contracting firm</span>. One of the <span className="italic  font-medium">Applauded & Trendsetters in Interior Contracting Industry</span>. Our unique way of <span className="italic  font-medium">'Giving Ideas to Quality Work'</span> has helped AK make <span className="italic  font-medium">Quantifiable value delivery in Projects</span>.
+                  We have <span className="italic  font-medium">trained carpenters, specialized skill set personals expertise and work style, site engineers</span>, and a <span className="italic  font-medium">managerial team</span> that forms the core of the firm. <span className="italic  font-medium">Aruh Koncept is constantly evolving</span>. Having worked with the <span className="italic  font-medium">best of architects</span> over a period of time, we have built a <span className="italic  font-medium">reputation of delivering excellence in quality within the stipulated time</span>.
+                  Our <span className="italic  font-medium">commitment to offer premium quality output</span> by focusing on <span className="italic  font-medium">creativity and Innovative ideas</span> is helping us to make a <span className="italic  font-medium">potential market for our firm</span>.
                 </h2>
               </div>
 
-              <div className="flex  justify-between md:justify-around lg:justify-between w-full  md:w-2/2 lg:w-1/2">
-                <div className="w-40 h-40 rounded-full bg-[#F1F2EB] flex flex-col items-center justify-center shadow-lg px-2 text-center">
+              <div className="flex justify-between  md:justify-around lg:justify-between w-full md:w-2/2 lg:w-1/2">
+                <div className="w-40  h-40 rounded-full xl:relative left-[35px] bg-[#F1F2EB] flex flex-col items-center justify-center shadow-lg px-2 text-center">
                   <h3 className="text-5xl text-[#142241] font-bold">10</h3>
                   <p className="text-xs mt-1 text-[#1A1A1A]">
                     Years of <br /> Experience
@@ -236,65 +236,65 @@ Our <span className="italic  font-medium">commitment to offer premium quality ou
             </p>
 
             <div className="mt-10 flex justify-start">
-           <div className="w-[90%] mx-auto flex flex-col gap-10">
-  {/* First Row - 3 cards */}
-  <div className="flex justify-center gap-16 flex-wrap">
-    {team.slice(0, 3).map((member, index) => (
-      <div
-        key={index}
-        className="w-64 rounded-b-xl overflow-hidden p-3"
-        style={{
-          background: 'linear-gradient(180deg, rgba(20,34,65,1) 0%, rgba(50,84,160,1) 100%)',
-          borderRadius: '8rem 8rem 0rem 0rem',
-        }}
-        data-aos="zoom-in"
-        data-aos-delay={400 + index * 150}
-        data-aos-duration="800"
-      >
-        <div className="relative w-full h-80 rounded-t-[140px] overflow-hidden">
-          <img
-            src={member.image}
-            alt={member.name}
-            className="w-full h-full object-cover rounded-t-[140px]"
-          />
-        </div>
-        <div className="text-center py-4">
-          <h3 className="text-white font-semibold text-lg">{member.name}</h3>
-          <p className="text-white text-sm">{member.role}</p>
-        </div>
-      </div>
-    ))}
-  </div>
+              <div className="w-[90%] mx-auto flex flex-col gap-10">
+                {/* First Row - 3 cards */}
+                <div className="flex justify-center gap-16 flex-wrap">
+                  {team.slice(0, 3).map((member, index) => (
+                    <div
+                      key={index}
+                      className="w-64 rounded-b-xl overflow-hidden p-3"
+                      style={{
+                        background: 'linear-gradient(180deg, rgba(20,34,65,1) 0%, rgba(50,84,160,1) 100%)',
+                        borderRadius: '8rem 8rem 0rem 0rem',
+                      }}
+                      data-aos="zoom-in"
+                      data-aos-delay={400 + index * 150}
+                      data-aos-duration="800"
+                    >
+                      <div className="relative w-full h-80 rounded-t-[140px] overflow-hidden">
+                        <img
+                          src={member.image}
+                          alt={member.name}
+                          className="w-full h-full object-cover rounded-t-[140px]"
+                        />
+                      </div>
+                      <div className="text-center py-4">
+                        <h3 className="text-white font-semibold text-lg">{member.name}</h3>
+                        <p className="text-white text-sm">{member.role}</p>
+                      </div>
+                    </div>
+                  ))}
+                </div>
 
-  {/* Second Row - 2 cards centered */}
-  <div className="flex justify-center gap-16 flex-wrap">
-    {team.slice(3, 5).map((member, index) => (
-      <div
-        key={index}
-        className="w-64 rounded-b-xl overflow-hidden p-3"
-        style={{
-          background: 'linear-gradient(180deg, rgba(20,34,65,1) 0%, rgba(50,84,160,1) 100%)',
-          borderRadius: '8rem 8rem 0rem 0rem',
-        }}
-        data-aos="zoom-in"
-        data-aos-delay={400 + (index + 3) * 150}
-        data-aos-duration="800"
-      >
-        <div className="relative w-full h-80 rounded-t-[140px] overflow-hidden">
-          <img
-            src={member.image}
-            alt={member.name}
-            className="w-full h-full object-cover rounded-t-[140px]"
-          />
-        </div>
-        <div className="text-center py-4">
-          <h3 className="text-white font-semibold text-lg">{member.name}</h3>
-          <p className="text-white text-sm">{member.role}</p>
-        </div>
-      </div>
-    ))}
-  </div>
-</div>
+                {/* Second Row - 2 cards centered */}
+                <div className="flex justify-center gap-16 flex-wrap">
+                  {team.slice(3, 5).map((member, index) => (
+                    <div
+                      key={index}
+                      className="w-64 rounded-b-xl overflow-hidden p-3"
+                      style={{
+                        background: 'linear-gradient(180deg, rgba(20,34,65,1) 0%, rgba(50,84,160,1) 100%)',
+                        borderRadius: '8rem 8rem 0rem 0rem',
+                      }}
+                      data-aos="zoom-in"
+                      data-aos-delay={400 + (index + 3) * 150}
+                      data-aos-duration="800"
+                    >
+                      <div className="relative w-full h-80 rounded-t-[140px] overflow-hidden">
+                        <img
+                          src={member.image}
+                          alt={member.name}
+                          className="w-full h-full object-cover rounded-t-[140px]"
+                        />
+                      </div>
+                      <div className="text-center py-4">
+                        <h3 className="text-white font-semibold text-lg">{member.name}</h3>
+                        <p className="text-white text-sm">{member.role}</p>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
 
             </div>
           </div>

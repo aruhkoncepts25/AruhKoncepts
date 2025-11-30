@@ -236,7 +236,7 @@ const Project3 = () => {
 
           <a 
             onClick={handleClick} 
-            className="inline-flex items-center cursor-pointer gap-4 mt-1 mb-1 md:mt-6 md:mb-6 text-3xl font-medium text-gray-800 hover:text-[#C8966B] transition"
+            className="inline-flex items-center cursor-pointer gap-4 mt-1 mb-1 md:mt-6 md:mb-6 text-2xl font-medium text-gray-800 hover:text-[#C8966B] transition"
             ref={addToTextRefs}
           >
             Connect Now
